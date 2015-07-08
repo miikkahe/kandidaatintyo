@@ -1,4 +1,4 @@
-﻿# Sisällys
+# Sisällys
 
 ## 1. Kokeensuunnittelu
 
