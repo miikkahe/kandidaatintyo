@@ -1,25 +1,27 @@
-# Sisällys
+﻿# Sisällys
 
-## Kokeensuunnittelu
+## 1. Kokeensuunnittelu
 
-### ANOVA
+### 1.2 ANOVA
 
-### MSA
+#### Satunnaiset ja kiinteät muuttujat
+
+### 1.3 MSA
 
 #### GR&R
 
-### RPD
+### 1.4 RPD
 
 #### Taguchi
 
-## Kumipyöräabraasiotesti
+## 2. Kumipyöräabraasiotesti
 
-## Kokeet
+## 3. Kokeet
 
-### Suunnitelma
+### 3.1 Suunnitelma
 
-### Tulokset
+### 3.2 Tulokset
 
-## Analyysi
+## 4. Analyysi
 
-## Johtopäätökset
+## 5. Johtopäätökset
