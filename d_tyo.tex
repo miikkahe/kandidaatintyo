@@ -37,7 +37,7 @@
 % Define your basic information
 %-----------------------------------------------------------------------------------------------------------------
 \author{Miikka Hevosmaa}
-\title{Tilastollisen kokeensuunnittelun soveltaminen teollisen mittausprosessin analysointiin ja optimointiin: tapaustutkimus}      % primary title (for front page)
+\title{Koeuunnittelun soveltaminen teollisen mittausprosessin analysointiin ja optimointiin: tapaustutkimus}      % primary title (for front page)
 %ONGELMA!!! LIIAN PITKÄ, HEITTÄÄ TARKASTAJAN SEURAAVALLE SIVULLE!!!
 \titleB{Otsikko suomeksi} % translated title for abstract
 \thesistype{Kandidaatintyö} % or Bachelor of Science, Laboratory Report... 
@@ -186,41 +186,12 @@ The abstract in Finnish. Foreign students do not need this page.
 Suomenkieliseen diplomityöhön kirjoitetaan tiivistelmä sekä suomeksi
 että englanniksi.
 
-wou wou latexmk toimiiko jepujee tällä vaan leikitään vaikka töitä
-pitäis tehdä.
-
-testi testi jee jee jee
-jfisadjfs
-kjflsdkjf fjfisldfjvlf fisadlfi
-ifudsfla
-illlll
-
-GitHub testi. Mitä hyötyä tästä nyt on? Ei edes vim -komentoja.
-Mutta versiokontrolli? Pitää kokeilla. Ja onhan tää koodarien
-suosiossa. Nyt github client androidilla. Ja nyt git desktopilla
-työkoneella. Editoin sublimetextillä. Vaihdoin nimen työkoneella.
-Nyt vaihdoin nimen sagemath pilvessä.
-Ja nyt vaihdoin nimen puhelimessa.
-
-Nyt tämä sagemath. Toivottavasti tämä pirun github sync toimii.
-Ja toimiko? Hyvältä näyttää, paitsi näitten komentojen kanssa.
-
-Aquamacs - hyvä vai huono? Näin se selviää
-Emacs komennot - hohhohhooo
-
-Texmaker - näyttää kivalta, kuinkahan toimii. Kaipaan vimkomentoja, mutta tässä
-paljon tex-asetuksia. Mutta ei github -integraatiota. Ja väriteemoja? No voihan niitä etsiä.
-
-Brackets -kokeilu, näyttää ainakin modernilta.
-
-Tämä kappale on testi. Kirjoitan kännykällä.
-Testi testi älämölö. Hehe lisää!
-Joopa joo poista vaan tämä.
-äööäölkkkllöääö testi suomen näppäimistö.
-
 Kandidaatintyön tiivistelmä kirjoitetaan ainoastaan kerran, samalla
 kielellä kuin työ. Kuitenkin myös suomenkielisillä kandidaatintöillä
 pitää olla englanninkielinen otsikko arkistointia varten.
+
+Koesuunnittelun menetelmiä on sovellettu teollisten prosessien analysointiin ja
+optimointiin jo vuosikymmenten ajan.
 
 %-----------------------------------------------------------------------------------------------------------------
 
@@ -260,29 +231,6 @@ pitää olla englanninkielinen otsikko arkistointia varten.
 %\chapter*{Preface}
 \chapter*{Alkusanat}
 %-----------------------------------------------------------------------------------------------------------------
-
-Hi Weimi! Look here! Hello!ää Tässä sitaatti \parencite{muelaner2015hybrid}.
-
-This document template conforms to Guide to Writing a Thesis at
-Tampere University of Technology (2014) and is based on the previous
-template. The main purpose is to show how the theses are formatted
-using LaTeX (or \LaTeX ~ to be extra fancy) .
-
-The thesis text is written into file \texttt{d\_tyo.tex}, whereas
-\texttt{tutthesis.cls} contains the formatting instructions. Both
-files include lots of comments (start with \%) that should help in
-using LaTeX. TUT specific formatting is done by additional settings on
-top of the original \texttt{report.cls} class file. This example needs a
-few additional files: TUT logo, example figure, example code, as well
-as example bibliography and its formatting (\texttt{.bst}) An example
-makefile is provided for those preferring command line. You are
-encouraged to comment your work and to keep the length of lines
-moderate, e.g. <80 characters. In Emacs, you can use \texttt{Alt-Q} to
-break long lines in a paragraph and \texttt{Tab} to indent commands
-(e.g. inside figure and table environments). Moreover, tex files are
-well suited for versioning systems, such as Subversion or Git.  
-% \url{http://www.ctan.org/tex-archive/info/lshort/english/lshort.pdf}
-
 
 Acknowledgements to those who contributed to the thesis are generally
 presented in the preface. It is not appropriate to criticize anyone in
@@ -350,19 +298,16 @@ Teemu Teekkari
 \item [RPD]        Robust parameter design, robustien parametrien suunnittelu
 \item [RSM]        Response surface methodology,
 \item [SNR]        Signal to noise ratio, signaali-kohinasuhde
-\item [URL]        Uniform Resource Locator
 \end{termlist} 
 
 \begin{termlist}
 \item [$\sigma$] keskihajonta
 \item [$\sigma^2$] varianssi
-\item [$F$] force
-\item [$m$] mass
 \end{termlist} 
 
-The abbreviations and symbols used in the thesis are collected into a
-list in alphabetical order. In addition, they must be explained upon
-first usage in the text.
+% The abbreviations and symbols used in the thesis are collected into a
+% list in alphabetical order. In addition, they must be explained upon
+% first usage in the text.
 
 
 % Leave the backside of abbreviation list empty in twoside mode
@@ -378,8 +323,8 @@ first usage in the text.
                               % 'Luku' in page headers (in 'twoside'
                               % mode)
 %-----------------------------------------------------------------------------------------------------------------
-\chapter{Introduction}
-\label{ch:intro} 
+\chapter{Johdanto}
+\label{ch:johdanto} 
 %-----------------------------------------------------------------------------------------------------------------
 
 % \label{...} allows cross-referencing, e.g. 'as explained in
@@ -414,14 +359,6 @@ report typically include the following chapters:
 \end{itemize}
 
 
-Each of these chapters starts from a new page in a thesis. The titles
-of chapters from 1 to 5 are provided as examples only. You should use
-more descriptive ones.  The title page of your thesis features the
-University's logo (approximately 8 cm wide), your name, the thesis
-title and type. The name of the examiner is included at the bottom
-right corner of the title page. The table of contents lists all the
-numbered headings after it, but not always the preceding headings.
-
 Introduction outlines the purpose and objectives of the presented
 research. The background information, utilized methods and source
 material are presented next at a level that is necessary to understand
@@ -433,6 +370,13 @@ presented, but summarizes and them and analyzes their
 consequences. List of references enables your reader to find the cited
 sources.
 
+Kulumiskestävyyden testaus on kriittinen osa uusien pinnoitteiden kehitystä.
+Sovelluskohteesta riippuen kulumiskestävyys voi olla jopa kehitystyön tärkein
+tavoite. Näin ollen on selvää että testauksen on annettava luotettavia ja
+vertailukelpoisia tuloksia. Ei ole tarkoituksenmukaista luottaa mittaus- ja
+testauslaitteisiin varauksetta tutkimatta niitten luotettavuutta kriittisesti.
+
+Nykyiset koesuunnittelun menetelmät kehitettiin alun perin 
 
 
 This document is structured as follows. Chapter~\ref{ch:doe}
@@ -446,7 +390,7 @@ appendices as well (Appendix A and B).
 
 
 %-----------------------------------------------------------------------------------------------------------------
-\chapter{Kokeensuunnittelu}
+\chapter{Koesuunnittelu}
 \label{ch:doe}
 %-----------------------------------------------------------------------------------------------------------------
 
