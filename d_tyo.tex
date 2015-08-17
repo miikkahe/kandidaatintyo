@@ -33,9 +33,9 @@
 % pages.  Availbale: http://tobi.oetiker.ch/lshort/lshort.pdf]
 
 
-%-----------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 % Define your basic information
-%-----------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 \author{Miikka Hevosmaa}
 \title{Koeuunnittelun soveltaminen teollisen mittausprosessin analysointiin ja optimointiin: tapaustutkimus}      % primary title (for front page)
 %ONGELMA!!! LIIAN PITKÄ, HEITTÄÄ TARKASTAJAN SEURAAVALLE SIVULLE!!!
@@ -47,17 +47,17 @@
 % (e.g. \@author). Trick is reversed with \makeatother a bit later.
 \makeatletter
 
-%-----------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 % Define the pdf document properties.  Fill in your own keywords.
-%-----------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 \hypersetup{   
   pdftitle={\@title},
   pdfauthor={\@author},
   pdfkeywords={design of experiments; measurement systems analysis}
 }
 
-%-----------------------------------------------------------------------------------------------------------------
-%-----------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 % Put your thesis' main language last
 % http://mirrors.ctan.org/macros/latex/required/babel/base/babel.pdf
 % !!! 2014-11-03 Second language seems to mess up figure and table
@@ -67,8 +67,8 @@
 %\usepackage[english]{babel}
 
 
-%-----------------------------------------------------------------------------------------------------------------
-%-----------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 % You can include special packages or define new commands here at the
 % beginning. Options are given in brackets and package name is in
 % braces:  \usepackage[opt]{pkg_name}
@@ -91,15 +91,15 @@
 
 
 
-%-----------------------------------------------------------------------------------------------------------------
-%-----------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 % You can also add your own commands
 \newcommand\todo[1]{{\color{red}!!!TODO: #1}} % Remark text in braces appears in red
 \newcommand{\angs}{\textsl{\AA}}              % , e.g. slanted symbol for Ångstöm
 
 % Preparatory content ends here
-%-----------------------------------------------------------------------------------------------------------------
-%-----------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 
 
 \pagenumbering{Roman}
@@ -108,9 +108,9 @@
 
 
 
-%-----------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 % Create the title page.
-%-----------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 % First the logo. Check its language.
 \thispagestyle{empty}
 %\vspace*{-.5cm}\noindent
@@ -148,8 +148,8 @@
 
 
 
-%-----------------------------------------------------------------------------------------------------------------
-%-----------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 % Use Roman numbering i,ii,iii... for the first pages (abstract, TOC,
 % termlist etc)
 \pagenumbering{roman} 
@@ -165,9 +165,9 @@
 % !!! Problems with other language. Disable it (ES, 2014-11-03)
 %%\begin{otherlanguage}{finnish} %  Following text in in 2nd language
 
-%-----------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 \chapter*{Tiivistelmä}         % Asterisk * turns numbering off
-%-----------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 
 \begin{spacing}{1.0}
          {\bf \textsf{\MakeUppercase{\@author}}}: \@title\\  % or use \@title when thesis is in Finnish
@@ -192,7 +192,7 @@ pitää olla englanninkielinen otsikko arkistointia varten.
 
 Työssä on tutkittu
 
-%-----------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 
 %%\end{otherlanguage} % End on 2nd language part -- (Disabled 2014-11-03)
 
@@ -221,15 +221,15 @@ Työssä on tutkittu
 
 %%\end{otherlanguage} % End on 2nd language part -- (Disabled 2014-11-03)
 
-%-----------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 
 
 \makeatother % Make the @ a special symbol again, as \@author and \@title are not neded after this
 
-%-----------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 %\chapter*{Preface}
 \chapter*{Alkusanat}
-%-----------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 
 Acknowledgements to those who contributed to the thesis are generally
 presented in the preface. It is not appropriate to criticize anyone in
@@ -250,7 +250,7 @@ Teemu Teekkari
 
 
 
-%-----------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 %
 % Add the table of contents, optionally also the lists of figures,
 % tables and codes.
@@ -282,11 +282,11 @@ Teemu Teekkari
 % Term and symbol exaplanations use a special list type
 %
 
-%-----------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 \chapter*{Lyhenteet ja merkinnät}
 %\chapter*{Lyhenteet ja merkinnät}
 \markboth{}{}                                % no headers
-%-----------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 
 % You don't have to align these with whitespaces, but it makes the
 % .tex file more readable
@@ -300,7 +300,7 @@ Teemu Teekkari
 \end{termlist} 
 
 \begin{termlist}
-\item [$\sigma$] keskihajonta
+\item [$\sigma$] keskihajonta (engl. standard deviation)
 \item [$\sigma^2$] varianssi
 \end{termlist} 
 
@@ -312,7 +312,7 @@ Teemu Teekkari
 % Leave the backside of abbreviation list empty in twoside mode
 \cleardoublepage
 
-%-----------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 % The actual text begins here and page numbering changes to 1,2...
 \newpage             % needed for page numbering
 \pagenumbering{arabic}
@@ -321,10 +321,10 @@ Teemu Teekkari
 \renewcommand{\chaptername}{} % This disables the prefix 'Chapter' or
                               % 'Luku' in page headers (in 'twoside'
                               % mode)
-%-----------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 \chapter{Johdanto}
 \label{ch:johdanto} 
-%-----------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 
 % \label{...} allows cross-referencing, e.g. 'as explained in
 % Chapter~\ref{ch:intro}' Note that you may have to run the command
@@ -389,10 +389,28 @@ appendices as well (Appendix A and B).
 
 
 
-%-----------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 \chapter{Koesuunnittelu}
 \label{ch:doe}
-%-----------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+
+Kokeiden teko on tapa saada tietoa tutkittavasta kohteesta. Se on teorian
+ohella yksi tieteellisen menetelmän perusteista ja siten siihen onkin
+kehittynyt oma erikoistunut teoreettinen runkonsa, joka limittyy matematiikan ja
+tilastotieteen kanssa. Alan muodostumiseen ovat suuresti vaikuttaneet mm.
+tilastotieteilijät R. A. Fisher (1890-1962) ja George E. P. Box (1919-2013).
+Suomeksi tähän alaan viittaa termi koesuunnittelu, joskus kokeensuunnittelu,
+englanniksi design of experiments (DOE) tai experimental design.
+
+Koesuunnittelu on osoittautunut tehokkaaksi työkaluksi teollisuudessa; prosessien
+ja systeemien ymmärtämisessä \parencite{Antony2006a} . Se on yksi prosessinhallinnan
+ja laadunhallinnan menetelmistä. Teollisuudessa suosittu laatujohtamisstrategia
+Six Sigma käyttää koesuunnittelun menetelmiä, ja Six Sigman ... \parencite{Dusharme2001}.
+
+parametrit ja input output.kk
+
+Koesuunnitteluun ja muihin tilastollisiin menetelmiin on kehitetty monia ohjelmistoja,
+mm. Minitab, JMP ja Design-Expert.
 
 \section{Koesuunnitelma}
 
@@ -402,7 +420,7 @@ Lisää OFAT, adaptable OFAT, 2k, Taguchi, vastepinta, d-optimal, designated des
 
 \section{Robusti suunnittelu}
 
-%TODO: Siirrä muualle kun tiedät mihin!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+%TODO: Siirrä muualle kun tiedät mihin!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 \todo{Siirrä muualle kun tiedät mihin!!!!!!!!}
 
 Mittausjärjestelmää voidaan ajatella \textit{prosessina} johon kuuluu
@@ -837,10 +855,10 @@ numbering.
 %\end{figure}
 
 
-%-----------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 \chapter{Referencing styles}
 \label{sec:ref_styles}
-%-----------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 
 Different referencing styles determine how you create 1) in-text
 citations and 2) the bibliography. Two common referencing styles are
@@ -981,10 +999,10 @@ Section~\ref{sec:3rd} cannot appear alone, but needs some company
 % Empty line is a paragraph separator in LaTeX.
 
 
-%-----------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 \chapter{Conclusions}
 \label{ch:concl}
-%-----------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 
 \epigraph{The best time to plan an experiment is after you’ve done it}{R. A. Fisher}
 
@@ -1019,9 +1037,9 @@ toimii, ja writemonkey on erittäin hyvä ellei täydellinen.
 
 
 
-%-----------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 % The bibliography, i.e the list of references (3 options available)
-%-----------------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 \newpage
 
 %\renewcommand{\bibname}{Bibliography}     % Otherwise bilingual babel uses Finnish ``Kirjallisutta''. Strange...
@@ -1127,9 +1145,9 @@ toimii, ja writemonkey on erittäin hyvä ellei täydellinen.
 
 
 
-%--------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 % Appendices are optional. 
-%--------------------------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 
 % This part is semi-ugly at the moment. Please give feedback if you
 % know how to improve it. The problems were related to certain
