@@ -410,11 +410,12 @@ toimivaksi strategiaksi \parencite{Dusharme2001}.
 
 Koesuunnittelu tutkii yleensä prosessia (tai systeemiä). Kuvassa \ref{fig:malli1}
 on yksinkertainen malli prosessista. Tutkija haluaa selvittää miten tekijät
-(x,x,..) vaikuttavat vasteeseen y. Joissain tapauksissa on hyödyllisempää
+\textit{x,x,...} vaikuttavat vasteeseen \textit{y}. Joissain tapauksissa on hyödyllisempää
 jakaa teijät kahteen ryhmään: niihin joita voimme hallita tavallisessa
 prosessissa ja niihin joita ei ole mahdollista tai järkevää yrittää
 hallita \ref{fig:malli2}. Jälkimmäisiä kutsutaan häiriötekijöiksi (engl. noise
-factor). Vaste y .... \cite{Montgomery2012} antaa kokeen tavoitteeksi seuraavat:
+factor). Vaste \textit{y} .... Montgomery \yearcite{Montgomery2012} antaa kokeen
+tavoitteeksi seuraavat:
 
 \begin{itemize}
 \item[1] Vasteeseen y eniten vaikuttavien tekijöiden tunnistaminen
@@ -564,47 +565,12 @@ Bursztyn ja Steinberg \citeyear{Bursztyn} vertailevat tutkimuksessaan hajonta
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Effective written communication requires both sound content and clear
-style. Keep the layout of your thesis neat and pay attention to your
-writing style.
+%-------------------------------------------------------------------------------
+\chapter{Mittajärjestelmäanalyysi}
+\label{ch:grr}
+%-------------------------------------------------------------------------------
 
-This document serves as an example, rather than tutorial, since there
-are plenty of those available, see for example 
-\cite{mittelbach04,oetiker14, latex13}. The source files are compiled
-with the command \texttt{pdflatex d\_tyo.tex} (or \texttt{latex
-  d\_tyo.tex}). Depending on your bibliography style, you might also
-need to run \texttt{bibtex d\_tyo}.
-
-Unfortunately, compilation may fail, if your LaTeX environment does
-not have all the needed packages installed. If you cannot install
-them, you can momentarily disable them by putting them inside comments
-in the file tutthesis.cls:
-\begin{center}
-\texttt{\% \textbackslash usepackage\{hyperref\}}
-\end{center}
-Of course, depending on the package, some of the features are also
-disabled and you must remove those parts from your tex file.
-Spellchecking can done, for example, by running 
-\texttt{aspell -t -c d\_tyo.tex}.
-
-Moreover, certain characters need escape symbols, e.g. per cent should
-be written as \textbackslash\% (otherwise it starts a comment),
-underscore as \textbackslash\_, tilde as \textbackslash\~{}\{\}, hash
-as \textbackslash\#, dollar sign as \textbackslash\$, and opening
-brace as \textbackslash\{ and so on. Note that double backslash
-\textbackslash\textbackslash makes a line break.
-
-\section{Text}
-A thesis is written with a single-column layout on one- or two-sided
-A4 sheets (210 mm x 297 mm). The font type of the body text is usually
-Times New Roman and the font size is 12 pt. The spacing is 1.2 and the
-text is fully justified and hyphenated. You do not have to indent the
-paragraphs.
-
-Arial 18 pt font is used for the headings in this guide, and there is
-a 42 pt space above and below. The font size of subheadings is
-14. There is an 18 pt space above subheadings and 12 pt space below
-them.
+\todo
 
 Brief basics of writing style are:
 \begin{itemize}
@@ -859,61 +825,6 @@ LaTeX is the best editor for writing also the more complex equations, such as
   G^+(t,t')= \int G^+(E) exp[-iE(t-t')/\hbar] dE.
 \end{equation}
 
-
-
-
-\section{Programs and algorithms}
-
-Codes and algorithms are written using monospaced font, such as
-Courier New, Consolas or their variations. If the length of the code
-or algorithm is less than 10 lines and you do not refer to it later on
-in the text, you can present it similarly to formulas.  Here's an
-example showing a snippet from the makefile. These commands were
-written directly to the .tex file and appear without numbering.
-
-\begin{lstlisting}[style=console, % title={Template files}
-  ] 
-all: ${TARGET}.tex
-	pdflatex ${TARGET}.tex
-	bibtex ${TARGET}
-	pdflatex ${TARGET}.tex
-\end{lstlisting}  
-% You can add an extra dollar sign here to turn off the accidental
-% syntax highlight (when there is an odd number of dollar signs in
-% listing)
-
-If the code is longer but shorter than a page, you present like a
-figure (Program 4.1) titled ``Program'' or ``Algorithm''.
-% This is controlled from .cls file with command
-% \renewcommand\lstlistingname{Program} % or {Ohjelma} in Finnish
-You should add some comments to the code and indent it
-consistently. The actions performed by the code must be outlined in
-broad terms in the body text. Line numbers make it much easier to
-refer to the code in the text. 
-
-LaTeX has a package listings \cite{heinz06} which can handle code
-very conveniently, include real code files, add row numbers, and
-highlight the reserved words.  Program~\ref{code:sort} shows another
-example which is included from a separate file
-\textit{example\_code.c}, and includes both line numbers and a code
-numbering.
-
-\begin{minipage}{\linewidth} % Optional: Minipage prevents a page break in the middle of listing
-\lstinputlisting[style=a1listing, language=C, emph={koko} 
-  , numberstyle=\tiny, stepnumber=2, numbersep=5pt
-  , caption={Example of algorithm. Variable \textit{koko} is emphasized to highlight some important aspect.}
-  , captionpos=b, nolol=false, label={code:sort}
-] {example_code.c}
-\end{minipage}
-
-
-% Alternatively you can add your code also inside the figure
-% environment, but use only style consistently in your thesis.
-%\begin{figure}
-% \lstinputlisting[style=a1listing, language=C,...
-% \caption{Example of algorithm...}
-% \label{code:sort}
-%\end{figure}
 
 
 %-------------------------------------------------------------------------------
