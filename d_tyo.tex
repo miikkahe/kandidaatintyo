@@ -414,7 +414,9 @@ on yksinkertainen malli prosessista. Tutkija haluaa selvittää miten tekijät
 jakaa teijät kahteen ryhmään: niihin joita voimme hallita tavallisessa
 prosessissa ja niihin joita ei ole mahdollista tai järkevää yrittää
 hallita \ref{fig:malli2}. Jälkimmäisiä kutsutaan häiriötekijöiksi (engl. noise
-factor). Vaste \textit{y} .... Montgomery \yearcite{Montgomery2012} antaa kokeen
+factor). Vaste \textit{y} ....
+On yleistä nimetä tutkittavat tekijät mallilla A, B, C, jne.
+Montgomery \yearcite{Montgomery2012} antaa kokeen
 tavoitteeksi seuraavat:
 
 \begin{itemize}
@@ -425,6 +427,12 @@ tavoitteeksi seuraavat:
 \item[4] Merkittävien hallittavien tekijöiden x asettaminen siten, että
 	häiriötekijöiden z vaikutus on mahdollisimman pieni
 \end{itemize}
+
+Vaikutusten tutkimiseksi tekijöille valitaan kokeessa käytettävät tasot, so.
+tekijöiden arvot. Yleisintä on valita joka tekijälle 2 (matala ja korkea) tai
+3 (matala, keskitaso, korkea) tasoa. Tasojen asettaminen rohkeasti mutta
+järkevästi normaalin alueen ulkopuolelle johtaa usein informatiivisempiin
+tuloksiin.
 
 \begin{figure}
   \begin{center}
@@ -444,7 +452,10 @@ Oletetaan siis kuvitteellinen objektiivinen makumittari. Makumittarin tulokseen
 vaikuttaa moni tekijä, näistä voimme hallita esim. aineksien osuuksia ja
 paistolämpötilaa ja -aikaa. Moni hallitsematon häiriötekijä voi myös vaikuttaa
 tulokseen, esim. uunin lämpötilan vaihtelu, epätarkat mittakulhot, huoneen
-ilmankosteus ja viereisen asunnon remontista aiheutuva tärinä. Leipuri voi asettaa
+ilmankosteus ja viereisen asunnon remontista aiheutuva tärinä.
+Lämpötilalle voidaan valita esim. matalaksi tasoksi 150 \celsius ja korkeaksi
+220 \celsius , ja käytetyn voin tyypille -1 (suolaton) ja 1 (normaalisuolainen).
+Leipuri voi asettaa
 tavoitteeksi mahdollisimman korkean mittaustuloksen tai pyrkiä johonkin
 tiettyyn mittarilukemaan (ehkä ylin johto on päättänyt että tietyn tason
 kakuista saadaan paras liikevaihto...) ja sitten asettaa toleranssit tulokselle.
@@ -467,15 +478,28 @@ kuvaamisessa ja sekä prosessin että koesuunnittelun asiantuntijoiden tietojen
 tehokas käyttö.
 
 \todo
-Koesuunnitteluun ja muihin tilastollisiin menetelmiin on kehitetty monia ohjelmistoja,
-mm. Minitab, JMP ja Design-Expert.
+Koesuunnitteluun ja muihin tilastollisiin menetelmiin on olemassa monia ohjelmistoja
+kuten Minitab, JMP ja Design-Expert.
 
 \section{Koesuunnitelma}
 
-Kokeen suunnittelussa tasot
+Tekijöiden ja tutkittavan vasteen valitsemisen jälkeen on suunniteltava käytettävät
+tasot, koeajojen määrä ja tekijätasojen yhdistelmät joilla kokeet ajetaan.
+Tuloksena on koesuunnitelma ja se esitetään taulukkomuodossa, jossa rivit ovat
+koeajoja ja sarakkeisiin merkitään ajossa käytettävät tekijätasot. Esimerkkinä
+kuva \todo . 
+
+\todo
+Aliasointi!
+
+
+
+On mahdollista valita tekijöille eri määrä tasoja samassa kokeessa, tällaist
+
 
 Yksinkertaisin tapa toteuttaa koe on vaihdella
 
+\todo
 Lisää OFAT, adaptable OFAT, 2k, Taguchi, vastepinta, d-optimal, designated design, Box-Meyers
 
 \section{Screenaus}
