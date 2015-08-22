@@ -2,6 +2,7 @@
 %\documentclass[12pt,a4paper,english %,twoside,openright %]{tutthesis}
 \documentclass[12pt,a4paper,finnish]{tutthesis}
 \usepackage{epigraph}
+\usepackage{gensymb}
 
 % Note that you must choose either Finnish or English here and there in this
 % file.
@@ -416,21 +417,24 @@ prosessissa ja niihin joita ei ole mahdollista tai järkevää yrittää
 hallita \ref{fig:malli2}. Jälkimmäisiä kutsutaan häiriötekijöiksi (engl. noise
 factor). Vaste \textit{y} ....
 On yleistä nimetä tutkittavat tekijät mallilla A, B, C, jne.
-Montgomery \yearcite{Montgomery2012} antaa kokeen
+\cite{Montgomery2012} antaa kokeen
 tavoitteeksi seuraavat:
 
 \begin{itemize}
-\item[1] Vasteeseen y eniten vaikuttavien tekijöiden tunnistaminen
-\item[2] Merkittävien tekijöiden asettaminen siten, että y on mahdollisimman usein
+\item Vasteeseen y eniten vaikuttavien tekijöiden tunnistaminen
+\item Merkittävien tekijöiden asettaminen siten, että y on mahdollisimman usein
 	mahdollisimman lähellä haluttua arvoa
-\item[3] Merkittävien tekijöiden asettaminen siten, että y:n vaihtelu on pientä
-\item[4] Merkittävien hallittavien tekijöiden x asettaminen siten, että
+\item Merkittävien tekijöiden asettaminen siten, että y:n vaihtelu on pientä
+\item Merkittävien hallittavien tekijöiden x asettaminen siten, että
 	häiriötekijöiden z vaikutus on mahdollisimman pieni
 \end{itemize}
 
 Vaikutusten tutkimiseksi tekijöille valitaan kokeessa käytettävät tasot, so.
 tekijöiden arvot. Yleisintä on valita joka tekijälle 2 (matala ja korkea) tai
-3 (matala, keskitaso, korkea) tasoa. Tasojen asettaminen rohkeasti mutta
+3 (matala, keskitaso, korkea) tasoa.
+Samassa kokeessa eri tekijöillä voi myös olla eri määrä tasoja, esim. 3 tekijällä
+2 tasoa ja 1 tekijällä 3 tasoa. Tällainen koe on \todo suomeksi mixed-level design.
+Tasojen asettaminen rohkeasti mutta
 järkevästi normaalin alueen ulkopuolelle johtaa usein informatiivisempiin
 tuloksiin.
 
@@ -453,7 +457,7 @@ vaikuttaa moni tekijä, näistä voimme hallita esim. aineksien osuuksia ja
 paistolämpötilaa ja -aikaa. Moni hallitsematon häiriötekijä voi myös vaikuttaa
 tulokseen, esim. uunin lämpötilan vaihtelu, epätarkat mittakulhot, huoneen
 ilmankosteus ja viereisen asunnon remontista aiheutuva tärinä.
-Lämpötilalle voidaan valita esim. matalaksi tasoksi 150 \celsius ja korkeaksi
+Lämpötilalle voidaan valita esim. matalaksi tasoksi 150 \celsius  ja korkeaksi
 220 \celsius , ja käytetyn voin tyypille -1 (suolaton) ja 1 (normaalisuolainen).
 Leipuri voi asettaa
 tavoitteeksi mahdollisimman korkean mittaustuloksen tai pyrkiä johonkin
@@ -489,6 +493,16 @@ Tuloksena on koesuunnitelma ja se esitetään taulukkomuodossa, jossa rivit ovat
 koeajoja ja sarakkeisiin merkitään ajossa käytettävät tekijätasot. Esimerkkinä
 kuva \todo . 
 
+Yksinkertaisinta on muuttaa yhtä tekijää kerrallaan. Koesuunnittelu kuitenkin syntyi
+osaksi juuri tarjoamaan vaihtoehtoja tälle menetelmälle. On mahdollista luoda
+koesuunnitelmia jotka vaativat vähemmän koeajoja kuin yksi tekijä kerrallaan
+-menetelmä, ja jotka antavat tietoa myös tekijöiden yhteisvaikutuksista.
+Koesuunnitelmia on kehitetty useita erilaisia eri tarkoituksiin.
+Suunnitelma on perinteisesti valittu apuna tietämys
+tutkinnan kohteesta, tavoitteista ja koesuunnittelumenetelmistä.
+Tietokoneiden kehityttyä on syntynyt myös toinen mahdollisuus, luoda tilanteeseen
+mukautettu suunnitelma algoritmin avulla.
+
 \todo
 Aliasointi!
 
@@ -504,7 +518,7 @@ Lisää OFAT, adaptable OFAT, 2k, Taguchi, vastepinta, d-optimal, designated des
 
 \section{Screenaus}
 
-\section{Robusti suunnittelu}
+\section{Dispersiovaikutukset, robusti suunnittelu ja laadun hallinta}
 
 %TODO: Siirrä muualle kun tiedät mihin!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 \todo{Siirrä muualle kun tiedät mihin!!!!!!!!}
