@@ -417,7 +417,7 @@ prosessissa ja niihin joita ei ole mahdollista tai järkevää yrittää
 hallita \ref{fig:malli2}. Jälkimmäisiä kutsutaan häiriötekijöiksi (engl. noise
 factor). Vaste \textit{y} ....
 On yleistä nimetä tutkittavat tekijät mallilla A, B, C, jne.
-\cite{Montgomery2012} antaa kokeen
+\cite[pp. 3]{Montgomery2012} antaa kokeen
 tavoitteeksi seuraavat:
 
 \begin{itemize}
@@ -489,9 +489,13 @@ kuten Minitab, JMP ja Design-Expert.
 
 Tekijöiden ja tutkittavan vasteen valitsemisen jälkeen on suunniteltava käytettävät
 tasot, koeajojen määrä ja tekijätasojen yhdistelmät joilla kokeet ajetaan.
-Tuloksena on koesuunnitelma ja se esitetään taulukkomuodossa, jossa rivit ovat
-koeajoja ja sarakkeisiin merkitään ajossa käytettävät tekijätasot. Esimerkkinä
-kuva \todo . 
+Tuloksena on koesuunnitelma ja se esitetään matriisina jossa rivit ovat
+koeajoja ja sarakkeisiin merkitään ajossa käytettävät tekijätasot.
+Matala taso merkitään yleensä -1 ja korkea +1, joskus vain - ja +. 
+Yleistä on myös merkitä tekijän A korkeaa tasoa kirjaimella \textit{a}, tekijän
+B korkeaa tasoa kirjaimella \textit{b}, jne. Merkintä \textit{ac} on siis
+Tekjät A ja C korkealla tasolla ja tekijä B matalalla. Esimerkkinä
+suunnitelmamatriisista kuva \todo . 
 
 Yksinkertaisinta on muuttaa yhtä tekijää kerrallaan. Koesuunnittelu kuitenkin syntyi
 osaksi juuri tarjoamaan vaihtoehtoja tälle menetelmälle. On mahdollista luoda
@@ -500,11 +504,20 @@ koesuunnitelmia jotka vaativat vähemmän koeajoja kuin yksi tekijä kerrallaan
 Koesuunnitelmia on kehitetty useita erilaisia eri tarkoituksiin.
 Suunnitelma on perinteisesti valittu apuna tietämys
 tutkinnan kohteesta, tavoitteista ja koesuunnittelumenetelmistä.
-Tietokoneiden kehityttyä on syntynyt myös toinen mahdollisuus, luoda tilanteeseen
-mukautettu suunnitelma algoritmin avulla.
+Uudempi tapa on luoda tilanteeseen
+mukautettu suunnitelma algoritmin ja tietokoneen avulla.
+
+Yhdistely- eli faktorikokeessa (engl. factorial experiment/design) tekijöiden
+tasoja vaihdellaan sekä yksitellen että yhdessä. Jos kaikki tasoyhdistelmät
+toteutetaan, on kyseessä full factorial design eli täysyhdistelykoe (huom.
+tekijän suomennos). Tällainen koe arvioi kaikkien tekijöiden kaikki yksittäis-
+ja yhdistelmävaikutukset vasteeseen. Kattavuuden hintana on koeajojen
+eksponentiaalisesti kasvava määrä kun tekijöitä lisätään kokeeseen: jos kaikilla
+tekijöillä on 2 tasoa, on koeajojen määrä 2^\textit{k} , missä \textit{k} on
+tekijöiden lukumäärä.
 
 \todo
-Aliasointi!
+Aliasointi! Kaikissa käytännön koesuunnitelmissa
 
 
 
@@ -519,6 +532,8 @@ Lisää OFAT, adaptable OFAT, 2k, Taguchi, vastepinta, d-optimal, designated des
 \section{Screenaus}
 
 \section{Dispersiovaikutukset, robusti suunnittelu ja laadun hallinta}
+
+\section{Systemaattinen ja satunnainen virhe}
 
 %TODO: Siirrä muualle kun tiedät mihin!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 \todo{Siirrä muualle kun tiedät mihin!!!!!!!!}
