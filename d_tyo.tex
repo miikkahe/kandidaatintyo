@@ -524,8 +524,22 @@ Käytetyin koesuunnitelma on \textit{osittainen yhdistelykoe} (engl. fractional 
 design), useimmiten 2 tai 3:lla tekijätasolla. Osittaisessa kokeessa ei ajeta
 kaikkia mahdollisia yhdistelmiä, vaan vain tietyt tarkoituksella valitut. Hyvä
 osittainen yhdistelykoe antaa tyydyttävästi tietoa yhteisvaikutuksista
-kohtuullisella koemäärällä. Pienempi koemäärä saavutetaan \textit{sulauttamalla}
-(engl. \textit{aliasing} tai \textit{confounding}) tekijöiden vaikutuksia, so. 
+kohtuullisella koemäärällä. Pienempi koemäärä johtaa tekijöiden vaikutusten
+\textit{sulautumiseen}
+(engl. \textit{aliasing} tai \textit{confounding}), mikä tarkoittaa että joitain
+vaikutuksia ei voida erottaa toisistaan. Esimerkiksi tekijä A ja yhteisvaikutus BCD
+voivat olla sulautuneita, jolloin ei voida sanoa johtuuko vaikutus A:sta vai
+BCD:stä. Mitä vähemmän koeajoja on, eli mitä osittaisempi suunnitelma on, sitä
+enemmän on sulautumisia. Suunnitelmien teossa käytetään hyväksi n.s.
+\textit{vaikutusten niukkuusperiaatetta} (engl. \textit{sparsity-of-effects principle}),
+jonka mukaan todennäköisintä on että vaikutuksen aiheuttaa yksi tekijä, vähemmän
+todennäköistä on kahden tekijän yhteisvaikutus, vielä vähemmän todennäköistä on
+kolmen tekijän yhteisvaikutus jne. Suunnitelmissa monen tekijän yhteisvaikutukset
+yleensä sulautetaan ja kokeen tekijän on hyvä ottaa tämä huomioon.
+
+Koesuunnitelmaan ja sulauttamiseen liittyy käsite \textit{resoluutio}. Resoluutio
+kertoo kuinka monet vaikutukset suunnitelmassa on sulautettu. Suuri resoluutio
+
 
 
 \todo
