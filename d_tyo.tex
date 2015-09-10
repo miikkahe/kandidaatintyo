@@ -421,12 +421,12 @@ On yleistä nimetä tutkittavat tekijät mallilla A, B, C, jne.
 tavoitteeksi seuraavat:
 
 \begin{itemize}
-\item Vasteeseen y eniten vaikuttavien tekijöiden tunnistaminen
-\item Merkittävien tekijöiden asettaminen siten, että y on mahdollisimman usein
+\item Vasteeseen \textit{y} eniten vaikuttavien tekijöiden tunnistaminen
+\item Merkittävien tekijöiden asettaminen siten, että \textit{y} on mahdollisimman usein
 	mahdollisimman lähellä haluttua arvoa
-\item Merkittävien tekijöiden asettaminen siten, että y:n vaihtelu on pientä
-\item Merkittävien hallittavien tekijöiden x asettaminen siten, että
-	häiriötekijöiden z vaikutus on mahdollisimman pieni
+\item Merkittävien tekijöiden asettaminen siten, että \textit{y}:n vaihtelu on pientä
+\item Merkittävien hallittavien tekijöiden \textit{x} asettaminen siten, että
+	häiriötekijöiden \textit{z} vaikutus on mahdollisimman pieni
 \end{itemize}
 
 Vaikutusten tutkimiseksi tekijöille valitaan kokeessa käytettävät tasot, so.
@@ -536,6 +536,8 @@ jonka mukaan todennäköisintä on että vaikutuksen aiheuttaa yksi tekijä, vä
 todennäköistä on kahden tekijän yhteisvaikutus, vielä vähemmän todennäköistä on
 kolmen tekijän yhteisvaikutus jne. Suunnitelmissa monen tekijän yhteisvaikutukset
 yleensä sulautetaan ja kokeen tekijän on hyvä ottaa tämä huomioon.
+Yhden tekijän aiheuttamia vaikutuksia vasteeseen kutsutaan \textit{päävaikutuksiksi}
+(engl. \textit{main factor}) erotukseksi useamman tekijän yhteisvaikuksista.
 
 Koesuunnitelmaan ja sulauttamiseen liittyy käsite \textit{resoluutio}. Resoluutio
 kertoo kuinka monet vaikutukset suunnitelmassa on sulautettu. Arvo ilmoitetaan
@@ -543,10 +545,17 @@ roomalaisilla numeroilla ja isompi resoluutio tarkoittaa vähemmän sulautumisia
 Yleensä on siis järkevää valita suurin mahdollinen resoluutio ottaen huomioon
 koeajojen määrä. Yleisimmät resoluutioarvot ovat III, IV ja V:
 
+\begin{description}
+\item[Resoluutio III] Päävaikutukset eivät ole sulautuneita toisiinsa
+mutta ovat sulautuneita 2 tekijän yhteisvaikutuksiin.
+\item[Resoluutio IV] Päävaikutukset eivät ole sulautuneita toisiinsa eivätkä 2 tekijän
+yhteisvaikutuksiin mutta jotkut 2 tekijän yhteisvaikutukset ovat sulautuneita toisiinsa
+ja päävaikutukset ovat sulautuneita 3 tekijän yhteisvaikutuksiin.
+\item[Resoluutio V] Päävaikutukset ja 2 tekijän yhteisvaikutukset eivät ole sulautuneita
+keskenään tai toisiina mutta 2 tekijän yhteisvaikutukset ovat sulautuneita 3 tekijän
+yhteisvaikutuksiin ja päävaikutukset ovat sulautuneita 4 tekijän yhteisvaikutuksiin.
 
 
-\todo
-Aliasointi! Kaikissa käytännön koesuunnitelmissa
 
 
 
