@@ -4,6 +4,10 @@
 \usepackage{epigraph}
 \usepackage{gensymb}
 
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+
 % Note that you must choose either Finnish or English here and there in this
 % file.
 % Other options for document class
@@ -182,14 +186,14 @@
 \end{spacing}
 
 
-The abstract in Finnish. Foreign students do not need this page.
+%The abstract in Finnish. Foreign students do not need this page.
 
-Suomenkieliseen diplomityöhön kirjoitetaan tiivistelmä sekä suomeksi
-että englanniksi.
+%Suomenkieliseen diplomityöhön kirjoitetaan tiivistelmä sekä suomeksi
+%että englanniksi.
 
-Kandidaatintyön tiivistelmä kirjoitetaan ainoastaan kerran, samalla
-kielellä kuin työ. Kuitenkin myös suomenkielisillä kandidaatintöillä
-pitää olla englanninkielinen otsikko arkistointia varten.
+%Kandidaatintyön tiivistelmä kirjoitetaan ainoastaan kerran, samalla
+%kielellä kuin työ. Kuitenkin myös suomenkielisillä kandidaatintöillä
+%pitää olla englanninkielinen otsikko arkistointia varten.
 
 Työssä on tutkittu
 
@@ -232,11 +236,11 @@ Työssä on tutkittu
 \chapter*{Alkusanat}
 %-------------------------------------------------------------------------------
 
-Acknowledgements to those who contributed to the thesis are generally
-presented in the preface. It is not appropriate to criticize anyone in
-the preface, even though the preface will not affect your grade. The
-preface must fit on one page. Add the date, after which you have not
-made any revisions to the text, at the end of the preface.
+%Acknowledgements to those who contributed to the thesis are generally
+%presented in the preface. It is not appropriate to criticize anyone in
+%the preface, even though the preface will not affect your grade. The
+%preface must fit on one page. Add the date, after which you have not
+%made any revisions to the text, at the end of the preface.
 
 ~ 
 % Tilde ~ makes an non-breakable spce in LaTeX. Here it is used to get
@@ -339,36 +343,36 @@ Teemu Teekkari
 % \include{related_works} % and so on...
 
 
-This document template conforms to Guide to Writing a Thesis Tampere
-University of technology (TUT) \cite{thesisguide13}. A thesis or a
-report typically include the following chapters:
-\begin{itemize}
-  \setlength{\itemsep}{-10pt} % Put these lines closer to each other
-\item[] Title page           % Empty bracket[] remove the bullet
-\item[] Abstract
-\item[] Preface
-\item[] Contents
-\item[] List of abbreviations and symbols
-\item[] 1. Introduction
-\item[] 2. Theoretical background
-\item[] 3. Research methodology and materials
-\item[] 4. Results and analysis (possibly split into separate chapters)
-\item[] 5. Conclusions
-\item[] References
-\item[] Appendices (if applicable)
-\end{itemize}
+%This document template conforms to Guide to Writing a Thesis Tampere
+%University of technology (TUT) \cite{thesisguide13}. A thesis or a
+%report typically include the following chapters:
+%\begin{itemize}
+%  \setlength{\itemsep}{-10pt} % Put these lines closer to each other
+%\item[] Title page           % Empty bracket[] remove the bullet
+%\item[] Abstract
+%\item[] Preface
+%\item[] Contents
+%\item[] List of abbreviations and symbols
+%\item[] 1. Introduction
+%\item[] 2. Theoretical background
+%\item[] 3. Research methodology and materials
+%\item[] 4. Results and analysis (possibly split into separate chapters)
+%\item[] 5. Conclusions
+%\item[] References
+%\item[] Appendices (if applicable)
+%\end{itemize}
 
 
-Introduction outlines the purpose and objectives of the presented
-research. The background information, utilized methods and source
-material are presented next at a level that is necessary to understand
-the rest of the text. Then comes the discussion regarding the achieved
-results, their significance, error sources, deviations from the
-expected results, and the reliability of your research. Conclusions is
-the most important chapter. It does repeat the details already
-presented, but summarizes and them and analyzes their
-consequences. List of references enables your reader to find the cited
-sources.
+%Introduction outlines the purpose and objectives of the presented
+%research. The background information, utilized methods and source
+%material are presented next at a level that is necessary to understand
+%the rest of the text. Then comes the discussion regarding the achieved
+%results, their significance, error sources, deviations from the
+%expected results, and the reliability of your research. Conclusions is
+%the most important chapter. It does repeat the details already
+%presented, but summarizes and them and analyzes their
+%consequences. List of references enables your reader to find the cited
+%sources.
 
 Kulumiskestävyyden testaus on kriittinen osa uusien pinnoitteiden kehitystä.
 Sovelluskohteesta riippuen kulumiskestävyys voi olla jopa kehitystyön tärkein
@@ -380,12 +384,12 @@ testauslaitteisiin varauksetta tutkimatta niitten luotettavuutta kriittisesti.
 Nykyiset koesuunnittelumenetelmät kehitettiin alun perin
 
 
-This document is structured as follows. Chapter~\ref{ch:doe}
-discusses briefly the basics of writing and presentation style
-regarding the text, figures, tables and mathematical
-notations. Chapters~\ref{sec:ref_styles} and \ref{ch:concl} summarize
-the referencing basics and the whole document. There are two example
-appendices as well (Appendix A and B).
+%This document is structured as follows. Chapter~\ref{ch:doe}
+%discusses briefly the basics of writing and presentation style
+%regarding the text, figures, tables and mathematical
+%notations. Chapters~\ref{sec:ref_styles} and \ref{ch:concl} summarize
+%the referencing basics and the whole document. There are two example
+%appendices as well (Appendix A and B).
 % ~\ref{app:A} and \ref{app:B}). Labels do not with \chapter*
 
 
@@ -405,18 +409,24 @@ englanniksi design of experiments (DOE) tai experimental design.
 
 Koesuunnittelu on osoittautunut tehokkaaksi työkaluksi teollisuudessa; prosessien
 ja systeemien ymmärtämisessä \parencite{Antony2006} . Se on yksi prosessinhallinnan
-ja laadunhallinnan menetelmistä. Teollisuudessa suosittu laatujohtamisstrategia
+ja laadunhallinnan menetelmistä. Esimerkiksi teollisuudessa suosittu laatujohtamisstrategia
 Six Sigma käyttää koesuunnittelun menetelmiä, ja Six Sigma on osoittautunut
+ainakin jossain määrin
 toimivaksi strategiaksi \parencite{Dusharme2001}.
 
-Koesuunnittelu tutkii yleensä prosessia (tai systeemiä). Kuvassa \ref{fig:malli1}
+Koesuunnittelu tutkii yleensä prosessia tai systeemiä. Kuvassa \ref{subfig:malli1}
 on yksinkertainen malli prosessista. Tutkija haluaa selvittää miten tekijät
-\textit{x,x,...} vaikuttavat vasteeseen \textit{y}. Joissain tapauksissa on hyödyllisempää
-jakaa teijät kahteen ryhmään: niihin joita voimme hallita tavallisessa
+\textit{x\textsubscript{1}, x\textsubscript{2},\ldots,x\textsubscript{n}}
+vaikuttavat vasteeseen \textit{y}.
+Joissain tapauksissa on hyödyllisempää
+jakaa tekijät kahteen ryhmään: niihin joita voimme hallita tavallisessa
 prosessissa ja niihin joita ei ole mahdollista tai järkevää yrittää
-hallita \ref{fig:malli2}. Jälkimmäisiä kutsutaan häiriö- tai kohinatekijöiksi (engl. noise
-factor). Vaste \textit{y} ....
-On yleistä nimetä tutkittavat tekijät mallilla A, B, C, jne.
+hallita. Jälkimmäisiä kutsutaan häiriö- tai kohinatekijöiksi (engl. noise
+factor) ja merkitään usein
+\textit{z\textsubscript{1}, z\textsubscript{2},\ldots,z\textsubscript{n}} kuten
+kuvassa \ref{subfig:malli2}
+Vaste \textit{y} \todo{....}
+On yleistä nimetä tutkittavat tekijät malliin A, B, C, jne.
 \textcite[pp. 3]{Montgomery2012} antaa kokeen
 tavoitteeksi seuraavat:
 
@@ -433,20 +443,58 @@ Vaikutusten tutkimiseksi tekijöille valitaan kokeessa käytettävät tasot, so.
 tekijöiden arvot. Yleisintä on valita joka tekijälle 2 (matala ja korkea) tai
 3 (matala, keskitaso, korkea) tasoa.
 Samassa kokeessa eri tekijöillä voi myös olla eri määrä tasoja, esim. 3 tekijällä
-2 tasoa ja 1 tekijällä 3 tasoa. Tällainen koe on \todo suomeksi mixed-level design.
+2 tasoa ja 1 tekijällä 3 tasoa. Tällainen koe on
+\textit{sekatasosuunnitelma} (huom. tekijän käännös, engl.
+mixed-level design).
 Tasojen asettaminen rohkeasti mutta
 järkevästi normaalin alueen ulkopuolelle johtaa usein informatiivisempiin
 tuloksiin.
 
-\begin{figure}
+%
+%\begin{figure}
+%  \begin{center}
+%    \includegraphics[width=1.0\textwidth]{prosessimalli1}
+%  \end{center}
+%  \caption[Prosessin yleismalli]{Prosessi ja siihen vaikuttavat tekijät}
+%  % Optional shorter caption in brackets is used in Table of Figures
+%  % (tof).
+%  \label{fig:malli1}
+%\end{figure}
+%
+%\begin{figure}
+%  \begin{center}
+%    \includegraphics[width=1.0\textwidth]{prosessimalli2}
+%  \end{center}
+%  \caption[Prosessin vaihtoehtoinen malli]{Tekijät jaettuna hallittaviin ja hallitsemattomiin}
+%  % Optional shorter caption in brackets is used in Table of Figures
+%  % (tof).
+%  \label{fig:malli2}
+%\end{figure}
+%
+
+\begin{figure*}
   \begin{center}
-    \includegraphics[width=1.0\textwidth]{prosessimalli1}
+    \subfigure[Prosessi ja siihen vaikuttavat tekijät.]{
+      \includegraphics[width=\textwidth]{prosessimalli1}
+      \label{subfig:malli1}}
+    %\qquad                        % i) Ugly hack to get more horizontal space between figures
+    %\hspace{0.05\textwidth}      % ii) Another ugly way to hack space
+    % ~~                          % iii) Yet another...
+
+    \subfigure[Prosessin tekijät jaettuna hallittaviin ja hallitsemattomiin.]{
+      \includegraphics[width=\textwidth]{prosessimalli2}
+      \label{subfig:malli2}}
+    \caption[Prosessin malleja]{Prosessin malleja. Koesuunnittelussa on joskus
+    hyödyllistä jakaa tekijät kuvan mukaisesti.}
+    % Optional shorter caption in brackets is used in Table of Figures
+    % (tof).
+
+    \label{fig:prosessi}
   \end{center}
-  \caption[Prosessin yleismalli]{Prosessi ja siihen vaikuttavat tekijät}
-  % Optional shorter caption in brackets is used in Table of Figures
-  % (tof).
-  \label{fig:malli1}
-\end{figure}
+\end{figure*}
+
+
+
 
 Käsitteiden hahmottamista voi helpottaa seuraava analogia: kakun leipominen
 \parencite[ajatus otettu:][]{Sleeper2012}. Leivonnassa vasteena on yleensä
@@ -491,16 +539,23 @@ Tekijöiden ja tutkittavan vasteen valitsemisen jälkeen on suunniteltava käyte
 tasot, koeajojen määrä ja tekijätasojen yhdistelmät joilla kokeet ajetaan.
 Tuloksena on koesuunnitelma ja se esitetään matriisina jossa rivit ovat
 koeajoja ja sarakkeisiin merkitään ajossa käytettävät tekijätasot.
-Matala taso merkitään yleensä -1 ja korkea +1, joskus vain - ja +. 
+Matala taso merkitään yleensä -1 ja korkea +1, joskus vain - ja +.
 Yleistä on myös merkitä tekijän A korkeaa tasoa kirjaimella \textit{a}, tekijän
-B korkeaa tasoa kirjaimella \textit{b}, jne. Merkintä \textit{ac} on siis
-Tekjät A ja C korkealla tasolla ja tekijä B matalalla. Esimerkkinä
-suunnitelmamatriisista kuva \todo . 
+B korkeaa tasoa kirjaimella \textit{b}, jne. Merkintä \textit{ac} tarkoittaa siis
+että
+tekijät A ja C ovat korkealla tasolla ja tekijä B matalalla. Esimerkki
+suunnitelmamatriisista on taulukko \ref{tab:fullf}.
+Kirjallisuudessa esiintyy usein suunnitelman graafinen esitystapa,
+"laatikkokuvaaja", kuten kuvassa \ref{fig:cube} \textcite{ehandbook}.
+Koe on sama kuin taulukossa \ref{tab:fullf} mutta tekijöitä on
+merkitty kirjaimilla \textbf{X\textsubscript{1}}, \textbf{X\textsubscript{2}}
+ja \textbf{X\textsubscript{3}}. Nuolet osoittavat tekijän arvon lisäämisen
+suunnan ja jokainen kulma on yksi koeajo.
 
 Yksinkertaisinta on muuttaa yhtä tekijää kerrallaan. Koesuunnittelu kuitenkin syntyi
-osaksi juuri tarjoamaan vaihtoehtoja tälle menetelmälle. On mahdollista luoda
-koesuunnitelmia jotka vaativat vähemmän koeajoja kuin yksi tekijä kerrallaan
--menetelmä, ja jotka antavat tietoa myös tekijöiden yhteisvaikutuksista.
+osaksi juuri tarjoamaan vaihtoehtoja tälle hitaalle menetelmälle. On mahdollista luoda
+koesuunnitelmia jotka vaativat vähemmän koeajoja kuin yksi tekijä kerrallaan -metodi,
+ja jotka antavat tietoa myös tekijöiden yhteisvaikutuksista.
 Koesuunnitelmia on kehitetty useita erilaisia eri tarkoituksiin.
 Suunnitelma on perinteisesti valittu apuna tietämys
 tutkinnan kohteesta, tavoitteista ja koesuunnittelumenetelmistä.
@@ -513,12 +568,52 @@ toteutetaan, on kyseessä full factorial design eli täysyhdistelykoe (huom.
 tekijän suomennos). Tällainen koe arvioi kaikkien tekijöiden kaikki yksittäis-
 ja yhdistelmävaikutukset vasteeseen. Kattavuuden hintana on koeajojen
 eksponentiaalisesti kasvava määrä kun tekijöitä lisätään kokeeseen: jos kaikilla
-tekijöillä on 2 tasoa, on koeajojen määrä 2^\textit{k}, missä \textit{k} on
+tekijöillä on 2 tasoa, on koeajojen määrä \(2^\textit{k}\),
+missä \textit{k} on
 tekijöiden lukumäärä. Ko. kokeelle käytetäänkin nimenä yksinkertaisesti
-merkintää 2^\textit{k} -koe. Jos tekijöitä tiedetään olevan 2, merkintä on
-2^2 ja niin edelleen.
+merkintää \(2^\textit{k}\)-koe.
+Jos tekijöitä tiedetään olevan 2, merkintä on
+\(2^2\) ja niin edelleen.
 
-\todo{laatikkokuvaaja}
+
+
+\begin{table}[h]
+  \begin{center}
+  \caption{Esimerkki täysyhdistelykokeesta kolmella tekijällä.}
+  \label{tab:fullf}
+  \begin{tabular}{ | l | c | c | c | }
+    \hline
+     & \textbf{A} & \textbf{B} & \textbf{C} \\ \hline
+    1 & - & - & -\\ \hline
+    2 & + & - & -\\ \hline
+    3 & - & + & -\\ \hline
+    4 & + & + & -\\ \hline
+    5 & - & - & +\\ \hline
+    6 & + & - & +\\ \hline
+    7 & - & + & +\\ \hline
+    8 & + & + & +\\ \hline
+  \end{tabular}
+  \end{center}
+\end{table}
+
+
+
+
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.6]{cube}
+  \end{center}
+  \caption[Laatikkokuvaaja]{Täysyhdistelykokeen graafinen esitys, ns. "laatikkokuvaaja".}
+  % Optional shorter caption in brackets is used in Table of Figures
+  % (tof).
+  \label{fig:cube}
+\end{figure}
+
+
+
+
+
 
 Käytetyin koesuunnitelma on \textit{osittainen yhdistelykoe} (engl. fractional factorial
 design), useimmiten 2 tai 3:lla tekijätasolla. Osittaisessa kokeessa ei ajeta
@@ -534,16 +629,22 @@ enemmän on sulautumisia. Suunnitelmien teossa käytetään hyväksi n.s.
 \textit{vaikutusten niukkuusperiaatetta} (engl. \textit{sparsity-of-effects principle}),
 jonka mukaan todennäköisintä on että vaikutuksen aiheuttaa yksi tekijä, vähemmän
 todennäköistä on kahden tekijän yhteisvaikutus, vielä vähemmän todennäköistä on
-kolmen tekijän yhteisvaikutus jne. Suunnitelmissa monen tekijän yhteisvaikutukset
+kolmen tekijän yhteisvaikutus jne.
+Suunnitelmissa monen tekijän yhteisvaikutukset
 yleensä sulautetaan ja kokeen tekijän on hyvä ottaa tämä huomioon.
 Yhden tekijän aiheuttamia vaikutuksia vasteeseen kutsutaan \textit{päävaikutuksiksi}
 (engl. \textit{main factor}) erotukseksi useamman tekijän yhteisvaikuksista.
+
+\todo{lisää tulokset \cite{Li2006}}
+
+
 
 Koesuunnitelmaan ja sulauttamiseen liittyy käsite \textit{resoluutio}. Resoluutio
 kertoo kuinka monet vaikutukset suunnitelmassa on sulautettu. Arvo ilmoitetaan
 roomalaisilla numeroilla ja isompi resoluutio tarkoittaa vähemmän sulautumisia.
 Yleensä on siis järkevää valita suurin mahdollinen resoluutio ottaen huomioon
 koeajojen määrä. Yleisimmät resoluutioarvot ovat III, IV ja V:
+\textcite{minitabres}
 
 \begin{description}
 \item[Resoluutio III] Päävaikutukset eivät ole sulautuneita toisiinsa
@@ -554,27 +655,168 @@ ja päävaikutukset ovat sulautuneita 3 tekijän yhteisvaikutuksiin.
 \item[Resoluutio V] Päävaikutukset ja 2 tekijän yhteisvaikutukset eivät ole sulautuneita
 keskenään tai toisiina mutta 2 tekijän yhteisvaikutukset ovat sulautuneita 3 tekijän
 yhteisvaikutuksiin ja päävaikutukset ovat sulautuneita 4 tekijän yhteisvaikutuksiin.
+\end{description}
+
+
+Yksinkertaisin tapa toteuttaa koe on vaihdella yhtä tekijää kerrallaan
+muiden pysyessä valituilla perustasoillaan ja toistaa
+tämä kaikille tekijöille vuorollaan. Tätä kutsutaan
+yksi tekijä kerrallaan -menetelmäksi
+(engl. one-factor-at-a-time tai OFAT).
+Tuloksista on helppo piirtää yksinkertaisia vaikutuskuvaajia
+\todo{vaikutuskuvaajat}.
+OFAT ei kuitenkaan pysty havaitsemaan
+tekijöiden yhteisvaikutuksia,
+vaatii enemmän koeajoja
+ja voi helposti olla huomaamatta tekijöiden optimiyhdistelmiä.
+Siten esimerkiksi \cite{Montgomery2012}
+yhtyy siihen yleiskäsitykseen että käytännössä joka tilanteessa on
+suotavampaa käyttää yhdistelykokeita koska yhteisvaikutukset
+ovat niin yleisiä ja silloin OFAT ei toimi hyvin.
+Kuitenkin \cite{frey2005mechanisms} osoittavat tämän
+olevan ainakin osittain virheellinen käsitys. Heidän tutkimansa
+menetelmä on adaptive OFAT (mukautuva OFAT), jossa muutetaan
+yhtä tekijää, tarkistetaan tulos, ja jos se on parempi niin
+pidetään tekijä tällä tasolla ja jos huonompi niin muutetaan se
+takaisin aiemmalle. Näin jatketaan kunnes kaikkia tekijöitä on
+muutettu. Tutkimuksen mukaan ainakin tämä menetelmä voi
+johtaa keskimäärin parempiin tuloksiin jos kokeen virhe on
+pieni (vähemmän kuin yksi neljäsosa tekijävaikutuksista) tai
+tekijöitten yhteisvaikutukset suuria (enemmän kuin yksi neljäsosa
+kaikista vaikutuksista). \cite{frey2005mechanisms} esittävät
+myös selityksiä tälle tulokselle.
+
+
+\todo{Screenaus suom. seulontakoe}
 
 
 
 
 
-On mahdollista valita tekijöille eri määrä tasoja samassa kokeessa, tällaist
+Koeajojen jälkeen tulokset analysoidaan tilastollisilla menetelmillä.
+Koesuunnitteluun tarkoitetut ohjelmistot tekevät tämän yleensä
+automaattisesti, mutta osaavat kokeentekijät voivat myös tehdä
+sen itse esimerkiksi python tai R -ohjelmointikielillä.
+Usein hyödyllisintä datan tutkimiseen ja tulkintaan on
+piirtää yksinkertaisia kuvia ja kuvaajia.
 
 
-Yksinkertaisin tapa toteuttaa koe on vaihdella
 
-\todo
-Lisää OFAT, adaptable OFAT, 2k, Taguchi, vastepinta, d-optimal, designated design, Box-Meyers
 
-\section{Screenaus}
 
-\section{Dispersiovaikutukset, robusti suunnittelu ja laadun hallinta}
+\todo{ Taguchi, vastepinta, d-optimal, designated design, Box-Meyers}
+
+
+\section{Dispersiovaikutukset, robusti suunnittelu ja laadunhallinta}
+
+\todo{muista lisätä tähän six sigma ja Taguchi vs. perinteinen, "tieteellinen" DOE}
+
+
+
+
+
+Taguchin menetelmän kohinatekijöitä ja signaali-kohinasuhteen kohinaa
+ei tule sekoittaa. Kohinatekijät ovat prosessiin vaikuttavia tekijöitä,
+kohina taas ulostuloa.
+
+
+
+
+
+
+Taguchin menetelmien toimivuudesta on huomattavasti erimielisyyksiä. Monet
+tilastotieteilijät, kuten Montgomery, Box, jne. (lisää sitaatit) eivät luota
+Taguchin menetelmiin.\textcite{Sleeper2012} jättää menetelmät kokonaan
+pois kirjastaan sanoen niiden käytön olevan vähentymässä ja tarjoaa tilalle
+vastepintamenetelmiä. Toisaalta monet teollisuuden kanssa työskentelevät
+suosittelevat Taguchi-menetelmiä. Eero Karjalainen (lisää sitaatti) kertoi
+sähköpostissa havainneensa Taguchi-menetelmien toimivan hyvin.
+\textcite{Antony2006} katsoo ... \todo
+Minitab-ohjelma tarjoaa Taguchi-suunnitelmien tekemiseen ja analysointiin työkalut.
+
+\textcite{Hedayat2012} listaavat
+seuraavat ongelmat liittyen
+Taguchi-menetelmiin:
+\begin{itemize}
+\item Signaali-kohinasuhde ei kerro kuinka ohjaustekijät vaikuttavat
+      ulostuloon. Vaikka vaikutusta havaittaisiin, ei silti voida tietää
+      muuttaako se vasteen keskiarvoa, vaihtelua vai molempia.
+\item Mahdollisia tekijöitten välisiä vuorovaikutuksia ei oteta huomioon.
+\item (...)
+\item Menetelmä ei kerro kuinka häiriötekijät vaikuttavat ulostuloon.
+      Syntyykö kohina vain joistain häiriötekijöistä? Onko niitten ja
+      ohjaustekijöitten välillä vuorovaikutuksia? Signaali-kohinasuhdeanalyysi
+      ei vastaa näihin kysymyksiin.
+\end{itemize}
+
+\textcite{Bursztyn} vertailevat tutkimuksessaan hajonta
+
+
+
+
+
+
+
+
 
 \section{Systemaattinen ja satunnainen virhe}
 
-%TODO: Siirrä muualle kun tiedät mihin!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-\todo{Siirrä muualle kun tiedät mihin!!!!!!!!}
+
+
+%-------------------------------------------------------------------------------
+\chapter{Mittajärjestelmäanalyysi}
+\label{ch:grr}
+%-------------------------------------------------------------------------------
+
+\todo
+
+
+
+Yleensä mittausjärjestelmäanalyysissa itse mittalaite oletetaan
+yksinkertaiseksi, esimerkkinä mittanauha tai sähkövirtamittari.
+Mittausvirheen lähteeksi ei ole montaa vaihtoehtoa ja siksi GR\&R-analyysissa
+muuttujiksi oletuksena annetaan operaattori ja näytekappale.
+
+Kumipyöräabraasiotestin tapauksessa tämä itse mittalaite on vaaka jolla
+massahäviö mitataan. Koska tässä tapauksessa luottamus vaakaan ja operaattoriin
+on korkea, on analyysia sovellettava ottamalla muuttujiksi itse
+abraasiolaitteen parametreja. Abraasiolaitteesta tulee prosessi ja mittaus
+....
+
+Näin sovellettu MSA liittyy GR\&R:ään enää vain käytettävien matemaattisten
+työkalujen osalta, eli varianssianalyysin. Prosessin muuttujien
+hajontavaikutuksen laskemiseen on muitakin matemaattisia työkaluja,
+kuten Box-Meyer-menetelmä, joka tosin vaatii DOE-suunnitelman?
+
+
+
+
+%-------------------------------------------------------------------------------
+\chapter{Abrasiivinen kuluminen ja kumipyöräabraasiokoe}
+\label{ch:kumip}
+%-------------------------------------------------------------------------------
+
+\todo
+
+
+%-------------------------------------------------------------------------------
+\chapter{Kokeet ja tulokset}
+\label{ch:kokeet}
+%-------------------------------------------------------------------------------
+
+\todo
+
+Teollisuusprojekti syntyi tarpeesta selvittää syitä
+kumipyöräabraasiotestin tulosten hajontaan. Erityisesti
+haluttiin selvittää onko suuresti odotetusta poikkeaviin
+testituloksiin syy todellakin pinnoitteessa vai olivatko
+ne mahdollisesti seurausta virheellisestä testauslaitteistosta
+tai -menetelmästä. Toisin sanoen haluttiin selvittää
+kumipyöräabraasiokokeen luotettavuutta. Tutkimuksen tekemiseen
+käytettiin tilastollisen koesuunnittelun menetelmiä jotka
+toteutettiin Minitab–ohjelmistolla. Projektissa käytettäväksi
+valmisteltiin yksi suuri erä ruiskupinnoitettuja näytekappaleita
+sekä kappaleita erilaisilla pinnoitteilla.
 
 Mittausjärjestelmää voidaan ajatella \textit{prosessina} johon kuuluu
 näytteen valmistelu, abraasiotestin toteuttaminen ja massahäviön
@@ -597,117 +839,503 @@ parametrejä eikä tuloksia ole ilmoitettu muuten kuin massahäviönä.
 Mittauslaitteesta saatavia tuloksia ei voi verrata tunnettuihin
 materiaaleihin. ...
 
-Robust parameter design on lähestymistapa prosessinhallintaan, jossa ...
+\section{Suunnitelma}
 
-Taguchi-menetelmässä suoritetaan koe jossa ....
+Muodostui seuraava suunnitelma: ensin suoritetaan yksinkertainen
+tyypin 1 mittajärjestelmäanalyysi (type 1 Gage R\&R), jolla tutkitaan
+prosessin stabiiliutta eli tuloksen muutosta ajan suhteen. Sen
+jälkeen yleisellä mittajärjestelmäanalyysilla (Gage R\&R) tutkitaan
+todennäköisimmäksi hajonnan aiheuttajaksi jo aiemmin arvellun kumipyörän
+epäsäännöllisyyden osuutta kokonaishajonnasta 3 erilaisella tätä
+projektia varten valmistetulla kumipyörällä. Lopulta tehdään
+robustien parametrien suunnittelu–koe, jolla etsitään ne
+hallittavien parametrien arvot (ajoaika, hiekan virtausmäärä jne.)
+joilla koetulosten hajonta on pienintä. Tähän soveltuvia
+koesuunnitelmia on monia, ja alustavasti menetelmäksi valittiin
+Taguchi–koe. Jätettiin myös avoimeksi mahdollisuus tehdä muita
+kokeita sen mukaan mikä vaikuttaisi olevan projektin kannalta
+hyödyllistä. Mahdollisista koetulokseen vaikuttavista syistä koottiin
+kuvan \ref{fig:ruoto1} kalanruotokaavio.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=1.0\textwidth]{Capture7}
+  \end{center}
+  \caption[Kalanruotokaavio abraasiokokeesta]{Arvio kokeessa vaikuttavista tekijöistä.}
+  % Optional shorter caption in brackets is used in Table of Figures
+  % (tof).
+  \label{fig:ruoto1}
+\end{figure}
 
-Yleensä mittausjärjestelmäanalyysissa itse mittalaite oletetaan
-yksinkertaiseksi, esimerkkinä mittanauha tai sähkövirtamittari.
-Mittausvirheen lähteeksi ei ole montaa vaihtoehtoa ja siksi GR\&R -analyysissa
-muuttujiksi oletuksena annetaan operaattori ja näytekappale.
+\section{Tyypin 1 Mittajärjestelmäanalyysi}
 
-Kumipyöräabraasiotestin tapauksessa tämä itse mittalaite on vaaka jolla
-massahäviö mitataan. Koska tässä tapauksessa luottamus vaakaan ja operaattoriin
-on korkea, on analyysia sovellettava ottamalla muuttujiksi itse
-abraasiolaitteen parametreja. Abraasiolaitteesta tulee prosessi ja mittaus
-....
+Tyypin 1 mittajärjestelmäanalyysi toteutettiin valmistelemalla 10 näytekappaletta ja ajamalla jokaiseen satunnaisessa järjestyksessä 1 kulumisjälki, jonka jälkeen massahäviö mitattiin ja ajettiin samoihin näytteisiin toinen kulumisjälki, jälleen satunnaisessa järjestyksessä. Kumipyöränä käytettiin tällöin
+normaalissa käytössä jo jonkin aikaa ollutta kumipyörää.
+Kuva \ref{fig:t1grr} näyttää tulokset kokeiden ajojärjestyksessä, mittaustulokset y-akselilla on ilmoitettu milligrammoissa.
 
-Näin sovellettu MSA liittyy GR\&R:ään enää vain käytettävien matemaattisten
-työkalujen osalta, eli varianssianalyysin. Prosessin muuttujien
-hajontavaikutuksen laskemiseen on muitakin matemaattisia työkaluja,
-kuten Box-Meyer -menetelmä, joka tosin vaatii DOE-suunnitelman?
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=1.0\textwidth]{t1grr}
+  \end{center}
+  \caption[Tulokset tyypin 1 mittajärjestelmäanalyysista]{Tulokset tyypin 1 mittajärjestelmäanalyysista.}
+  % Optional shorter caption in brackets is used in Table of Figures
+  % (tof).
+  \label{fig:t1grr}
+\end{figure}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Voidaan havaita hienoinen laskeva suuntaus mutta ainoastaan yksi koetulos on ohjelmiston laskeman (tilastollisesti merkittävän) punaisella merkityn alarajan alapuolella. Suuntaus voi hyvin olla kohinan tai pinnoitteen epähomogeenisuuden tuottama harha.
+Koemäärä osoittautui myös liian pieneksi johtopäätösten tekemiseen.
 
-Taguchin menetelmän kohinatekijöitä ja signaali-kohinasuhteen kohinaa
-ei tule sekoittaa. Kohinatekijät ovat prosessiin vaikuttavia tekijöitä,
-kohina taas ulostuloa.
+Kuva \ref{fig:t1grr2} näyttää joka koekappaleen 2 testitulosta rinnakkain.
+Epätavallista on että lähes jokaisen näytekappaleen massahäviö
+laski toisella koekerralla. Syytä on vaikea arvella, mutta eräs
+mahdollisuus on näytteiden keskeneräiseksi jäänyt kuivaaminen,
+jonka johdosta nestettä haihtuisi vielä koetta edeltävän punnituksen
+ja kokeen jälkeisen punnituksen välillä.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=1.0\textwidth]{t1grr2}
+  \end{center}
+  \caption[Rinnakkaiset tulokset tyypin 1 mittajärjestelmäanalyysista]{Tulokset tyypin 1 mittajärjestelmäanalyysista, saman koekappaleen tulokset rinnakkain.}
+  % Optional shorter caption in brackets is used in Table of Figures
+  % (tof).
+  \label{fig:t1grr2}
+\end{figure}
 
-Taguchin menetelmien toimivuudesta on huomattavasti erimielisyyksiä. Monet
-tilastotieteilijät, kuten Montgomery, Box, jne. (lisää sitaatit) eivät luota
-Taguchin menetelmiin. Sleeper (lisää sitaatti) jättää menetelmät kokonaan
-pois kirjastaan sanoen niiden käytön olevan vähentymässä ja tarjoaa tilalle
-vastepintamenetelmiä. Toisaalta monet teollisuuden kanssa työskentelevät
-suosittelevat Taguchi -menetelmiä. Eero Karjalainen (lisää sitaatti) kertoi
-sähköpostissa havainneensa Taguchi -menetelmien toimivan hyvin. Minitab
-tarjoaa Taguchi -suunnitelmien tekemiseen ja analysointiin työkalut.
 
-\textcite{Hedayat2012} listaavat
-seuraavat ongelmat liittyen
-Taguchi -menetelmiin:
+Koska koemäärä vaikutti riittämättömältä koetta jatkettiin valmistelemalla 6 näytekappaletta lisää ja ajamalla niihin kulumisjälki satunnaisessa järjestyksessä, mittaamalla massahäviöt ja ajamalla toinen kulumisjälki satunnaisessa järjestyksessä.
+Kuva \ref{fig:t1grrjt} näyttää tuloksen kun uudet tulokset lisättiin kuvaan \ref{fig:t1grr}.
+Hajonta vaikuttaa kaoottisemmalta ja laskeva suuntaus ei ole enää niinkään selvä. Näytteen ensimmäisen ja toisen mittaustuloksen vertailukuvaajaan lisättynä
+tulos on kuvassa \ref{fig:t1grrjt2} (uudet näytteet merkittiin B-kirjaimella). 3:ssa uusista näytteistä massahäviö laski mutta 3:ssa myös nousi.
+Aiempi ilmiö oli luultavasti sattumaa tai aiheutui tuntemattomasta virheestä koeprosessissa. Kaiken kaikkiaan tyypin 1 mittajärjestelmäanalyysi ei osoittanut testin olevan epästabiili, so. ajan suhteen muuttuva. Toisaalta on huomattava että 32 testiajoa n. 2 päivän aikana ei todennäköisesti ole riittävä määrä kokeita tai aikaa luotettavien tulosten saamiseksi.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=1.0\textwidth]{t1grrjt}
+  \end{center}
+  \caption[Jatketun tyypin 1 mittajärjestelmäanalyysin tulokset]{Jatketun tyypin 1 mittajärjestelmäanalyysin tulokset.}
+  % Optional shorter caption in brackets is used in Table of Figures
+  % (tof).
+  \label{fig:t1grrjt}
+\end{figure}
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=1.0\textwidth]{t1grrjt2}
+  \end{center}
+  \caption[Jatketun tyypin 1 mittajärjestelmäanalyysin tulokset rinnakkain]{Jatketun tyypin 1 mittajärjestelmäanalyysin tulokset, saman koekappaleen tulokset rinnakkain. Uudet näytteet on merkitty B-kirjaimella.}
+  % Optional shorter caption in brackets is used in Table of Figures
+  % (tof).
+  \label{fig:t1grrjt2}
+\end{figure}
+
+\section{Yleinen mittajärjestelmäanalyysi}
+
+Mittajärjestelmäanalyysiin valitaan koekappaleita mahdollisimman kattavasti koko siitä valikoimasta joita mittajärjestelmä normaalissa käytössä kohtaisi, tarkoituksena vertailla tätä koekappaleiden odotettua hajontaa muihin hajontalähteisiin ja saada selville käyttäytyykö järjestelmä eri tavalla eri mittaustulosalueilla. Koekappaleita valmistettiin 12:sta eri pinnoitteesta jotka
+numeroitiin 1 \ldots 12.
+Eri operaattoreiden sijasta käytettiin 3:a erilaista abraasiotestin kumipyörää koska tämän
+uskottiin olevan merkittävästi todennäköisempi vaihtelun lähde kuin operaattorin. Pyörät
+valittiin seuraavasti:
+
+\begin{description}
+  \item[P1] Kumipyörä 1, normaalissa käytössä ollut kohtalaisesti kulunut kumipyörä
+  \item[P2] Kumipyörä 2, sileä ja kulumaton kumipyörä
+  \item[P3] Kumipyörä 3, keinotekoisesti hiomakoneella kulutettu kumipyörä, ”pompottava”
+\end{description}
+
+Koe tehtiin Minitab–ohjelman ohjeiden mukaan, hierarkkisena (nested) sillä kulumiskestävyyskoe on destruktiivinen eikä täsmälleen samaa näytekappaleen aluetta voi testata eri operaattoreilla/kumipyörillä. Onkin muistettava että kokeen taustalla on oletus pinnoitteiden homogeenisuudesta mikä ei välttämättä ole totuudenmukaista.
+
+Joka pinnoitteesta valmisteltiin 3 näytekappaletta, joihin jokaiseen ajettiin 2 kulumisjälkeä. Aluksi laitteeseen asetettiin kumipyörä P1, jolla suoritettiin 1 koeajo jokaiseen eri pinnoitteeseen satunnaisessa järjestyksessä. Seuraavaksi asetettiin paikalleen kumipyörä P2 ja sama toistettiin uudelle joukolle näytekappaleita. Sama toistettiin jälleen pyörälle P3. Tämän jälkeen asetettiin paikalleen pyörä P1 uudelleen ja suoritettiin koeajo samoihin näytteisiin kuin oli suoritettu samalle pyörälle P1 aiemmin, jälleen satunnaisessa järjestyksessä. Näin tehtiin myös pyörälle P2 ja lopuksi pyörälle P3.
+
+Minitabin varianssianalyysi tutkimuksesta on kuvassa \ref{fig:minitabgrr}.
+\%Contribution (of VarComp) –kohdasta nähdään että pinnoitteiden erilaisuudesta johtuva varianssi on paljon suurempi kuin muista lähteistä aiheutuva (99,35 \% vs. 0,65 \%), joten koe kykenee ainakin erottamaan eri pinnoitteet toisistaan kumipyörien epäsäännöllisyydestä huolimatta. Projektin tavoitteiden kannalta kiinnostavampia ovat ehkä kuitenkin lukuisat kuvaajat joita tuloksista saadaan: Kuvassa \ref{subfig:ygrr1} nähdään kaikki koetulokset samassa graafissa, samaan näytekappaleeseen tehdyt eri koeajot ovat päällekkäin palloina ja yksiköt ovat milligrammoja.
+Nähdään ainakin että mittaukset samalla pyörällä samalle pinnoitteelle ovat kohtuullisen lähellä toisiaan ja lähes kaikissa tapauksissa pystytään tunnistamaan samaksi pinnoitteeksi.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics{minitabgrr}
+  \end{center}
+  \caption[Yleinen mittajärjestelmävarianssianalyysi]{Varianssianalyysi yleisen mittajärjestelmäanalyysin tuloksista.}
+  % Optional shorter caption in brackets is used in Table of Figures
+  % (tof).
+  \label{fig:minitabgrr}
+\end{figure}
+
+
+Xbar–kuvaaja \ref{subfig:ygrrxbar} näyttää samaan kappaleeseen tehtyjen koeajojen keskiarvon joka pinnoitteelle ja kumipyörälle.
+Voidaan jo nähdä että P1:n ja P2:n käyrien muodot ovat melko samanlaiset, ja P3:ssa referenssimateriaalin tulos on täysin erilainen. Kuvassa lähellä toisiaan olevat keskiarvo- ja ylä- ja alaraja-arvolinjat kertovat että koekappaleiden valinnat olivat onnistuneet sillä hajontaa oli paljon ja kaikki eivät asettuneet samoihin rajoihin.
+
+
+Havainnollisin kuvaaja on R-chart –käyrä, kuva \ref{subfig:ygrrrchart}. Käyrä näyttää eron samaan koekappaleeseen tehdyn kahden eri kokeen välillä. Jos pinnoitteet oletetaan homogeenisiksi, on paras kumipyörä sellainen, joka tuottaa mahdollisimman pienen eron koeajoihin.
+Kuvasta nähdään että johdonmukaisimpia tuloksia antaa sileä, uusi kumipyörä nro 2. Eniten vaihtelevat epätasaisen kumipyörä 3:n tulokset. Voidaan todeta että epätasainen, ”pompottava” kumipyörä voi aiheuttaa yli 10 milligramman eroja saman pinnoitteen koetuloksille.
+
+
+\begin{figure*}
+  \begin{center}
+    \subfigure[Yleisen mittajärjestelmäanalyysin tulokset samassa graafissa.]{
+      \includegraphics[width=\textwidth]{ygrr1}
+      \label{subfig:ygrr1}}
+    %\qquad                        % i) Ugly hack to get more horizontal space between figures
+    %\hspace{0.05\textwidth}      % ii) Another ugly way to hack space
+    % ~~                          % iii) Yet another...
+
+    \subfigure[Yleisen mittajärjestelmäanalyysin Xbar-kuvaaja.]{
+      \includegraphics[width=\textwidth]{ygrrxbar}
+      \label{subfig:ygrrxbar}}
+
+    \subfigure[Yleisen mittajärjestelmäanalyysin R-chart -kuvaaja.]{
+      \includegraphics[width=\textwidth]{ygrrrchart}
+      \label{subfig:ygrrrchart}}
+    \caption[Yleisen mittajärjestelmäanalyysin tulokset]{Yleisen mittajärjestelmäanalyysin tulokset.}
+    % Optional shorter caption in brackets is used in Table of Figures
+    % (tof).
+
+    \label{fig:ygrr}
+  \end{center}
+\end{figure*}
+
+
+
+Kuva \ref{fig:ygrr2} näyttää saman kappaleen ensimmäisen ja toisen koeajon rinnakkain, sekä saman pinnoitteen tulokset eri kumipyörillä rinnakkain.
+Vaikka yleensä tulokset osuvat lähimain samalle alueelle eri kumipyörilläkin, ainakin yksi materiaali reagoi täysin eri tavalla kumipyörä nro 3:lle: teräksinen referenssimateriaali. Tämä kertoo että ainakin jotkin materiaalit voivat olla herkempiä pyörän epätasaisuudelle kuin toiset. Luonnollisesti ei ole toivottavaa että referenssimateriaali, jolla koelaitteiston toimintaa seurataan, reagoi eri parametreihin eri tavalla kuin varsinaisesti testattavat pinnoitteet. Toisaalta herkempi referenssimateriaali voi olla hyvä indikaattori joka varoittaa kuluneesta kumipyörästä ajoissa.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=1.0\textwidth]{ygrr2}
+  \end{center}
+  \caption[Yleinen mittajärjestelmäanalyysi: Rinnakkaiset tulokset]{Tulokset yleisestä mittajärjestelmäanalyysista, saman koekappaleen tulokset rinnakkain.}
+  % Optional shorter caption in brackets is used in Table of Figures
+  % (tof).
+  \label{fig:ygrr2}
+\end{figure}
+
+
+
+
+
+
+Kaiken kaikkiaan mittajärjestelmäanalyysi paljasti että kumipyörän epätasaisuudella on havaittava vaikutus mittaustuloksiin, tosin verrattuna eri pinnoitteiden välisiin eroihin tämä vaikutus ei ole suuri, paitsi referenssimateriaalin tapauksessa. Kulunut pyörä antaa vaihtelevampia tuloksia samalle materiaalille.
+
+\section{Muut varianssianalyysit}
+
+Kumipyörän epätasaisuuden osoittauduttua suhteellisen pieneksi osaksi hajontaa tutkittiin muita mahdollisia syitä vaihteleville tuloksille.
+Päädyttiin siihen johtopäätökseen että vaihteleviin tuloksiin luultavimmin vaikuttavat näytteen kunnollinen kuivaus, kumipyörän kovuuden vaihtelu, hiekan virtausmäärän vaihtelu ja hiekan kasaantuminen ja epätasainen virtaus näytekappaleen päältä. Näytteiden kuivaus vaikutti epätodennäköiseltä syyltä sillä kuivumiseen annettiin aina reilusti aikaa, ainakin seuraavaan päivään asti, ja kuivausmenetelmää oli käyttänyt kokenut operaattori, joka ei ollut maininnut kuivauksessa olleen mitään vaikeuksia. Hiekan virtausmäärä vaikutti vakiolta aina ennen laitteen käyttämistä tehdyssä mittauksessa, lähes aina ~60 g/min. Kumipyörän kovuuden vaihtelun mittaaminen osoittautui vaikeaksi, käsin käytettävän Shore –durometrin mittaustulokset olivat vaihtelevia ja vaikeita toistaa.
+
+Hiekan oli havaittu kasautuvan epäsäännölliseen muotoon näytekappaleen päälle ja vasta siitä laskeutuvan
+kumipyörän ja näytteen väliseen rakoon. Vaikutti järkeenkäyvältä että tällainen epätasainen virtaus vaikuttaisi koetulosten hajontaan. Standardissa G65 \parencite{Standard2010}
+ja muissa kumipyöräabraasiolaitteen kaaviokuvissa hiekkaverho putosi aina suoraan pyörän ja kappaleen väliseen rakoon. Vaikutusta olisi myös helppo tutkia, oli vain valmistettava näytekappaleita jotka olivat niin korkeita että niiden yläreuna olisi korkeammalla kuin hiekkasuuttimen pää, jolloin hiekka ei pääsisi kasaantumaan reunan päälle.
+Valittiin 8 kpl hyväpintaisia 100 x 50 mm koekappaleita, joista 4 leikattiin 50 x 50 mm muotoisiksi
+kuten kuvassa \ref{fig:kappaleet}.
+100 x 50 mm kappaleista hiottiin kulmat pois, koska muuten ne ottivat kiinni hiekkasuuttimen päähän kokeen aikana.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{kappaleet}
+  \end{center}
+  \caption[Virtauskokeen koekappaleita]{Hiekan epätasaisen virtauksen tutkimiseen valmistettuja koekappaleita.}
+  % Optional shorter caption in brackets is used in Table of Figures
+  % (tof).
+  \label{fig:kappaleet}
+\end{figure}
+
+Varianssianalyysi suoritettiin hierarkkisena Gage R\&R:nä, kuten aiempikin mittajärjestelmäanalyysi. Ensin jokaiseen neliönmuotoiseen kappaleeseen ajettiin koe satunnaisessa järjestyksessä, sitten jokaiseen suorakulmion muotoiseen, sen jälkeen toinen koeajo samoihin neliökappaleisiin, ja sama suorakulmioihin. Kokeissa käytettiin edellisessä kokeessa luotettavimmaksi osoittautunutta kumipyörä P2:ta. Minitab tuotti
+kuvan \ref{subfig:virtausxbar} mukaisen Xbar –kuvaajan ja kuvan \ref{subfig:virtausrchart} mukaisen R-chart-kuvaajan.
+Kuvasta nähdään että suorakulmion muotoisilla näytteillä, joissa hiekan virtaus on hallitumpaa, saman kappaleen eri mittausten välillä on vähemmän eroa. Yksiköt ovat jälleen milligrammoja.
+Koeajojen rinnakkainen vertaus on kuvassa \ref{subfig:virtausrinnakkaiset}
+Odottamattomasti jokaisen 50 x 50 mm –näytteen massahäviö laski toisella koeajolla mutta vastaavaa ilmiötä ei esiintynyt 100 x 50 mm –näytteillä.
+
+\begin{figure*}
+  \begin{center}
+    \subfigure[Hiekan epätasaisen virtauksen kokeen Xbar-kuvaaja.]{
+      \includegraphics[width=\textwidth]{virtausxbar}
+      \label{subfig:virtausxbar}}
+    %\qquad                        % i) Ugly hack to get more horizontal space between figures
+    %\hspace{0.05\textwidth}      % ii) Another ugly way to hack space
+    % ~~                          % iii) Yet another...
+
+    \subfigure[Hiekan epätasaisen virtauksen kokeen R-chart-kuvaaja]{
+      \includegraphics[width=\textwidth]{virtausrchart}
+      \label{subfig:virtausrchart}}
+
+    \subfigure[Hiekan epätasaisen virtauksen kokeen tulokset, saman koekappaleen tulokset esitettynä rinnakkain]{
+      \includegraphics[width=\textwidth]{virtausrinnakkaiset}
+      \label{subfig:virtausrinnakkaiset}}
+    \caption[Virtauskokeen tulokset]{Hiekan epätasaisen virtauksen tutkimuksen tulokset.}
+    % Optional shorter caption in brackets is used in Table of Figures
+    % (tof).
+
+    \label{fig:virtauskoe}
+  \end{center}
+\end{figure*}
+
+
+Näitten tulosten ansiosta päätettiin toistaa sama hiekan virtauksen varianssianalyysi suuren projektia varten tehdyn näyte-erän karbidipinnoitteille. Tästä erästä leikattiin pieni ”kansi”, joka asetettiin näytteen päälle näytteenpidikkeeseen, kuten kuvassa \ref{fig:kappaleet2}
+Kuvassa \ref{fig:kpllaitteessa} näkyvä pieni pahvinpala piti kannen tiukasti paikoillaan kokeen aikana.
+Muuten koe suoritettiin samoin kuin edellinen teräskappaleilla tehty koe,
+eli hierarkkisena Gage R\&R:nä.
+Syntynyt Xbar –kuvaaja on kuvassa \ref{subfig:virtaus2xbar}, R-chart kuvassa \ref{subfig:virtaus2rchart} ja rinnakkaistarkastelu
+kuvassa \ref{subfig:virtaus2rinnakkaiset}.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{kappaleet2}
+  \end{center}
+  \caption[Toisen virtauskokeen koekappaleita]{Hiekan epätasaisen virtauksen tutkimiseen valmistettuja karbidipinnoitteisia koekappaleita.}
+  % Optional shorter caption in brackets is used in Table of Figures
+  % (tof).
+  \label{fig:kappaleet2}
+\end{figure}
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=0.7\textwidth]{kpllaitteessa}
+  \end{center}
+  \caption[Toisen virtauskokeen koejärjestely]{Toisen virtauskokeen koekappale, koekappaleen "kansi" ja "kantta" paikallaan pitävä pahvinpala koelaitteessa.}
+  % Optional shorter caption in brackets is used in Table of Figures
+  % (tof).
+  \label{fig:kpllaitteessa}
+\end{figure}
+
+\begin{figure*}
+  \begin{center}
+    \subfigure[Toisen epätasaisen virtauksen kokeen Xbar-kuvaaja.]{
+      \includegraphics[width=\textwidth]{virtaus2xbar}
+      \label{subfig:virtaus2xbar}}
+    %\qquad                        % i) Ugly hack to get more horizontal space between figures
+    %\hspace{0.05\textwidth}      % ii) Another ugly way to hack space
+    % ~~                          % iii) Yet another...
+
+    \subfigure[Toisen epätasaisen virtauksen kokeen R-chart-kuvaaja.]{
+      \includegraphics[width=\textwidth]{virtaus2rchart}
+      \label{subfig:virtaus2rchart}}
+
+    \subfigure[Toisen epätasaisen virtauksen kokeen tulokset, saman koekappaleen tulokset esitettynä rinnakkain.]{
+      \includegraphics[width=\textwidth]{virtaus2rinnakkaiset}
+      \label{subfig:virtaus2rinnakkaiset}}
+    \caption[Toisen virtauskokeen tulokset]{Tulokset hiekan epätasaisen virtauksen tutkimuksesta kun koekappale on karbidipinnoitteinen.}
+    % Optional shorter caption in brackets is used in Table of Figures
+    % (tof).
+
+    \label{fig:virtauskoe2}
+  \end{center}
+\end{figure*}
+
+
+Tässä kokeessa ei löytynyt merkittävää eroa kannellisen ja kannettoman koeajon välillä.
+On mahdollista että teräs on keraamia herkempää hiekkavirran turbulenssille tai että ”kansi – ei kantta” koejärjestely ei vastaa ”50 x 50 mm – 100 x 50 mm” koejärjestelyä. Joka tapauksessa tämä nimenomainen koetulos ei puolla hiekkavirran hallintaa kansikappaletta käyttämällä.
+
+\section{Robustien parametrien suunnittelu}
+
+Alunperin robustien parametrien suunnitteluun ajateltiin käytettäväksi
+Taguchi-menetelmää. Projektin edetessä selventyi kuitenkin 2 syytä, joiden
+vuoksi Taguchi-suunnitelma ei ollut sopiva tässä tapauksessa:
+
 \begin{itemize}
-\item Signaali-kohinasuhde ei kerro kuinka ohjaustekijät vaikuttavat
-      ulostuloon. Vaikka vaikutusta havaittaisiin, ei silti voida tietää
-      muuttaako se vasteen keskiarvoa, vaihtelua vai molempia. 
-\item Mahdollisia tekijöitten välisiä vuorovaikutuksia ei oteta huomioon.
-\item (...)
-\item Menetelmä ei kerro kuinka häiriötekijät vaikuttavat ulostuloon.
-      Syntyykö kohina vain joistain häiriötekijöistä? Onko niitten ja
-      ohjaustekijöitten välillä vuorovaikutuksia? Signaali-kohinasuhdeanalyysi
-      ei vastaa näihin kysymyksiin.
+  \item Taguchi–menetelmässä parametrien optimointiin käytetään
+signaali-kohinasuhdetta, joka yhdistää koetuloksen keskiarvon ja varianssin. Tämä on tarpeetonta koska projektissa ei
+yritetty tai haluttu säätää tulosten keskiarvoa millään tavalla.
+  \item Hallittavat ja ei-hallittavat parametrit eli kontrollitekijät ja häiriötekijät.
+\todo{tarkasta temit alkukappaleista}
+Taguchi-menetelmä on ns. aktiivinen robustien parametrien suunnittelumenetelmä, so. kaikki tulokseen vaikuttavat tekijät, joita ei voida prosessin aikana hallita, eli häiriötekijät (näitä voivat olla ympäristön lämpötila ja ilmankosteus, osien kuluminen ajan myötä jne.) pyritään tunnistamaan ja sitten kokeen aikana hallitsemaan, näin vaihtelu pakotetaan esille kokeen aikana. Tämä on hyvin toimivaa kun nämä häiriötekijät tunnistetaan tai tunnetaan jo etukäteen ja prosessi halutaan suojata niitä vastaan, mutta kumipyöräabraasiokokeessa
+hajonnan syyt eivät olleet tarpeeksi hyvin tiedossa jotta aktiivista suunnittelua
+oltaisi voitu toteuttaa.
 \end{itemize}
 
-\textcite{Bursztyn} vertailevat tutkimuksessaan hajonta
+Suunnitelmaksi valikoitui passiivinen robusti suunnittelu, jossa kokeita toistetaan parametrien eri tasoilla ja toivotaan että vaihtelua esiintyy todellisuutta edustavalla tavalla. Toistojen määräksi valikoitui 4 koska 2
+saman pinnoitteen näytekappaleeseen kumpaankin voidaan tehdä 2 koeajoa.
 
+Koeajojen määrän pitämiseksi järkevänä oli tutkittavien parametrien määrä pidettävä pienenä. Lopulta päädyttiin 5 parametriin joiden vaikutus tuntui todennäköisimmältä:
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%-------------------------------------------------------------------------------
-\chapter{Mittajärjestelmäanalyysi}
-\label{ch:grr}
-%-------------------------------------------------------------------------------
-
-\todo
-
-Brief basics of writing style are:
 \begin{itemize}
-\item Always think of your reader when you are writing and proceed
-  logically from general to specific.
-\item Highlight your key points, for example, by discussing them in
-  separate chapters or presenting them in a table or figure. Use
-  \textit{italics} or \textbf{boldface} for emphasis, but don't overdo
-  it.  Moreover, this template uses \texttt{teletype} font for LaTeX
-  specific names, such as commands and files.
-\item Avoid long sentences and complicated statements. A full stop is
-  the best way to end a sentence.
-\item Use active verbs to make a dynamic impression but avoid the
-  first person pro-noun ``I'', except in your preface.
-\item Avoid jargon and wordiness. Use established terminology and
-  neutral language.
-\item The minimum length of chapters and subchapters is two
-  paragraphs, and you need to consider the balance of
-  chapters. Paragraphs must always consist of more than one sentence.
-\item Do not use more than three levels of headings, such as 4.4.2.
-\item Do not use too many abbreviations. Use capital and small letter
-  consistently
+  \item Ajoaika
+  \item Näytteen paine kumipyörää vasten
+  \item Hiekan virtausmäärä aikayksikköä kohden
+  \item Hiekan eli abrasiivin tyyppi
+  \item Oliko edellisessä kokeessa käytetty hiekan virtausta ohjaava kansi paikallaan vai ei
 \end{itemize}
 
-Sometimes ending a section with list is considered as bad
-style. Therefore, it is better to have some text after it.
+Joka parametrille valittiin 2 tasoa, matala ja korkea. Ajoajalle valittiin 5 min ja 15 min, paineelle 0 kg punnus ja 1,5 kg punnus, hiekan virtaukselle 21 g/min ja 62 g/min, abrasiivityypille nilsiähiekka (-1) ja alumiinioksidi (1) ja kannelle ei kantta (-1) tai kansi paikoillaan (1). Hiekan virtausta oli tarkoitus tutkia myös suuremmilla arvoilla, mutta tarkoitukseen soveltuvia suuttimia ei löytynyt. Kumipyöräksi valittiin aiemmin hyväksi osoittautunut kumipyörä P2.
+
+Varsinaista koesuunnitelmaa ei valittu valmiiden joukosta, vaan se luotiin Minitab –makrolla, jolle annettiin tutkittavien parametrien määrä ja joka sen pohjalta loi ns. D-optimaalisen koesuunnitelman. D-optimaalinen suunnitelma kykenee arvioimaan kaikki yhden parametrin vaikutukset sekä kaikki 2 tekijän yhteisvaikutukset pitämällä koeajojen määrän kuitenkin mahdollisimman pienenä. Etuna on että koe on räätälöity sille annettuihin parametreihin ja siten mahdollisimman tehokas.
+
+Koesuunnitelmasta muodostui kuvan \ref{fig:tarray} mukainen:
+16 eri parametritasojen yhdistelmää, joista jokaisessa suoritettiin 4 koeajoa, yhteensä siis \(16\times 4 = 64\) koeajoa. 4 koetulokselle laskettiin keskiarvo ja keskihajonta.
+Varianssin analysointiin on Minitabissa 2 arvointimenetelmää. Ensimmäinen, ”Least squares regression”, antaa kuvan \ref{subfig:pareto1} mukaisen Pareto–arvion parametrien vaikutuksista
+ja ”Maximum likelihood” -menetelmä kuvan \ref{subfig:pareto2} mukaisen.
+Tekijöiden vaikutusjärjestys, suurimmasta pienimpään, on molemmissa sama;
+1 tekijän vaikutukset ovat ensimmäisinä ennen yhteisvaikutuksia.
+Eniten vaikuttivat hiekan virtausmäärä ja paine koekappaleen ja kumipyörän välillä.
+\todo{merkittävyysrajat}
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[width=1.0\textwidth]{tarray}
+  \end{center}
+  \caption[Robustien parametrien koesuunnitelma]{Robustien parametrien suunnittelukokeen koesuunnitelma.}
+  % Optional shorter caption in brackets is used in Table of Figures
+  % (tof).
+  \label{fig:tarray}
+\end{figure}
 
 
-\section{Figures}
-You must refer to all the figures in the body text. The reference
-should preferably appear on the same page as the actual figure or
-before it. Figures and tables must be numbered consistently thesis
-and primarily placed at the top of the page, but you are free to
-decide where they fit best. Never start a chapter with a figure, table
-or list.
+\begin{figure*}
+  \begin{center}
+    \subfigure[”Least squares regression” -menetelmän Pareto-kuvaaja.]{
+      \includegraphics[width=\textwidth]{pareto1}
+      \label{subfig:pareto1}}
+    %\qquad                        % i) Ugly hack to get more horizontal space between figures
+    %\hspace{0.05\textwidth}      % ii) Another ugly way to hack space
+    % ~~                          % iii) Yet another...
 
-Figures and the caption are either consistently centered (or aligned
-to the left). The caption is placed under the figure and always on the
-same page as the figure. All figures must be explained in the body
-text, so that readers know what they are supposed to notice. Figures
-generated by analysis software usually need further editing, see
-Figure~\ref{fig:ex_fig} for example. The figures should be in the same
-language as other text (even if Figure~\ref{fig:ex_fig} violates this
-recommendation). The recommended font size is the same as that of the
-body text but no smaller than 10 pt. The figures must be readable,
-even if your thesis is printed in greyscale.
+    \subfigure[”Maximum likelihood” -menetelmän Pareto-kuvaaja.]{
+      \includegraphics[width=\textwidth]{pareto2}
+      \label{subfig:pareto2}}
+    \caption[Robustien parametrien suunnittelukokeen tulokset]{Robustien parametrien suunnittelukokeen tulokset parametrien vaikutuksista.}
+    % Optional shorter caption in brackets is used in Table of Figures
+    % (tof).
+
+    \label{fig:paretot}
+  \end{center}
+\end{figure*}
+
+
+
+
+
+Jos kuitenkin vaikutusten pienuudesta huolimatta
+jatketaan ja käytetään Minitabin optimointityökalua keskihajonnan minimointiin
+saadaan tulos kuten kuvassa \ref{subfig:robusti1}.
+Punaisella ylälaidassa näkyvät parhaiten keskihajontaa pienentävä parametrien arvojen yhdistelmä. Huomattiin kuitenkin että koska nähtävästi
+optimointityökalu yrittää minimoida absoluuttisen keskihajonnan niin samalla se
+pyrkii pienempiin ajoaikoihin vain koska silloin tuloksen keskiarvo ja sitä kautta myös keskihajonta pienenee, \em vaikka suhteellinen keskihajonta nousisikin. \em Päätettiin käyttää keskihajonnan sijasta yksikköä \em variaatiokerroin, \em kaavalla
+\[v = \frac{s}{x} \times 100\> \%\]
+missä \em s \em on keskihajonta ja \em x \em on keskiarvo.
+\todo{Kirjallisuudesta paljastuikin myöhemmin variaatiokertoimen tai vastaavien arvojen olevan yleisesti käytettyjä robustissa suunnittelussa vaikka Minitab ei tätä mainitsekaan.}
+Variaatiokertoimet syötettiin Minitabiin, mutta koska Minitab ei ole asettanut mallia näihin arvoihin, vaan ainoastaan keskihajonnan arvoihin, ei variaatiokerrointa voida optimoida samalla työkalulla. Voidaan kuitenkin piirtää kuvan \ref{subfig:robusti2} mukainen vaikutuskuvaaja.
+Tässä kuvassa ajoaika ja abrasiivi ovat aiempaan verrattuna päinvastoin, nyt pidemmällä ajoajalla ja käyttämällä alumiinioksidia saadaan paremmat tulokset. Ilman optimointityökalua ei voida kuitenkaan arvioida yhteisvaikutuksia.
+
+
+\begin{figure*}
+  \begin{center}
+    \subfigure[Minitabin optimointityökalun tulokset keskihajonnan minimointiin.]{
+      \includegraphics[width=\textwidth]{robusti1}
+      \label{subfig:robusti1}}
+    %\qquad                        % i) Ugly hack to get more horizontal space between figures
+    %\hspace{0.05\textwidth}      % ii) Another ugly way to hack space
+    % ~~                          % iii) Yet another...
+
+    \subfigure[Minitabin vaikutuskuvaaja, tutkittujen parametrien vaikutus variaatiokertoimeen.]{
+      \includegraphics[width=\textwidth]{robusti2}
+      \label{subfig:robusti2}}
+    \caption[Robustien parametrien suunnittelukokeen tulokset kokeen optimointiin]{Robustien parametrien suunnittelukokeen tulokset parametrien säätämiseen.}
+    % Optional shorter caption in brackets is used in Table of Figures
+    % (tof).
+
+    \label{fig:robustit}
+  \end{center}
+\end{figure*}
+
+
+
+
+
+Kaiken kaikkiaan on hyvä muistaa että tässä robustien parametrien suunnittelussa tehtiin vain 4 toistokoetta jokaisella parametriarvojen yhdistelmällä.
+Koska tekijöiden vaikutusta hajontaan mitataan nimenomaan näistä 4:stä toistokokeesta,
+voi satunnainen kohina vaikuttaa tuloksiin paljon.
+\todo{Ensimmäinen Pareto–kaavio myös arvioi kaikki vaikutukset merkityksettömiksi.}
+
+\section{Kumipyörän P2 tyypin 1 mittajärjestelmäanalyysi}
+
+Koska alussa täysin uutta kumipyörä P2:ta oli nyt käytetty kohtuullinen määrä, päätettiin sillä ajaa vielä muutama koe projektia varten valmistetulla näyte-erällä ja koota koko projektin aikana samalla pinnoitteella ko. pyörällä tehdyt koetulokset samaan taulukkoon, stabiiliuden ja pyörän kulumisen suhteen muutosten selvittämiseksi. Tulokset nähdään kuvassa \ref{fig:kp2grr}.
+Tässä ”kokeessa” oli 16 koeajoa ja keskihajonta 2,71. Projektin ensimmäisessä kokeessa oli 20 koeajoa ja keskihajonta 1,78. Tässä viimeisessä kokeessa ero pienimmän ja suurimman koetuloksen välillä on jo suuri, n. 10 milligrammaa. Kuvaajan perusteella tulokset
+muuttuvat
+satunnaisemmiksi loppua kohden, tämän voisi kuvitella johtuvan kumipyörän kulumisesta lukuisissa vaihtelevissa kokeissa.
+
+
+\begin{figure*}
+  \begin{center}
+    \subfigure[Kumipyörän P2 tyypin 1 mittajärjestelmäanalyysin tulos.]{
+      \includegraphics[width=\textwidth]{kp2grr1}
+      \label{subfig:kp2grr1}}
+    %\qquad                        % i) Ugly hack to get more horizontal space between figures
+    %\hspace{0.05\textwidth}      % ii) Another ugly way to hack space
+    % ~~                          % iii) Yet another...
+
+    \subfigure[Kumipyörän P2 tyypin 1 mittajärjestelmäanalyysin tulos, saman koekappaleen tulokset rinnakkain.]{
+      \includegraphics[width=\textwidth]{kp2grr2}
+      \label{subfig:kp2grr2}}
+    \caption[Kumipyörän P2 tyypin 1 mittajärjestelmäanalyysin tulokset]{Kumipyörän P2 tyypin 1 mittajärjestelmäanalyysin tulokset.}
+    % Optional shorter caption in brackets is used in Table of Figures
+    % (tof).
+
+    \label{fig:kp2grr}
+  \end{center}
+\end{figure*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%-------------------------------------------------------------------------------
+\chapter{Formats}
+\label{ch:formats}
+%-------------------------------------------------------------------------------
+
+%Brief basics of writing style are:
+%\begin{itemize}
+%\item Always think of your reader when you are writing and proceed
+%  logically from general to specific.
+%\item Highlight your key points, for example, by discussing them in
+%  separate chapters or presenting them in a table or figure. Use
+%  \textit{italics} or \textbf{boldface} for emphasis, but don't overdo
+%  it.  Moreover, this template uses \texttt{teletype} font for LaTeX
+%  specific names, such as commands and files.
+%\item Avoid long sentences and complicated statements. A full stop is
+%  the best way to end a sentence.
+%\item Use active verbs to make a dynamic impression but avoid the
+%  first person pro-noun ``I'', except in your preface.
+%\item Avoid jargon and wordiness. Use established terminology and
+%  neutral language.
+%\item The minimum length of chapters and subchapters is two
+%  paragraphs, and you need to consider the balance of
+%  chapters. Paragraphs must always consist of more than one sentence.
+%\item Do not use more than three levels of headings, such as 4.4.2.
+%\item Do not use too many abbreviations. Use capital and small letter
+%  consistently
+%\end{itemize}
+
+%Sometimes ending a section with list is considered as bad
+%style. Therefore, it is better to have some text after it.
+
+
+%\section{Figures}
+%You must refer to all the figures in the body text. The reference
+%should preferably appear on the same page as the actual figure or
+%before it. Figures and tables must be numbered consistently thesis
+%and primarily placed at the top of the page, but you are free to
+%decide where they fit best. Never start a chapter with a figure, table
+%or list.
+
+%Figures and the caption are either consistently centered (or aligned
+%to the left). The caption is placed under the figure and always on the
+%same page as the figure. All figures must be explained in the body
+%text, so that readers know what they are supposed to notice. Figures
+%generated by analysis software usually need further editing, see
+%Figure~\ref{fig:ex_fig} for example. The figures should be in the same
+%language as other text (even if Figure~\ref{fig:ex_fig} violates this
+%recommendation). The recommended font size is the same as that of the
+%body text but no smaller than 10 pt. The figures must be readable,
+%even if your thesis is printed in greyscale.
 % Note: put tilde between text and ref command, like in
 % 'Figure~\ref{fig:ex_fig}' above. Tilde (~) puts a white space but
 % prevents line break. Same thing applies to Table~\ref{tab:summary}
@@ -923,30 +1551,30 @@ LaTeX is the best editor for writing also the more complex equations, such as
 \label{sec:ref_styles}
 %-------------------------------------------------------------------------------
 
-Different referencing styles determine how you create 1) in-text
-citations and 2) the bibliography. Two common referencing styles are
-presented in this chapter:
-\begin{enumerate}
-\item	Numeric referencing (Vancouver system), such as [1],[2]...
-\item	Name-year system (Harvard system), such as (Weber 2001), (Kaunisto 2003)...
-\end{enumerate}
+%Different referencing styles determine how you create 1) in-text
+%citations and 2) the bibliography. Two common referencing styles are
+%presented in this chapter:
+%\begin{enumerate}
+%\item	Numeric referencing (Vancouver system), such as [1],[2]...
+%\item	Name-year system (Harvard system), such as (Weber 2001), (Kaunisto 2003)...
+%\end{enumerate}
 
-A numeric reference is inserted in square brackets [~], whereasthe last
-name of the author and the year of publication are given in round
-brackets ().
+%A numeric reference is inserted in square brackets [~], whereasthe last
+%name of the author and the year of publication are given in round
+%brackets ().
 
-Both styles are acceptable, but the conventions for referencing vary
-between disciplines. You must pick one and use is consistently
-throughout your thesis. 
+%Both styles are acceptable, but the conventions for referencing vary
+%between disciplines. You must pick one and use is consistently
+%throughout your thesis. 
 
-\section{In-text citations}
-:
-In-text citations are placed within the body of the text as close to
-the actual citation as possible \parencite{rubberwheel}. The citation is generally placed
-within the sentence before the full stop. LaTeX has a command
-\texttt{\textbackslash cite} for this \parencite[p. 85]{oetiker14}. See the
-tex file for additional remarks for Harvard style citations \parencites {wang2010143}{alrefaie2010842}
-\parencite{alrefaie2010842}.
+%\section{In-text citations}
+%:
+%In-text citations are placed within the body of the text as close to
+%the actual citation as possible \parencite{rubberwheel}. The citation is generally placed
+%within the sentence before the full stop. LaTeX has a command
+%\texttt{\textbackslash cite} for this \parencite[p. 85]{oetiker14}. See the
+%tex file for additional remarks for Harvard style citations \parencites {wang2010143}{alrefaie2010842}
+%\parencite{alrefaie2010842}.
 % The package Harvard has also additional commands, such as
 % \citename{heinz06}, \citeyear{heinz06}, \citeasnoun{heinz06} and so
 % on.
@@ -957,91 +1585,91 @@ tex file for additional remarks for Harvard style citations \parencites {wang201
 
 
 
-\begin{itemize}
-  \setlength{\itemsep}{-10pt} % Put these lines closer to each other
-  \small
-\item[] Weber argues that [1]. 
-\item[] Cattaneo et al. introduce in their study [2] a new...
-\item[] The result is ... [1, p. 23]. One must also note... [1, s. 33-36]
-\item[]
-\item[] In accordance with the presented theory ... (Weber 2001).
-\item[] It must especially be noted... (Cattaneo et al.).
-\item[] Weber (2001, p. 230) has stated...
-\item[]
-\item[] Based on literature in the field [1,3,5]...
-\item[] Based on literature in the field [1][3][5]...
-\item[] The topic has been widely studied [6-18]...
-\item[]
-\item[] ...existing literature (Weber 2001; Kaunisto 2003; Cattaneo et al. 2004) has...
-\end{itemize}
+%\begin{itemize}
+%  \setlength{\itemsep}{-10pt} % Put these lines closer to each other
+%  \small
+%\item[] Weber argues that [1]. 
+%\item[] Cattaneo et al. introduce in their study [2] a new...
+%\item[] The result is ... [1, p. 23]. One must also note... [1, s. 33-36]
+%\item[]
+%\item[] In accordance with the presented theory ... (Weber 2001).
+%\item[] It must especially be noted... (Cattaneo et al.).
+%\item[] Weber (2001, p. 230) has stated...
+%\item[]
+%\item[] Based on literature in the field [1,3,5]...
+%\item[] Based on literature in the field [1][3][5]...
+%\item[] The topic has been widely studied [6-18]...
+%\item[]
+%\item[] ...existing literature (Weber 2001; Kaunisto 2003; Cattaneo et al. 2004) has...
+%\end{itemize}
 
 
-\section{Bibliography}
-The entries must include all the details listed in Table~\ref{tab:bibl}.
-\begin{table}[!h]
-  \small
-  \begin{center}
-    \caption{Necessary bibliographic information.}
-    \label{tab:bibl}
-    \begin{tabular}{r l | r l }
-\hline 
-\textbf{\#}  
-   & \textbf{Numeric system}
-                       & \textbf{\#}  
-                                & \textbf{Name-year system}\\
-\hline
-\hline
-1. &	authors,	   & 1. & authors,  \\
-   &                       & 2. & (year in parentheses) \\
-2. &	title,             & 3.	& title,    \\
-3. &	publisher,         & 4.	& publisher,\\
-4. &	year of publication, &  &	 \\
-5. &	pages,             & 5.  & pages, \\
-6. &	URL, if applicable & 6.	& URL, if applicable    \\
-      \hline
-    \end{tabular}
-  \end{center}
-\end{table}
+%\section{Bibliography}
+%The entries must include all the details listed in Table~\ref{tab:bibl}.
+%\begin{table}[!h]
+%  \small
+%  \begin{center}
+%    \caption{Necessary bibliographic information.}
+%    \label{tab:bibl}
+%    \begin{tabular}{r l | r l }
+%\hline 
+%\textbf{\#}  
+%   & \textbf{Numeric system}
+%                       & \textbf{\#}  
+%                                & \textbf{Name-year system}\\
+%\hline
+%\hline
+%1. &	authors,	   & 1. & authors,  \\
+%   &                       & 2. & (year in parentheses) \\
+%2. &	title,             & 3.	& title,    \\
+%3. &	publisher,         & 4.	& publisher,\\
+%4. &	year of publication, &  &	 \\
+%5. &	pages,             & 5.  & pages, \\
+%6. &	URL, if applicable & 6.	& URL, if applicable    \\
+%      \hline
+%    \end{tabular}
+%  \end{center}
+%\end{table}
 
 
-Formatting examples of an journal article in bibliography are provided
-below, first in the numeric style and then the name-year style.
+%Formatting examples of an journal article in bibliography are provided
+%below, first in the numeric style and then the name-year style.
 
 % Define columns widths to get text wrapped
-\begin{tabular}{p{1cm}p{12cm}}
-\small
-[100] & K. Keutzer, A.R. Newton, J.M. Rabaey,
-A. Sangiovanni-Vincentelli, System-level design: orthogonalization of
-concerns and platform-based design, IEEE Transactions on
-Computer-Aided Design of Integrated Circuits and Systems, vol.19,
-no.12, Dec 2000, pp.1523-1543.\\
-\end{tabular}
+%\begin{tabular}{p{1cm}p{12cm}}
+%\small
+%[100] & K. Keutzer, A.R. Newton, J.M. Rabaey,
+%A. Sangiovanni-Vincentelli, System-level design: orthogonalization of
+%concerns and platform-based design, IEEE Transactions on
+%Computer-Aided Design of Integrated Circuits and Systems, vol.19,
+%no.12, Dec 2000, pp.1523-1543.\\
+%\end{tabular}
 
-\begin{tabular}{p{13cm}}
-\small
-Keutzer, K., Newton, A.R., Rabaey, J.M. \& Sangiovanni-Vincentelli
-A. (2000). System-level design: orthogonalization of concerns and
-platform-based design. IEEE Transactions on Computer-Aided Design of
-Integrated Circuits and Systems. Vol.19(12), s.1523-1543. \\
-\end{tabular}
+%\begin{tabular}{p{13cm}}
+%\small
+%Keutzer, K., Newton, A.R., Rabaey, J.M. \& Sangiovanni-Vincentelli
+%A. (2000). System-level design: orthogonalization of concerns and
+%platform-based design. IEEE Transactions on Computer-Aided Design of
+%Integrated Circuits and Systems. Vol.19(12), s.1523-1543. \\
+%\end{tabular}
 
-Your references are listed at the end of your thesis in alphabetical
-order based on the first author's last name. If the author is unknown,
-alphabetize the source using the corporate author or title.
+%Your references are listed at the end of your thesis in alphabetical
+%order based on the first author's last name. If the author is unknown,
+%alphabetize the source using the corporate author or title.
 
 
-LaTeX has two ways for making reference list
-\begin{enumerate}
-\item using automated Bibtex tool
-\item manually
-\end{enumerate}
+%LaTeX has two ways for making reference list
+%\begin{enumerate}
+%\item using automated Bibtex tool
+%\item manually
+%\end{enumerate}
 
-The tex source of this document has both versions, and the other is in
-comments. Bibtex\footnote{\url{http://ctan.org/pkg/bibtex}} formats the
-reference list according to a setup file, which is usually provided by
-academic journals. You need to write the basic information into
-\texttt{.bib} file. Citations in your tex file at looked up by bibtex
-and it produces the list of references automatically.
+%The tex source of this document has both versions, and the other is in
+%comments. Bibtex\footnote{\url{http://ctan.org/pkg/bibtex}} formats the
+%reference list according to a setup file, which is usually provided by
+%academic journals. You need to write the basic information into
+%\texttt{.bib} file. Citations in your tex file at looked up by bibtex
+%and it produces the list of references automatically.
 
 \subsection{Header at 3rd level}
 \label{sec:3rd}
@@ -1069,34 +1697,16 @@ Section~\ref{sec:3rd} cannot appear alone, but needs some company
 
 \epigraph{The best time to plan an experiment is after you’ve done it}{R. A. Fisher}
 
-This template and the mathching Latex document class file together
-with general writing guidelines should help achieving a consistently
-formatted and clear documents. Similar template is also available for
-MS Word.
+%This template and the mathching Latex document class file together
+%with general writing guidelines should help achieving a consistently
+%formatted and clear documents. Similar template is also available for
+%MS Word.
 
-Every writing and presentation must have a conclusion. This fact is
-here emphasized by having this short and rather artificial summary
-also in this template. A concise summary table is a good way for
-providing an overview of the most important points.
+%Every writing and presentation must have a conclusion. This fact is
+%here emphasized by having this short and rather artificial summary
+%also in this template. A concise summary table is a good way for
+%providing an overview of the most important points.
 
-Kirjoitan nyt vim -moodissa. Aika kätevää ja hyvää harjoitusta, eikö vain?
-Ja jälleen kerran siteeraan jotain lähdettä \parencite{rubberwheel}.
-
-Ja mikähän väriteema on paras? Sellainen josta erottaa sekä kommentit että tekstin...hmmm...
-Näitä on ihan kiva kokeilla. Monokai näyttää coolilta mutta kommentit ovat
-aika tummia. Parempi valita vain joku ja käyttää jonkin aikaa.
-
-Nyt vaihdoin monokaihin. Jotenkin leveämpi ja mukavampi katsoa. Mennään
-tällä nyt aluksi \parencite{wang2010143}. Ja taas selain fullscreeninä verrattuna
-Sublimetext:iin. Lähes samalla tasolla, turha tätä enää on vatvoa. Selain ja Overleaf \\ voittavat
-tämän kisan.
-
-Mutta nyt vaihdoin sharelatexiin koska löysin sen filetree -jutun (viimein...).
-Ja tämähän tosiaan on paljon parempi. Kursori rullaa sulavasti ja idlefingers in hyvä
-väritemplaatti. Puuttuu vain se versiokontrolli -ominaisuus.
-
-Taas uutta, nimittäin sublimetextiin saa idlefingersin, git-kontrolli
-toimii, ja writemonkey on erittäin hyvä ellei täydellinen.
 
 
 
@@ -1262,3 +1872,5 @@ and so on.
 
 
 \end{document}
+
+%sagemathcloud={"latex_command":"pdflatex -synctex=1 -interact=nonstopmode 'd_tyo.tex'"}
