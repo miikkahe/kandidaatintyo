@@ -635,8 +635,17 @@ yleensä sulautetaan ja kokeen tekijän on hyvä ottaa tämä huomioon.
 Yhden tekijän aiheuttamia vaikutuksia vasteeseen kutsutaan \textit{päävaikutuksiksi}
 (engl. \textit{main factor}) erotukseksi useamman tekijän yhteisvaikuksista.
 
-\todo{lisää tulokset \cite{Li2006}}
+\cite{Li2006} ovat tehneet meta-analyysin yhdistelykokeissa esiintyvistä
+säännönmukaisuuksista, joista yksi on em. vaikutusten niukkuusperiaate.
+Analyysin tuloksia on muun muassa:
 
+\begin{itemize}
+\item Kaikki yleensä kirjallisuudessa käsitellyt säännönmukaisuudet, joista yhtenä
+    vaikutusten niukkuusperiaate, vahvistettiin tilastollisesti merkittäviksi mutta
+    heikommiksi kuin mitä niiden käsittely usein antaa ymmärtää.
+\item Riippuen tekijöiden määrästä, kolmen tekijän yhteisvaikutuksia voi esiintyä
+    enemmän kuin kahden tekijän yhteisvaikutuksia.
+\end{itemize}
 
 
 Koesuunnitelmaan ja sulauttamiseen liittyy käsite \textit{resoluutio}. Resoluutio
@@ -670,12 +679,12 @@ tekijöiden yhteisvaikutuksia,
 vaatii enemmän koeajoja
 ja voi helposti olla huomaamatta tekijöiden optimiyhdistelmiä.
 Siten esimerkiksi \cite{Montgomery2012}
-yhtyy siihen yleiskäsitykseen että käytännössä joka tilanteessa on
+yhtyy siihen yleiseen käsitykseen että käytännössä joka tilanteessa on
 suotavampaa käyttää yhdistelykokeita koska yhteisvaikutukset
 ovat niin yleisiä ja silloin OFAT ei toimi hyvin.
 Kuitenkin \cite{frey2005mechanisms} osoittavat tämän
 olevan ainakin osittain virheellinen käsitys. Heidän tutkimansa
-menetelmä on adaptive OFAT (mukautuva OFAT), jossa muutetaan
+menetelmä on adaptive OFAT (aOFAT, mukautuva OFAT), jossa muutetaan
 yhtä tekijää, tarkistetaan tulos, ja jos se on parempi niin
 pidetään tekijä tällä tasolla ja jos huonompi niin muutetaan se
 takaisin aiemmalle. Näin jatketaan kunnes kaikkia tekijöitä on
@@ -684,7 +693,7 @@ johtaa keskimäärin parempiin tuloksiin jos kokeen virhe on
 pieni (vähemmän kuin yksi neljäsosa tekijävaikutuksista) tai
 tekijöitten yhteisvaikutukset suuria (enemmän kuin yksi neljäsosa
 kaikista vaikutuksista). \cite{frey2005mechanisms} esittävät
-myös selityksiä tälle tulokselle.
+myös mekanismeja ja selityksiä tälle tulokselle.
 
 
 \todo{Screenaus suom. seulontakoe}
@@ -709,6 +718,32 @@ piirtää yksinkertaisia kuvia ja kuvaajia.
 
 \section{Dispersiovaikutukset, robusti suunnittelu ja laadunhallinta}
 
+Teollisuudessa prosessin tuloksena on usein jokin tuote, ja vasteena voidaan
+tutkia jotakin tämän tuotteen ominaisuutta. Koesuunnittelun menetelmillä
+saadaan selville tutkittavien tekijöiden vaikutus tähän ominaisuuteen.
+Yleensä tuotteen ominaisuuksien halutaan pysyvän aina samana kun
+tekijät pidetään tietyillä tasoilla. Tällöin tuote on tasalaatuista, mikä
+on yksi laadunhallinnan tavoitteista.
+
+Vasteen satunnaista vaihtelua sanotaan \em varianssiksi, \em
+ja usein tavoitellaan sen minimoimista. Koesuunnittelulla saadaan
+tietoa tekijöiden vaikutuksista vasteen varianssiin. Tällaista vaikutusta
+kutsutaan \em dispersiovaikutukseksi. \em
+Vastaavasti kuten edellä käsitellyissä vaikutuksissa vasteen tasoon,
+myös dispersiovaikutuksissa esiintyy yhden tekijän päävaikutuksia
+ja monen tekijän yhteisvaikutuksia.
+
+Kun koesuunnittelulla halutaan saada selville nämä vaikutukset
+ja se ihanteellinen tekijätasojen yhdistelmä jolla varianssi on pienimmillään,
+puhutaan \em robustien parametrien suunnittelusta\em ( engl. robust
+parameter design, robustien koska prosessista halutaan mahdollisimman
+vastustuskykyinen satunnaisille muutoksille, so. robusti, ja parametrien koska
+teollisuudessa kokeen tekijät ovat yleensä hallittavia prosessiparametreja).
+
+
+
+
+
 \todo{muista lisätä tähän six sigma ja Taguchi vs. perinteinen, "tieteellinen" DOE}
 
 
@@ -732,6 +767,7 @@ vastepintamenetelmiä. Toisaalta monet teollisuuden kanssa työskentelevät
 suosittelevat Taguchi-menetelmiä. Eero Karjalainen (lisää sitaatti) kertoi
 sähköpostissa havainneensa Taguchi-menetelmien toimivan hyvin.
 \textcite{Antony2006} katsoo ... \todo
+
 Minitab-ohjelma tarjoaa Taguchi-suunnitelmien tekemiseen ja analysointiin työkalut.
 
 \textcite{Hedayat2012} listaavat
@@ -749,8 +785,32 @@ Taguchi-menetelmiin:
       ei vastaa näihin kysymyksiin.
 \end{itemize}
 
+\cite{nair1992} ovat koonneet kattavan paneelikeskustelun Taguchi-menetelmän
+toimivuudesta. Yksi väittelyn ydinkohdista on ristikkäisten ja yhdistettyjen suunnitelmien
+tehokkuudesta robustissa suunnittelussa. (Yhdistetyssä suunnitelmassa hallitsemattomia
+tekijöitä ei eroteta omaksi ulkotaulukokseen, vaan niitä vaihdellaan yhdessä hallittavien
+tekijöiden kanssa kuten normaalissa \(2^\textit{k}\)-kokeessa).
+Teoreettiset perustelut yhdistettyjen suunnitelmien paremmuudelle ovat
+vakuuttavat mutta jotkut empiiriset kokeet viittaavaat siihen että
+ristikkäiset suunnitelmat johtavat parempiin tuloksiin
+\textcite{kunert2003experiment}.
+Osa erimielisyyksistä liittyy siihen, missä määrin ns. vaikutusten
+niukkuusperiaatetta pidetään perusteltuna \textcite{Li2006}.
+
 \textcite{Bursztyn} vertailevat tutkimuksessaan hajonta
 
+
+
+\cite{frey2008adaptive} ovat tutkineet adaptive OFAT (mukautuva OFAT) -menetelmän
+toimivuutta robustissa suunnittelussa. Menetelmä on kuten edellä mainittu
+aOFAT, erotuksena se että joka hallittavan tekijän tason vaihdon
+jälkeen ajetaan hallitsemattomille tekijöille resoluutio III -tasoinen
+yhdistelykoe. Johtopäätöksenä he esittävät että OFAT on tässäkin tilanteessa
+turhaan ylenkatsottu menetelmä. Kun kokeen virhe on pieni
+tai yhteisvaikutukset suuria, on
+tämänkaltainen aOFAT parempi kuin Taguchi-tyyliset ristikkäiset suunnitelmat.
+Kun virhe kasvaa, tietyssä pisteessä ristikkäiset suunnitelmat osoittatuvat
+kuitenkin paremmiksi.
 
 
 
