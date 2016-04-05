@@ -427,7 +427,7 @@ factor) ja merkitään usein
 kuvassa \ref{subfig:malli2}
 Vaste \textit{y} \todo{....}
 On yleistä nimetä tutkittavat tekijät malliin A, B, C, jne.
-\textcite[pp. 3]{Montgomery2012} antaa kokeen
+\textcite[s. 3]{Montgomery2012} antaa kokeen
 tavoitteeksi seuraavat:
 
 \begin{itemize}
@@ -635,7 +635,7 @@ yleensä sulautetaan ja kokeen tekijän on hyvä ottaa tämä huomioon.
 Yhden tekijän aiheuttamia vaikutuksia vasteeseen kutsutaan \textit{päävaikutuksiksi}
 (engl. \textit{main factor}) erotukseksi useamman tekijän yhteisvaikuksista.
 
-\cite{Li2006} ovat tehneet meta-analyysin yhdistelykokeissa esiintyvistä
+\textcite{Li2006} ovat tehneet meta-analyysin yhdistelykokeissa esiintyvistä
 säännönmukaisuuksista, joista yksi on em. vaikutusten niukkuusperiaate.
 Analyysin tuloksia on muun muassa:
 
@@ -678,11 +678,11 @@ OFAT ei kuitenkaan pysty havaitsemaan
 tekijöiden yhteisvaikutuksia,
 vaatii enemmän koeajoja
 ja voi helposti olla huomaamatta tekijöiden optimiyhdistelmiä.
-Siten esimerkiksi \cite{Montgomery2012}
+Siten esimerkiksi \textcite{Montgomery2012}
 yhtyy siihen yleiseen käsitykseen että käytännössä joka tilanteessa on
 suotavampaa käyttää yhdistelykokeita koska yhteisvaikutukset
 ovat niin yleisiä ja silloin OFAT ei toimi hyvin.
-Kuitenkin \cite{frey2005mechanisms} osoittavat tämän
+Kuitenkin \textcite{frey2005mechanisms} osoittavat tämän
 olevan ainakin osittain virheellinen käsitys. Heidän tutkimansa
 menetelmä on adaptive OFAT (aOFAT, mukautuva OFAT), jossa muutetaan
 yhtä tekijää, tarkistetaan tulos, ja jos se on parempi niin
@@ -692,12 +692,22 @@ muutettu. Tutkimuksen mukaan ainakin tämä menetelmä voi
 johtaa keskimäärin parempiin tuloksiin jos kokeen virhe on
 pieni (vähemmän kuin yksi neljäsosa tekijävaikutuksista) tai
 tekijöitten yhteisvaikutukset suuria (enemmän kuin yksi neljäsosa
-kaikista vaikutuksista). \cite{frey2005mechanisms} esittävät
+kaikista vaikutuksista). \textcite{frey2005mechanisms} esittävät
 myös mekanismeja ja selityksiä tälle tulokselle.
 
 
-\todo{Screenaus suom. seulontakoe}
+Kokeen suunnittelun alkuvaiheessa monia mahdollisia tekijöitä harkitaan
+mutta todennäköisesti useat niistä ovat merkityksettömiä tai lähes
+merkityksettömiä. Tätä ei kuitenkaan voida etukäteen tietää. Tällöin
+on tarkoituksenmukaista tehdä \em seulontakoe, \em
+(engl. screening experiment) jossa mukana on monia tekijöitä
+ja tarkoituksena on tunnistaa niistä ne joilla on suuri vaikutus.
+Hyödyllisintä seulontakokeessa on käyttää osittaista
+yhdistelykoetta, jossa koeajojen määrä pysyy kohtuullisena
+useasta tutkittavasta tekijästä huolimatta.
 
+Tärkeiksi havaitut tekijät tutkitaan perusteellisemmin myöhemmissä
+kokeissa.
 
 
 
@@ -735,7 +745,7 @@ ja monen tekijän yhteisvaikutuksia.
 
 Kun koesuunnittelulla halutaan saada selville nämä vaikutukset
 ja se ihanteellinen tekijätasojen yhdistelmä jolla varianssi on pienimmillään,
-puhutaan \em robustien parametrien suunnittelusta\em ( engl. robust
+puhutaan \em robustien parametrien suunnittelusta \em (engl. robust
 parameter design, robustien koska prosessista halutaan mahdollisimman
 vastustuskykyinen satunnaisille muutoksille, so. robusti, ja parametrien koska
 teollisuudessa kokeen tekijät ovat yleensä hallittavia prosessiparametreja).
@@ -759,33 +769,80 @@ kohina taas ulostuloa.
 
 
 
-Taguchin menetelmien toimivuudesta on huomattavasti erimielisyyksiä. Monet
-tilastotieteilijät, kuten Montgomery, Box, jne. (lisää sitaatit) eivät luota
-Taguchin menetelmiin.\textcite{Sleeper2012} jättää menetelmät kokonaan
+Taguchin menetelmien perusteista ja pätevyydestä on huomattavasti erimielisyyttä.
+Yleisesti ottaen tilastotieteilijät, matemaatikot ja tutkijat sanovat menetelmän
+olevan vanhentunut ja kritisoivat joustamattomuutta (koe pitää muokata
+annettujen suunnitelmien mukaiseksi, kun taas tietokoneiden avulla suunnitelmat
+voidaan luoda kokeen perusteella,
+kokeen tekijän on tunnettava prosessi erittäin hyvin
+jotta mahdollisia merkittäviä mutta ennalta tuntemattomia tekijöitä
+ei jää huomiotta), tehottomuutta (pieni resoluutio suhteessa
+koeajojen määrään) ja annettujen analysointityökalujen järkevyyttä
+(signaali-kohinasuhde).
+Yksi ongelma on myös se että hieman ulkopuolisena uudistajana Taguchi
+usein turhaan uudelleennimesi jo olemassa olevia käsitteitä ja käytti
+erikoisia merkintöjä, jotka ovat yhä käytössä näissä menetelmissä.
+Esimerkiksi hallittavien ja hallitsemattomien tekijöiden nimeäminen
+control- ja noise factoreiksi kun tilastotieteessä noise-sanalla (kohina)
+on jo oma merkityksensä aiheuttaa tarpeetonta sekaannusta.
+Sama pätee robust-sanaan.
+Toisaalta Taguchi-menetelmiä
+on teollisuudessa käytetty jo kauan (kuten esimerkiksi Six Sigma -strategiassa)
+ja tulosten ja käyttäjien kokemusten perusteella se on usein
+toiminut paremmin kuin tarjotut vaihtoehdot.
+
+\textcite{Antony2006} antaa yleistason kuvan Taguchi-menetelmien ja
+perinteisen koesuunnittelun eroista
+
+\textcite{Sleeper2012} jättää menetelmät kokonaan
 pois kirjastaan sanoen niiden käytön olevan vähentymässä ja tarjoaa tilalle
 vastepintamenetelmiä. Toisaalta monet teollisuuden kanssa työskentelevät
 suosittelevat Taguchi-menetelmiä. Eero Karjalainen (lisää sitaatti) kertoi
 sähköpostissa havainneensa Taguchi-menetelmien toimivan hyvin.
 \textcite{Antony2006} katsoo ... \todo
 
+\begin{table}[ht]
+  \small
+  \begin{center}
+    \caption{Example of evaporation conditions in a thin film structure.}
+    \label{tab:thin_film}
+    \begin{tabular}{l | r r r r r r}
+      % l = align to left (e.g. text), c=align to center, r=align to
+      % right (e.g. numbers), Pipe | creates vertical line
+      % Let's put 1 horinzontal line above the table, 2 after header rows,  and 1 below
+      \hline
+      \textbf{Ongelman luonne} & \textbf{Taguchi}& \textbf{Perinteinen}  \\
+                         & \textbf{(DOE)}     & \textbf{DOE} \\
+      \hline 
+      \hline
+      Kokeen tekijä uskoo kokeessa olevan vahvoja vuorovaikutuksia & \times & \checkmark \\
+      Nopea prosessin ymmärtäminen ja vastaus johtoportaalle & \checkmark & \times   \\
+      \hline
+    \end{tabular}
+  \end{center}
+\end{table}
+
+
 Minitab-ohjelma tarjoaa Taguchi-suunnitelmien tekemiseen ja analysointiin työkalut.
 
-\textcite{Hedayat2012} listaavat
+\textcite[s. 300-301]{Hedayat2012} listaavat
 seuraavat ongelmat liittyen
 Taguchi-menetelmiin:
 \begin{itemize}
-\item Signaali-kohinasuhde ei kerro kuinka ohjaustekijät vaikuttavat
-      ulostuloon. Vaikka vaikutusta havaittaisiin, ei silti voida tietää
-      muuttaako se vasteen keskiarvoa, vaihtelua vai molempia.
-\item Mahdollisia tekijöitten välisiä vuorovaikutuksia ei oteta huomioon.
-\item (...)
-\item Menetelmä ei kerro kuinka häiriötekijät vaikuttavat ulostuloon.
-      Syntyykö kohina vain joistain häiriötekijöistä? Onko niitten ja
-      ohjaustekijöitten välillä vuorovaikutuksia? Signaali-kohinasuhdeanalyysi
+\item Signaali-kohinasuhde ei kerro kuinka hallittavat tekijät vaikuttavat
+      vasteeseen. Vaikka vaikutusta havaittaisiin, ei silti voida tietää
+      muuttaako se vasteen tasoa, varianssia vai molempia.
+\item Mahdollisia tekijöitten välisiä vuorovaikutuksia (huom. ei siis yhteisvaikutuksia) ei oteta huomioon.
+\item Vaikka ristikkäisyyden vuoksi koeajoja ja tuloksia on paljon, hallittavien tekijöiden
+    tasoyhdistelmiä on kuitenkin suhteessa tähän vain pieni määrä. Siten hallittavien
+    tekijöiden keskinäinen sulautuminen on aina sama, ja täten ko. resoluutio pieni.
+\item Menetelmä ei kerro tarkalleen kuinka hallitsemattomat tekijät vaikuttavat vasteeseen.
+      Syntyykö kohina vain joistain hallitsemattomista tekijöistä? Onko niitten ja
+      hallittavien tekijöitten välillä vuorovaikutuksia? Signaali-kohinasuhdeanalyysi
       ei vastaa näihin kysymyksiin.
 \end{itemize}
 
-\cite{nair1992} ovat koonneet kattavan paneelikeskustelun Taguchi-menetelmän
+\textcite{nair1992} ovat koonneet kattavan paneelikeskustelun Taguchi-menetelmän
 toimivuudesta. Yksi väittelyn ydinkohdista on ristikkäisten ja yhdistettyjen suunnitelmien
 tehokkuudesta robustissa suunnittelussa. (Yhdistetyssä suunnitelmassa hallitsemattomia
 tekijöitä ei eroteta omaksi ulkotaulukokseen, vaan niitä vaihdellaan yhdessä hallittavien
@@ -793,9 +850,9 @@ tekijöiden kanssa kuten normaalissa \(2^\textit{k}\)-kokeessa).
 Teoreettiset perustelut yhdistettyjen suunnitelmien paremmuudelle ovat
 vakuuttavat mutta jotkut empiiriset kokeet viittaavaat siihen että
 ristikkäiset suunnitelmat johtavat parempiin tuloksiin
-\textcite{kunert2003experiment}.
+\parencite{kunert2003experiment}.
 Osa erimielisyyksistä liittyy siihen, missä määrin ns. vaikutusten
-niukkuusperiaatetta pidetään perusteltuna \textcite{Li2006}.
+niukkuusperiaatetta pidetään perusteltuna \parencite{Li2006}.
 
 \textcite{Bursztyn} vertailevat tutkimuksessaan hajonta
 
