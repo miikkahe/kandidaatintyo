@@ -586,13 +586,13 @@ Jos tekijöitä tiedetään olevan 2, merkintä on
   \begin{tabular}{ | l | c | c | c | }
     \hline
      & \textbf{A} & \textbf{B} & \textbf{C} \\ \hline
-    1 & $-$ & - & -\\ \hline
-    2 & + & - & -\\ \hline
-    3 & - & + & -\\ \hline
-    4 & + & + & -\\ \hline
-    5 & - & - & +\\ \hline
-    6 & + & - & +\\ \hline
-    7 & - & + & +\\ \hline
+    1 & $-$ & $-$ & $-$\\ \hline
+    2 & + & $-$ & $-$\\ \hline
+    3 & $-$ & + & $-$\\ \hline
+    4 & + & + & $-$\\ \hline
+    5 & $-$ & $-$ & +\\ \hline
+    6 & + & $-$ & +\\ \hline
+    7 & $-$ & + & +\\ \hline
     8 & + & + & +\\ \hline
   \end{tabular}
   \end{center}
@@ -709,11 +709,11 @@ kokeissa.
 Hyödyllisintä seulontakokeessa on käyttää osittaista
 yhdistelykoetta, jossa koeajojen määrä pysyy kohtuullisena
 useasta tutkittavasta tekijästä huolimatta.
-Usein hyödyllisin suunnitelma on \(2^\textit{k\textminus p}\)-koe,
-mikä tarkoittaa että koe on \(1/2^\textit(p)\)-osa \(2^\textit{k}\)-kokeesta.
-Esimerkiksi \(2^\textit{3\textminus 1}\)-koe on puolikas \(2^\textit{3}\)-kokeesta,
-jolloin koeajoja on vain 4 (\(2^\textit{3}\)-kokeessa koeajoja on 8).
-\(2^\textit{6\textminus 2}\)-koe on neljäsosa \(2^\textit{6}\)-kokeesta
+Usein hyödyllisin suunnitelma on \(2^\textit{k-p}\)-koe,
+mikä tarkoittaa että koe on \(1/2^\textit{p}\)-osa \(2^\textit{k}\)-kokeesta.
+Esimerkiksi \(2^3-1}\)-koe on puolikas \(2^3\)-kokeesta,
+jolloin koeajoja on vain 4 (\(2^3\)-kokeessa koeajoja on 8).
+\(2^6-2}\)-koe on neljäsosa \(2^6\)-kokeesta
 ja siinä on 16 koeajoa. Yleensä seulontakokeeksi valitaan
 resoluution III tai IV koe \parencite[s.~9]{montgomery2006}.
 On kuitenkin pidettävä mielessä näiden resoluutiotasojen
@@ -738,7 +738,7 @@ piirtää yksinkertaisia kuvia ja kuvaajia.
 
 
 
-\todo{Taguchi, vastepinta, d-optimal, designated design, Box-Meyers}
+\todo{vastepinta, d-optimal, designated design, Box-Meyers}
 
 
 \section{Dispersiovaikutukset, robusti suunnittelu ja laadunhallinta}
@@ -777,7 +777,9 @@ Dispersiovaikutusten etsintään on kolme lähestymistapaa:
 
 Hallitsemattomien tekijöiden sisällyttäminen oli japanilaisen
 Genichi Taguchin (1924 - 2012) idea. Taguchi kehitti menetelmänsä
-1950-luvulla ja vaikutti voimakkaasti laadunhallinnan tekniikan kehittymiseen.
+1950-luvulla ja ne saivat suurta huomiota Yhdysvalloissa 1980-luvulla.
+Taguchi vaikutti siten voimakkaasti laadunhallinnan tekniikan kehittymiseen.
+
 
 Taguchi esitti että vasteen varianssin aiheuttavat usein satunnaiset vaihtelut
 merkittävissä tekijöissä joita ei kuitenkaan voida prosessin aikana hallita.
@@ -787,7 +789,7 @@ Taguchi nimesi nämä hallitsemattomiksi tekijöiksi (noise factor)
 ja erotti ne hallittavista tekijöistä antaen niille kokeessa erityistä
 huomiota. \textcite{Bursztyn} antavat yksinkertaisen esimerkin hallitsemattomien tekijöiden
 sisällyttämisestä: Ajatellaan että koe tehdään tuotteelle jonka
-komponenttiosan leveys on 3 \pm 0,1 mm \todo{näkyykö tämä? ±}
+komponenttiosan leveys on 3 \pm 0,1 mm.
 Toistoon perustuvassa dispersiovaikutusten etsinnässä jokainen
 komponenttiosa valittaisiin satunnaisesti, joten joittenkin leveys
 saattaisi olla 2,9 mm, joittenkin 3,1 mm, mutta useimmat olisivat lähellä
@@ -795,8 +797,24 @@ saattaisi olla 2,9 mm, joittenkin 3,1 mm, mutta useimmat olisivat lähellä
 hallitsemattomaksi tekijäksi ja kokeessa käytettäisiin vain niitä joiden
 leveys on 2,9 mm tai 3,1 mm. Koesuunnitelmaan sisältyisi tällöin
 kaksitasoinen hallitsematon tekijä jonka $-$-taso on 2,9 mm ja
-+-taso 3,1 mm.
++-taso 3,1 mm. \todo{regression slope kuvaaja}.
+\textcite{steinberg1994,Steinberg1998,Berube1998} ovat osoittaneet
+että hallitsemattomien tekijöiden sisällyttäminen kokeeseen voi
+lisätä sen kykyä havaita dispersiovaikutuksia huomattavasti.
+Haittapuolia ovat kuitenkin koeajojen määrän huomattava lisääntyminen
+ja se, että tämänkaltaisia tekijöitä on usein vaikea
+tai kallista hallita kokeen aikana.
 
+Taguchin menetelmässä hallittaville ja hallitsemattomille
+tekijöille valitaan omat erilliset koesuunnitelmansa.
+Hallittavien tekijöiden suunnitelmaa nimitetään \em sisätaulukoksi \em
+ja hallitsemattomien tekijöiden suunnitelmaa \em ulkotaulukoksi \em
+(engl. inner array ja outer array).
+Nämä suunnitelmat
+"ristitään", so. sisätaulukon jokainen tekijätasojen yhdistelmä
+suoritetaan ulkotaulukon joka tekijätasojen yhdistelmällä. Syntyvää
+koesuunnitelmaa sanotaan \em ristikkäiseksi suunnitelmaksi \em
+(engl. crossed array design).
 
 
 
@@ -822,11 +840,14 @@ Toisaalta Taguchi-menetelmiä
 on teollisuudessa käytetty jo kauan (kuten esimerkiksi Six Sigma -strategiassa)
 ja tulosten ja käyttäjien kokemusten perusteella se on usein
 toiminut paremmin kuin tarjotut vaihtoehdot.
+\textcite[s.~554]{Montgomery2012} mukaan vastepintamenetelmä
+(engl. response surface methodology, RSM, josta lisää tuonnempana)
+on luotettavampi ja tehokkaampi vaihtoehto robustien parametrien suunnitteluun.
 
 \textcite{Antony2006} antaa yleistason kuvan Taguchi-menetelmien ja
 perinteisen koesuunnittelun eroista \todo
 
-\textcite{Sleeper2012} jättää menetelmät kokonaan
+\textcite{Sleeper2012} jättää Taguchi-menetelmät kokonaan
 pois kirjastaan sanoen niiden käytön olevan vähentymässä ja tarjoaa tilalle
 vastepintamenetelmiä. Toisaalta monet teollisuuden kanssa työskentelevät
 suosittelevat Taguchi-menetelmiä. Eero Karjalainen (lisää sitaatti) kertoi
@@ -976,15 +997,15 @@ toteutettiin Minitab–ohjelmistolla. Projektissa käytettäväksi
 valmisteltiin yksi suuri erä ruiskupinnoitettuja näytekappaleita
 sekä kappaleita erilaisilla pinnoitteilla.
 
-Mittausjärjestelmää voidaan ajatella \textit{prosessina} johon kuuluu
+Mittausjärjestelmää voidaan ajatella prosessina johon kuuluu
 näytteen valmistelu, abraasiotestin toteuttaminen ja massahäviön
-mittaaminen. Tällöin ongelmaa voidaan lähestyä prosessinhallinnan
-näkökulmasta. Prosessissa on sekä hallittavia parametreja, tässä mm. painava
+mittaaminen. Prosessissa on sekä hallittavia parametreja, tässä mm. painava
 voima, pyörimisaika ja ..., että hallitsemattomia parametrejä, tässä mm.
 ilmankosteus, pyörän pinnan tasaisuus, ... . On myös jokin tietty ulostulo,
 jonka halutaan olevan keskimäärin tietyllä tasolla vaihtelun ollessa
-mahdollisimman pientä. Esimerkkinä voidaan ajatella kemiallista prosessia
-jossa ....
+mahdollisimman pientä. Koesuunnittelun hallittavat ja hallitsemattomat
+tekijät vastaavat näitä hallittavia ja hallitsemattomia parametreja joten
+tässä luvussa niitä on kutsuttu parametreiksi.
 
 Tässä mittausprosessissa hallittavia parametreja ovat mm. painava
 voima, pyörimisaika ja ..., ja hallitsemattomia parametrejä mm.
