@@ -576,6 +576,10 @@ tekijöiden lukumäärä. Ko. kokeelle käytetäänkin nimenä yksinkertaisesti
 merkintää \(2^\textit{k}\)-koe.
 Jos tekijöitä tiedetään olevan 2, merkintä on
 \(2^2\) ja niin edelleen.
+Tekijän vaikutusta voidaan arvioida yksinkertaisesti laskemalla vasteen keskiarvo
+ensin kaikista tuloksista tekijän ollessa matalalla tasollaan ja sen jälkeen
+vasteen keskiarvo tekijän ollessa korkealla tasollaan ja sen jälkeen
+vertailemalla niitä keskenään.
 
 
 
@@ -649,6 +653,17 @@ Analyysin tuloksia on muun muassa:
     enemmän kuin kahden tekijän yhteisvaikutuksia.
 \end{itemize}
 
+Tuloksia voidaan mallintaa matemaattisesti, vasteen ja tekijöiden yhdistävällä
+yhtälöllä. Ensimmäisen kertaluvun malli kuvaa ainoastaan tekijöiden päävaikutuksia:
+\[y = \beta _0 + \beta _{1}x_1 + \beta _{2}x_2 + \varepsilon \]
+missä \textit{y} on vaste, \textit{x}:t tekijöitä, \textit{\beta}:t tuntemattomia parametreja
+jotka arvioidaan kokeen tuloksista ja \textit{\varepsilon} on
+kokeessa tapahtuvaa satunnaista virhettä kuvaava termi.
+Usein lisätään yhteisvaikutusta kuvaava termi, esimerkiksi
+\[y = \beta _0 + \beta _{1}x_1 + \beta _{2}x_2 + \beta _{12}x_{1}x_{2} + \varepsilon \]
+Jolloin voidaan kuvata päävaikutuksia ja kahden tekijän yhteisvaikutuksia.
+
+
 
 Koesuunnitelmaan ja sulauttamiseen liittyy käsite \textit{resoluutio}. Resoluutio
 kertoo kuinka monet vaikutukset suunnitelmassa on sulautettu. Arvo ilmoitetaan
@@ -666,6 +681,8 @@ ja päävaikutukset ovat sulautuneita 3 tekijän yhteisvaikutuksiin;
 keskenään tai toisiina mutta 2 tekijän yhteisvaikutukset ovat sulautuneita 3 tekijän
 yhteisvaikutuksiin ja päävaikutukset ovat sulautuneita 4 tekijän yhteisvaikutuksiin. \parencite[s.~9]{montgomery2006}
 \end{description}
+
+
 
 
 Yksinkertaisin tapa toteuttaa koe on vaihdella yhtä tekijää kerrallaan
@@ -730,7 +747,7 @@ seulonnassa havaitun suuntauksen mukaan.
 Koeajojen jälkeen tulokset analysoidaan tilastollisilla menetelmillä.
 Koesuunnitteluun tarkoitetut ohjelmistot tekevät tämän yleensä
 automaattisesti, mutta osaavat kokeentekijät voivat myös tehdä
-sen itse esimerkiksi python tai R -ohjelmointikielillä.
+analyyseja itse esimerkiksi python tai R -ohjelmointikielillä.
 Usein hyödyllisintä datan tutkimiseen ja tulkintaan on
 piirtää yksinkertaisia kuvia ja kuvaajia.
 
@@ -757,6 +774,7 @@ kutsutaan \em dispersiovaikutukseksi. \em
 Vastaavasti kuten edellä käsitellyissä vaikutuksissa vasteen tasoon,
 myös dispersiovaikutuksissa esiintyy yhden tekijän päävaikutuksia
 ja monen tekijän yhteisvaikutuksia.
+
 
 Kun koesuunnittelulla halutaan saada selville nämä vaikutukset
 ja se ihanteellinen tekijätasojen yhdistelmä jolla varianssi on pienimmillään,
@@ -814,10 +832,24 @@ Nämä suunnitelmat
 "ristitään", so. sisätaulukon jokainen tekijätasojen yhdistelmä
 suoritetaan ulkotaulukon joka tekijätasojen yhdistelmällä. Syntyvää
 koesuunnitelmaa sanotaan \em ristikkäiseksi suunnitelmaksi \em
-(engl. crossed array design).
+(engl. crossed array design). \todo{crossed array kuva, montgomery sivu 557}
+Kuvan sisätaulukko on \(2^4-1}\) osittainen yhdistelykoe ja ulkotaulukko
+yksinkertainen \(2^1}\)-koe. Sisätaulukon 8 koeajoa ja ulkotaulukon 2
+ristiöitynä tekevät yhteensä 16 koeajoa, mutta kuvan kokeessa jokainen
+yhdistelmä myös toistettiin kolmesti, tuloksena 48 havaintoa.
+\todo{Kuvassa montgomery sivu 558 mutta alunperin byrne ja taguchi 1987}
+on toinen esimerkki ristikkäisestä suunnitelmasta. Nyt sisätaulukossa
+on kolmitasoinen resoluution III \(3^4-2}\)-suunnitelma ja ulkotaulukossa \(2^3}\)-suunnitelma,
+yhteensä \(9\times 8=72\) koeajoa. Kuten nähdään, vaikka tekijöitä on vain
+7 ja resoluutio vain III, on koe silti suhteellisen aikaavievä.
+
+Myös Taguchin menetelmä ristikkäisen suunnitelman datan analysointiin on
+omintakeinen.
 
 
-
+Robustien parametrien suunnittelun menetelmissä on muistettava
+huomioida se, onko kokeen vasteena tutkittu tulosten keskiarvoa vai
+varianssia. \todo{lisää asiaatähän}
 
 Taguchin menetelmien perusteista ja pätevyydestä on huomattavasti erimielisyyttä.
 Yleisesti ottaen tilastotieteilijät, matemaatikot ja tutkijat sanovat menetelmän
@@ -903,6 +935,8 @@ Teoreettiset perustelut yhdistettyjen suunnitelmien paremmuudelle ovat
 vakuuttavat mutta jotkut empiiriset kokeet viittaavaat siihen että
 ristikkäiset suunnitelmat johtavat parempiin tuloksiin
 \parencite{kunert2003experiment}.
+\textcite[s.~558]{Montgomery2012} on sitä mieltä että yleensä ottaen yhdistetyt
+suunnitelmat ovat paljon tehokkaampia.
 Osa erimielisyyksistä liittyy siihen, missä määrin ns. vaikutusten
 niukkuusperiaatetta pidetään perusteltuna \parencite{Li2006}.
 
