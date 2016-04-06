@@ -421,10 +421,12 @@ vaikuttavat vasteeseen \textit{y}.
 Joissain tapauksissa on hyödyllisempää
 jakaa tekijät kahteen ryhmään: niihin joita voimme hallita tavallisessa
 prosessissa ja niihin joita ei ole mahdollista tai järkevää yrittää
-hallita. Jälkimmäisiä kutsutaan häiriö- tai kohinatekijöiksi (engl. noise
-factor) ja merkitään usein
+hallita. Jälkimmäisiä on selkeintä kutsua hallitsemattomiksi tekijöiksi
+mutta käytetään myös termejä häiriö- tai kohinatekijä, sillä englanninkieliseksi
+termiksi on vakiintunut noise factor.
+Niitä merkitään usein
 \textit{z\textsubscript{1}, z\textsubscript{2},\ldots,z\textsubscript{n}} kuten
-kuvassa \ref{subfig:malli2}
+kuvassa \ref{subfig:malli2}.
 Vaste \textit{y} \todo{....}
 On yleistä nimetä tutkittavat tekijät malliin A, B, C, jne.
 \textcite[s. 3]{Montgomery2012} antaa kokeen
@@ -436,7 +438,7 @@ tavoitteeksi seuraavat:
 	mahdollisimman lähellä haluttua arvoa
 \item Merkittävien tekijöiden asettaminen siten, että \textit{y}:n vaihtelu on pientä
 \item Merkittävien hallittavien tekijöiden \textit{x} asettaminen siten, että
-	häiriötekijöiden \textit{z} vaikutus on mahdollisimman pieni
+	hallitsemattomien tekijöiden \textit{z} vaikutus on mahdollisimman pieni
 \end{itemize}
 
 Vaikutusten tutkimiseksi tekijöille valitaan kokeessa käytettävät tasot, so.
@@ -447,7 +449,7 @@ Samassa kokeessa eri tekijöillä voi myös olla eri määrä tasoja, esim. 3 te
 \textit{sekatasosuunnitelma} (huom. tekijän käännös, engl.
 mixed-level design).
 Tasojen asettaminen rohkeasti mutta
-järkevästi normaalin alueen ulkopuolelle johtaa usein informatiivisempiin
+järkevästi normaalin alueen ulkopuolelle johtaa usein informatiivisimpiin
 tuloksiin.
 
 %
@@ -584,7 +586,7 @@ Jos tekijöitä tiedetään olevan 2, merkintä on
   \begin{tabular}{ | l | c | c | c | }
     \hline
      & \textbf{A} & \textbf{B} & \textbf{C} \\ \hline
-    1 & - & - & -\\ \hline
+    1 & $-$ & - & -\\ \hline
     2 & + & - & -\\ \hline
     3 & - & + & -\\ \hline
     4 & + & + & -\\ \hline
@@ -653,17 +655,16 @@ kertoo kuinka monet vaikutukset suunnitelmassa on sulautettu. Arvo ilmoitetaan
 roomalaisilla numeroilla ja isompi resoluutio tarkoittaa vähemmän sulautumisia.
 Yleensä on siis järkevää valita suurin mahdollinen resoluutio ottaen huomioon
 koeajojen määrä. Yleisimmät resoluutioarvot ovat III, IV ja V:
-\textcite{minitabres}
 
 \begin{description}
 \item[Resoluutio III] Päävaikutukset eivät ole sulautuneita toisiinsa
-mutta ovat sulautuneita 2 tekijän yhteisvaikutuksiin.
+mutta ovat sulautuneita 2 tekijän yhteisvaikutuksiin;
 \item[Resoluutio IV] Päävaikutukset eivät ole sulautuneita toisiinsa eivätkä 2 tekijän
 yhteisvaikutuksiin mutta jotkut 2 tekijän yhteisvaikutukset ovat sulautuneita toisiinsa
-ja päävaikutukset ovat sulautuneita 3 tekijän yhteisvaikutuksiin.
+ja päävaikutukset ovat sulautuneita 3 tekijän yhteisvaikutuksiin;
 \item[Resoluutio V] Päävaikutukset ja 2 tekijän yhteisvaikutukset eivät ole sulautuneita
 keskenään tai toisiina mutta 2 tekijän yhteisvaikutukset ovat sulautuneita 3 tekijän
-yhteisvaikutuksiin ja päävaikutukset ovat sulautuneita 4 tekijän yhteisvaikutuksiin.
+yhteisvaikutuksiin ja päävaikutukset ovat sulautuneita 4 tekijän yhteisvaikutuksiin. \parencite[s.~9]{montgomery2006}
 \end{description}
 
 
@@ -702,13 +703,27 @@ merkityksettömiä. Tätä ei kuitenkaan voida etukäteen tietää. Tällöin
 on tarkoituksenmukaista tehdä \em seulontakoe, \em
 (engl. screening experiment) jossa mukana on monia tekijöitä
 ja tarkoituksena on tunnistaa niistä ne joilla on suuri vaikutus.
-Hyödyllisintä seulontakokeessa on käyttää osittaista
-yhdistelykoetta, jossa koeajojen määrä pysyy kohtuullisena
-useasta tutkittavasta tekijästä huolimatta.
-
 Tärkeiksi havaitut tekijät tutkitaan perusteellisemmin myöhemmissä
 kokeissa.
 
+Hyödyllisintä seulontakokeessa on käyttää osittaista
+yhdistelykoetta, jossa koeajojen määrä pysyy kohtuullisena
+useasta tutkittavasta tekijästä huolimatta.
+Usein hyödyllisin suunnitelma on \(2^\textit{k\textminus p}\)-koe,
+mikä tarkoittaa että koe on \(1/2^\textit(p)\)-osa \(2^\textit{k}\)-kokeesta.
+Esimerkiksi \(2^\textit{3\textminus 1}\)-koe on puolikas \(2^\textit{3}\)-kokeesta,
+jolloin koeajoja on vain 4 (\(2^\textit{3}\)-kokeessa koeajoja on 8).
+\(2^\textit{6\textminus 2}\)-koe on neljäsosa \(2^\textit{6}\)-kokeesta
+ja siinä on 16 koeajoa. Yleensä seulontakokeeksi valitaan
+resoluution III tai IV koe \parencite[s.~9]{montgomery2006}.
+On kuitenkin pidettävä mielessä näiden resoluutiotasojen
+toimivuuden perustuvan vaikutusten niukkuusperiaatteelle.
+
+Seulontakokeen perusteella jatkokokeita voidaan säätää monella tavalla.
+Tekijöitä voidaan poistaa tai lisätä, niiden vaihteluvälejä voidaan
+säätää sopivammiksi, joitakin seulontakokeen koeajoja voidaan toistaa
+virheen tai jonkin muun syyn vuoksi ja koealuetta voidaan säätää
+seulonnassa havaitun suuntauksen mukaan.
 
 
 
@@ -723,7 +738,7 @@ piirtää yksinkertaisia kuvia ja kuvaajia.
 
 
 
-\todo{ Taguchi, vastepinta, d-optimal, designated design, Box-Meyers}
+\todo{Taguchi, vastepinta, d-optimal, designated design, Box-Meyers}
 
 
 \section{Dispersiovaikutukset, robusti suunnittelu ja laadunhallinta}
@@ -749,21 +764,38 @@ puhutaan \em robustien parametrien suunnittelusta \em (engl. robust
 parameter design, robustien koska prosessista halutaan mahdollisimman
 vastustuskykyinen satunnaisille muutoksille, so. robusti, ja parametrien koska
 teollisuudessa kokeen tekijät ovat yleensä hallittavia prosessiparametreja).
+Dispersiovaikutusten etsintään on kolme lähestymistapaa:
 
+\begin{enumerate}  
+\item  Kokeessa toistetaan koetta samalla hallittavien tekijöiden
+    tasolla josta varianssia voidaan arvioida;
+\item Kokeeseen pakotetaan varianssia sisällyttämällä siihen
+    myös hallitsemattomia tekijöitä;
+\item Dispersiovaikutuksia analysoidaan kokeista joissa ei
+    ole toistoa. \parencite{Bursztyn}
+\end{enumerate}
 
+Hallitsemattomien tekijöiden sisällyttäminen oli japanilaisen
+Genichi Taguchin (1924 - 2012) idea. Taguchi kehitti menetelmänsä
+1950-luvulla ja vaikutti voimakkaasti laadunhallinnan tekniikan kehittymiseen.
 
-
-
-\todo{muista lisätä tähän six sigma ja Taguchi vs. perinteinen, "tieteellinen" DOE}
-
-
-
-
-
-Taguchin menetelmän kohinatekijöitä ja signaali-kohinasuhteen kohinaa
-ei tule sekoittaa. Kohinatekijät ovat prosessiin vaikuttavia tekijöitä,
-kohina taas ulostuloa.
-
+Taguchi esitti että vasteen varianssin aiheuttavat usein satunnaiset vaihtelut
+merkittävissä tekijöissä joita ei kuitenkaan voida prosessin aikana hallita.
+Esimerkkejä ovat ympäristötekijät, kuten ilmankosteus tai lämpötila, ja
+komponenttien mittojen vaihtelu nimellisarvon ympärillä (toleranssit).
+Taguchi nimesi nämä hallitsemattomiksi tekijöiksi (noise factor)
+ja erotti ne hallittavista tekijöistä antaen niille kokeessa erityistä
+huomiota. \textcite{Bursztyn} antavat yksinkertaisen esimerkin hallitsemattomien tekijöiden
+sisällyttämisestä: Ajatellaan että koe tehdään tuotteelle jonka
+komponenttiosan leveys on 3 \pm 0,1 mm \todo{näkyykö tämä? ±}
+Toistoon perustuvassa dispersiovaikutusten etsinnässä jokainen
+komponenttiosa valittaisiin satunnaisesti, joten joittenkin leveys
+saattaisi olla 2,9 mm, joittenkin 3,1 mm, mutta useimmat olisivat lähellä
+3,0 mm. Taguchin menetelmässä komponentin leveys valittaisiin
+hallitsemattomaksi tekijäksi ja kokeessa käytettäisiin vain niitä joiden
+leveys on 2,9 mm tai 3,1 mm. Koesuunnitelmaan sisältyisi tällöin
+kaksitasoinen hallitsematon tekijä jonka $-$-taso on 2,9 mm ja
++-taso 3,1 mm.
 
 
 
@@ -792,16 +824,15 @@ ja tulosten ja käyttäjien kokemusten perusteella se on usein
 toiminut paremmin kuin tarjotut vaihtoehdot.
 
 \textcite{Antony2006} antaa yleistason kuvan Taguchi-menetelmien ja
-perinteisen koesuunnittelun eroista
+perinteisen koesuunnittelun eroista \todo
 
 \textcite{Sleeper2012} jättää menetelmät kokonaan
 pois kirjastaan sanoen niiden käytön olevan vähentymässä ja tarjoaa tilalle
 vastepintamenetelmiä. Toisaalta monet teollisuuden kanssa työskentelevät
 suosittelevat Taguchi-menetelmiä. Eero Karjalainen (lisää sitaatti) kertoi
 sähköpostissa havainneensa Taguchi-menetelmien toimivan hyvin.
-\textcite{Antony2006} katsoo ... \todo
 
-\begin{table}[ht]
+\begin{table}
   \small
   \begin{center}
     \caption{Example of evaporation conditions in a thin film structure.}
@@ -854,8 +885,18 @@ ristikkäiset suunnitelmat johtavat parempiin tuloksiin
 Osa erimielisyyksistä liittyy siihen, missä määrin ns. vaikutusten
 niukkuusperiaatetta pidetään perusteltuna \parencite{Li2006}.
 
-\textcite{Bursztyn} vertailevat tutkimuksessaan hajonta
-
+\textcite{Bursztyn} vertailevat kattavassa tutkimuksessaan menetelmiä dispersiovaikutusten
+seulomiseksi. He päätyvät siihen tulokseen että hallitsemattomien tekijöiden
+sisällyttäminen kokeeseen lisää huomattavasti kokeen kykyä havaita
+dispersiovaikutuksia verrattuna pelkästään kokeiden toistoon perustuvaan
+kokeeseen. He huomasivat että tämä parannus saavutetaan vain
+kun
+tulosten analysointiin
+käytetään vastemallianalyysia, \em ei silloin kun käytetään Taguchin kehittämää
+suorituskykyanalyysia. \em
+Lisäksi \textcite{Bursztyn} päätyivät siihen tulokseen että dispersiovaikutusten
+havaitseminen kokeista joissa ei ole toistoa on hyvin riskialtista eikä
+sen yrittäminen suotavaa.
 
 
 \cite{frey2008adaptive} ovat tutkineet adaptive OFAT (mukautuva OFAT) -menetelmän
