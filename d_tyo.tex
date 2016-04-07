@@ -536,6 +536,7 @@ Koesuunnitteluun ja muihin tilastollisiin menetelmiin on olemassa monia ohjelmis
 kuten Minitab, JMP ja Design-Expert.
 
 \section{Koesuunnitelma}
+\label{doe}
 
 Tekijöiden ja tutkittavan vasteen valitsemisen jälkeen on suunniteltava käytettävät
 tasot, koeajojen määrä ja tekijätasojen yhdistelmät joilla kokeet ajetaan.
@@ -575,7 +576,8 @@ missä \textit{k} on
 tekijöiden lukumäärä. Ko. kokeelle käytetäänkin nimenä yksinkertaisesti
 merkintää \(2^k\)-koe.
 Jos tekijöitä tiedetään olevan 2, merkintä on
-\(2^2\) ja niin edelleen.
+\(2^2\) ja niin edelleen. Vastaavasti jos tekijöille on valittu 3 tasoa,
+kutsutaan tätä \(3^k\)-kokeeksi.
 Tekijän vaikutusta voidaan arvioida yksinkertaisesti laskemalla vasteen keskiarvo
 ensin kaikista tuloksista tekijän ollessa matalalla tasollaan ja sen jälkeen
 vasteen keskiarvo tekijän ollessa korkealla tasollaan ja sen jälkeen
@@ -767,7 +769,7 @@ Yleensä tuotteen ominaisuuksien halutaan pysyvän aina samana kun
 tekijät pidetään tietyillä tasoilla. Tällöin tuote on tasalaatuista, mikä
 on yksi laadunhallinnan tavoitteista.
 
-Vasteen satunnaista vaihtelua sanotaan \em varianssiksi, \em
+Vasteen satunnaista vaihtelua sanotaan \em varianssiksi \em tai \em vaihteluksi, \em
 ja usein tavoitellaan sen minimoimista. Koesuunnittelulla saadaan
 tietoa tekijöiden vaikutuksista vasteen varianssiin. Tällaista vaikutusta
 kutsutaan \em dispersiovaikutukseksi. \em
@@ -798,14 +800,17 @@ Genichi Taguchin (1924 - 2012) idea. Taguchi kehitti menetelmänsä
 1950-luvulla ja ne saivat suurta huomiota Yhdysvalloissa 1980-luvulla.
 Taguchi vaikutti siten voimakkaasti laadunhallinnan tekniikan kehittymiseen.
 
+\subsection{Taguchi-menetelmä}
 
-Taguchi esitti että vasteen varianssin aiheuttavat usein satunnaiset vaihtelut
+Taguchi esitti että vasteen vaihtelun aiheuttavat usein satunnaiset vaihtelut
 merkittävissä tekijöissä joita ei kuitenkaan voida prosessin aikana hallita.
 Esimerkkejä ovat ympäristötekijät, kuten ilmankosteus tai lämpötila, ja
 komponenttien mittojen vaihtelu nimellisarvon ympärillä (toleranssit).
 Taguchi nimesi nämä hallitsemattomiksi tekijöiksi (noise factor)
 ja erotti ne hallittavista tekijöistä antaen niille kokeessa erityistä
-huomiota. \textcite{Bursztyn} antavat yksinkertaisen esimerkin hallitsemattomien tekijöiden
+huomiota. Tavoitteeksi hän asetti niiden hallittavien tekijöiden tasojen
+löytämisen, joilla hallitsemattomien tekijöiden dispersiovaikutus minimoituu.
+\textcite{Bursztyn} antavat yksinkertaisen esimerkin hallitsemattomien tekijöiden
 sisällyttämisestä: Ajatellaan että koe tehdään tuotteelle jonka
 komponenttiosan leveys on \(3 \pm 0,1\) mm.
 Toistoon perustuvassa dispersiovaikutusten etsinnässä jokainen
@@ -815,7 +820,18 @@ saattaisi olla 2,9 mm, joittenkin 3,1 mm, mutta useimmat olisivat lähellä
 hallitsemattomaksi tekijäksi ja kokeessa käytettäisiin vain niitä joiden
 leveys on 2,9 mm tai 3,1 mm. Koesuunnitelmaan sisältyisi tällöin
 kaksitasoinen hallitsematon tekijä jonka $-$-taso on 2,9 mm ja
-+-taso 3,1 mm. \todo{regression slope kuvaaja}.
++-taso 3,1 mm.
+
+Hyvä esimerkki on japanilaisen Ina Tile Companyn tapaus 1950-luvulta,
+kuten \textcite{Kackar1989} kertoo:
+Yhtiön valmistamien tiilien mitat vaihtelivat paljon ja monet olivat sallittujen mittojen ulkopuolella
+jolloin hävikki oli suurta.
+Saatiin selville että vaihtelua aiheutti polttouunin epätasainen lämpötila,
+jota ei kuitenkaan voitu hallita. Taguchi-menetelmillä saatiin selville että
+lisäämällä kalkin määrää savessa, mikä taas oli hallittava tekijä, tiilet saatiin
+vastustuskykyisemmiksi uunin lämpötilan vaihtelulle ja mitat yhdenmukaisemmiksi.
+
+\todo{regression slope kuvaaja}.
 \textcite{steinberg1994,Steinberg1998,Berube1998} ovat osoittaneet
 että hallitsemattomien tekijöiden sisällyttäminen kokeeseen voi
 lisätä sen kykyä havaita dispersiovaikutuksia huomattavasti.
@@ -846,9 +862,45 @@ on kolmitasoinen resoluution III \(3^{4-2}\)-suunnitelma ja ulkotaulukossa \(2^3
 yhteensä \(9\times 8=72\) koeajoa. Kuten nähdään, vaikka tekijöitä on vain
 7 ja resoluutio vain III, on koe silti suhteellisen aikaavievä.
 
-Myös Taguchin menetelmä ristikkäisen suunnitelman datan analysointiin on
-omintakeinen.
+\textcite{shoemaker1991} huomauttavat että tällainen ristikkäinen
+suunnitelma on pohjimmiltaan vain osittainen yhdistelykoe jolla
+on tietty sulautumisrakenne. Kun ristikkäinen suunnitelma esitetään
+näin, puhutaan \em yhdistetystä suunnitelmasta \em (eng. combined
+array). Yhdistetyssä suunnitelmassa hallitsemattomia
+tekijöitä ei siis eroteta omaksi ulkotaulukokseen, vaan niitä vaihdellaan yhdessä hallittavien
+tekijöiden kanssa kuten normaalissa \(2^k\)-kokeessa.
+Yhdistetyn suunnitelman etuna suurempi joustavuus, sillä siinä sulautumisia
+voidaan hallita tarpeen mukaan.
 
+Myös Taguchin menetelmä ristikkäisen suunnitelman datan analysointiin on
+omintakeinen. Hallitsemattomia tekijöitä sisältävien kokeiden analysoinnissa
+käytetään pääasiassa kahta menetelmää, vastemallianalyysia ja suoritemitta-analyysia
+(engl. response model analysis ja performance measure analysis).
+Suoritemitta-analyysi on Taguchin kehittämä menetelmä, jossa
+tulokset joka hallittavien tekijätasojen yhdistelmästä yhdistetään matemaattisesti
+"suoritemitaksi", jonka riippuvuutta hallittavista tekijöistä vuorostaan
+analysoidaan. Käytetyin Taguchin kehittämistä suoritemitoista on
+\em signaali-kohinasuhde, \em joka kuvaa vasteen keskiarvon suuruutta suhteessa
+sen varianssiin. Hallittavien tekijöiden dispersiovaikutukset tunnistetaan
+niiden vaikutuksesta signaali-kohinasuhteeseen, ja robustin suunnittelun
+tavoitteena on maksimoida tämä suhde.
+Suoritemitta-analyysin tarkoituksenmukaisuutta on kritisoitu paljon.
+\textcite{Bursztyn} mukaan sen suurin heikkous on että siinä ei
+erityisesti hyödynnetä kokeeseen sisällytettyjä hallitsemattomia tekijöitä,
+vaikka ne on varta vasten sisällytetty suunnitelmaan. Pohjimmiltaan
+niiden data vain "luhistetaan" matemaattisesti jonka jälkeen analyysi
+tehdään kuten yksinkertaisessa toistoon perustuvassa suunnitelmassa.
+Toinen ongelmallinen seikka on vasteen keskiarvon ja sen varianssin
+väkinäinen yhdistäminen.
+\textcite{box1988,steinberg1994} ovat näyttäneet monia muitakin suoritemitta-analyysin
+haittoja, mm. sen että se voi jättää tunnistamatta dispersiovaikutuksia.
+
+Vastemallianalyysi on vähemmän kiistanalainen analysointimenetelmä.
+Sovellettuna yhdistettyyn suunnitelmaan se on samankaltainen kuin
+\ref{doe} esitetty tulosten mallintamisen
+menetelmä. Esimerkiksi, jos on 2 hallittavaa tekijää, $x_1$ ja $x_2$, ja yksi
+hallitsematon tekijä, $z_1$, malli on
+\[y = \beta _0 + \beta _{1}x_1 + \beta _{2}x_2 + \beta _{12}x_{1}x_{2} + \gamma _{1}z_1 + \delta _{11}x_{1}z_{1} + \delta _{21}x_{2}z_1 + \varepsilon \]
 
 Robustien parametrien suunnittelun menetelmissä on muistettava
 huomioida se, onko kokeen vasteena tutkittu tulosten keskiarvoa vai
@@ -931,10 +983,8 @@ Taguchi-menetelmiin:
 
 \textcite{nair1992} ovat koonneet kattavan paneelikeskustelun Taguchi-menetelmän
 toimivuudesta. Yksi väittelyn ydinkohdista on ristikkäisten ja yhdistettyjen suunnitelmien
-tehokkuudesta robustissa suunnittelussa. (Yhdistetyssä suunnitelmassa hallitsemattomia
-tekijöitä ei eroteta omaksi ulkotaulukokseen, vaan niitä vaihdellaan yhdessä hallittavien
-tekijöiden kanssa kuten normaalissa \(2^k\)-kokeessa).
-Teoreettiset perustelut yhdistettyjen suunnitelmien paremmuudelle ovat
+tehokkuudesta robustissa suunnittelussa.
+Teoreettiset perustelut yhdistettyjen suunnitelmien toimivuudelle ovat
 vakuuttavat mutta jotkut empiiriset kokeet viittaavaat siihen että
 ristikkäiset suunnitelmat johtavat parempiin tuloksiin
 \parencite{kunert2003experiment}.
@@ -951,13 +1001,16 @@ kokeeseen. He huomasivat että tämä parannus saavutetaan vain
 kun
 tulosten analysointiin
 käytetään vastemallianalyysia, \em ei silloin kun käytetään Taguchin kehittämää
-suorituskykyanalyysia. \em
+suoritemitta-analyysia. \em
 Lisäksi \textcite{Bursztyn} päätyivät siihen tulokseen että dispersiovaikutusten
 havaitseminen kokeista joissa ei ole toistoa on hyvin riskialtista eikä
 sen yrittäminen suotavaa.
 
+\subsection{Vastepintamenetelmä}
+
 \todo{lisää vastepinta- ja vastemallianalyysi}
 
+\subsection{Muut menetelmät}
 
 \cite{frey2008adaptive} ovat tutkineet adaptive OFAT (mukautuva OFAT) -menetelmän
 toimivuutta robustissa suunnittelussa. Menetelmä on kuten edellä mainittu
