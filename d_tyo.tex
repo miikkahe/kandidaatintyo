@@ -570,10 +570,10 @@ toteutetaan, on kyseessä full factorial design eli täysyhdistelykoe (huom.
 tekijän suomennos). Tällainen koe arvioi kaikkien tekijöiden kaikki yksittäis-
 ja yhdistelmävaikutukset vasteeseen. Kattavuuden hintana on koeajojen
 eksponentiaalisesti kasvava määrä kun tekijöitä lisätään kokeeseen: jos kaikilla
-tekijöillä on 2 tasoa, on koeajojen määrä \(2^\textit{k}\),
+tekijöillä on 2 tasoa, on koeajojen määrä \(2^k\),
 missä \textit{k} on
 tekijöiden lukumäärä. Ko. kokeelle käytetäänkin nimenä yksinkertaisesti
-merkintää \(2^\textit{k}\)-koe.
+merkintää \(2^k\)-koe.
 Jos tekijöitä tiedetään olevan 2, merkintä on
 \(2^2\) ja niin edelleen.
 Tekijän vaikutusta voidaan arvioida yksinkertaisesti laskemalla vasteen keskiarvo
@@ -656,7 +656,7 @@ Analyysin tuloksia on muun muassa:
 Tuloksia voidaan mallintaa matemaattisesti, vasteen ja tekijöiden yhdistävällä
 yhtälöllä. Ensimmäisen kertaluvun malli kuvaa ainoastaan tekijöiden päävaikutuksia:
 \[y = \beta _0 + \beta _{1}x_1 + \beta _{2}x_2 + \varepsilon \]
-missä \textit{y} on vaste, \textit{x}:t tekijöitä, \textit{\beta}:t tuntemattomia parametreja
+missä \textit{y} on vaste, \textit{x}:t tekijöitä, \textit{ \beta }:t tuntemattomia parametreja
 jotka arvioidaan kokeen tuloksista ja \textit{\varepsilon} on
 kokeessa tapahtuvaa satunnaista virhettä kuvaava termi.
 Usein lisätään yhteisvaikutusta kuvaava termi, esimerkiksi
@@ -726,11 +726,11 @@ kokeissa.
 Hyödyllisintä seulontakokeessa on käyttää osittaista
 yhdistelykoetta, jossa koeajojen määrä pysyy kohtuullisena
 useasta tutkittavasta tekijästä huolimatta.
-Usein hyödyllisin suunnitelma on \(2^\textit{k-p}\)-koe,
-mikä tarkoittaa että koe on \(1/2^\textit{p}\)-osa \(2^\textit{k}\)-kokeesta.
-Esimerkiksi \(2^3-1}\)-koe on puolikas \(2^3\)-kokeesta,
+Usein hyödyllisin suunnitelma on \(2^{k - p}\)-koe,
+mikä tarkoittaa että koe on \(1/2^p\)-osa \(2^k\)-kokeesta.
+Esimerkiksi \(2^{3 - 1}\)-koe on puolikas \(2^3\)-kokeesta,
 jolloin koeajoja on vain 4 (\(2^3\)-kokeessa koeajoja on 8).
-\(2^6-2}\)-koe on neljäsosa \(2^6\)-kokeesta
+\(2^{6-2}\)-koe on neljäsosa \(2^6\)-kokeesta
 ja siinä on 16 koeajoa. Yleensä seulontakokeeksi valitaan
 resoluution III tai IV koe \parencite[s.~9]{montgomery2006}.
 On kuitenkin pidettävä mielessä näiden resoluutiotasojen
@@ -807,7 +807,7 @@ Taguchi nimesi nämä hallitsemattomiksi tekijöiksi (noise factor)
 ja erotti ne hallittavista tekijöistä antaen niille kokeessa erityistä
 huomiota. \textcite{Bursztyn} antavat yksinkertaisen esimerkin hallitsemattomien tekijöiden
 sisällyttämisestä: Ajatellaan että koe tehdään tuotteelle jonka
-komponenttiosan leveys on 3 \pm 0,1 mm.
+komponenttiosan leveys on \(3 \pm 0,1\) mm.
 Toistoon perustuvassa dispersiovaikutusten etsinnässä jokainen
 komponenttiosa valittaisiin satunnaisesti, joten joittenkin leveys
 saattaisi olla 2,9 mm, joittenkin 3,1 mm, mutta useimmat olisivat lähellä
@@ -821,7 +821,10 @@ että hallitsemattomien tekijöiden sisällyttäminen kokeeseen voi
 lisätä sen kykyä havaita dispersiovaikutuksia huomattavasti.
 Haittapuolia ovat kuitenkin koeajojen määrän huomattava lisääntyminen
 ja se, että tämänkaltaisia tekijöitä on usein vaikea
-tai kallista hallita kokeen aikana.
+tai kallista hallita kokeen aikana. Luonnollisesti jotta merkittävät hallitsemattomat
+tekijät voidaan sisällyttää kokeeseen, on ne tunnistettava oikein jo
+suunnitteluvaiheessa, mikä vaatii usein erinomaista prosessin tuntemusta
+eikä suinkaan ole itsestäänselvää.
 
 Taguchin menetelmässä hallittaville ja hallitsemattomille
 tekijöille valitaan omat erilliset koesuunnitelmansa.
@@ -833,13 +836,13 @@ Nämä suunnitelmat
 suoritetaan ulkotaulukon joka tekijätasojen yhdistelmällä. Syntyvää
 koesuunnitelmaa sanotaan \em ristikkäiseksi suunnitelmaksi \em
 (engl. crossed array design). \todo{crossed array kuva, montgomery sivu 557}
-Kuvan sisätaulukko on \(2^4-1}\) osittainen yhdistelykoe ja ulkotaulukko
-yksinkertainen \(2^1}\)-koe. Sisätaulukon 8 koeajoa ja ulkotaulukon 2
+Kuvan sisätaulukko on \(2^{4-1}\) osittainen yhdistelykoe ja ulkotaulukko
+yksinkertainen \(2^1\)-koe. Sisätaulukon 8 koeajoa ja ulkotaulukon 2
 ristiöitynä tekevät yhteensä 16 koeajoa, mutta kuvan kokeessa jokainen
 yhdistelmä myös toistettiin kolmesti, tuloksena 48 havaintoa.
 \todo{Kuvassa montgomery sivu 558 mutta alunperin byrne ja taguchi 1987}
 on toinen esimerkki ristikkäisestä suunnitelmasta. Nyt sisätaulukossa
-on kolmitasoinen resoluution III \(3^4-2}\)-suunnitelma ja ulkotaulukossa \(2^3}\)-suunnitelma,
+on kolmitasoinen resoluution III \(3^{4-2}\)-suunnitelma ja ulkotaulukossa \(2^3\)-suunnitelma,
 yhteensä \(9\times 8=72\) koeajoa. Kuten nähdään, vaikka tekijöitä on vain
 7 ja resoluutio vain III, on koe silti suhteellisen aikaavievä.
 
@@ -849,7 +852,7 @@ omintakeinen.
 
 Robustien parametrien suunnittelun menetelmissä on muistettava
 huomioida se, onko kokeen vasteena tutkittu tulosten keskiarvoa vai
-varianssia. \todo{lisää asiaatähän}
+varianssia. \todo{lisää asiaa tähän}
 
 Taguchin menetelmien perusteista ja pätevyydestä on huomattavasti erimielisyyttä.
 Yleisesti ottaen tilastotieteilijät, matemaatikot ja tutkijat sanovat menetelmän
@@ -930,7 +933,7 @@ Taguchi-menetelmiin:
 toimivuudesta. Yksi väittelyn ydinkohdista on ristikkäisten ja yhdistettyjen suunnitelmien
 tehokkuudesta robustissa suunnittelussa. (Yhdistetyssä suunnitelmassa hallitsemattomia
 tekijöitä ei eroteta omaksi ulkotaulukokseen, vaan niitä vaihdellaan yhdessä hallittavien
-tekijöiden kanssa kuten normaalissa \(2^\textit{k}\)-kokeessa).
+tekijöiden kanssa kuten normaalissa \(2^k\)-kokeessa).
 Teoreettiset perustelut yhdistettyjen suunnitelmien paremmuudelle ovat
 vakuuttavat mutta jotkut empiiriset kokeet viittaavaat siihen että
 ristikkäiset suunnitelmat johtavat parempiin tuloksiin
@@ -952,6 +955,8 @@ suorituskykyanalyysia. \em
 Lisäksi \textcite{Bursztyn} päätyivät siihen tulokseen että dispersiovaikutusten
 havaitseminen kokeista joissa ei ole toistoa on hyvin riskialtista eikä
 sen yrittäminen suotavaa.
+
+\todo{lisää vastepinta- ja vastemallianalyysi}
 
 
 \cite{frey2008adaptive} ovat tutkineet adaptive OFAT (mukautuva OFAT) -menetelmän
