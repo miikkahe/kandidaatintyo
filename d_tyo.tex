@@ -8,6 +8,8 @@
 \usepackage{caption}
 \usepackage{subcaption}
 
+\usepackage{booktabs}
+
 % Note that you must choose either Finnish or English here and there in this
 % file.
 % Other options for document class
@@ -951,8 +953,12 @@ Toisaalta Taguchi-menetelmiä
 on teollisuudessa käytetty jo kauan (kuten esimerkiksi Six Sigma -strategiassa)
 ja tulosten ja käyttäjien kokemusten perusteella se on usein
 toiminut paremmin kuin tarjotut vaihtoehdot.
+\textcite{Berube1998} huomauttavat että osa ongelmaa on se että
+monet käytetyistä tulosten analysointimenetelmistä eivät ole
+erityisesti käyttäneet hyväksi ristikkäisen suunnitelman ja ulkotaulukon
+rakennetta.
 \textcite[s.~554]{Montgomery2012} mukaan vastepintamenetelmä
-(lisää \ref{vastep})
+(josta lisää luvussa \ref{vastep})
 on luotettavampi ja tehokkaampi vaihtoehto robustien parametrien suunnitteluun.
 
 \textcite{Antony2006} antaa yleistason kuvan Taguchi-menetelmien ja
@@ -1075,9 +1081,40 @@ kuitenkin paremmiksi.
 \label{ch:grr}
 %-------------------------------------------------------------------------------
 
-\todo
 
+Missä tahansa mittauksia sisältävässä tapahtumassa osa mitatuista
+eroista johtuu varsinaisesta mitattavien kohteiden eroista mutta osa itse mittausprosessista
+tai mittalaitteista. \em Mittajärjestelmäanalyysin \em tarkoituksena
+on näiden osien suhteen selvittäminen ja tulosten vaihtelun syiden erittely.
+Tulosten perusteella voidaan päätellä onko mittalaite käyttökelpoinen.
 
+Monet mittajärjestelmäanalyysit toteutetaan niin että kohde mitataan
+mittalaitteella useita kertoja käyttäjän, mittausmenetelmän tai jonkin muun
+tekijän vaihtuessa. Havaittu vaihtelu jaetaan kahteen osaan, toistettavuuteen
+ja toisinnettavuuteen (engl. repeatability ja reproducibility). Toistettavuus
+kuvaa mittalaitteesta aiheutuvaa vaihtelua kun samaa
+kohdetta mitataan käyttäjän, menetelmän jne. pysyessä samana. Toisinnettavuus
+on eri käyttäjistä, menetelmistä jne. aiheutuvaa vaihtelua.
+Tuloksia tutkitaan tilastollisella \em varianssianalyysilla \em (ANOVA, analysis of variance).
+Tämänkaltaisia mittajärjestelmäanalyyseja kutsutaan GR\&R-analyyseiksi
+(gauge tai gage repeatability and reproducibility).
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[]
+\centering
+\caption{GR\&R-analyysin parametreja}
+\label{table:grr}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Parametri                           & Määritelmä                                              \\ \midrule
+$\gamma _P$                         & Kohteen varianssi                                       \\
+$\gamma _M$                         & Mittajärjestelmän varianssi                             \\
+$\gamma _T = \gamma _P + \gamma _M$ & Vasteen kokonaisvarianssi                               \\
+$\rho _P = \gamma _P / \gamma _T$   & Kohteen varianssin osuus kokonaisvarianssista           \\
+$\rho _M = \gamma _M / \gamma _T$   & Mittajärjestelmän varianssin osuus kokonaisvarianssista
+\end{tabular}
+\end{table}
 
 Yleensä mittausjärjestelmäanalyysissa itse mittalaite oletetaan
 yksinkertaiseksi, esimerkkinä mittanauha tai sähkövirtamittari.
@@ -1095,7 +1132,8 @@ työkalujen osalta, eli varianssianalyysin. Prosessin muuttujien
 hajontavaikutuksen laskemiseen on muitakin matemaattisia työkaluja,
 kuten Box-Meyer-menetelmä, joka tosin vaatii DOE-suunnitelman?
 
-
+\todo{onko muuten grr jossa etsitään varianssiin vaikuttavia tekijöitä l. dispersiovaikutuksia
+sama kuin dispersiovaikutus-seulonta?}
 
 
 %-------------------------------------------------------------------------------
