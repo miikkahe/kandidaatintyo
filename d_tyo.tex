@@ -579,7 +579,8 @@ tekijöiden lukumäärä. Ko. kokeelle käytetäänkin nimenä yksinkertaisesti
 merkintää \(2^k\)-koe.
 Jos tekijöitä tiedetään olevan 2, merkintä on
 \(2^2\) ja niin edelleen. Vastaavasti jos tekijöille on valittu 3 tasoa,
-kutsutaan tätä \(3^k\)-kokeeksi.
+kutsutaan tätä \(3^k\)-kokeeksi, ja jos valittuja tasoja on \textit{I},
+niin kutsutaan sitä \(I^k\)-kokeeksi.
 
 Tekijän vaikutusta voidaan arvioida yksinkertaisesti laskemalla vasteen keskiarvo
 ensin kaikista tuloksista tekijän ollessa matalalla tasollaan ja sen jälkeen
@@ -637,7 +638,7 @@ osittainen yhdistelykoe antaa tyydyttävästi tietoa yhteisvaikutuksista
 kohtuullisella koemäärällä.
 
 Osittaisista yhdistelykokeista käytetään merkintää \(I^{k - p}\)
-mikä tarkoittaa että koe on \(1/i^p\)-osa \(I^k\)-kokeesta.
+mikä tarkoittaa että koe on \(1/I^p\)-osa \(I^k\)-kokeesta.
 Esimerkiksi \(2^{3 - 1}\)-koe on puolikas \(2^3\)-kokeesta,
 jolloin koeajoja on vain 4 (\(2^3\)-kokeessa koeajoja on 8).
 \(2^{6-2}\)-koe on neljäsosa \(2^6\)-kokeesta
@@ -838,15 +839,15 @@ huomiota. Tavoitteeksi hän asetti niiden hallittavien tekijöiden tasojen
 löytämisen, joilla ei-hallittavien tekijöiden dispersiovaikutus minimoituu.
 \textcite{Bursztyn} antavat yksinkertaisen esimerkin ei-hallittavien tekijöiden
 sisällyttämisestä: Ajatellaan että koe tehdään tuotteelle jonka
-komponenttiosan leveys on \(3 \pm 0,1\) mm.
+komponenttiosan leveys on \(3,0 \pm 0,1\) mm.
 Toistoon perustuvassa dispersiovaikutusten etsinnässä jokainen
 komponenttiosa valittaisiin satunnaisesti, joten joittenkin leveys
-saattaisi olla 2,9 mm, joittenkin 3,1 mm, mutta useimmat olisivat lähellä
+saattaisi olla 2,9 mm, joittenkin 3,1 mm, mutta monet olisivat lähellä
 3,0 mm. Taguchin menetelmässä komponentin leveys valittaisiin
 ei-hallittavaksi tekijäksi ja kokeessa käytettäisiin vain niitä joiden
 leveys on 2,9 mm tai 3,1 mm. Koesuunnitelmaan sisältyisi tällöin
-kaksitasoinen ei-hallittava tekijä jonka $-$-taso on 2,9 mm ja
-+-taso 3,1 mm.
+kaksitasoinen ei-hallittava tekijä jonka matala taso on 2,9 mm ja
+korkea taso 3,1 mm.
 
 Hyvä esimerkki on japanilaisen Ina Tile Companyn tapaus 1950-luvulta,
 kuten \textcite{Kackar1989} kertoo:
@@ -1055,7 +1056,7 @@ $2^k$-seulontakokeessa tunnistettuja tekijöitä optimoidaan vastepintamenetelm�
 \subsection{Muut menetelmät}
 
 \cite{frey2008adaptive} ovat tutkineet adaptive OFAT (mukautuva OFAT) -menetelmän
-toimivuutta robustissa suunnittelussa. Menetelmä on kuten \ref{doe} mainittu
+toimivuutta robustissa suunnittelussa. Menetelmä on kuten kappaleessa \ref{doe} mainittu
 aOFAT, erotuksena se että joka hallittavan tekijän tason vaihdon
 jälkeen ajetaan ei-hallittaville tekijöille resoluutio III -tasoinen
 yhdistelykoe. Johtopäätöksenä he esittävät että OFAT on tässäkin tilanteessa
