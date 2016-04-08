@@ -421,7 +421,7 @@ vaikuttavat vasteeseen \textit{y}.
 Joissain tapauksissa on hyödyllisempää
 jakaa tekijät kahteen ryhmään: niihin joita voimme hallita tavallisessa
 prosessissa ja niihin joita ei ole mahdollista tai järkevää yrittää
-hallita. Jälkimmäisiä on selkeintä kutsua hallitsemattomiksi tekijöiksi
+hallita. Jälkimmäisiä on selkeintä kutsua ei-hallittaviksi tekijöiksi
 mutta käytetään myös termejä häiriö- tai kohinatekijä, sillä englanninkieliseksi
 termiksi on vakiintunut noise factor.
 Niitä merkitään usein
@@ -438,7 +438,7 @@ tavoitteeksi seuraavat:
 	mahdollisimman lähellä haluttua arvoa
 \item Merkittävien tekijöiden asettaminen siten, että \textit{y}:n vaihtelu on pientä
 \item Merkittävien hallittavien tekijöiden \textit{x} asettaminen siten, että
-	hallitsemattomien tekijöiden \textit{z} vaikutus on mahdollisimman pieni
+	ei-hallittavien tekijöiden \textit{z} vaikutus on mahdollisimman pieni
 \end{itemize}
 
 Vaikutusten tutkimiseksi tekijöille valitaan kokeessa käytettävät tasot, so.
@@ -483,7 +483,7 @@ tuloksiin.
     %\hspace{0.05\textwidth}      % ii) Another ugly way to hack space
     % ~~                          % iii) Yet another...
 
-    \subfigure[Prosessin tekijät jaettuna hallittaviin ja hallitsemattomiin.]{
+    \subfigure[Prosessin tekijät jaettuna hallittaviin ja ei-hallittaviin.]{
       \includegraphics[width=\textwidth]{prosessimalli2}
       \label{subfig:malli2}}
     \caption[Prosessin malleja]{Prosessin malleja. Koesuunnittelussa on joskus
@@ -504,7 +504,7 @@ lopputuloksen maku, mutta vaikka käytössä olisi maailman parhaat makutuomarit
 on tämä mitta paljon subjektiivisempi kuin teollisuudessa ja tieteessä käytetyt.
 Oletetaan siis kuvitteellinen objektiivinen makumittari. Makumittarin tulokseen
 vaikuttaa moni tekijä, näistä voimme hallita esim. aineksien osuuksia ja
-paistolämpötilaa ja -aikaa. Moni hallitsematon häiriötekijä voi myös vaikuttaa
+paistolämpötilaa ja -aikaa. Moni ei-hallittava häiriötekijä voi myös vaikuttaa
 tulokseen, esim. uunin lämpötilan vaihtelu, epätarkat mittakulhot, huoneen
 ilmankosteus ja viereisen asunnon remontista aiheutuva tärinä.
 Lämpötilalle voidaan valita esim. matalaksi tasoksi 150 \celsius  ja korkeaksi
@@ -558,7 +558,7 @@ suunnan ja jokainen kulma on yksi koeajo.
 Yksinkertaisinta on muuttaa yhtä tekijää kerrallaan. Koesuunnittelu kuitenkin syntyi
 osaksi juuri tarjoamaan vaihtoehtoja tälle hitaalle menetelmälle. On mahdollista luoda
 koesuunnitelmia jotka vaativat vähemmän koeajoja kuin yksi tekijä kerrallaan -metodi,
-ja jotka antavat tietoa myös tekijöiden yhteisvaikutuksista.
+ja jotka kuitenkin antavat tietoa myös tekijöiden yhteisvaikutuksista.
 Koesuunnitelmia on kehitetty useita erilaisia eri tarkoituksiin.
 Suunnitelma on perinteisesti valittu apuna tietämys
 tutkinnan kohteesta, tavoitteista ja koesuunnittelumenetelmistä.
@@ -578,10 +578,15 @@ merkintää \(2^k\)-koe.
 Jos tekijöitä tiedetään olevan 2, merkintä on
 \(2^2\) ja niin edelleen. Vastaavasti jos tekijöille on valittu 3 tasoa,
 kutsutaan tätä \(3^k\)-kokeeksi.
+
 Tekijän vaikutusta voidaan arvioida yksinkertaisesti laskemalla vasteen keskiarvo
 ensin kaikista tuloksista tekijän ollessa matalalla tasollaan ja sen jälkeen
 vasteen keskiarvo tekijän ollessa korkealla tasollaan ja sen jälkeen
-vertailemalla niitä keskenään.
+vertailemalla niitä keskenään. Kun koesuunnitelma sallii tällaisen matemaattisesti
+riippumattoman tarkastelun joka tekijän vaikutuksista, sanotaan
+sen olevan \em ortogonaalinen.\em Toisin sanoen matemaattisessa
+tarkastelussa koesuunnitelman joka sarakkeen (eli tekijän) välinen kovarianssi
+on nolla \parencite{barker2005}.
 
 
 
@@ -627,7 +632,16 @@ Käytetyin koesuunnitelma on \textit{osittainen yhdistelykoe} (engl. fractional 
 design), useimmiten 2 tai 3:lla tekijätasolla. Osittaisessa kokeessa ei ajeta
 kaikkia mahdollisia yhdistelmiä, vaan vain tietyt tarkoituksella valitut. Hyvä
 osittainen yhdistelykoe antaa tyydyttävästi tietoa yhteisvaikutuksista
-kohtuullisella koemäärällä. Pienempi koemäärä johtaa tekijöiden vaikutusten
+kohtuullisella koemäärällä.
+
+Osittaisista yhdistelykokeista käytetään merkintää \(I^{k - p}\)
+mikä tarkoittaa että koe on \(1/i^p\)-osa \(I^k\)-kokeesta.
+Esimerkiksi \(2^{3 - 1}\)-koe on puolikas \(2^3\)-kokeesta,
+jolloin koeajoja on vain 4 (\(2^3\)-kokeessa koeajoja on 8).
+\(2^{6-2}\)-koe on neljäsosa \(2^6\)-kokeesta
+ja siinä on 16 koeajoa.
+
+Pienempi koemäärä johtaa tekijöiden vaikutusten
 \textit{sulautumiseen}
 (engl. \textit{aliasing} tai \textit{confounding}), mikä tarkoittaa että joitain
 vaikutuksia ei voida erottaa toisistaan. Esimerkiksi tekijä A ja yhteisvaikutus BCD
@@ -728,21 +742,27 @@ kokeissa.
 Hyödyllisintä seulontakokeessa on käyttää osittaista
 yhdistelykoetta, jossa koeajojen määrä pysyy kohtuullisena
 useasta tutkittavasta tekijästä huolimatta.
-Usein hyödyllisin suunnitelma on \(2^{k - p}\)-koe,
-mikä tarkoittaa että koe on \(1/2^p\)-osa \(2^k\)-kokeesta.
-Esimerkiksi \(2^{3 - 1}\)-koe on puolikas \(2^3\)-kokeesta,
-jolloin koeajoja on vain 4 (\(2^3\)-kokeessa koeajoja on 8).
-\(2^{6-2}\)-koe on neljäsosa \(2^6\)-kokeesta
-ja siinä on 16 koeajoa. Yleensä seulontakokeeksi valitaan
+Usein hyödyllisin suunnitelma on kaksitasoinen \(2^{k - p}\)-koe.
+Yleensä seulontakokeeksi valitaan
 resoluution III tai IV koe \parencite[s.~9]{montgomery2006}.
 On kuitenkin pidettävä mielessä näiden resoluutiotasojen
 toimivuuden perustuvan vaikutusten niukkuusperiaatteelle.
+
+\textcite{plackett1946} esittivät Plackett-Burman-suunnitelmat,
+jotka ovat erittäin vähän koeajoja sisältäviä osittaisia yhdistelykokeita
+ja soveltuvat siten hyvin käytettäväksi seulontaan. Esimerkiksi 12 koeajon
+PB-suunnitelmassa voidaan tutkia 11 tekijää. Näissä suunnitelmissa
+päävaikutukset ovat kuitenkin voimakkaasti sulautuneet yhteisvaikutuksiin.
+
+
 
 Seulontakokeen perusteella jatkokokeita voidaan säätää monella tavalla.
 Tekijöitä voidaan poistaa tai lisätä, niiden vaihteluvälejä voidaan
 säätää sopivammiksi, joitakin seulontakokeen koeajoja voidaan toistaa
 virheen tai jonkin muun syyn vuoksi ja koealuetta voidaan säätää
 seulonnassa havaitun suuntauksen mukaan.
+\textcite{box1993} ovat esittäneet Bayesilaisen menetelmän
+aktiivisten tekijöiden tunnistamiseen seulontakokeessa.
 
 
 
@@ -757,7 +777,7 @@ piirtää yksinkertaisia kuvia ja kuvaajia.
 
 
 
-\todo{vastepinta, d-optimal, designated design, Box-Meyers}
+\todo{d-optimal, designated design, Box-Meyers}
 
 
 \section{Dispersiovaikutukset, robusti suunnittelu ja laadunhallinta}
@@ -790,12 +810,16 @@ Dispersiovaikutusten etsintään on kolme lähestymistapaa:
 \item  Kokeessa toistetaan koetta samalla hallittavien tekijöiden
     tasolla josta varianssia voidaan arvioida;
 \item Kokeeseen pakotetaan varianssia sisällyttämällä siihen
-    myös hallitsemattomia tekijöitä;
+    myös ei-hallittavia tekijöitä;
 \item Dispersiovaikutuksia analysoidaan kokeista joissa ei
     ole toistoa. \parencite{Bursztyn}
 \end{enumerate}
 
-Hallitsemattomien tekijöiden sisällyttäminen oli japanilaisen
+Ensimmäistä ja kolmatta lähestymistapaa kutsutaan joskus
+\em passiiviseksi \em robustiksi suunnitteluksi ja toista lähestymistapaa
+\em aktiiviseksi \em robustiksi suunnitteluksi.
+
+Ei-hallittavien tekijöiden sisällyttäminen oli japanilaisen
 Genichi Taguchin (1924 - 2012) idea. Taguchi kehitti menetelmänsä
 1950-luvulla ja ne saivat suurta huomiota Yhdysvalloissa 1980-luvulla.
 Taguchi vaikutti siten voimakkaasti laadunhallinnan tekniikan kehittymiseen.
@@ -806,20 +830,20 @@ Taguchi esitti että vasteen vaihtelun aiheuttavat usein satunnaiset vaihtelut
 merkittävissä tekijöissä joita ei kuitenkaan voida prosessin aikana hallita.
 Esimerkkejä ovat ympäristötekijät, kuten ilmankosteus tai lämpötila, ja
 komponenttien mittojen vaihtelu nimellisarvon ympärillä (toleranssit).
-Taguchi nimesi nämä hallitsemattomiksi tekijöiksi (noise factor)
+Taguchi nimesi nämä ei-hallittaviksi tekijöiksi (noise factor)
 ja erotti ne hallittavista tekijöistä antaen niille kokeessa erityistä
 huomiota. Tavoitteeksi hän asetti niiden hallittavien tekijöiden tasojen
-löytämisen, joilla hallitsemattomien tekijöiden dispersiovaikutus minimoituu.
-\textcite{Bursztyn} antavat yksinkertaisen esimerkin hallitsemattomien tekijöiden
+löytämisen, joilla ei-hallittavien tekijöiden dispersiovaikutus minimoituu.
+\textcite{Bursztyn} antavat yksinkertaisen esimerkin ei-hallittavien tekijöiden
 sisällyttämisestä: Ajatellaan että koe tehdään tuotteelle jonka
 komponenttiosan leveys on \(3 \pm 0,1\) mm.
 Toistoon perustuvassa dispersiovaikutusten etsinnässä jokainen
 komponenttiosa valittaisiin satunnaisesti, joten joittenkin leveys
 saattaisi olla 2,9 mm, joittenkin 3,1 mm, mutta useimmat olisivat lähellä
 3,0 mm. Taguchin menetelmässä komponentin leveys valittaisiin
-hallitsemattomaksi tekijäksi ja kokeessa käytettäisiin vain niitä joiden
+ei-hallittavaksi tekijäksi ja kokeessa käytettäisiin vain niitä joiden
 leveys on 2,9 mm tai 3,1 mm. Koesuunnitelmaan sisältyisi tällöin
-kaksitasoinen hallitsematon tekijä jonka $-$-taso on 2,9 mm ja
+kaksitasoinen ei-hallittava tekijä jonka $-$-taso on 2,9 mm ja
 +-taso 3,1 mm.
 
 Hyvä esimerkki on japanilaisen Ina Tile Companyn tapaus 1950-luvulta,
@@ -833,19 +857,19 @@ vastustuskykyisemmiksi uunin lämpötilan vaihtelulle ja mitat yhdenmukaisemmiks
 
 \todo{regression slope kuvaaja}.
 \textcite{steinberg1994,Steinberg1998,Berube1998} ovat osoittaneet
-että hallitsemattomien tekijöiden sisällyttäminen kokeeseen voi
+että ei-hallitavien tekijöiden sisällyttäminen kokeeseen voi
 lisätä sen kykyä havaita dispersiovaikutuksia huomattavasti.
 Haittapuolia ovat kuitenkin koeajojen määrän huomattava lisääntyminen
 ja se, että tämänkaltaisia tekijöitä on usein vaikea
-tai kallista hallita kokeen aikana. Luonnollisesti jotta merkittävät hallitsemattomat
+tai kallista hallita kokeen aikana. Luonnollisesti jotta merkittävät ei-hallittavat
 tekijät voidaan sisällyttää kokeeseen, on ne tunnistettava oikein jo
 suunnitteluvaiheessa, mikä vaatii usein erinomaista prosessin tuntemusta
 eikä suinkaan ole itsestäänselvää.
 
-Taguchin menetelmässä hallittaville ja hallitsemattomille
+Taguchin menetelmässä hallittaville ja ei-hallittaville
 tekijöille valitaan omat erilliset koesuunnitelmansa.
 Hallittavien tekijöiden suunnitelmaa nimitetään \em sisätaulukoksi \em
-ja hallitsemattomien tekijöiden suunnitelmaa \em ulkotaulukoksi \em
+ja ei-hallittavien tekijöiden suunnitelmaa \em ulkotaulukoksi \em
 (engl. inner array ja outer array).
 Nämä suunnitelmat
 "ristitään", so. sisätaulukon jokainen tekijätasojen yhdistelmä
@@ -866,14 +890,14 @@ yhteensä \(9\times 8=72\) koeajoa. Kuten nähdään, vaikka tekijöitä on vain
 suunnitelma on pohjimmiltaan vain osittainen yhdistelykoe jolla
 on tietty sulautumisrakenne. Kun ristikkäinen suunnitelma esitetään
 näin, puhutaan \em yhdistetystä suunnitelmasta \em (eng. combined
-array). Yhdistetyssä suunnitelmassa hallitsemattomia
+array). Yhdistetyssä suunnitelmassa ei-hallittavia
 tekijöitä ei siis eroteta omaksi ulkotaulukokseen, vaan niitä vaihdellaan yhdessä hallittavien
 tekijöiden kanssa kuten normaalissa \(2^k\)-kokeessa.
-Yhdistetyn suunnitelman etuna suurempi joustavuus, sillä siinä sulautumisia
+Yhdistetyn suunnitelman etuna on suurempi joustavuus, sillä siinä sulautumisia
 voidaan hallita tarpeen mukaan.
 
 Myös Taguchin menetelmä ristikkäisen suunnitelman datan analysointiin on
-omintakeinen. Hallitsemattomia tekijöitä sisältävien kokeiden analysoinnissa
+omintakeinen. Ei-hallittavia tekijöitä sisältävien kokeiden analysoinnissa
 käytetään pääasiassa kahta menetelmää, vastemallianalyysia ja suoritemitta-analyysia
 (engl. response model analysis ja performance measure analysis).
 Suoritemitta-analyysi on Taguchin kehittämä menetelmä, jossa
@@ -886,8 +910,8 @@ niiden vaikutuksesta signaali-kohinasuhteeseen, ja robustin suunnittelun
 tavoitteena on maksimoida tämä suhde.
 Suoritemitta-analyysin tarkoituksenmukaisuutta on kritisoitu paljon.
 \textcite{Bursztyn} mukaan sen suurin heikkous on että siinä ei
-erityisesti hyödynnetä kokeeseen sisällytettyjä hallitsemattomia tekijöitä,
-vaikka ne on varta vasten sisällytetty suunnitelmaan. Pohjimmiltaan
+erityisesti hyödynnetä kokeeseen sisällytettyjä ei-hallittavia tekijöitä,
+vaikka ne on varta vasten tunnistettu ja valittu koetta varten. Pohjimmiltaan
 niiden data vain "luhistetaan" matemaattisesti jonka jälkeen analyysi
 tehdään kuten yksinkertaisessa toistoon perustuvassa suunnitelmassa.
 Toinen ongelmallinen seikka on vasteen keskiarvon ja sen varianssin
@@ -899,7 +923,7 @@ Vastemallianalyysi on vähemmän kiistanalainen analysointimenetelmä.
 Sovellettuna yhdistettyyn suunnitelmaan se on samankaltainen kuin
 \ref{doe} esitetty tulosten mallintamisen
 menetelmä. Esimerkiksi, jos on 2 hallittavaa tekijää, $x_1$ ja $x_2$, ja yksi
-hallitsematon tekijä, $z_1$, malli on
+ei-hallittava tekijä, $z_1$, malli on
 \[y = \beta _0 + \beta _{1}x_1 + \beta _{2}x_2 + \beta _{12}x_{1}x_{2} + \gamma _{1}z_1 + \delta _{11}x_{1}z_{1} + \delta _{21}x_{2}z_1 + \varepsilon \]
 
 Robustien parametrien suunnittelun menetelmissä on muistettava
@@ -919,7 +943,7 @@ koeajojen määrään) ja annettujen analysointityökalujen järkevyyttä
 Yksi ongelma on myös se että hieman ulkopuolisena uudistajana Taguchi
 usein turhaan uudelleennimesi jo olemassa olevia käsitteitä ja käytti
 erikoisia merkintöjä, jotka ovat yhä käytössä näissä menetelmissä.
-Esimerkiksi hallittavien ja hallitsemattomien tekijöiden nimeäminen
+Esimerkiksi hallittavien ja ei-hallittavien tekijöiden nimeäminen
 control- ja noise factoreiksi kun tilastotieteessä noise-sanalla (kohina)
 on jo oma merkityksensä aiheuttaa tarpeetonta sekaannusta.
 Sama pätee robust-sanaan.
@@ -928,7 +952,7 @@ on teollisuudessa käytetty jo kauan (kuten esimerkiksi Six Sigma -strategiassa)
 ja tulosten ja käyttäjien kokemusten perusteella se on usein
 toiminut paremmin kuin tarjotut vaihtoehdot.
 \textcite[s.~554]{Montgomery2012} mukaan vastepintamenetelmä
-(engl. response surface methodology, RSM, josta lisää tuonnempana)
+(lisää \ref{vastep})
 on luotettavampi ja tehokkaampi vaihtoehto robustien parametrien suunnitteluun.
 
 \textcite{Antony2006} antaa yleistason kuvan Taguchi-menetelmien ja
@@ -975,8 +999,8 @@ Taguchi-menetelmiin:
 \item Vaikka ristikkäisyyden vuoksi koeajoja ja tuloksia on paljon, hallittavien tekijöiden
     tasoyhdistelmiä on kuitenkin suhteessa tähän vain pieni määrä. Siten hallittavien
     tekijöiden keskinäinen sulautuminen on aina sama, ja täten ko. resoluutio pieni.
-\item Menetelmä ei kerro tarkalleen kuinka hallitsemattomat tekijät vaikuttavat vasteeseen.
-      Syntyykö kohina vain joistain hallitsemattomista tekijöistä? Onko niitten ja
+\item Menetelmä ei kerro tarkalleen kuinka ei-hallittavat tekijät vaikuttavat vasteeseen.
+      Syntyykö kohina vain joistain ei-hallittavista tekijöistä? Onko niitten ja
       hallittavien tekijöitten välillä vuorovaikutuksia? Signaali-kohinasuhdeanalyysi
       ei vastaa näihin kysymyksiin.
 \end{itemize}
@@ -994,7 +1018,7 @@ Osa erimielisyyksistä liittyy siihen, missä määrin ns. vaikutusten
 niukkuusperiaatetta pidetään perusteltuna \parencite{Li2006}.
 
 \textcite{Bursztyn} vertailevat kattavassa tutkimuksessaan menetelmiä dispersiovaikutusten
-seulomiseksi. He päätyvät siihen tulokseen että hallitsemattomien tekijöiden
+seulomiseksi. He päätyvät siihen tulokseen että ei-hallittavien tekijöiden
 sisällyttäminen kokeeseen lisää huomattavasti kokeen kykyä havaita
 dispersiovaikutuksia verrattuna pelkästään kokeiden toistoon perustuvaan
 kokeeseen. He huomasivat että tämä parannus saavutetaan vain
@@ -1007,15 +1031,27 @@ havaitseminen kokeista joissa ei ole toistoa on hyvin riskialtista eikä
 sen yrittäminen suotavaa.
 
 \subsection{Vastepintamenetelmä}
+\label{vastep}
 
-\todo{lisää vastepinta- ja vastemallianalyysi}
+Vastepintamenetelmä (engl. response surface methodology, RSM)
+on kokoelma matemaattisia tekniikoita jotka soveltuvat erityisen hyvin tilanteisiin
+joissa vaikuttaa monia tekijöitä ja tavoitteena on vasteen optimointi, kuten
+robustien parametrien suunnittelussa. Nimi tulee menetelmässä piirrettävistä
+kuvaajista joissa vaste usein esitetään kaksiulotteisena pintana kuten \todo{kuvassa n}.
+Vastepintamenetelmä keskittyy tekijöiden ja vasteen välisen suhteen mallintamiseen
+eikä se sovellu merkittävien tekijöiden tunnistamiseen eli seulontaan kuten $2^k$-suunnitelmat
+soveltuvat. Usein näitä menetelmiä käytetäänkin peräkkäin jolloin 
+$2^k$-seulontakokeessa tunnistettuja tekijöitä optimoidaan vastepintamenetelmällä.
+
+
+
 
 \subsection{Muut menetelmät}
 
 \cite{frey2008adaptive} ovat tutkineet adaptive OFAT (mukautuva OFAT) -menetelmän
-toimivuutta robustissa suunnittelussa. Menetelmä on kuten edellä mainittu
+toimivuutta robustissa suunnittelussa. Menetelmä on kuten \ref{doe} mainittu
 aOFAT, erotuksena se että joka hallittavan tekijän tason vaihdon
-jälkeen ajetaan hallitsemattomille tekijöille resoluutio III -tasoinen
+jälkeen ajetaan ei-hallittaville tekijöille resoluutio III -tasoinen
 yhdistelykoe. Johtopäätöksenä he esittävät että OFAT on tässäkin tilanteessa
 turhaan ylenkatsottu menetelmä. Kun kokeen virhe on pieni
 tai yhteisvaikutukset suuria, on
@@ -1092,15 +1128,15 @@ sekä kappaleita erilaisilla pinnoitteilla.
 Mittausjärjestelmää voidaan ajatella prosessina johon kuuluu
 näytteen valmistelu, abraasiotestin toteuttaminen ja massahäviön
 mittaaminen. Prosessissa on sekä hallittavia parametreja, tässä mm. painava
-voima, pyörimisaika ja ..., että hallitsemattomia parametrejä, tässä mm.
+voima, pyörimisaika ja ..., että ei-hallittavia parametrejä, tässä mm.
 ilmankosteus, pyörän pinnan tasaisuus, ... . On myös jokin tietty ulostulo,
 jonka halutaan olevan keskimäärin tietyllä tasolla vaihtelun ollessa
-mahdollisimman pientä. Koesuunnittelun hallittavat ja hallitsemattomat
-tekijät vastaavat näitä hallittavia ja hallitsemattomia parametreja joten
+mahdollisimman pientä. Koesuunnittelun hallittavat ja ei-hallittavat
+tekijät vastaavat näitä hallittavia ja ei-hallittavia parametreja joten
 tässä luvussa niitä on kutsuttu parametreiksi.
 
 Tässä mittausprosessissa hallittavia parametreja ovat mm. painava
-voima, pyörimisaika ja ..., ja hallitsemattomia parametrejä mm.
+voima, pyörimisaika ja ..., ja ei-hallittavia parametrejä mm.
 ilmankosteus, pyörän pinnan tasaisuus, ... . Ihanteellissa tapauksessa
 haluttu ulostulo olisi materiaalin todellinen kulumiskestävyys.
 Tällöin voitaisiin käyttää tunnetun referenssimateriaalin arvoa ja
@@ -1547,6 +1583,47 @@ satunnaisemmiksi loppua kohden, tämän voisi kuvitella johtuvan kumipyörän ku
 
 
 
+%-------------------------------------------------------------------------------
+\chapter{Conclusions}
+\label{ch:concl}
+%-------------------------------------------------------------------------------
+
+\epigraph{The best time to plan an experiment is after you’ve done it}{R. A. Fisher}
+
+
+Kaiken kaikkiaan mikään tutkituista tekijöitä ei vaikuttanut aiheuttavan
+kovin merkittäviä disperiovaikutuksia. Tulos viittaa siihen että jos kumipyöräkoe
+on antanut ajoittain poikkeavia tuloksia, on syy jossain muualla kuin tutkituissa
+tekijöissä. On kuitenkin pidettävä mielessä että koe oli passiivinen
+robustien parametrien suunnittelukoe ja toistojen määrä vähäinen.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%This template and the mathching Latex document class file together
+%with general writing guidelines should help achieving a consistently
+%formatted and clear documents. Similar template is also available for
+%MS Word.
+
+%Every writing and presentation must have a conclusion. This fact is
+%here emphasized by having this short and rather artificial summary
+%also in this template. A concise summary table is a good way for
+%providing an overview of the most important points.
+
+
 
 
 
@@ -1960,23 +2037,6 @@ Section~\ref{sec:3rd} cannot appear alone, but needs some company
 % Fifth level header
 % Empty line is a paragraph separator in LaTeX.
 
-
-%-------------------------------------------------------------------------------
-\chapter{Conclusions}
-\label{ch:concl}
-%-------------------------------------------------------------------------------
-
-\epigraph{The best time to plan an experiment is after you’ve done it}{R. A. Fisher}
-
-%This template and the mathching Latex document class file together
-%with general writing guidelines should help achieving a consistently
-%formatted and clear documents. Similar template is also available for
-%MS Word.
-
-%Every writing and presentation must have a conclusion. This fact is
-%here emphasized by having this short and rather artificial summary
-%also in this template. A concise summary table is a good way for
-%providing an overview of the most important points.
 
 
 
