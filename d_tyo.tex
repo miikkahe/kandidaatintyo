@@ -10,6 +10,8 @@
 
 \usepackage{booktabs}
 
+\usepackage{amssymb}
+
 % Note that you must choose either Finnish or English here and there in this
 % file.
 % Other options for document class
@@ -1099,16 +1101,20 @@ on eri käyttäjistä, menetelmistä jne. aiheutuvaa vaihtelua.
 Tuloksia tutkitaan tilastollisella \em varianssianalyysilla \em (ANOVA, analysis of variance).
 Tämänkaltaisia mittajärjestelmäanalyyseja kutsutaan GR\&R-analyyseiksi
 (gauge tai gage repeatability and reproducibility).
+Taulukossa \ref{table:grr} on esitetty GR\&R-analyyseissa usein käytettyjä
+muuttujia.
+
+
 
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}[]
 \centering
-\caption{GR\&R-analyysin parametreja}
+\caption{GR\&R-analyysin muuttujia \parencite{Burdick2003}.}
 \label{table:grr}
 \begin{tabular}{@{}ll@{}}
 \toprule
-Parametri                           & Määritelmä                                              \\ \midrule
+Muuttuja                           & Määritelmä                                              \\ \midrule
 $\gamma _P$                         & Kohteen varianssi                                       \\
 $\gamma _M$                         & Mittajärjestelmän varianssi                             \\
 $\gamma _T = \gamma _P + \gamma _M$ & Vasteen kokonaisvarianssi                               \\
@@ -1117,7 +1123,7 @@ $\rho _M = \gamma _M / \gamma _T$   & Mittajärjestelmän varianssin osuus kokon
 \end{tabular}
 \end{table}
 
-Yleensä mittausjärjestelmäanalyysissa itse mittalaite oletetaan
+Yleensä mittajärjestelmäanalyysissa itse mittalaite oletetaan
 yksinkertaiseksi, esimerkkinä mittanauha tai sähkövirtamittari.
 Mittausvirheen lähteeksi ei ole montaa vaihtoehtoa ja siksi GR\&R-analyysissa
 muuttujiksi oletuksena annetaan operaattori ja näytekappale.
@@ -1639,6 +1645,8 @@ robustien parametrien suunnittelukoe ja toistojen määrä vähäinen.
 
 
 
+Kokeen aikana ei suuresta koeajojen määrästä huolimatta esiintynyt
+suuresti odotetusta poikkeavia koetuloksia (yhtä teräsnäytettä lukuunottamatta).
 
 
 
