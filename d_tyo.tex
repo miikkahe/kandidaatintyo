@@ -931,6 +931,8 @@ menetelmä. Esimerkiksi, jos on 2 hallittavaa tekijää, $x_1$ ja $x_2$, ja yksi
 ei-hallittava tekijä, $z_1$, malli on
 \[y = \beta _0 + \beta _{1}x_1 + \beta _{2}x_2 + \beta _{12}x_{1}x_{2} + \gamma _{1}z_1 + \delta _{11}x_{1}z_{1} + \delta _{21}x_{2}z_1 + \varepsilon \]
 
+\todo{analyysi: keskiarvo ja varianssi erikseen}
+
 Robustien parametrien suunnittelun menetelmissä on muistettava
 huomioida se, onko kokeen vasteena tutkittu tulosten keskiarvoa vai
 varianssia. \todo{lisää asiaa tähän}
@@ -1052,6 +1054,8 @@ eikä se sovellu merkittävien tekijöiden tunnistamiseen eli seulontaan kuten $
 soveltuvat. Usein näitä menetelmiä käytetäänkin peräkkäin jolloin 
 $2^k$-seulontakokeessa tunnistettuja tekijöitä optimoidaan vastepintamenetelmällä.
 
+RSM toteutetaan peräkkäisinä tekniikoina,
+
 
 
 
@@ -1104,7 +1108,10 @@ Tämänkaltaisia mittajärjestelmäanalyyseja kutsutaan GR\&R-analyyseiksi
 Taulukossa \ref{table:grr} on esitetty GR\&R-analyyseissa usein käytettyjä
 muuttujia.
 
+\todo{stability study}
 
+\todo{DOE seulontakoe ja varianssin lähteitä etsivä mittajärjestelmäanalyysi ovat
+tavoitteiltaan samankaltaisia.}
 
 % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
