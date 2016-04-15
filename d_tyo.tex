@@ -1095,6 +1095,11 @@ tai mittalaitteista. \em Mittajärjestelmäanalyysin \em tarkoituksena
 on näiden osien suhteen selvittäminen ja tulosten vaihtelun syiden erittely.
 Tulosten perusteella voidaan päätellä onko mittalaite käyttökelpoinen.
 
+\todo{stability study}
+Yksinkertaisin analyysi on ns. tyypin 1 mittajärjestelmäanalyysi, jossa ei
+käytetä
+
+
 Monet mittajärjestelmäanalyysit toteutetaan niin että kohde mitataan
 mittalaitteella useita kertoja käyttäjän, mittausmenetelmän tai jonkin muun
 tekijän vaihtuessa. Havaittu vaihtelu jaetaan kahteen osaan, toistettavuuteen
@@ -1106,9 +1111,24 @@ Tuloksia tutkitaan tilastollisella \em varianssianalyysilla \em (ANOVA, analysis
 Tämänkaltaisia mittajärjestelmäanalyyseja kutsutaan GR\&R-analyyseiksi
 (gauge tai gage repeatability and reproducibility).
 Taulukossa \ref{table:grr} on esitetty GR\&R-analyyseissa usein käytettyjä
-muuttujia.
+muuttujia. Ko. muuttujien avulla arvioidaan mittajärjestelmän käyttökelpoisuutta.
+Jos kokeessa on esimerkiksi ollut mukana useita käyttäjiä, voidaan myös
+analysoida käyttäjien, kohteen ja käyttäjä-kohde vuorovaikutuksen osuutta
+varianssista.
 
-\todo{stability study}
+\todo{pitääkö selittää random factor ja fixed factor?}
+
+\todo{destruktiivinen}
+Usein mittaus kuitenkin vahingoittaa kohdetta tai näytettä jollain tavalla.
+Esimerkiksi vetolujuutta mitattaessa näytekappale tuhoutuu. Tällöin ei
+kokeen kaikki käyttäjät eivät voi mitata samaa kappaletta, jolloin toistettavuutta
+ei voida määrittää tavalliseen tapaan. \textcite{mitchell1997,bergeret2002improving}
+ovat kuitenkin esittäneet menetelmän mittajärjestelmäanalyysin tekemiseen
+destruktiiviselle mittausjärjestelmälle.
+
+
+\textcite{Gorman2002}
+
 
 \todo{DOE seulontakoe ja varianssin lähteitä etsivä mittajärjestelmäanalyysi ovat
 tavoitteiltaan samankaltaisia.}
