@@ -1116,18 +1116,42 @@ Jos kokeessa on esimerkiksi ollut mukana useita käyttäjiä, voidaan myös
 analysoida käyttäjien, kohteen ja käyttäjä-kohde vuorovaikutuksen osuutta
 varianssista.
 
+
+
+Syystä tai toisesta teollisuuteen on vakiintunut tapa tehdä yksinkertainen GR\&R-analyysi
+10:llä näytekappaleella, 3:lla käyttäjällä ja 2 tai 3:lla mittaustoistolla.
+Tällöin koe on $10 \times 3 \times 2$ tai $10 \times 3 \times 3$-koe.
+Kuten nähdään, $10 \times 3 \times 2$-koe vaatii $10 \times 3 \times 2 = 60$
+yksittäistä mittausta.
+
 \todo{pitääkö selittää random factor ja fixed factor?}
 
 \todo{destruktiivinen}
 Usein mittaus kuitenkin vahingoittaa kohdetta tai näytettä jollain tavalla.
-Esimerkiksi vetolujuutta mitattaessa näytekappale tuhoutuu. Tällöin ei
+Esimerkiksi vetolujuutta mitattaessa näytekappale tuhoutuu. Tällöin
 kokeen kaikki käyttäjät eivät voi mitata samaa kappaletta, jolloin toistettavuutta
 ei voida määrittää tavalliseen tapaan. \textcite{mitchell1997,bergeret2002improving}
-ovat kuitenkin esittäneet menetelmän mittajärjestelmäanalyysin tekemiseen
-destruktiiviselle mittausjärjestelmälle.
+ovat kuitenkin esittäneet menetelmiä mittajärjestelmäanalyysin tekemiseen
+destruktiiviselle mittausjärjestelmälle. Kattavan katsauksen näihin ja
+muihin vastaaviin menetelmiin antavat \textcite{Mast2005}.
 
 
-\textcite{Gorman2002}
+\textcite{Gorman2002} esittämässä menetelmässä tarvitaan erä kappaleita
+jotka ovat tarpeeksi samanlaisisa jotta niitä voidaan ajatella samana kappaleena,
+so. homogeeninen erä. Toistettavuus arvioidaan erän sisäisestä vaihtelusta.
+
+
+
+\textcite{Burdick2003} antavat suosituksia onnistuneen mittajärjestelmäanalyysin
+suorittamiseksi. Yksi on mahdollisimman monen erilaisen näytekappaleen
+käyttö jotta ne edustaisivat mahdollisimman hyvin mittajärjestelmän
+todellisuudessa kohtaamaa ainesta.
+Tällöin voidaan myös helpommin havaita
+mitattavan ominaisuuden lukemasta riippuva vaihtelu. Toinen on näytekappaleiden
+ja käyttäjien määrän valinta. Valmiita suosituksia tähän he eivät anna mutta
+kertovat että \textcite{burdick1997confidence} ovat
+simulaatioilla osoittaneet ainakin käyttäjien määrän lisäämisen kolmesta
+kuuteen parantavan luottamusväliä merkittävästi.
 
 
 \todo{DOE seulontakoe ja varianssin lähteitä etsivä mittajärjestelmäanalyysi ovat
@@ -1229,8 +1253,7 @@ epäsäännöllisyyden osuutta kokonaishajonnasta 3 erilaisella tätä
 projektia varten valmistetulla kumipyörällä. Lopulta tehdään
 robustien parametrien suunnittelu–koe, jolla etsitään ne
 hallittavien parametrien arvot (ajoaika, hiekan virtausmäärä jne.)
-joilla koetulosten hajonta on pienintä. Tähän soveltuvia
-koesuunnitelmia on monia, ja alustavasti menetelmäksi valittiin
+joilla koetulosten hajonta on pienintä. Alustavasti menetelmäksi valittiin
 Taguchi–koe. Jätettiin myös avoimeksi mahdollisuus tehdä muita
 kokeita sen mukaan mikä vaikuttaisi olevan projektin kannalta
 hyödyllistä. Mahdollisista koetulokseen vaikuttavista syistä koottiin
