@@ -1095,9 +1095,6 @@ tai mittalaitteista. \em Mittajärjestelmäanalyysin \em tarkoituksena
 on näiden osien suhteen selvittäminen ja tulosten vaihtelun syiden erittely.
 Tulosten perusteella voidaan päätellä onko mittalaite käyttökelpoinen.
 
-\todo{stability study}
-Yksinkertaisin analyysi on ns. tyypin 1 mittajärjestelmäanalyysi, jossa ei
-käytetä
 
 
 Monet mittajärjestelmäanalyysit toteutetaan niin että kohde mitataan
@@ -1117,16 +1114,74 @@ analysoida käyttäjien, kohteen ja käyttäjä-kohde vuorovaikutuksen osuutta
 varianssista.
 
 
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[]
+\centering
+\caption{GR\&R-analyysin muuttujia \parencite{Burdick2003}.}
+\label{table:grr}
+\begin{tabular}{@{}ll@{}}
+\toprule
+Muuttuja                           & Määritelmä                                              \\ \midrule
+$\gamma _P$                         & Kohteen varianssi                                       \\
+$\gamma _M$                         & Mittajärjestelmän varianssi                             \\
+$\gamma _T = \gamma _P + \gamma _M$ & Vasteen kokonaisvarianssi                               \\
+$\rho _P = \gamma _P / \gamma _T$   & Kohteen varianssin osuus kokonaisvarianssista           \\
+$\rho _M = \gamma _M / \gamma _T$   & Mittajärjestelmän varianssin osuus kokonaisvarianssista
+\end{tabular}
+\end{table}
+
+
+
+
+Analyyseissa on tärkeää tietää onko muuttuja eli
+vaihtelun lähde (tyypillisesti käyttäjä tai näytekappale) satunnainen vai
+vakio (engl. random factor ja fixed factor). Muuttuja on satunnainen
+jos kokeessa esiintyvät muuttujan arvot ovat vain otos isommasta
+tutkittavasta perusjoukosta ja vakio jos kokeessa
+käytetyt muuttujan arvot ovat ainoat joista ollaan kiinnostuneita.
+Näytekappale on lähes aina satunnainen muuttuja sillä kokeeseen
+valitut kappaleet ovat satunnainen otos kaikista mahdollisista kappaleista.
+Muuttujan käyttäjä asema sen sijaan ei aina ole selvä. Jos esimerkiksi kokeessa
+ollaan kiinnostuneita vain tietyistä työntekijöistä ja kaikki
+nämä käyttäjät otetaan kokeeseen mukaan, on muuttuja vakio. Jos sen
+sijaan halutaan yleistää tulokset kaikkiin mahdollisiin käyttäjiin on muuttujaa
+käsiteltävä satunnaisena. Tulosten matemaattinen analyysi on erilainen riippuen
+siitä onko muuttuja vakio vai satunnainen, sillä satunnaisuus tuo kokeeseen
+ylimääräisiä vaihtelun lähteitä.
+
+
+Yksinkertaisin analyysi on ns. tyypin 1 mittajärjestelmäanalyysi, jossa
+mitataan ainoastaan mittalaitteen toistettavuutta. Tällöin sama käyttäjä
+mittaa samaa osaa useita kertoja. Yleensä suositellaan tekemään
+vähintään 20 mittausta tällä tavalla. Tuloksista voidaan arvioida mittaustuloksen
+vaihtelua ja keskiarvon mahdollista muuttumista ajan suhteen.
 
 Syystä tai toisesta teollisuuteen on vakiintunut tapa tehdä yksinkertainen GR\&R-analyysi
 10:llä näytekappaleella, 3:lla käyttäjällä ja 2 tai 3:lla mittaustoistolla.
-Tällöin koe on $10 \times 3 \times 2$ tai $10 \times 3 \times 3$-koe.
-Kuten nähdään, $10 \times 3 \times 2$-koe vaatii $10 \times 3 \times 2 = 60$
-yksittäistä mittausta.
+Tällöin koe on $10 \times 3 \times 2$ tai $10 \times 3 \times 3$ -koe.
+Kuten nähdään, $10 \times 3 \times 2$ -koe vaatii $10 \times 3 \times 2 = 60$
+yksittäistä mittausta. Kuten \textcite{kitska2014} neuvoo, ei kuitenkaan ole mieltä
+valita vakiintunutta suunnitelmaa vain tavan vuoksi. Gage R\&R toimii
+parhaiten kun suunnitelma tehdään harkiten tilanteeseen sopivaksi.
+Näytekappaleita ja käyttäjiä on syytä olla tarpeeksi monia ja monenlaisia
+jotta ne kuvaavat todellista tilannetta mahdollisimman hyvin.
+Toisinnettuja kokeita on oltava tarpeeksi monta jotta varianssi voidaan
+arvioida tarkasti. On myös harkittava muiden muuttujien kuin vain näytekappaleiden
+ja käyttäjien sisällyttämistä kokeeseen.
 
-\todo{pitääkö selittää random factor ja fixed factor?}
+Tyypillisesti mittajärjestelmäanalyysissa tutkitaan vain kahta muuttujaa -
+käyttäjää ja näytekappaletta. Samassa analyysissa voidaan kuitenkin
+tutkia useampiakin muuttujia, esimerkiksi eri mittalaitteita tai laboratorioita. Kun
+tyypilliseen GR\&R-analyysiin lisätään muuttujia, puhutaan
+\em laajennetusta GR\&R-analyysista. \em Jos esimerkiksi lisätään
+tyypilliseen GR\&R-analyysiin 3 eri mittalaitetta, voi mittausten määräksi
+tulla $10 \times 3 \times 2 \times 3 = 180$. Koska mittausten määrä
+kasvaa näin nopeasti, usein vähennetään näytekappaleiden määrää
+10:stä esimerkiksi 5:een.
 
-\todo{destruktiivinen}
+
+
 Usein mittaus kuitenkin vahingoittaa kohdetta tai näytettä jollain tavalla.
 Esimerkiksi vetolujuutta mitattaessa näytekappale tuhoutuu. Tällöin
 kokeen kaikki käyttäjät eivät voi mitata samaa kappaletta, jolloin toistettavuutta
@@ -1134,11 +1189,11 @@ ei voida määrittää tavalliseen tapaan. \textcite{mitchell1997,bergeret2002im
 ovat kuitenkin esittäneet menetelmiä mittajärjestelmäanalyysin tekemiseen
 destruktiiviselle mittausjärjestelmälle. Kattavan katsauksen näihin ja
 muihin vastaaviin menetelmiin antavat \textcite{Mast2005}.
-
-
 \textcite{Gorman2002} esittämässä menetelmässä tarvitaan erä kappaleita
-jotka ovat tarpeeksi samanlaisisa jotta niitä voidaan ajatella samana kappaleena,
+jotka ovat tarpeeksi samanlaisia jotta niitä voidaan ajatella samana kappaleena,
 so. homogeeninen erä. Toistettavuus arvioidaan erän sisäisestä vaihtelusta.
+
+
 
 
 
@@ -1157,38 +1212,11 @@ kuuteen parantavan luottamusväliä merkittävästi.
 \todo{DOE seulontakoe ja varianssin lähteitä etsivä mittajärjestelmäanalyysi ovat
 tavoitteiltaan samankaltaisia.}
 
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
-\begin{table}[]
-\centering
-\caption{GR\&R-analyysin muuttujia \parencite{Burdick2003}.}
-\label{table:grr}
-\begin{tabular}{@{}ll@{}}
-\toprule
-Muuttuja                           & Määritelmä                                              \\ \midrule
-$\gamma _P$                         & Kohteen varianssi                                       \\
-$\gamma _M$                         & Mittajärjestelmän varianssi                             \\
-$\gamma _T = \gamma _P + \gamma _M$ & Vasteen kokonaisvarianssi                               \\
-$\rho _P = \gamma _P / \gamma _T$   & Kohteen varianssin osuus kokonaisvarianssista           \\
-$\rho _M = \gamma _M / \gamma _T$   & Mittajärjestelmän varianssin osuus kokonaisvarianssista
-\end{tabular}
-\end{table}
 
-Yleensä mittajärjestelmäanalyysissa itse mittalaite oletetaan
-yksinkertaiseksi, esimerkkinä mittanauha tai sähkövirtamittari.
-Mittausvirheen lähteeksi ei ole montaa vaihtoehtoa ja siksi GR\&R-analyysissa
-muuttujiksi oletuksena annetaan operaattori ja näytekappale.
-
-Kumipyöräabraasiotestin tapauksessa tämä itse mittalaite on vaaka jolla
-massahäviö mitataan. Koska tässä tapauksessa luottamus vaakaan ja operaattoriin
-on korkea, on analyysia sovellettava ottamalla muuttujiksi itse
-abraasiolaitteen parametreja. Abraasiolaitteesta tulee prosessi ja mittaus
-....
-
-Näin sovellettu MSA liittyy GR\&R:ään enää vain käytettävien matemaattisten
-työkalujen osalta, eli varianssianalyysin. Prosessin muuttujien
-hajontavaikutuksen laskemiseen on muitakin matemaattisia työkaluja,
-kuten Box-Meyer-menetelmä, joka tosin vaatii DOE-suunnitelman?
+Mittajärjestelmäanalyysien tekoon on useita ohjelmistoja, esimerkiksi edellä mainittu
+Minitab. Kuten koesuunnittelussakin, asiantunteva kokeentekijä voi myös
+suunnitella kokeen ja analysoida tulokset itse, ja usein hyödyllisintä tulosten
+tulkinnan kannalta on havainnollisten kuvien ja kuvaajien piirtäminen.
 
 \todo{onko muuten grr jossa etsitään varianssiin vaikuttavia tekijöitä l. dispersiovaikutuksia
 sama kuin dispersiovaikutus-seulonta?}
