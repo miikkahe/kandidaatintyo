@@ -426,13 +426,15 @@ Joissain tapauksissa on hyödyllisempää
 jakaa tekijät kahteen ryhmään: niihin joita voimme hallita tavallisessa
 prosessissa ja niihin joita ei ole mahdollista tai järkevää yrittää
 hallita. Jälkimmäisiä on selkeintä kutsua ei-hallittaviksi tekijöiksi
-mutta käytetään myös termejä häiriö- tai kohinatekijä, sillä englanninkieliseksi
+mutta käytössä on  myös termit häiriö- ja kohinatekijä, sillä englanninkieliseksi
 termiksi on vakiintunut noise factor.
 Niitä merkitään usein
 \textit{z\textsubscript{1}, z\textsubscript{2},\ldots,z\textsubscript{n}} kuten
 kuvassa \ref{subfig:malli2}.
-Vaste \textit{y} \todo{....}
+Vaste \textit{y} on mikä tahansa mitattava ominaisuus joka syntyy prosessin
+lopputuloksena ja jota halutaan hallita.
 On yleistä nimetä tutkittavat tekijät malliin A, B, C, jne.
+
 \textcite[s. 3]{Montgomery2012} antaa kokeen
 tavoitteeksi seuraavat:
 
@@ -1054,7 +1056,7 @@ eikä se sovellu merkittävien tekijöiden tunnistamiseen eli seulontaan kuten $
 soveltuvat. Usein näitä menetelmiä käytetäänkin peräkkäin jolloin 
 $2^k$-seulontakokeessa tunnistettuja tekijöitä optimoidaan vastepintamenetelmällä.
 
-RSM toteutetaan peräkkäisinä tekniikoina,
+RSM toteutetaan peräkkäisinä tekniikoina, 
 
 
 
@@ -1093,7 +1095,7 @@ Missä tahansa mittauksia sisältävässä tapahtumassa osa mitatuista
 eroista johtuu varsinaisesta mitattavien kohteiden eroista mutta osa itse mittausprosessista
 tai mittalaitteista. \em Mittajärjestelmäanalyysin \em tarkoituksena
 on näiden osien suhteen selvittäminen ja tulosten vaihtelun syiden erittely.
-Tulosten perusteella voidaan päätellä onko mittalaite käyttökelpoinen.
+Tulosten perusteella voidaan päätellä onko mittausjärjestelmä käyttökelpoinen.
 
 
 
@@ -1188,12 +1190,27 @@ kokeen kaikki käyttäjät eivät voi mitata samaa kappaletta, jolloin toistetta
 ei voida määrittää tavalliseen tapaan. \textcite{mitchell1997,bergeret2002improving}
 ovat kuitenkin esittäneet menetelmiä mittajärjestelmäanalyysin tekemiseen
 destruktiiviselle mittausjärjestelmälle. Kattavan katsauksen näihin ja
-muihin vastaaviin menetelmiin antavat \textcite{Mast2005}.
+muihin vastaaviin menetelmiin antaa \textcite{Mast2005}.
 \textcite{Gorman2002} esittämässä menetelmässä tarvitaan erä kappaleita
 jotka ovat tarpeeksi samanlaisia jotta niitä voidaan ajatella samana kappaleena,
 so. homogeeninen erä. Toistettavuus arvioidaan erän sisäisestä vaihtelusta.
 
+Myös tyypin 1 mittajärjestelmäanalyysi voidaan tehdä destruktiiviselle
+mittaukselle. Tällöin kappaleet yksinkertaisesti oletetaan homogeenisiksi
+ja analyysi tehdään kuin käytettäisi yhtä ainoaa näytekappaletta.
+On siis kriittistä kuinka perusteltu oletus homogeenisuudesta on.
 
+Mittajärjestelmäanalyysi voidaan suorittaa joko ristiöitynä tai hierarkkisena
+(engl. crossed tai nested). Ristiöidyssä kokeessa joka käyttäjä mittaa joka
+kappaleen, eli mittaukset tehdään ristiin. Hierarkkisessa suunnitelmassa
+joka käyttäjällä on omat mitattavat kappaleensa ja siis esimerkiksi käyttäjä
+A ei mittaa käyttäjän B mittaamia kappaleita. Kuvassa \todo{lisää kuva jossa crossed ja nested}
+nähdään näiden suunnitelmien erot. Destruktiivinen mittausjärjestelmä
+vaatii lähes aina hierarkkisen mittajärjestelmäanalyysin. Jos käytettävissä on
+suuri näytekappale-erä joka voidaan varmuudella olettaa homogeeniseksi,
+voidaan destruktiivisen mittausjärjestelmän analyysi toteuttaa ristiöitynä.
+Tulosten varianssianalyysi muuttuu merkittävästi sen mukaan onko
+käytetty ristiöityä vai hierarkkista suunnitelmaa,
 
 
 
@@ -1229,6 +1246,78 @@ sama kuin dispersiovaikutus-seulonta?}
 
 \todo
 
+Kun kova pinta liukuu pehmeämpää pintaa vasten ja kovan pinnan
+karheat huiput uurtavat pehmeämpää pintaa, on kyse kahden kappaleen abrasiivisesta kulumisesta
+(engl. two-body abrasive wear). Jos kahden pinnan välissä on kovempia kappaleita
+jotka uurtavat molempia pintoja kutsutaan tätä kolmen kappaleen
+abrasiiviseksi kulumiseksi (engl. three-body abrasive wear).
+
+Abrasiivisen kulumisen kulumisjälkenä syntyy tunnusomaisia
+pitkiä samansuuntaisia uurteita, joitten pituus ja syvyys vaihtelevat
+kevyistä naarmuista syviin uriin. \textcite[s.~179]{williamsengineering}
+mukaan jopa 50 prosenttia teollisuuden kulumisongelmista
+aiheutuu abrasiivisesta kulumisesta. Usein syynä on yleisesti
+esiintyvien kvartsikappaleiden eli hiekan tunkeutuminen koneistoihin.
+
+Abrasiivinen kuluminen voi tapahtua eri mekanismeilla:
+
+\begin{itemize}
+\item Kyntämällä
+\item Leikkaamalla
+\item Hauraasti murtumalla \parencite[s.~109]{kivioja1997}
+\end{itemize}
+
+
+Materiaalin kolmen kappaleen abrasiivisen kulumisen vastustuskyvyn määrittämiseen
+on olemassa standardisoitu koe G65-04 \parencite{Standard2010},
+kumipyöräabraasiokoe.
+Kuvan \todo{lisää kumipyöräkuva} mukaisella laitteistolla koekappaleeseen
+kulutetaan kulumisjälki ja kappaleen massan muutos mitataan. Abrasiivina
+käytetään standardin AFS 50/70 \parencite{foundrysand} mukaista Ottawa-irtohiekkaa.
+Abrasiivinen kuluminen tapahtuu kun koekappaletta painetaan pyörivää
+kumipyörää vasten tietyn ajanjakson ajan ja samalla annetaan abrasiivin virrata pyörän ja kappaleen
+välistä.
+
+Mitä vähemmän kappaleesta irtoaa materiaalia kokeen aikana, sitä
+vastustuskykyisempi materiaali on abrasiiviselle kulumiselle.
+Tulos ilmoitetaan tilavuushäviönä materiaalien vaihtelevien tiheyksien
+vuoksi. Tilavuushävion laskemiseksi massahäviöstä on tunnettava
+materiaalin tiheys. Standardi kuitenkin sanoo että massahäviöitä
+voidaan käyttää laboratorioiden sisäisesti samantiheyksisten
+materiaalien vertailuun.
+
+\textcite{Stevenson1996} ovat esittäneet parannusehdotuksia
+standardin mukaiseen abraasiokokeeseen. Ehdotetussa parannellussa
+koelaitteessa (kuvassa \todo{kuva}) koekappale on vaakatasossa kiinnitettynä
+ikeeseen siten että se voi liikkua vapaammin kuin standardin mukaisessa laitteessa.
+Rakenne mahdollistaa koekappaleen ja kumipyörän välistä kulkevan abrasiivin
+määrän ja kappaleeseen kohdistuvan reaktiovoiman määrittämisen.
+Tällöin voidaan mitata myös kokeen aikaisia kitkavoimia.
+He myös havaitsivat että virtaava hiekka kuljetti pois
+suurimman osan kitkan synnyttämästä lämmöstä ja että täten hiekan virtauksen
+pienentäminen johti suurempiin lämpötilan nousuihin.
+
+\textcite{avery1981analysis,borik1970rubber} ovat osoittaneet kulumisnopeuden
+kasvavan kumipyörän kumin kovuuden kasvaessa. \textcite{Stevenson1996}
+havaitsivat että kokeen aikana syntyvä lämpö voi alentaa kumin kovuutta ja
+että vaikutus oli erilainen klooributyylikumille ja polyuretaanille, polyuretaanin
+kovuus laski enemmän. Tästä syystä he suosittelevat suuria hiekan virtausmääriä,
+sillä tällä tavalla kitkan kokeessa synnyttämä lämpö ohjautuu tehokkaammin pois.
+
+\textcite{merkle2008} on esittänyt kumipyöräabraasiokokeen
+käytössä ilmenneitä ongelmia. Vaikeimmaksi asiaksi hallita
+osoittautui kumipyörien vaihtelevat kovuudet. Myyjän toimittamissa
+kumipyörissä esiintyi merkittävää vaihtelua jota vuosia kestänyt
+varastointi lisäsi. Vaihtelun minimointiin Merkle antaa ratkaisuksi
+ainoastaan useiden kumipyörien tilaamisen, jolloin kovuusmittarilla
+saadaan seulottua kelpoisat suuresta joukosta. Muita vaihtelua aiheuttaneita
+tekijöitä olivat hiekan virtausmäärän satunnainen vaihtelu ja
+hiekan kasautuminen kappaleen pidikkeen ja kappaleen väliseen
+rakoon.
+
+
+
+
 
 %-------------------------------------------------------------------------------
 \chapter{Kokeet ja tulokset}
@@ -1246,8 +1335,8 @@ tai -menetelmästä. Toisin sanoen haluttiin selvittää
 kumipyöräabraasiokokeen luotettavuutta. Tutkimuksen tekemiseen
 käytettiin tilastollisen koesuunnittelun menetelmiä jotka
 toteutettiin Minitab–ohjelmistolla. Projektissa käytettäväksi
-valmisteltiin yksi suuri erä ruiskupinnoitettuja näytekappaleita
-sekä kappaleita erilaisilla pinnoitteilla.
+valmisteltiin yksi suuri erä ruiskupinnoitettuja karbidipintaisia näytekappaleita
+sekä kokoelma kappaleita erilaisilla pinnoitteilla.
 
 Mittausjärjestelmää voidaan ajatella prosessina johon kuuluu
 näytteen valmistelu, abraasiotestin toteuttaminen ja massahäviön
