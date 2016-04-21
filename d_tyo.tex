@@ -837,7 +837,7 @@ vastustuskykyinen satunnaisille muutoksille, so. robusti, ja parametrien koska
 teollisuudessa kokeen tekijät ovat yleensä hallittavia prosessiparametreja).
 Dispersiovaikutusten etsintään on kolme lähestymistapaa:
 
-\begin{enumerate}  
+\begin{enumerate}
 \item  Kokeessa toistetaan koetta samalla hallittavien tekijöiden
     tasolla josta varianssia voidaan arvioida;
 \item Kokeeseen pakotetaan varianssia sisällyttämällä siihen
@@ -888,7 +888,7 @@ vastustuskykyisemmiksi uunin lämpötilan vaihtelulle ja mitat yhdenmukaisemmiks
 
 \todo{regression slope kuvaaja}.
 \textcite{steinberg1994,Steinberg1998,Berube1998} ovat osoittaneet
-että ei-hallitavien tekijöiden sisällyttäminen kokeeseen voi
+että ei-hallittavien tekijöiden sisällyttäminen kokeeseen voi
 lisätä sen kykyä havaita dispersiovaikutuksia huomattavasti.
 Haittapuolia ovat kuitenkin koeajojen määrän huomattava lisääntyminen
 ja se, että tämänkaltaisia tekijöitä on usein vaikea
@@ -906,16 +906,40 @@ Nämä suunnitelmat
 "ristitään", so. sisätaulukon jokainen tekijätasojen yhdistelmä
 suoritetaan ulkotaulukon joka tekijätasojen yhdistelmällä. Syntyvää
 koesuunnitelmaa sanotaan \em ristikkäiseksi suunnitelmaksi \em
-(engl. crossed array design). \todo{crossed array kuva, montgomery sivu 557}
+(engl. crossed array design). Kuvassa \ref{subfig:crossed} on esimerkki tällaisesta suunnitelmasta.
 Kuvan sisätaulukko on \(2^{4-1}\) osittainen yhdistelykoe ja ulkotaulukko
 yksinkertainen \(2^1\)-koe. Sisätaulukon 8 koeajoa ja ulkotaulukon 2
 ristiöitynä tekevät yhteensä 16 koeajoa, mutta kuvan kokeessa jokainen
 yhdistelmä myös toistettiin kolmesti, tuloksena 48 havaintoa.
-\todo{Kuvassa montgomery sivu 558 mutta alunperin byrne ja taguchi 1987}
+Kuvassa \ref{subfig:crossed2}
 on toinen esimerkki ristikkäisestä suunnitelmasta. Nyt sisätaulukossa
 on kolmitasoinen resoluution III \(3^{4-2}\)-suunnitelma ja ulkotaulukossa \(2^3\)-suunnitelma,
 yhteensä \(9\times 8=72\) koeajoa. Kuten nähdään, vaikka tekijöitä on vain
 7 ja resoluutio vain III, on koe silti suhteellisen aikaavievä.
+
+
+\begin{figure*}
+  \begin{center}
+    \subfigure[Ristikkäinen Taguchi-suunnitelma kolmella koetoistolla \parencite{Montgomery2012}.]{
+      \includegraphics[width=\textwidth]{crossed}
+      \label{subfig:crossed}}
+    %\qquad                        % i) Ugly hack to get more horizontal space between figures
+    %\hspace{0.05\textwidth}      % ii) Another ugly way to hack space
+    % ~~                          % iii) Yet another...
+
+    \subfigure[Ristikkäinen Taguchi-suunnitelma \parencite{byrne1987taguchi}.]{
+      \includegraphics[width=\textwidth]{crossed2}
+      \label{subfig:crossed2}}
+    \caption[Ristikkäisiä suunnitelmia]{Ristikkäisiä Taguchi-suunnitelmia.}
+    % Optional shorter caption in brackets is used in Table of Figures
+    % (tof).
+
+    \label{fig:prosessi}
+  \end{center}
+\end{figure*}
+
+
+
 
 \textcite{shoemaker1991} huomauttavat että tällainen ristikkäinen
 suunnitelma on pohjimmiltaan vain osittainen yhdistelykoe jolla
@@ -957,7 +981,7 @@ haittoja, mm. sen että se voi olla huomaamatta dispersiovaikutuksia.
 
 Vastemallianalyysi on vähemmän kiistanalainen analysointimenetelmä.
 Sovellettuna yhdistettyyn suunnitelmaan se on samankaltainen kuin
-\ref{doe} esitetty tulosten mallintamisen
+luvussa \ref{doe} esitetty tulosten mallintamisen
 menetelmä. Esimerkiksi, jos on 2 hallittavaa tekijää, $x_1$ ja $x_2$, ja yksi
 ei-hallittava tekijä, $z_1$, malli on
 
@@ -1019,7 +1043,7 @@ tarpeiden tapauksessa.
   \begin{center}
     \caption{Robustien parametrien suunnittelumenetelmän valinnan kaavio \parencite{Antony2006}.}
     \label{tab:vertailu}
-    \begin{tabular}{l | r r r r r r}
+    \begin{tabular}{l | c c c c c c}
       % l = align to left (e.g. text), c=align to center, r=align to
       % right (e.g. numbers), Pipe | creates vertical line
       % Let's put 1 horinzontal line above the table, 2 after header rows,  and 1 below
