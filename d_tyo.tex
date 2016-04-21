@@ -411,8 +411,9 @@ tilastotieteilijät R. A. Fisher (1890-1962) ja George E. P. Box (1919-2013).
 Suomeksi tähän alaan viittaa termi koesuunnittelu, joskus kokeensuunnittelu,
 englanniksi design of experiments (DOE) tai experimental design.
 
-Koesuunnittelu on osoittautunut tehokkaaksi työkaluksi teollisuudessa; prosessien
-ja systeemien ymmärtämisessä \parencite{Antony2006} . Se on yksi prosessinhallinnan
+Koesuunnittelu on osoittautunut tehokkaaksi työkaluksi teollisuudessa; siellä sitä
+sovelletaan prosessien
+ja systeemien ymmärtämiseen ja hallintaan \parencite{Antony2006} . Se on yksi prosessinhallinnan
 ja laadunhallinnan menetelmistä. Esimerkiksi teollisuudessa suosittu laatujohtamisstrategia
 Six Sigma käyttää koesuunnittelun menetelmiä, ja Six Sigma on osoittautunut
 ainakin jossain määrin
@@ -426,7 +427,7 @@ Joissain tapauksissa on hyödyllisempää
 jakaa tekijät kahteen ryhmään: niihin joita voimme hallita tavallisessa
 prosessissa ja niihin joita ei ole mahdollista tai järkevää yrittää
 hallita. Jälkimmäisiä on selkeintä kutsua ei-hallittaviksi tekijöiksi
-mutta käytössä on  myös termit häiriö- ja kohinatekijä, sillä englanninkieliseksi
+mutta käytössä ovat myös termit häiriötekijä ja kohinatekijä, sillä englanninkieliseksi
 termiksi on vakiintunut noise factor.
 Niitä merkitään usein
 \textit{z\textsubscript{1}, z\textsubscript{2},\ldots,z\textsubscript{n}} kuten
@@ -435,8 +436,8 @@ Vaste \textit{y} on mikä tahansa mitattava ominaisuus joka syntyy prosessin
 lopputuloksena ja jota halutaan hallita.
 On yleistä nimetä tutkittavat tekijät malliin A, B, C, jne.
 
-\textcite[s. 3]{Montgomery2012} antaa kokeen
-tavoitteeksi seuraavat:
+\textcite[s.~3]{Montgomery2012} antaa koesuunnittelulle
+seuraavat tavoitteet:
 
 \begin{itemize}
 \item Vasteeseen \textit{y} eniten vaikuttavien tekijöiden tunnistaminen
@@ -450,8 +451,8 @@ tavoitteeksi seuraavat:
 Vaikutusten tutkimiseksi tekijöille valitaan kokeessa käytettävät tasot, so.
 tekijöiden arvot. Yleisintä on valita joka tekijälle 2 (matala ja korkea) tai
 3 (matala, keskitaso, korkea) tasoa.
-Samassa kokeessa eri tekijöillä voi myös olla eri määrä tasoja, esim. 3 tekijällä
-2 tasoa ja 1 tekijällä 3 tasoa. Tällainen koe on
+Samassa kokeessa eri tekijöillä voi myös olla eri määrä tasoja, esim. 3:lla tekijällä
+2 tasoa ja 1:llä tekijällä 3 tasoa. Tällainen koe on
 \textit{sekatasosuunnitelma} (huom. tekijän käännös, engl.
 mixed-level design).
 Tasojen asettaminen rohkeasti mutta
@@ -504,25 +505,25 @@ tuloksiin.
 
 
 
-Käsitteiden hahmottamista voi helpottaa seuraava analogia: kakun leipominen
-\parencite[ajatus otettu:][]{Sleeper2012}. Leivonnassa vasteena on yleensä
-lopputuloksen maku, mutta vaikka käytössä olisi maailman parhaat makutuomarit,
-on tämä mitta paljon subjektiivisempi kuin teollisuudessa ja tieteessä käytetyt.
-Oletetaan siis kuvitteellinen objektiivinen makumittari. Makumittarin tulokseen
-vaikuttaa moni tekijä, näistä voimme hallita esim. aineksien osuuksia ja
-paistolämpötilaa ja -aikaa. Moni ei-hallittava häiriötekijä voi myös vaikuttaa
-tulokseen, esim. uunin lämpötilan vaihtelu, epätarkat mittakulhot, huoneen
-ilmankosteus ja viereisen asunnon remontista aiheutuva tärinä.
-Lämpötilalle voidaan valita esim. matalaksi tasoksi 150 \celsius  ja korkeaksi
-220 \celsius , ja käytetyn voin tyypille -1 (suolaton) ja 1 (normaalisuolainen).
-Leipuri voi asettaa
-tavoitteeksi mahdollisimman korkean mittaustuloksen tai pyrkiä johonkin
-tiettyyn mittarilukemaan (ehkä ylin johto on päättänyt että tietyn tason
-kakuista saadaan paras liikevaihto...) ja sitten asettaa toleranssit tulokselle.
 
-Leipuri haluaisi tietää miten tekijät vaikuttavat lopputulokseen jotta voisi
-säätää niitä parhaaksi katsomallaan tavalla. Prosessi on liian monimutkainen
-mallintaa joten parasta mitä hän voi tehdä on leipoa useita kakkuja vaihdellen
+Opetuksessa usein käytetään esimerkkinä koesuunnittelusta pienoiskatapulttia.
+Vasteena on etäisyys joka jää lingotun pallon ja katapultin väliin. Tulokseen
+vaikuttaa moni tekijä, joista kokeessa hallitaan esimerkiksi kuminauhojen
+kiinnityspisteen korkeutta, laukaisukulmaa, kuminauhojen määrää ja katapultin
+varren pituutta. Moni ei-hallittava häiriötekijä
+voi myös vaikuttaa tulokseen, esim. satunnaiset ilmavirrat, alustan tasaisuus,
+pallon vaihteleva asento katapultin pidikkeessä jne. Hallittaville tekijöille
+valitaan tutkittavat tasot, esim. laukaisukulman matalaksi tasoksi voidaan
+valita 45 astetta ja korkeaksi 80 astetta ja kuminauhojen määrän matalaksi
+tasoksi 1 ja korkeaksi 2. Tavoitteeksi voidaan asettaa esimerkiksi niitten
+tekijätasojen löytäminen, joilla pallo lentää mahdollisimman pitkälle,
+pallo osuu mahdollisimman lähelle tiettyä etäisyyttä, tai joilla
+pallon kulkema etäisyys on aina mahdollisimman lähellä samaa arvoa.
+
+
+Kokeen tekijä haluaa tietää miten tekijät vaikuttavat lopputulokseen jotta voisi
+säätää niitä parhaaksi katsomallaan tavalla. Hän voi ampua katapultilla
+useita kertoja vaihdellen
 tekijöiden tasoa ja katsoa miten tämä vaikuttaa mittaustulokseen. Koesuunnittelu
 tarjoaa työkalut tämän systemaattiseen toteuttamiseen ja tulosten oikeaan
 tulkintaan.
@@ -537,9 +538,11 @@ Usein onnistumisessa keskeistä on selkeys ongelman ja halutun ratkaisun
 kuvaamisessa ja sekä prosessin että koesuunnittelun asiantuntijoiden tietojen
 tehokas käyttö.
 
-\todo
+
 Koesuunnitteluun ja muihin tilastollisiin menetelmiin on olemassa monia ohjelmistoja
-kuten Minitab, JMP ja Design-Expert.
+kuten Minitab, JMP ja Design-Expert. Ohjelmistot auttavat suunnittelussa
+mutta menetelmien tunteminen on silti tärkeää jotta vältytään virheiltä
+ja vääriltä tulkinnoilta.
 
 \section{Koesuunnitelma}
 \label{doe}
@@ -563,8 +566,9 @@ suunnan ja jokainen kulma on yksi koeajo.
 
 Yksinkertaisinta on muuttaa yhtä tekijää kerrallaan. Koesuunnittelu kuitenkin syntyi
 osaksi juuri tarjoamaan vaihtoehtoja tälle hitaalle menetelmälle. On mahdollista luoda
-koesuunnitelmia jotka vaativat vähemmän koeajoja kuin yksi tekijä kerrallaan -metodi,
+koesuunnitelmia jotka vaativat vähemmän koeajoja kuin yksi tekijä kerrallaan -menetelmä,
 ja jotka kuitenkin antavat tietoa myös tekijöiden yhteisvaikutuksista.
+
 Koesuunnitelmia on kehitetty useita erilaisia eri tarkoituksiin.
 Suunnitelma on perinteisesti valittu apuna tietämys
 tutkinnan kohteesta, tavoitteista ja koesuunnittelumenetelmistä.
@@ -573,13 +577,13 @@ mukautettu suunnitelma algoritmin ja tietokoneen avulla.
 
 Yhdistely- eli faktorikokeessa (engl. factorial experiment/design) tekijöiden
 tasoja vaihdellaan sekä yksitellen että yhdessä. Jos kaikki tasoyhdistelmät
-toteutetaan, on kyseessä full factorial design eli täysyhdistelykoe (huom.
-tekijän suomennos). Tällainen koe arvioi kaikkien tekijöiden kaikki yksittäis-
+toteutetaan, on kyseessä täysyhdistelykoe (engl.
+full factorial design). Tällainen koe arvioi kaikkien tekijöiden kaikki yksittäis-
 ja yhdistelmävaikutukset vasteeseen. Kattavuuden hintana on koeajojen
 eksponentiaalisesti kasvava määrä kun tekijöitä lisätään kokeeseen: jos kaikilla
 tekijöillä on 2 tasoa, on koeajojen määrä \(2^k\),
 missä \textit{k} on
-tekijöiden lukumäärä. Ko. kokeelle käytetäänkin nimenä yksinkertaisesti
+tekijöiden lukumäärä. Ko. kokeelle käytetäänkin yksinkertaisesti
 merkintää \(2^k\)-koe.
 Jos tekijöitä tiedetään olevan 2, merkintä on
 \(2^2\) ja niin edelleen. Vastaavasti jos tekijöille on valittu 3 tasoa,
@@ -664,6 +668,20 @@ yleensä sulautetaan ja kokeen tekijän on hyvä ottaa tämä huomioon.
 Yhden tekijän aiheuttamia vaikutuksia vasteeseen kutsutaan \textit{päävaikutuksiksi}
 (engl. \textit{main factor}) erotukseksi useamman tekijän yhteisvaikuksista.
 
+Nykyisin tietokoneiden avulla voidaan luoda algoritmin tuottamia D-optimaalisia
+koesuunnitelmia. Suunnitelman luova algoritmi etsii optimaalisen ryhmän
+koeajoja mahdollisten koeajojen joukosta siten että mallin parametriarvioiden
+kovarianssi miminoituu \parencite[s.~513]{Montgomery2012}.
+Toisin kuin yleiset koesuunnitelmat, D-optimaaliset eivät välttämättä ole
+ortogonaalisia ja siten vaikutusarviot voivat olla toisistaan riippuvaisia.
+Ne kuitenkin sallivat kokeen suorittamisen tavallisia koesuunnitelmia
+vähemmillä koeajoilla ja sallivat suunnitelman muokkauksen silloin kun
+kaikkia tekijätasojen yhdistelmiä ei syystä tai toisesta voida toteuttaa
+\parencite{ehandbook}.
+D-optimaalinen suunnitelma kykenee arvioimaan kaikki yhden parametrin vaikutukset sekä kaikki 2 tekijän yhteisvaikutukset pitämällä koeajojen määrän kuitenkin mahdollisimman pienenä.
+
+
+
 \textcite{Li2006} ovat tehneet meta-analyysin yhdistelykokeissa esiintyvistä
 säännönmukaisuuksista, joista yksi on em. vaikutusten niukkuusperiaate.
 Analyysin tuloksia on muun muassa:
@@ -677,20 +695,25 @@ Analyysin tuloksia on muun muassa:
 \end{itemize}
 
 Tuloksia voidaan mallintaa matemaattisesti, vasteen ja tekijöiden yhdistävällä
-yhtälöllä. Ensimmäisen kertaluvun malli kuvaa ainoastaan tekijöiden päävaikutuksia:
-\[y = \beta _0 + \beta _{1}x_1 + \beta _{2}x_2 + \varepsilon \]
+yhtälöllä. Ensimmäisen kertaluvun malli kuvaa ainoastaan tekijöiden päävaikutuksia.
+Jos tekijöitä on esimerkiksi kaksi, on malli
 
 \begin{equation}
   \label{eq:1krtluku}
  y = \beta _0 + \beta _{1}x_1 + \beta _{2}x_2 + \varepsilon,
 \end{equation}
 
-missä \textit{y} on vaste, \textit{x}:t tekijöitä, \textit{ \beta }:t tuntemattomia parametreja
-jotka arvioidaan kokeen tuloksista ja \textit{\varepsilon} on
+missä \textit{y} on vaste, \textit{x}:t tekijöitä, $\beta $:t tuntemattomia parametreja
+jotka arvioidaan kokeen tuloksista ja $\varepsilon $ on
 kokeessa tapahtuvaa satunnaista virhettä kuvaava termi.
-Usein lisätään yhteisvaikutusta kuvaava termi, esimerkiksi
-\[y = \beta _0 + \beta _{1}x_1 + \beta _{2}x_2 + \beta _{12}x_{1}x_{2} + \varepsilon \]
-Jolloin voidaan kuvata päävaikutuksia ja kahden tekijän yhteisvaikutuksia.
+Usein lisätään yhteisvaikutusta kuvaava termi, esimerkiksi kahden tekijän tapauksessa
+
+\begin{equation}
+  \label{eq:2krtluku}
+ y = \beta _0 + \beta _{1}x_1 + \beta _{2}x_2 + \beta _{12}x_{1}x_{2} + \varepsilon,
+\end{equation}
+
+jolloin voidaan kuvata päävaikutuksia ja kahden tekijän yhteisvaikutuksia.
 
 
 
@@ -747,7 +770,7 @@ Kokeen suunnittelun alkuvaiheessa monia mahdollisia tekijöitä harkitaan
 mutta todennäköisesti useat niistä ovat merkityksettömiä tai lähes
 merkityksettömiä. Tätä ei kuitenkaan voida etukäteen tietää. Tällöin
 on tarkoituksenmukaista tehdä \em seulontakoe, \em
-(engl. screening experiment) jossa mukana on monia tekijöitä
+(engl. \em screening experiment\em) jossa mukana on monia tekijöitä
 ja tarkoituksena on tunnistaa niistä ne joilla on suuri vaikutus.
 Tärkeiksi havaitut tekijät tutkitaan perusteellisemmin myöhemmissä
 kokeissa.
@@ -788,12 +811,7 @@ piirtää yksinkertaisia kuvia ja kuvaajia.
 
 
 
-
-
-\todo{d-optimal, designated design, Box-Meyers}
-
-
-\section{Dispersiovaikutukset, robusti suunnittelu ja laadunhallinta}
+\section{Dispersiovaikutukset, robusti suunnittelu ja optimointi}
 
 Teollisuudessa prosessin tuloksena on usein jokin tuote, ja vasteena voidaan
 tutkia jotakin tämän tuotteen ominaisuutta. Koesuunnittelun menetelmillä
@@ -803,7 +821,7 @@ tekijät pidetään tietyillä tasoilla. Tällöin tuote on tasalaatuista, mikä
 on yksi laadunhallinnan tavoitteista.
 
 Vasteen satunnaista vaihtelua sanotaan \em varianssiksi \em tai \em vaihteluksi, \em
-ja usein tavoitellaan sen minimoimista. Koesuunnittelulla saadaan
+ja yleensä tavoitellaan sen minimoimista. Koesuunnittelulla saadaan
 tietoa tekijöiden vaikutuksista vasteen varianssiin. Tällaista vaikutusta
 kutsutaan \em dispersiovaikutukseksi. \em
 Vastaavasti kuten edellä käsitellyissä vaikutuksissa vasteen tasoon,
@@ -813,8 +831,8 @@ ja monen tekijän yhteisvaikutuksia.
 
 Kun koesuunnittelulla halutaan saada selville nämä vaikutukset
 ja se ihanteellinen tekijätasojen yhdistelmä jolla varianssi on pienimmillään,
-puhutaan \em robustien parametrien suunnittelusta \em (engl. robust
-parameter design, robustien koska prosessista halutaan mahdollisimman
+puhutaan \em robustien parametrien suunnittelusta \em (engl. \em robust
+parameter design\em, robustien koska prosessista halutaan mahdollisimman
 vastustuskykyinen satunnaisille muutoksille, so. robusti, ja parametrien koska
 teollisuudessa kokeen tekijät ovat yleensä hallittavia prosessiparametreja).
 Dispersiovaikutusten etsintään on kolme lähestymistapaa:
@@ -883,7 +901,7 @@ Taguchin menetelmässä hallittaville ja ei-hallittaville
 tekijöille valitaan omat erilliset koesuunnitelmansa.
 Hallittavien tekijöiden suunnitelmaa nimitetään \em sisätaulukoksi \em
 ja ei-hallittavien tekijöiden suunnitelmaa \em ulkotaulukoksi \em
-(engl. inner array ja outer array).
+(engl. \em inner array\em ja \em outer array\em).
 Nämä suunnitelmat
 "ristitään", so. sisätaulukon jokainen tekijätasojen yhdistelmä
 suoritetaan ulkotaulukon joka tekijätasojen yhdistelmällä. Syntyvää
@@ -902,12 +920,16 @@ yhteensä \(9\times 8=72\) koeajoa. Kuten nähdään, vaikka tekijöitä on vain
 \textcite{shoemaker1991} huomauttavat että tällainen ristikkäinen
 suunnitelma on pohjimmiltaan vain osittainen yhdistelykoe jolla
 on tietty sulautumisrakenne. Kun ristikkäinen suunnitelma esitetään
-näin, puhutaan \em yhdistetystä suunnitelmasta \em (eng. combined
-array). Yhdistetyssä suunnitelmassa ei-hallittavia
+näin, puhutaan \em yhdistetystä suunnitelmasta \em (eng. \em combined
+array\em). Yhdistetyssä suunnitelmassa ei-hallittavia
 tekijöitä ei siis eroteta omaksi ulkotaulukokseen, vaan niitä vaihdellaan yhdessä hallittavien
 tekijöiden kanssa kuten normaalissa \(2^k\)-kokeessa.
 Yhdistetyn suunnitelman etuna on suurempi joustavuus, sillä siinä sulautumisia
 voidaan hallita tarpeen mukaan.
+\textcite{Hijar-Rivera2009} esittävät tietokoneella tuotettuja ristikkäisiä
+suunnitelmia Taguchin tarjoamien valmiiden suunnitelmien rinnalle.
+Jokaiselle Taguchin suunnitelmalle voitiin tuottaa vähintään yksi koeajoiltaan samansuuruinen
+mutta tehokkaampi suunnitelma.
 
 Myös Taguchin menetelmä ristikkäisen suunnitelman datan analysointiin on
 omintakeinen. Ei-hallittavia tekijöitä sisältävien kokeiden analysoinnissa
@@ -922,28 +944,36 @@ sen varianssiin. Hallittavien tekijöiden dispersiovaikutukset tunnistetaan
 niiden vaikutuksesta signaali-kohinasuhteeseen, ja robustin suunnittelun
 tavoitteena on maksimoida tämä suhde.
 Suoritemitta-analyysin tarkoituksenmukaisuutta on kritisoitu paljon.
-\textcite{Bursztyn} mukaan sen suurin heikkous on että siinä ei
-erityisesti hyödynnetä kokeeseen sisällytettyjä ei-hallittavia tekijöitä,
+\textcite{Bursztyn} mukaan sen suurin heikkous on siinä että
+kokeeseen sisällytettyjä ei-hallittavia tekijöitä ei
+erityisesti hyödynnetä,
 vaikka ne on varta vasten tunnistettu ja valittu koetta varten. Pohjimmiltaan
 niiden data vain "luhistetaan" matemaattisesti jonka jälkeen analyysi
 tehdään kuten yksinkertaisessa toistoon perustuvassa suunnitelmassa.
 Toinen ongelmallinen seikka on vasteen keskiarvon ja sen varianssin
 väkinäinen yhdistäminen.
 \textcite{box1988,steinberg1994} ovat näyttäneet monia muitakin suoritemitta-analyysin
-haittoja, mm. sen että se voi jättää tunnistamatta dispersiovaikutuksia.
+haittoja, mm. sen että se voi olla huomaamatta dispersiovaikutuksia.
 
 Vastemallianalyysi on vähemmän kiistanalainen analysointimenetelmä.
 Sovellettuna yhdistettyyn suunnitelmaan se on samankaltainen kuin
 \ref{doe} esitetty tulosten mallintamisen
 menetelmä. Esimerkiksi, jos on 2 hallittavaa tekijää, $x_1$ ja $x_2$, ja yksi
 ei-hallittava tekijä, $z_1$, malli on
-\[y = \beta _0 + \beta _{1}x_1 + \beta _{2}x_2 + \beta _{12}x_{1}x_{2} + \gamma _{1}z_1 + \delta _{11}x_{1}z_{1} + \delta _{21}x_{2}z_1 + \varepsilon \]
 
-\todo{analyysi: keskiarvo ja varianssi erikseen}
+\begin{equation}
+  \label{eq:vastemalli}
+ y = \beta _0 + \beta _{1}x_1 + \beta _{2}x_2 + \beta _{12}x_{1}x_{2} + \gamma _{1}z_1 + \delta _{11}x_{1}z_{1} + \delta _{21}x_{2}z_1 + \varepsilon
+\end{equation}
 
-Robustien parametrien suunnittelun menetelmissä on muistettava
-huomioida se, onko kokeen vasteena tutkittu tulosten keskiarvoa vai
-varianssia. \todo{lisää asiaa tähän}
+Keskiarvo ja varianssi voidaan mallintaa myös ristikkäisestä suunnitelmasta suoraan.
+Arvot lasketaan joka sisätaulukon koeajoyhdistelmälle
+samojen ei-hallittavien tekijöiden arvojen tasolla,
+joten niissä esiintyvät erot johtuvat hallittavien tekijöiden eri tasoista. Voidaan
+siis yhtä aikaa optimoida sekä vasteen keskiarvo että sen varianssi.
+
+
+
 
 Taguchin menetelmien perusteista ja pätevyydestä on huomattavasti erimielisyyttä.
 Yleisesti ottaen tilastotieteilijät, matemaatikot ja tutkijat sanovat menetelmän
@@ -973,41 +1003,54 @@ rakennetta.
 \textcite[s.~554]{Montgomery2012} mukaan vastepintamenetelmä
 (josta lisää luvussa \ref{vastep})
 on luotettavampi ja tehokkaampi vaihtoehto robustien parametrien suunnitteluun.
+\textcite{Sleeper2012} jättää Taguchi-menetelmät kokonaan
+pois kirjastaan sanoen niiden käytön olevan vähentymässä ja tarjoaa myös tilalle
+vastepintamenetelmää.
 
 \textcite{Antony2006} antaa yleistason kuvan Taguchi-menetelmien ja
-perinteisen koesuunnittelun eroista \todo
-
-\textcite{Sleeper2012} jättää Taguchi-menetelmät kokonaan
-pois kirjastaan sanoen niiden käytön olevan vähentymässä ja tarjoaa tilalle
-vastepintamenetelmiä. Toisaalta monet teollisuuden kanssa työskentelevät
-suosittelevat Taguchi-menetelmiä. Eero Karjalainen (lisää sitaatti) kertoi
-sähköpostissa havainneensa Taguchi-menetelmien toimivan hyvin.
+perinteisen koesuunnittelun eroista harjoittajan näkökulmasta. Taulukossa \ref{tab:vertailu}
+hän vertailee Taguchi-menetelmää ja perinteistä koesuunnittelua, jolla hän
+tässä tarkoittaa seulontakoe-vastepinta-menetelmää josta lisää luvussa \ref{vastep}.
+Antony näyttää kallistuvan Taguchi-menetelmän kannalle teollisuuden
+tarpeiden tapauksessa.
 
 \begin{table}
   \small
   \begin{center}
-    \caption{Example of evaporation conditions in a thin film structure.}
-    \label{tab:thin_film}
+    \caption{Robustien parametrien suunnittelumenetelmän valinnan kaavio \parencite{Antony2006}.}
+    \label{tab:vertailu}
     \begin{tabular}{l | r r r r r r}
       % l = align to left (e.g. text), c=align to center, r=align to
       % right (e.g. numbers), Pipe | creates vertical line
       % Let's put 1 horinzontal line above the table, 2 after header rows,  and 1 below
       \hline
       \textbf{Ongelman luonne} & \textbf{Taguchi}& \textbf{Perinteinen}  \\
-                         & \textbf{(DOE)}     & \textbf{DOE} \\
+                         & \textbf{DOE}     & \textbf{DOE} \\
       \hline 
       \hline
-      Kokeen tekijä uskoo kokeessa olevan vahvoja vuorovaikutuksia & \times & \checkmark \\
-      Nopea prosessin ymmärtäminen ja vastaus johtoportaalle & \checkmark & \times   \\
+      Kokeen tekijä uskoo tutkimuskohteessa olevan läsnä vahvoja vuorovaikutuksia & \times & \checkmark \\
+      
+      Nopea prosessin yleistuntemus ja vastaus johtoportaalle & \checkmark & \times   \\
+      
+      Prosessin optimiolosuhteiden määritys & \times & \checkmark \\
+      
+      Robusti suunnittelu kun ei-hallittavat tekijät on tunnistettu vaihtelun lähteiksi & \checkmark & \times \\
+      
+      Prosessin suorityskykymitan tavoitearvon ennakointi & \times & \checkmark \\
+      
+      Varianssin vähentäminen tietyn tavoitearvon läheisyydessä & \checkmark & \times \\
+      
+      Vasteen ja prosessiparametrien välisen suhteen matemaattinen mallintaminen & \times & \checkmark \\
+      
+      Parametrien ja toleranssien suunnittelu halutun varianssin saavuttamiseksi & \checkmark & \times \\
       \hline
     \end{tabular}
   \end{center}
 \end{table}
 
 
-Minitab-ohjelma tarjoaa Taguchi-suunnitelmien tekemiseen ja analysointiin työkalut.
 
-\textcite[s. 300-301]{Hedayat2012} listaavat
+\textcite[s.~300-301]{Hedayat2012} luettelevat
 seuraavat ongelmat liittyen
 Taguchi-menetelmiin:
 \begin{itemize}
@@ -1062,10 +1105,54 @@ keskittyvät tekijöiden ja vasteen välisen suhteen mallintamiseen
 eivätkä ne sovellu merkittävien tekijöiden tunnistamiseen eli seulontaan kuten $2^k$-suunnitelmat
 soveltuvat. Usein näitä suunnitelmia käytetäänkin peräkkäin jolloin 
 $2^k$-seulontakokeessa tunnistettuja tekijöitä optimoidaan tarkemmilla vastepintasuunnitelmilla.
+\textcite{ehandbook} mukaan vastepintasuunnitelmiin on paras siirtyä vasta
+sitten kun seulontakokeella on vähennetty tutkittavien tekijöiden määrää
+neljään tai vähempään.
 
-RSM toteutetaan useina peräkkäisinä kokeina.
+Usein tekijöiden seulonnan jälkeen prosessin senhetkisten tekijätasojen oletetaan
+vielä olevan kaukana optimista, joten on suotavaa ensin siirtyä nopeasti optimialueen
+läheisyyteen, jonka jälkeen vasta mallinnetaan vastepinta ja tarkemmat tekijöiden
+optimitasot. Ensimmäinen tai ensimmäiset kokeet voidaan tehdä $2^k$-suunnitelmilla
+ja  sovittamalla tulokset ensimmäisen kertaluvun malliin \ref{eq:1krtluku}.
+Tämän jälkeen kohti optimialuetta siirrytään \em jyrkimmän nousun \em
+(tai \em jyrkimmän laskun \em) menetelmällä. Jyrkimmän nousun suunta on se
+suunta, missä vaste $y$ nousee nopeimmin. Ensimmäisen kertaluvun mallissa,
+jossa ei ole kaarevuutta, tämä suunta on kohtisuora vastepintaa kohden, kuten
+nähdään kuvasta \todo{kuva jossa steepest ascent}. Kokeen tekijä päättää
+kuinka isoja askeleita jyrkimmän nousun suuntaan otetaan. Uusia kokeita suoritetaan
+aina askelten välissä, ja jos vasteessa ei enää havaita nousua, voidaan sovittaa
+uusi ensimmäisen kertaluvun malli, jonka jälkeen jatketaan samaan tapaan.
+Lopulta päädytään lähelle optimialuetta, mistä yleensä kertoo ensimmäisen kertaluvun mallin
+huonompi sopivuus tuloksiin.
 
-RSM:ssä vasteeksi pitää valita varianssi, jolloin kokeissa tarvitaan useita toistoja?
+Optimialueen läheisyydessä toteutetaan vastepintasuunnitelma, josta voidaan
+tarkasti arvioida vastepinnan muotoa ja siten myös tekijöiden optimitasoja.
+Yleisimmin käytetyt suunnitelmat ovat Box-Behnken- ja keskiökomposiittisuunnitelmat
+(engl. Central composite design, CCD). Molemmissa käytetään vähintään kolmea
+tekijätasoa kaarevuudeen mallintamiseksi. Joissain CCD-suunnitelmissa vaaditaan
+jopa viisi tekijätasoa. Taulukossa \ref{vpsuunnitelmat} nähdään näitten suunnitelmien vaatimat
+koeajojen määrät eri tekijöiden määrällä.
+
+\begin{table}[]
+\centering
+\caption{CCD- ja Box-Behnken-suunnitelmien vaatimat koeajojen määrät eri tekijöiden määrällä \parencite{ehandbook}}
+\label{vpsuunnitelmat}
+\begin{tabular}{ccc}
+\hline
+\textbf{Tekijöiden määrä} & \textbf{CCD-suunnitelma}                 & \textbf{Box-Behnken} \\ \hline
+2                         & 13                                       & -                    \\
+3                         & 20                                       & 15                   \\
+4                         & 30                                       & 27                   \\
+5                         & 33 (osittainen) tai 52 (täydellinen koe) & 46                   \\
+6                         & 54 (osittainen) tai 91 (täydellinen koe) & 54                  
+\end{tabular}
+\end{table}
+
+Jotta vastepintamenetelmällä saadaan mallinnettua vasteen varianssia, on käytettävä
+passiivista robustien parametrien suunnittelua, eli
+joka koeajosta on tehtävä useita toistoja. Toistoista lasketaan joka pisteelle vasteen
+varianssi, joka pyritään tässä tapauksessa minimoimaan. Toistojen vuoksi
+kokeiden määrä saattaa nousta kokeesta riippuen hyvin korkeaksi.
 
 
 \subsection{Muut menetelmät}
@@ -1075,20 +1162,21 @@ toimivuutta robustissa suunnittelussa. Menetelmä on kuten kappaleessa \ref{doe}
 aOFAT, erotuksena se että joka hallittavan tekijän tason vaihdon
 jälkeen ajetaan ei-hallittaville tekijöille resoluutio III -tasoinen
 yhdistelykoe. Johtopäätöksenä he esittävät että OFAT on tässäkin tilanteessa
-turhaan ylenkatsottu menetelmä. Kun kokeen virhe on pieni
+turhaan ylenkatsottu menetelmä.
+
+Kun kokeen virhe on pieni
 tai yhteisvaikutukset suuria, on
 tämänkaltainen aOFAT parempi kuin Taguchi-tyyliset ristikkäiset suunnitelmat.
 Kun virhe kasvaa, tietyssä pisteessä ristikkäiset suunnitelmat osoittatuvat
 kuitenkin paremmiksi.
 
 
-
-
-
-
-
-
-\section{Systemaattinen ja satunnainen virhe}
+Minitab ja useimmat muut koesuunnitteluohjelmistot tarjoavat työkalut
+Taguchi- ja vastepintasuunnitelmien tekoon ja tulosten analysointiin.
+Aina ne eivät kuitenkaan tarjoa dispersiovaikutusten ja vasteen varianssin
+analysointiin tarvittavia valmiita suunnitelmia, ja kokeentekijän
+on itse suunniteltava passiivisessa robustien parametrien suunnittelussa
+tarvittavat toistokokeet ja laskettava varianssi.
 
 
 
@@ -1099,7 +1187,7 @@ kuitenkin paremmiksi.
 
 
 Missä tahansa mittauksia sisältävässä tapahtumassa osa mitatuista
-eroista johtuu varsinaisesta mitattavien kohteiden eroista mutta osa itse mittausprosessista
+eroista johtuu varsinaisesta mitattavien kohteiden eroista ja osa itse mittausprosessista
 tai mittalaitteista. \em Mittajärjestelmäanalyysin \em tarkoituksena
 on näiden osien suhteen selvittäminen ja tulosten vaihtelun syiden erittely.
 Tulosten perusteella voidaan päätellä onko mittausjärjestelmä käyttökelpoinen.
@@ -1116,8 +1204,8 @@ on eri käyttäjistä, menetelmistä jne. aiheutuvaa vaihtelua.
 Tuloksia tutkitaan tilastollisella \em varianssianalyysilla \em (ANOVA, analysis of variance).
 Tämänkaltaisia mittajärjestelmäanalyyseja kutsutaan GR\&R-analyyseiksi
 (gauge tai gage repeatability and reproducibility).
-Taulukossa \ref{table:grr} on esitetty GR\&R-analyyseissa usein käytettyjä
-muuttujia. Ko. muuttujien avulla arvioidaan mittajärjestelmän käyttökelpoisuutta.
+Taulukossa \ref{table:grr} on esitetty GR\&R-analyyseissa usein tutkittuja
+suureita. Ko. suureiden avulla arvioidaan mittajärjestelmän käyttökelpoisuutta.
 Jos kokeessa on esimerkiksi ollut mukana useita käyttäjiä, voidaan myös
 analysoida käyttäjien, kohteen ja käyttäjä-kohde vuorovaikutuksen osuutta
 varianssista.
@@ -1131,7 +1219,7 @@ varianssista.
 \label{table:grr}
 \begin{tabular}{@{}ll@{}}
 \toprule
-Muuttuja                           & Määritelmä                                              \\ \midrule
+Suure                           & Määritelmä                                              \\ \midrule
 $\gamma _P$                         & Kohteen varianssi                                       \\
 $\gamma _M$                         & Mittajärjestelmän varianssi                             \\
 $\gamma _T = \gamma _P + \gamma _M$ & Vasteen kokonaisvarianssi                               \\
@@ -1166,7 +1254,7 @@ mittaa samaa osaa useita kertoja. Yleensä suositellaan tekemään
 vähintään 20 mittausta tällä tavalla. Tuloksista voidaan arvioida mittaustuloksen
 vaihtelua ja keskiarvon mahdollista muuttumista ajan suhteen.
 
-Syystä tai toisesta teollisuuteen on vakiintunut tapa tehdä yksinkertainen GR\&R-analyysi
+Syystä tai toisesta teollisuuteen on vakiintunut tapa tehdä GR\&R-analyysi
 10:llä näytekappaleella, 3:lla käyttäjällä ja 2 tai 3:lla mittaustoistolla.
 Tällöin koe on $10 \times 3 \times 2$ tai $10 \times 3 \times 3$ -koe.
 Kuten nähdään, $10 \times 3 \times 2$ -koe vaatii $10 \times 3 \times 2 = 60$
@@ -1183,7 +1271,7 @@ Tyypillisesti mittajärjestelmäanalyysissa tutkitaan vain kahta muuttujaa -
 käyttäjää ja näytekappaletta. Samassa analyysissa voidaan kuitenkin
 tutkia useampiakin muuttujia, esimerkiksi eri mittalaitteita tai laboratorioita. Kun
 tyypilliseen GR\&R-analyysiin lisätään muuttujia, puhutaan
-\em laajennetusta GR\&R-analyysista. \em Jos esimerkiksi lisätään
+\em laajennetusta \em GR\&R-analyysista. Jos esimerkiksi lisätään
 tyypilliseen GR\&R-analyysiin 3 eri mittalaitetta, voi mittausten määräksi
 tulla $10 \times 3 \times 2 \times 3 = 180$. Koska mittausten määrä
 kasvaa näin nopeasti, usein vähennetään näytekappaleiden määrää
@@ -1197,7 +1285,7 @@ kokeen kaikki käyttäjät eivät voi mitata samaa kappaletta, jolloin toistetta
 ei voida määrittää tavalliseen tapaan. \textcite{mitchell1997,bergeret2002improving}
 ovat kuitenkin esittäneet menetelmiä mittajärjestelmäanalyysin tekemiseen
 destruktiiviselle mittausjärjestelmälle. Kattavan katsauksen näihin ja
-muihin vastaaviin menetelmiin antaa \textcite{Mast2005}.
+muihin vastaaviin menetelmiin antavat \textcite{Mast2005}.
 \textcite{Gorman2002} esittämässä menetelmässä tarvitaan erä kappaleita
 jotka ovat tarpeeksi samanlaisia jotta niitä voidaan ajatella samana kappaleena,
 so. homogeeninen erä. Toistettavuus arvioidaan erän sisäisestä vaihtelusta.
@@ -1215,9 +1303,9 @@ A ei mittaa käyttäjän B mittaamia kappaleita. Kuvassa \todo{lisää kuva joss
 nähdään näiden suunnitelmien erot. Destruktiivinen mittausjärjestelmä
 vaatii lähes aina hierarkkisen mittajärjestelmäanalyysin. Jos käytettävissä on
 suuri näytekappale-erä joka voidaan varmuudella olettaa homogeeniseksi,
-voidaan destruktiivisen mittausjärjestelmän analyysi toteuttaa ristiöitynä.
+voidaan destruktiivisen mittausjärjestelmän analyysi toteuttaa ristiöitynäkin.
 Tulosten varianssianalyysi muuttuu merkittävästi sen mukaan onko
-käytetty ristiöityä vai hierarkkista suunnitelmaa,
+käytetty ristiöityä vai hierarkkista suunnitelmaa.
 
 
 
@@ -1233,8 +1321,9 @@ simulaatioilla osoittaneet ainakin käyttäjien määrän lisäämisen kolmesta
 kuuteen parantavan luottamusväliä merkittävästi.
 
 
-\todo{DOE seulontakoe ja varianssin lähteitä etsivä mittajärjestelmäanalyysi ovat
-tavoitteiltaan samankaltaisia.}
+
+
+
 
 
 Mittajärjestelmäanalyysien tekoon on useita ohjelmistoja, esimerkiksi edellä mainittu
@@ -1242,8 +1331,7 @@ Minitab. Kuten koesuunnittelussakin, asiantunteva kokeentekijä voi myös
 suunnitella kokeen ja analysoida tulokset itse, ja usein hyödyllisintä tulosten
 tulkinnan kannalta on havainnollisten kuvien ja kuvaajien piirtäminen.
 
-\todo{onko muuten grr jossa etsitään varianssiin vaikuttavia tekijöitä l. dispersiovaikutuksia
-sama kuin dispersiovaikutus-seulonta?}
+
 
 
 %-------------------------------------------------------------------------------
@@ -1340,44 +1428,44 @@ testituloksiin syy todellakin pinnoitteessa vai olivatko
 ne mahdollisesti seurausta virheellisestä testauslaitteistosta
 tai -menetelmästä. Toisin sanoen haluttiin selvittää
 kumipyöräabraasiokokeen luotettavuutta. Tutkimuksen tekemiseen
-käytettiin tilastollisen koesuunnittelun menetelmiä jotka
+käytettiin koesuunnittelun menetelmiä jotka
 toteutettiin Minitab–ohjelmistolla. Projektissa käytettäväksi
 valmisteltiin yksi suuri erä ruiskupinnoitettuja karbidipintaisia näytekappaleita
 sekä kokoelma kappaleita erilaisilla pinnoitteilla.
 
-Mittausjärjestelmää voidaan ajatella prosessina johon kuuluu
+Kumipyöräabraasiokoe on tässä projektissa mallinnettu prosessiksi johon kuuluu
 näytteen valmistelu, abraasiotestin toteuttaminen ja massahäviön
-mittaaminen. Prosessissa on sekä hallittavia parametreja, tässä mm. painava
-voima, pyörimisaika ja ..., että ei-hallittavia parametrejä, tässä mm.
-ilmankosteus, pyörän pinnan tasaisuus, ... . On myös jokin tietty vaste,
-jonka halutaan olevan keskimäärin tietyllä tasolla vaihtelun ollessa
-mahdollisimman pientä. Koesuunnittelun hallittavat ja ei-hallittavat
+mittaaminen. Prosessissa on sekä hallittavia parametreja, tässä mm.
+näytekappaletta kumipyörää vasten painava
+voima ja pyörimisaika kuten myös ei-hallittavia parametrejä, tässä mm.
+ilmankosteus, pyörän pinnan tasaisuus ja kumipyörän kovuus.
+Koesuunnittelun hallittavat ja ei-hallittavat
 tekijät vastaavat näitä hallittavia ja ei-hallittavia parametreja joten
 tässä luvussa niitä on kutsuttu parametreiksi.
 
-Tässä mittausprosessissa hallittavia parametreja ovat mm. painava
-voima, pyörimisaika ja ..., ja ei-hallittavia parametrejä mm.
-ilmankosteus, pyörän pinnan tasaisuus, ... . Ihanteellissa tapauksessa
-haluttu ulostulo olisi materiaalin todellinen kulumiskestävyys.
-Tällöin voitaisiin käyttää tunnetun referenssimateriaalin arvoa ja
-verrata sitä saatuihin tuloksiin.
-Tässä kuitenkin mittauslaitetteessa ei ole käytetty standardin mukaisia
-parametrejä eikä tuloksia ole ilmoitettu muuten kuin massahäviönä.
-Mittauslaitteesta saatavia tuloksia ei voi verrata tunnettuihin
-materiaaleihin. ...
+Kokeessa vaste on koekappaleen massahäviö. Millekään tietylle tasolle
+vastetta ei ole haluttu säätää, sillä luotettavia referenssimateriaalien
+arvoja ei ole ollut saatavilla ja koe ei muutenkaan ole ollut täysin
+standardin mukainen. Tuloksia on käytetty puhtaasti laboratorion
+sisäisesti eri materiaalien vertailuun. Projektissa tutkimuksen
+kohteena onkin ollut vasteen varianssi. Koe on destruktiivinen,
+mikä on pitänyt ottaa huomioon useissa suoritetuissa
+mittajärjestelmäanalyyseissa.
+
+
 
 \section{Suunnitelma}
 
 Muodostui seuraava suunnitelma: ensin suoritetaan yksinkertainen
-tyypin 1 mittajärjestelmäanalyysi (type 1 Gage R\&R), jolla tutkitaan
-prosessin stabiiliutta eli tuloksen muutosta ajan suhteen. Sen
+tyypin 1 mittajärjestelmäanalyysi jolla tutkitaan
+prosessin toistettavuutta. Sen
 jälkeen yleisellä mittajärjestelmäanalyysilla (Gage R\&R) tutkitaan
 todennäköisimmäksi hajonnan aiheuttajaksi jo aiemmin arvellun kumipyörän
-epäsäännöllisyyden osuutta kokonaishajonnasta 3 erilaisella tätä
-projektia varten valmistetulla kumipyörällä. Lopulta tehdään
-robustien parametrien suunnittelu–koe, jolla etsitään ne
+epäsäännöllisyyden osuutta kokonaishajonnasta 3:lla erilaisella tätä
+projektia varten valmistetulla kumipyörällä. Lopulta suoritetaan
+robustien parametrien suunnittelu, jolla etsitään ne
 hallittavien parametrien arvot (ajoaika, hiekan virtausmäärä jne.)
-joilla koetulosten hajonta on pienintä. Alustavasti menetelmäksi valittiin
+joilla koetulosten vaihtelu on pienintä. Alustavasti menetelmäksi valittiin
 Taguchi–koe. Jätettiin myös avoimeksi mahdollisuus tehdä muita
 kokeita sen mukaan mikä vaikuttaisi olevan projektin kannalta
 hyödyllistä. Mahdollisista koetulokseen vaikuttavista syistä koottiin
@@ -1432,7 +1520,7 @@ ja kokeen jälkeisen punnituksen välillä.
 
 Koska koemäärä vaikutti riittämättömältä koetta jatkettiin valmistelemalla 6 näytekappaletta lisää ja ajamalla niihin kulumisjälki satunnaisessa järjestyksessä, mittaamalla massahäviöt ja ajamalla toinen kulumisjälki satunnaisessa järjestyksessä.
 Kuva \ref{fig:t1grrjt} näyttää tuloksen kun uudet tulokset lisättiin kuvaan \ref{fig:t1grr}.
-Hajonta vaikuttaa kaoottisemmalta ja laskeva suuntaus ei ole enää niinkään selvä. Näytteen ensimmäisen ja toisen mittaustuloksen vertailukuvaajaan lisättynä
+Hajonta vaikuttaa kaoottisemmalta ja laskeva suuntaus ei ole enää niin selvä. Näytteen ensimmäisen ja toisen mittaustuloksen vertailukuvaajaan lisättynä
 tulos on kuvassa \ref{fig:t1grrjt2} (uudet näytteet merkittiin B-kirjaimella). 3:ssa uusista näytteistä massahäviö laski mutta 3:ssa myös nousi.
 Aiempi ilmiö oli luultavasti sattumaa tai aiheutui tuntemattomasta virheestä koeprosessissa. Kaiken kaikkiaan tyypin 1 mittajärjestelmäanalyysi ei osoittanut testin olevan epästabiili, so. ajan suhteen muuttuva. Toisaalta on huomattava että 32 testiajoa n. 2 päivän aikana ei todennäköisesti ole riittävä määrä kokeita tai aikaa luotettavien tulosten saamiseksi.
 
@@ -1460,8 +1548,8 @@ Aiempi ilmiö oli luultavasti sattumaa tai aiheutui tuntemattomasta virheestä k
 
 Mittajärjestelmäanalyysiin valitaan koekappaleita mahdollisimman kattavasti koko siitä valikoimasta joita mittajärjestelmä normaalissa käytössä kohtaisi, tarkoituksena vertailla tätä koekappaleiden odotettua hajontaa muihin hajontalähteisiin ja saada selville käyttäytyykö järjestelmä eri tavalla eri mittaustulosalueilla. Koekappaleita valmistettiin 12:sta eri pinnoitteesta jotka
 numeroitiin 1 \ldots 12.
-Eri operaattoreiden sijasta käytettiin 3:a erilaista abraasiotestin kumipyörää koska tämän
-uskottiin olevan merkittävästi todennäköisempi vaihtelun lähde kuin operaattorin. Pyörät
+Eri käyttäjien sijasta käytettiin 3:a erilaista abraasiotestin kumipyörää koska tämän
+uskottiin olevan merkittävästi todennäköisempi vaihtelun lähde kuin käyttäjän. Pyörät
 valittiin seuraavasti:
 
 \begin{description}
@@ -1470,7 +1558,7 @@ valittiin seuraavasti:
   \item[P3] Kumipyörä 3, keinotekoisesti hiomakoneella kulutettu kumipyörä, ”pompottava”
 \end{description}
 
-Koe tehtiin Minitab–ohjelman ohjeiden mukaan, hierarkkisena (nested) sillä kulumiskestävyyskoe on destruktiivinen eikä täsmälleen samaa näytekappaleen aluetta voi testata eri operaattoreilla/kumipyörillä. Onkin muistettava että kokeen taustalla on oletus pinnoitteiden homogeenisuudesta mikä ei välttämättä ole totuudenmukaista.
+Koe tehtiin Minitab–ohjelman ohjeiden mukaan, hierarkkisena (nested) sillä kulumiskestävyyskoe on destruktiivinen eikä täsmälleen samaa näytekappaleen aluetta voi testata eri käyttäjillä/kumipyörillä. Onkin muistettava että kokeen taustalla on oletus pinnoitteiden homogeenisuudesta mikä ei välttämättä ole totuudenmukaista.
 
 Joka pinnoitteesta valmisteltiin 3 näytekappaletta, joihin jokaiseen ajettiin 2 kulumisjälkeä. Aluksi laitteeseen asetettiin kumipyörä P1, jolla suoritettiin 1 koeajo jokaiseen eri pinnoitteeseen satunnaisessa järjestyksessä. Seuraavaksi asetettiin paikalleen kumipyörä P2 ja sama toistettiin uudelle joukolle näytekappaleita. Sama toistettiin jälleen pyörälle P3. Tämän jälkeen asetettiin paikalleen pyörä P1 uudelleen ja suoritettiin koeajo samoihin näytteisiin kuin oli suoritettu samalle pyörälle P1 aiemmin, jälleen satunnaisessa järjestyksessä. Näin tehtiin myös pyörälle P2 ja lopuksi pyörälle P3.
 
@@ -1658,17 +1746,15 @@ Taguchi-menetelmää. Projektin edetessä selventyi kuitenkin 2 syytä, joiden
 vuoksi Taguchi-suunnitelma ei ollut sopiva tässä tapauksessa:
 
 \begin{itemize}
-  \item Taguchi–menetelmässä parametrien optimointiin käytetään
+  \item Taguchi–menetelmässä tekijöiden optimointiin käytetään
 signaali-kohinasuhdetta, joka yhdistää koetuloksen keskiarvon ja varianssin. Tämä on tarpeetonta koska projektissa ei
 yritetty tai haluttu säätää tulosten keskiarvoa millään tavalla.
-  \item Hallittavat ja ei-hallittavat parametrit eli kontrollitekijät ja häiriötekijät.
-\todo{tarkasta temit alkukappaleista}
-Taguchi-menetelmä on ns. aktiivinen robustien parametrien suunnittelumenetelmä, so. kaikki tulokseen vaikuttavat tekijät, joita ei voida prosessin aikana hallita, eli häiriötekijät (näitä voivat olla ympäristön lämpötila ja ilmankosteus, osien kuluminen ajan myötä jne.) pyritään tunnistamaan ja sitten kokeen aikana hallitsemaan, näin vaihtelu pakotetaan esille kokeen aikana. Tämä on hyvin toimivaa kun nämä häiriötekijät tunnistetaan tai tunnetaan jo etukäteen ja prosessi halutaan suojata niitä vastaan, mutta kumipyöräabraasiokokeessa
+  \item Taguchi-menetelmä on aktiivinen robustien parametrien suunnittelumenetelmä jossa kaikki ei-hallittavat tekijät pyritään ennen koetta tunnistamaan ja sitten kokeen aikana hallitsemaan. Tämä on hyvin toimivaa kun nämä häiriötekijät tunnistetaan tai tunnetaan jo etukäteen ja prosessi halutaan suojata niitä vastaan, mutta kumipyöräabraasiokokeessa
 hajonnan syyt eivät olleet tarpeeksi hyvin tiedossa jotta aktiivista suunnittelua
 oltaisi voitu toteuttaa.
 \end{itemize}
 
-Suunnitelmaksi valikoitui passiivinen robusti suunnittelu, jossa kokeita toistetaan parametrien eri tasoilla ja toivotaan että vaihtelua esiintyy todellisuutta edustavalla tavalla. Toistojen määräksi valikoitui 4 koska 2
+Lopulta suunnitelmaksi valikoitui $2^k$ dispersiovaikutusten seulontakoe jossa kokeita toistetaan parametrien eri tasoilla ja toivotaan että vaihtelua esiintyy todellisuutta edustavalla tavalla. Toistojen määräksi valikoitui 4 koska 2
 saman pinnoitteen näytekappaleeseen kumpaankin voidaan tehdä 2 koeajoa.
 
 Koeajojen määrän pitämiseksi järkevänä oli tutkittavien parametrien määrä pidettävä pienenä. Lopulta päädyttiin 5 parametriin joiden vaikutus tuntui todennäköisimmältä:
@@ -1683,7 +1769,7 @@ Koeajojen määrän pitämiseksi järkevänä oli tutkittavien parametrien mää
 
 Joka parametrille valittiin 2 tasoa, matala ja korkea. Ajoajalle valittiin 5 min ja 15 min, paineelle 0 kg punnus ja 1,5 kg punnus, hiekan virtaukselle 21 g/min ja 62 g/min, abrasiivityypille nilsiähiekka (-1) ja alumiinioksidi (1) ja kannelle ei kantta (-1) tai kansi paikoillaan (1). Hiekan virtausta oli tarkoitus tutkia myös suuremmilla arvoilla, mutta tarkoitukseen soveltuvia suuttimia ei löytynyt. Kumipyöräksi valittiin aiemmin hyväksi osoittautunut kumipyörä P2.
 
-Varsinaista koesuunnitelmaa ei valittu valmiiden joukosta, vaan se luotiin Minitab –makrolla, jolle annettiin tutkittavien parametrien määrä ja joka sen pohjalta loi ns. D-optimaalisen koesuunnitelman. D-optimaalinen suunnitelma kykenee arvioimaan kaikki yhden parametrin vaikutukset sekä kaikki 2 tekijän yhteisvaikutukset pitämällä koeajojen määrän kuitenkin mahdollisimman pienenä. Etuna on että koe on räätälöity sille annettuihin parametreihin ja siten mahdollisimman tehokas.
+Varsinaista koesuunnitelmaa ei valittu valmiiden joukosta, vaan Minitab–makrolla luotiin D-optimaalinen suunnitelma. Etuna on että koeajojen määrä saatiin mahdollisimman pieneksi.
 
 Koesuunnitelmasta muodostui kuvan \ref{fig:tarray} mukainen:
 16 eri parametritasojen yhdistelmää, joista jokaisessa suoritettiin 4 koeajoa, yhteensä siis \(16\times 4 = 64\) koeajoa. 4 koetulokselle laskettiin keskiarvo ja keskihajonta.
@@ -1737,7 +1823,7 @@ optimointityökalu yrittää minimoida absoluuttisen keskihajonnan niin samalla 
 pyrkii pienempiin ajoaikoihin vain koska silloin tuloksen keskiarvo ja sitä kautta myös keskihajonta pienenee, \em vaikka suhteellinen keskihajonta nousisikin. \em Päätettiin käyttää keskihajonnan sijasta yksikköä \em variaatiokerroin, \em kaavalla
 \[v = \frac{s}{x} \times 100\> \%\]
 missä \em s \em on keskihajonta ja \em x \em on keskiarvo.
-\todo{Kirjallisuudesta paljastuikin myöhemmin variaatiokertoimen tai vastaavien arvojen olevan yleisesti käytettyjä robustissa suunnittelussa vaikka Minitab ei tätä mainitsekaan.}
+Kirjallisuudesta paljastuikin myöhemmin variaatiokertoimen sisältyvän Taguchin suoritemitta-analyysiin vaikka Minitab ei tätä mainitsekaan \parencite{Steinberg1998,Kawamura2010,Wu2009}.
 Variaatiokertoimet syötettiin Minitabiin, mutta koska Minitab ei ole asettanut mallia näihin arvoihin, vaan ainoastaan keskihajonnan arvoihin, ei variaatiokerrointa voida optimoida samalla työkalulla. Voidaan kuitenkin piirtää kuvan \ref{subfig:robusti2} mukainen vaikutuskuvaaja.
 Tässä kuvassa ajoaika ja abrasiivi ovat aiempaan verrattuna päinvastoin, nyt pidemmällä ajoajalla ja käyttämällä alumiinioksidia saadaan paremmat tulokset. Ilman optimointityökalua ei voida kuitenkaan arvioida yhteisvaikutuksia.
 
@@ -1813,9 +1899,11 @@ satunnaisemmiksi loppua kohden, tämän voisi kuvitella johtuvan kumipyörän ku
 Kaiken kaikkiaan mikään tutkituista tekijöitä ei vaikuttanut aiheuttavan
 kovin merkittäviä disperiovaikutuksia. Tulos viittaa siihen että jos kumipyöräkoe
 on antanut ajoittain poikkeavia tuloksia, on syy jossain muualla kuin tutkituissa
-tekijöissä. On kuitenkin pidettävä mielessä että koe oli passiivinen
-robustien parametrien suunnittelukoe ja toistojen määrä vähäinen.
+tekijöissä.
 
+
+Robustien parametrien suunnitteluun käytettiin lopulta D-optimaalista
+$2^k$-seulontakoetta
 
 
 
@@ -1855,269 +1943,12 @@ suuresti odotetusta poikkeavia koetuloksia (yhtä teräsnäytettä lukuunottamat
 
 
 
-%-------------------------------------------------------------------------------
-\chapter{Formats}
-\label{ch:formats}
-%-------------------------------------------------------------------------------
-
-%Brief basics of writing style are:
-%\begin{itemize}
-%\item Always think of your reader when you are writing and proceed
-%  logically from general to specific.
-%\item Highlight your key points, for example, by discussing them in
-%  separate chapters or presenting them in a table or figure. Use
-%  \textit{italics} or \textbf{boldface} for emphasis, but don't overdo
-%  it.  Moreover, this template uses \texttt{teletype} font for LaTeX
-%  specific names, such as commands and files.
-%\item Avoid long sentences and complicated statements. A full stop is
-%  the best way to end a sentence.
-%\item Use active verbs to make a dynamic impression but avoid the
-%  first person pro-noun ``I'', except in your preface.
-%\item Avoid jargon and wordiness. Use established terminology and
-%  neutral language.
-%\item The minimum length of chapters and subchapters is two
-%  paragraphs, and you need to consider the balance of
-%  chapters. Paragraphs must always consist of more than one sentence.
-%\item Do not use more than three levels of headings, such as 4.4.2.
-%\item Do not use too many abbreviations. Use capital and small letter
-%  consistently
-%\end{itemize}
-
-%Sometimes ending a section with list is considered as bad
-%style. Therefore, it is better to have some text after it.
-
-
-%\section{Figures}
-%You must refer to all the figures in the body text. The reference
-%should preferably appear on the same page as the actual figure or
-%before it. Figures and tables must be numbered consistently thesis
-%and primarily placed at the top of the page, but you are free to
-%decide where they fit best. Never start a chapter with a figure, table
-%or list.
-
-%Figures and the caption are either consistently centered (or aligned
-%to the left). The caption is placed under the figure and always on the
-%same page as the figure. All figures must be explained in the body
-%text, so that readers know what they are supposed to notice. Figures
-%generated by analysis software usually need further editing, see
-%Figure~\ref{fig:ex_fig} for example. The figures should be in the same
-%language as other text (even if Figure~\ref{fig:ex_fig} violates this
-%recommendation). The recommended font size is the same as that of the
-%body text but no smaller than 10 pt. The figures must be readable,
-%even if your thesis is printed in greyscale.
-% Note: put tilde between text and ref command, like in
-% 'Figure~\ref{fig:ex_fig}' above. Tilde (~) puts a white space but
-% prevents line break. Same thing applies to Table~\ref{tab:summary}
-% as well.
-
-% Here's an example how to add a figure. Default placement of figures
-% is at top of page, i.e. placement specifier is '[t]' could be
-% omitted.  The dimensions can be relative to text width (or height)
-% or absolute (4 cm).
-
-% You can leave out the figure postfix (.pdf, .eps, .png). Utilized
-% tool (pdflatex, latex...) decides what file type to look for.
-% http://en.wikibooks.org/wiki/LaTeX/Importing_Graphics#Compiling_with_latex
-
-% Note that figure is placed _after_ this point and also after the
-% previous figures. You can cut-paste the figure insertion point
-% earlier to get it in better place, i.e. the figure can be before
-% reference to it in the Tex file, but otherway round in final pdf.
-% More information: [Oetker, pp. 49-52]. 
-\begin{figure}[t]
-  \begin{center}
-    \includegraphics[width=1.0\textwidth]{exampleFig}
-  \end{center}
-  \caption[Diagrams should be edited before publication.]{Diagrams
-    should be edited before publication. The diagram on the right is
-    an edited version of the one on the left.}
-  % Optional shorter caption in brackets is used in Table of Figures
-  % (tof).
-  \label{fig:ex_fig}
-\end{figure}
-
-% In conference and journals articles with two columns, the
-% command \begin{figure*} is useful. The asterisk makes the figure
-% width equal to the whole page. The same applies to \begin{table*} as
-% well.
-
-
-
-The basic command \texttt{latex} accepts only encapsulated postscript
-(eps) format. Therefore it is usually easiest to compile with
-\texttt{pdflatex} which can handle \verb+*.png+, \verb+*.jpg+ and
-\verb+*.pdf+ formats. Eps and pdf are recommended since their support
-vector graphics (zooming). For example Figure~\ref{fig:ex_fig} is in
-pdf format. 
-%Some programs, such as PowerPoint, store pdf figures A4
-%sized. Fortunately, pdf editors, such as PDF-X-Change, have a feature
-%'remove white spaces' or 'crop'.
-
-
-LaTeX has a package \texttt{subfigure} to layout multiple figures
-together, for example Figure~\ref{subfig:draft} to
-\ref{subfig:small_fig}. There might be newer packages as well, but this is
-already a quantum leap ahead of some other, unnamed word processors.
-% See http://www.ctan.org/pkg/subfigure
-\begin{figure*}
-  \begin{center}
-    \subfigure[Option \texttt{draft} helps to makes a placeholder box for figure. The file must exist.]{
-      \includegraphics[draft, width=0.35\textwidth]{exampleFig}
-      \label{subfig:draft}}
-    \qquad                        % i) Ugly hack to get more horizontal space between figures
-    %\hspace{0.05\textwidth}      % ii) Another ugly way to hack space
-    % ~~                          % iii) Yet another... 
-    \subfigure[Another way ot make a placeholder box with the command
-      \texttt{rule}.]{
-      \textcolor{blue}{\rule{0.3\textwidth}{3cm}}
-      \label{subfig:rule}}
-    \subfigure[Actual figure included but scaled down.]{
-      \includegraphics[width=0.35\textwidth]{exampleFig}
-      \label{subfig:small_fig}}
-    \caption[Example of subfigures]{Example of subfigures. Pay attention to how nicely they
-      are laid out and their neat subcaptions.}
-    % Optional shorter caption in brackets is used in Table of Figures
-    % (tof).
-
-    \label{fig:subfigs}
-  \end{center}
-\end{figure*}
-
-
-\section{Tables}
-
-Tables have numbered captions, see Table\ref{tab:thin_film} for
-example. The caption is placed on the same page but above the table,
-unlike the captions that accompany figures. You must refer to all the
-tables in the body text. In addition, you must discuss the content of
-any tables in the body text to ensure that readers understand their
-relevance.
-%
-%TODO: translate the thin film explanation in English
-%
-
-\todo{translate the thin film explanation in English}
-
-\begin{table}[ht]
-  \small
-  \begin{center}
-    \caption{Example of evaporation conditions in a thin film structure.}
-    \label{tab:thin_film}
-    \begin{tabular}{l | r r r r r r}
-      % l = align to left (e.g. text), c=align to center, r=align to
-      % right (e.g. numbers), Pipe | creates vertical line
-      % Let's put 1 horinzontal line above the table, 2 after header rows,  and 1 below
-      \hline
-      \textbf{Substance} & \textbf{Thickness}& \textbf{Correction } & \textbf{Pressure} & \textbf{Temper-}          & \textbf{Current} & \textbf{Speed} \\
-                         & \textbf{(nm)}     & \textbf{coefficient} & \textbf{(mbar)}   & \textbf{ature ($^\circ$C)} & \textbf{(mA)}    & \textbf{(nm/s)} \\
-      \hline 
-      \hline
-      SiO2	& 181.0	& 1.10	& $3.0\cdot10^5$	& 90.6	& 20-23	 &0.2 \\
-      TiO2	& 122.1	& 1.55	& $1.5\cdot10^4$	& 91.1	& 100-93 &0.1 \\
-      \hline
-    \end{tabular}
-  \end{center}
-\end{table}
-
-
-Often it is better to create the table in, e.g. MS Excel, and import
-it as .eps or .pdf file, for example, when you calculate some of the
-values automatically.
-%\begin{table}[h]
-%  \begin{center}
-%    \caption{Example of evaporation conditions in a thin film structure.}
-%    \label{tab:thin_film_graphics}
-%    \includegraphics[width=8cm]{my_table.eps}
-%  \end{center}
-%\end{table}
-
-
-
-The titles of the columns in your table are specified and data is
-added to the table. You can use boldface to highlight the titles and
-use a double horizontal line to separate the from the rest of the
-table. The order of the columns and rows must be carefully
-considered. Do not surround all the cells with a border, as it may
-make your table harder to read. Put a line on top and bottom of the
-table. You can add a horizontal line between every $4-5$ rows, if the
-data is not grouped into categories. If the table is large, the rows
-should be numbered if you plan to refer to the rows in the body text.
-
-The numbers are right aligned (optimally lined up at the decimal
-point) for easy comparison. You should preferably use SI units,
-established prefixes and rewrite large numbers so that the power of
-ten should be placed in the title of the column instead of each row,
-if possible. More suggestions can be found in \cite{salminen09}.
-
-\section{Mathematical notations}
-
-Numbers are generally written using numerals for the sake of clarity,
-for example ``6 stages'' rather than ``six stages'', which is
-nevertheless strongly preferred to ``a couple of stages''. You should
-also use a thousand separators\footnote{Use tilde \~{} in LaTeX and a
-  special character \textit{non-breaking space} in MS Word},
-i.e. instead of 55700125 write 55~700~125. Never omit the leading zero
-in decimals. For example, it is correct to write ``0.5'' and wrong to
-write ``.5''. A comma is used as a decimal separator in the Finnish
-language and a period in the English language.
-
-Like numbers, it is advisable to abbreviate units of
-measurement. There is a space between the number and the unit, but you
-should keep them on the same line. It is better to compile a table or
-graph than include a great deal of numerical values in the body
-text. Use precise language and put numbers on a scale (small, fast,
-expensive).
-
-Use generally known and well defined concepts and standard conventions
-and symbols for representing them. New concepts should be defined when
-they appear in the text for the first time. Upper case and lower case
-letters mean different things in symbols and units of measurement. Do
-not use the same symbol to mean different things.
-
-Newton's Second Law can be presented in the following way:
-
-\begin{equation}
-  \label{eq:newton2}
- ma= F,
-\end{equation}
-
-where $m$ denotes the mass of an object, $a$ means acceleration, and
-$F$ means force. Please note that all the variables must be defined at
-the point of their first appearance. All sen-tences end with a
-punctuation mark, and the main elements of a sentence are separated by
-a comma in accordance with the rules of English grammar.  Mathematical
-formulas are numbered, if they are written on separate lines and
-referred to in the main body of the text. The number is usually put in
-parenthesis and right aligned, see equation \ref{eq:newton2} for
-example. Occasionally mathematical notations are preceded by an
-identifier, such as 'Definition 1' or 'Theorem 1'
-\cite{ruohonen09}. Simple formulas may be displayed within the body of
-the text without numbering.
-
-Do not start a sentence with a mathematical symbol but add some word,
-such as the name or type of the symbol, in front of it. Variables,
-such as x and y, are generally presented in italics, whereas
-elementary functions, special functions and operators are not:
-\begin{center}
-sin$(2x+y)$, 	grad $T$, 	div $B$, 	lim $(x^2 - 1)/(x + 1)$.
-\end{center}
-
-At first, it is better to rely on the automated formatting of an
-equation editor. You may have to make compromises between logical
-clarity and readability.
-
-
-LaTeX is the best editor for writing also the more complex equations, such as
-\begin{equation}
-  \label{eq:fourier}
-  G^+(t,t')= \int G^+(E) exp[-iE(t-t')/\hbar] dE.
-\end{equation}
 
 
 
 %-------------------------------------------------------------------------------
-\chapter{Referencing styles}
-\label{sec:ref_styles}
+%\chapter{Referencing styles}
+%\label{sec:ref_styles}
 %-------------------------------------------------------------------------------
 
 %Different referencing styles determine how you create 1) in-text
@@ -2240,15 +2071,15 @@ LaTeX is the best editor for writing also the more complex equations, such as
 %\texttt{.bib} file. Citations in your tex file at looked up by bibtex
 %and it produces the list of references automatically.
 
-\subsection{Header at 3rd level}
-\label{sec:3rd}
-Some text...
+%\subsection{Header at 3rd level}
+%\label{sec:3rd}
+%Some text...
 
-\subsection{Another header at 3rd level}
-\label{sec:3rd_partner}
+%\subsection{Another header at 3rd level}
+%\label{sec:3rd_partner}
 
-Section~\ref{sec:3rd} cannot appear alone, but needs some company
-(i.e.~\ref{sec:3rd_partner}).
+%Section~\ref{sec:3rd} cannot appear alone, but needs some company
+%(i.e.~\ref{sec:3rd_partner}).
 
 %\subsubsection{Avoid 4th level headers}
 %Luckliy they are not numbered in this LaTeX template
@@ -2370,56 +2201,6 @@ Section~\ref{sec:3rd} cannot appear alone, but needs some company
 
 
 
-%-------------------------------------------------------------------------------
-% Appendices are optional. 
-%-------------------------------------------------------------------------------
-
-% This part is semi-ugly at the moment. Please give feedback if you
-% know how to improve it. The problems were related to certain
-% combinations of languages +babel, page headers, table of contents,
-% and one/two-sided mode.
-
-
-\appendix
-\pagestyle{headings}
-% \renewcommand{\appendixname}{Liite} % Extra. Set Finnish prefix for page header
-
-
-
-%
-% a) Not-so-handy way, but at least it works
-% 
-\def\appA{APPENDIX A. Something extra} % Define the name and numbering manually
-\chapter*{\appA}                       % Create chapter heading
-\markboth{\appA}{\appA}                % Set page header
-\addcontentsline{toc}{chapter}{\appA}  % Include this in TOC
-% Note that \label does not work with unnumbered chapter
-
-Appendices are purely optional.  All appendices must be referred to in
-the body text
-
-\def\appB{APPENDIX B. Something completely different} % Define another new command
-\chapter*{\appB}                       % As above, but use \appB instead of \appA
-\label{app:B}
-\markboth{\appB}{\appB}                     
-\addcontentsline{toc}{chapter}{\appB}  
-
-
-You can append to your thesis, for example, lengthy mathematical
-derivations, an important algorithm in a programming language, input
-and output listings, an extract of a standard relating to your thesis,
-a user manual, empirical knowledge produced while preparing the
-thesis, the results of a survey, lists, pictures, drawings, maps,
-complex charts (conceptual schema, circuit diagrams, structure charts)
-and so on.
-
-
-%
-% b) The other option is to use numbered chapter and our baseline
-% template report.cls numbers them as A, B... The heading and TOC do
-% not include prefix 'Appendix' although the page header does.
-%\chapter{name of the appendix}
-%\label{app:A}                          % For cross-references
 
 
 
