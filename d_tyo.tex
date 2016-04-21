@@ -679,6 +679,12 @@ Analyysin tuloksia on muun muassa:
 Tuloksia voidaan mallintaa matemaattisesti, vasteen ja tekijöiden yhdistävällä
 yhtälöllä. Ensimmäisen kertaluvun malli kuvaa ainoastaan tekijöiden päävaikutuksia:
 \[y = \beta _0 + \beta _{1}x_1 + \beta _{2}x_2 + \varepsilon \]
+
+\begin{equation}
+  \label{eq:1krtluku}
+ y = \beta _0 + \beta _{1}x_1 + \beta _{2}x_2 + \varepsilon,
+\end{equation}
+
 missä \textit{y} on vaste, \textit{x}:t tekijöitä, \textit{ \beta }:t tuntemattomia parametreja
 jotka arvioidaan kokeen tuloksista ja \textit{\varepsilon} on
 kokeessa tapahtuvaa satunnaista virhettä kuvaava termi.
@@ -1051,14 +1057,15 @@ on kokoelma matemaattisia tekniikoita jotka soveltuvat erityisen hyvin tilanteis
 joissa vaikuttaa monia tekijöitä ja tavoitteena on vasteen optimointi, kuten
 robustien parametrien suunnittelussa. Nimi tulee menetelmässä piirrettävistä
 kuvaajista joissa vaste usein esitetään kaksiulotteisena pintana kuten \todo{kuvassa n}.
-Vastepintamenetelmä keskittyy tekijöiden ja vasteen välisen suhteen mallintamiseen
-eikä se sovellu merkittävien tekijöiden tunnistamiseen eli seulontaan kuten $2^k$-suunnitelmat
-soveltuvat. Usein näitä menetelmiä käytetäänkin peräkkäin jolloin 
-$2^k$-seulontakokeessa tunnistettuja tekijöitä optimoidaan vastepintamenetelmällä.
+Vastepintamenetelmän loppuvaiheen optimointiin kehitetyt koesuunnitelmat
+keskittyvät tekijöiden ja vasteen välisen suhteen mallintamiseen
+eivätkä ne sovellu merkittävien tekijöiden tunnistamiseen eli seulontaan kuten $2^k$-suunnitelmat
+soveltuvat. Usein näitä suunnitelmia käytetäänkin peräkkäin jolloin 
+$2^k$-seulontakokeessa tunnistettuja tekijöitä optimoidaan tarkemmilla vastepintasuunnitelmilla.
 
-RSM toteutetaan peräkkäisinä tekniikoina, 
+RSM toteutetaan useina peräkkäisinä kokeina.
 
-
+RSM:ssä vasteeksi pitää valita varianssi, jolloin kokeissa tarvitaan useita toistoja?
 
 
 \subsection{Muut menetelmät}
@@ -1342,7 +1349,7 @@ Mittausjärjestelmää voidaan ajatella prosessina johon kuuluu
 näytteen valmistelu, abraasiotestin toteuttaminen ja massahäviön
 mittaaminen. Prosessissa on sekä hallittavia parametreja, tässä mm. painava
 voima, pyörimisaika ja ..., että ei-hallittavia parametrejä, tässä mm.
-ilmankosteus, pyörän pinnan tasaisuus, ... . On myös jokin tietty ulostulo,
+ilmankosteus, pyörän pinnan tasaisuus, ... . On myös jokin tietty vaste,
 jonka halutaan olevan keskimäärin tietyllä tasolla vaihtelun ollessa
 mahdollisimman pientä. Koesuunnittelun hallittavat ja ei-hallittavat
 tekijät vastaavat näitä hallittavia ja ei-hallittavia parametreja joten
