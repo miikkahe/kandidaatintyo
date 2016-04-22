@@ -1049,28 +1049,28 @@ tarpeiden tapauksessa.
   \begin{center}
     \caption{Robustien parametrien suunnittelumenetelmän valinnan kaavio \parencite{Antony2006}.}
     \label{tab:vertailu}
-    \begin{tabular}{l c c c c c c}
+    \begin{tabular}{p{10cm} c c c c c c}
       % l = align to left (e.g. text), c=align to center, r=align to
       % right (e.g. numbers), Pipe | creates vertical line
       % Let's put 1 horinzontal line above the table, 2 after header rows,  and 1 below
       \hline
       \textbf{Ongelman luonne} & \textbf{Taguchi}& \textbf{Perinteinen}  \\
-                         & \textbf{DOE}     & \textbf{DOE} \\
+                               & \textbf{DOE}     & \textbf{DOE} \\
       \hline
       Kokeen tekijä uskoo tutkimuskohteessa olevan läsnä vahvoja vuorovaikutuksia & \times & \checkmark \\
-      
+      \\
       Nopea prosessin yleistuntemus ja vastaus johtoportaalle & \checkmark & \times   \\
-      
+      \\
       Prosessin optimiolosuhteiden määritys & \times & \checkmark \\
-      
+      \\
       Robusti suunnittelu kun ei-hallittavat tekijät on tunnistettu vaihtelun lähteiksi & \checkmark & \times \\
-      
+      \\
       Prosessin suorityskykymitan tavoitearvon ennakointi & \times & \checkmark \\
-      
+      \\
       Varianssin vähentäminen tietyn tavoitearvon läheisyydessä & \checkmark & \times \\
-      
+      \\
       Vasteen ja prosessiparametrien välisen suhteen matemaattinen mallintaminen & \times & \checkmark \\
-      
+      \\
       Parametrien ja toleranssien suunnittelu halutun varianssin saavuttamiseksi & \checkmark & \times \\
       \hline
     \end{tabular}
@@ -1142,7 +1142,7 @@ neljään tai vähempään.
   \begin{center}
     \includegraphics[scale=0.6]{RSM}
   \end{center}
-  \caption[Vastepintamallin kuvaaja]{Vastepintamallin kuvaaja \parencite[s.~575]{Montgomery2012}.}
+  \caption[Vastepintamallin kuvaaja]{Vastepintamallin kuvaaja \parencite[s.~479]{Montgomery2012}.}
   % Optional shorter caption in brackets is used in Table of Figures
   % (tof).
   \label{fig:RSM}
@@ -1158,12 +1158,22 @@ Tämän jälkeen kohti optimialuetta siirrytään \em jyrkimmän nousun \em
 (tai \em jyrkimmän laskun \em) menetelmällä. Jyrkimmän nousun suunta on se
 suunta, missä vaste $y$ nousee nopeimmin. Ensimmäisen kertaluvun mallissa,
 jossa ei ole kaarevuutta, tämä suunta on kohtisuora vastepintaa kohden, kuten
-nähdään kuvasta \todo{kuva jossa steepest ascent}. Kokeen tekijä päättää
+nähdään kuvasta \ref{fig:steepest}. Kokeen tekijä päättää
 kuinka isoja askeleita jyrkimmän nousun suuntaan otetaan. Uusia kokeita suoritetaan
 aina askelten välissä, ja jos vasteessa ei enää havaita nousua, voidaan sovittaa
 uusi ensimmäisen kertaluvun malli, jonka jälkeen jatketaan samaan tapaan.
 Lopulta päädytään lähelle optimialuetta, mistä yleensä kertoo ensimmäisen kertaluvun mallin
 huonompi sopivuus tuloksiin.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[scale=0.6]{steepest}
+  \end{center}
+  \caption[Jyrkimmän nousun menetelmä]{Jyrkimmän nousun menetelmä ensimmäisen kertaluvun mallissa \parencite[s.~481]{Montgomery2012}.}
+  % Optional shorter caption in brackets is used in Table of Figures
+  % (tof).
+  \label{fig:steepest}
+\end{figure}
 
 Optimialueen läheisyydessä toteutetaan vastepintasuunnitelma, josta voidaan
 tarkasti arvioida vastepinnan muotoa ja siten myös tekijöiden optimitasoja.
@@ -1339,13 +1349,34 @@ Mittajärjestelmäanalyysi voidaan suorittaa joko ristiöitynä tai hierarkkisen
 (engl. crossed tai nested). Ristiöidyssä kokeessa joka käyttäjä mittaa joka
 kappaleen, eli mittaukset tehdään ristiin. Hierarkkisessa suunnitelmassa
 joka käyttäjällä on omat mitattavat kappaleensa ja siis esimerkiksi käyttäjä
-A ei mittaa käyttäjän B mittaamia kappaleita. Kuvassa \todo{lisää kuva jossa crossed ja nested}
+A ei mittaa käyttäjän B mittaamia kappaleita. Kuvassa \ref{fig:crossedandnested}
 nähdään näiden suunnitelmien erot. Destruktiivinen mittausjärjestelmä
 vaatii lähes aina hierarkkisen mittajärjestelmäanalyysin. Jos käytettävissä on
 suuri näytekappale-erä joka voidaan varmuudella olettaa homogeeniseksi,
 voidaan destruktiivisen mittausjärjestelmän analyysi toteuttaa ristiöitynäkin.
 Tulosten varianssianalyysi muuttuu merkittävästi sen mukaan onko
 käytetty ristiöityä vai hierarkkista suunnitelmaa.
+
+
+\begin{figure*}
+  \begin{center}
+    \subfigure[Ristiöity koe.]{
+      \includegraphics[width=\textwidth]{crossedGRR}
+      \label{subfig:crossedGRR}}
+    %\qquad                        % i) Ugly hack to get more horizontal space between figures
+    %\hspace{0.05\textwidth}      % ii) Another ugly way to hack space
+    % ~~                          % iii) Yet another...
+
+    \subfigure[Hierarkkinen koe.]{
+      \includegraphics[width=\textwidth]{nestedGRR}
+      \label{subfig:nestedGRR}}
+    \caption[Ristiöity ja hierarkkinen suunnitelma]{Ristiöity ja hierarkkinen MSA-suunnitelma.}
+    % Optional shorter caption in brackets is used in Table of Figures
+    % (tof).
+
+    \label{fig:crossedandnested}
+  \end{center}
+\end{figure*}
 
 
 
@@ -1405,12 +1436,24 @@ Abrasiivinen kuluminen voi tapahtua eri mekanismeilla:
 Materiaalin kolmen kappaleen abrasiivisen kulumisen vastustuskyvyn määrittämiseen
 on olemassa standardisoitu koe G65-04 \parencite{Standard2010},
 kumipyöräabraasiokoe.
-Kuvan \todo{lisää kumipyöräkuva} mukaisella laitteistolla koekappaleeseen
+Kuvan \ref{fig:G65} mukaisella laitteistolla koekappaleeseen
 kulutetaan kulumisjälki ja kappaleen massan muutos mitataan. Abrasiivina
 käytetään standardin AFS 50/70 \parencite{foundrysand} mukaista Ottawa-irtohiekkaa.
 Abrasiivinen kuluminen tapahtuu kun koekappaletta painetaan pyörivää
 kumipyörää vasten tietyn ajanjakson ajan ja samalla annetaan abrasiivin virrata pyörän ja kappaleen
 välistä.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[scale=0.6]{G65}
+  \end{center}
+  \caption[Kumipyöräabraasiokoelaite]{Kumipyöräabraasiokoelaitteen kaaviokuva \parencite{Standard2010}.}
+  % Optional shorter caption in brackets is used in Table of Figures
+  % (tof).
+  \label{fig:G65}
+\end{figure}
+
+
 
 Mitä vähemmän kappaleesta irtoaa materiaalia kokeen aikana, sitä
 vastustuskykyisempi materiaali on abrasiiviselle kulumiselle.
@@ -1422,7 +1465,7 @@ materiaalien vertailuun.
 
 \textcite{Stevenson1996} ovat esittäneet parannusehdotuksia
 standardin mukaiseen abraasiokokeeseen. Ehdotetussa parannellussa
-koelaitteessa (kuvassa \todo{kuva}) koekappale on vaakatasossa kiinnitettynä
+koelaitteessa, joka nähdään kuvassa \ref{fig:redesign}, koekappale on vaakatasossa kiinnitettynä
 ikeeseen siten että se voi liikkua vapaammin kuin standardin mukaisessa laitteessa.
 Rakenne mahdollistaa koekappaleen ja kumipyörän välistä kulkevan abrasiivin
 määrän ja kappaleeseen kohdistuvan reaktiovoiman määrittämisen.
@@ -1430,6 +1473,17 @@ Tällöin voidaan mitata myös kokeen aikaisia kitkavoimia.
 He myös havaitsivat että virtaava hiekka kuljetti pois
 suurimman osan kitkan synnyttämästä lämmöstä ja että täten hiekan virtauksen
 pienentäminen johti suurempiin lämpötilan nousuihin.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[scale=0.6]{redesign}
+  \end{center}
+  \caption[Koelaitteen parannusehdotus]{Kumipyöräabraasiokoelaitteen parannusehdotus \parencite[s.~234]{Stevenson1996}.}
+  % Optional shorter caption in brackets is used in Table of Figures
+  % (tof).
+  \label{fig:redesign}
+\end{figure}
+
 
 \textcite{avery1981analysis,borik1970rubber} ovat osoittaneet kulumisnopeuden
 kasvavan kumipyörän kumin kovuuden kasvaessa. \textcite{Stevenson1996}
@@ -1931,7 +1985,7 @@ satunnaisemmiksi loppua kohden, tämän voisi kuvitella johtuvan kumipyörän ku
 \label{ch:concl}
 %-------------------------------------------------------------------------------
 
-\epigraph{The best time to plan an experiment is after you’ve done it}{R. A. Fisher}
+\epigraph{The best time to plan an experiment is after you’ve done it.}{R. A. Fisher}
 
 
 Kaiken kaikkiaan mikään tutkituista tekijöitä ei vaikuttanut aiheuttavan
