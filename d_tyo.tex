@@ -388,6 +388,12 @@ testauslaitteisiin varauksetta tutkimatta niitten luotettavuutta kriittisesti.
 Nykyiset koesuunnittelumenetelmät kehitettiin alun perin
 
 
+Kaikki koesuunnittelun englanninkieliset termit tekijä on vapaasti
+suomentanut itse, sillä vakiintuneita suomenkielisiä termejä ei
+ole ollut olemassa tai niitä ei ole sisällytetty yleisiin
+sanakirjoihin. Näissä tapauksissa termin yhteyteen on kirjoitettu
+myös alkuperäinen englanninkielinen termi.
+
 %This document is structured as follows. Chapter~\ref{ch:doe}
 %discusses briefly the basics of writing and presentation style
 %regarding the text, figures, tables and mathematical
@@ -498,7 +504,7 @@ tuloksiin.
     % Optional shorter caption in brackets is used in Table of Figures
     % (tof).
 
-    \label{fig:prosessi}
+    \label{fig:prosessi1}
   \end{center}
 \end{figure*}
 
@@ -551,14 +557,14 @@ Tekijöiden ja tutkittavan vasteen valitsemisen jälkeen on suunniteltava käyte
 tasot, koeajojen määrä ja tekijätasojen yhdistelmät joilla kokeet ajetaan.
 Tuloksena on koesuunnitelma ja se esitetään matriisina jossa rivit ovat
 koeajoja ja sarakkeisiin merkitään ajossa käytettävät tekijätasot.
-Matala taso merkitään yleensä -1 ja korkea +1, joskus vain - ja +.
+Matala taso merkitään yleensä $-1$ ja korkea $+1$, joskus vain $-$ ja $+$.
 Yleistä on myös merkitä tekijän A korkeaa tasoa kirjaimella \textit{a}, tekijän
 B korkeaa tasoa kirjaimella \textit{b}, jne. Merkintä \textit{ac} tarkoittaa siis
 että
 tekijät A ja C ovat korkealla tasolla ja tekijä B matalalla. Esimerkki
 suunnitelmamatriisista on taulukko \ref{tab:fullf}.
 Kirjallisuudessa esiintyy usein suunnitelman graafinen esitystapa,
-"laatikkokuvaaja", kuten kuvassa \ref{fig:cube} \textcite{ehandbook}.
+"laatikkokuvaaja", kuten kuvassa \ref{fig:cube}.
 Koe on sama kuin taulukossa \ref{tab:fullf} mutta tekijöitä on
 merkitty kirjaimilla \textbf{X\textsubscript{1}}, \textbf{X\textsubscript{2}}
 ja \textbf{X\textsubscript{3}}. Nuolet osoittavat tekijän arvon lisäämisen
@@ -603,7 +609,7 @@ on nolla \parencite{barker2005}.
 
 \begin{table}[h]
   \begin{center}
-  \caption{Esimerkki täysyhdistelykokeesta kolmella tekijällä.}
+  \caption{Esimerkki $2^3$-täysyhdistelykokeesta kolmella tekijällä.}
   \label{tab:fullf}
   \begin{tabular}{ | l | c | c | c | }
     \hline
@@ -628,7 +634,7 @@ on nolla \parencite{barker2005}.
   \begin{center}
     \includegraphics[scale=0.6]{cube}
   \end{center}
-  \caption[Laatikkokuvaaja]{Täysyhdistelykokeen graafinen esitys, ns. "laatikkokuvaaja".}
+  \caption[Laatikkokuvaaja]{Täysyhdistelykokeen graafinen esitys, ns. "laatikkokuvaaja" \parencite{ehandbook}.}
   % Optional shorter caption in brackets is used in Table of Figures
   % (tof).
   \label{fig:cube}
@@ -1043,14 +1049,13 @@ tarpeiden tapauksessa.
   \begin{center}
     \caption{Robustien parametrien suunnittelumenetelmän valinnan kaavio \parencite{Antony2006}.}
     \label{tab:vertailu}
-    \begin{tabular}{l | c c c c c c}
+    \begin{tabular}{l c c c c c c}
       % l = align to left (e.g. text), c=align to center, r=align to
       % right (e.g. numbers), Pipe | creates vertical line
       % Let's put 1 horinzontal line above the table, 2 after header rows,  and 1 below
       \hline
       \textbf{Ongelman luonne} & \textbf{Taguchi}& \textbf{Perinteinen}  \\
                          & \textbf{DOE}     & \textbf{DOE} \\
-      \hline 
       \hline
       Kokeen tekijä uskoo tutkimuskohteessa olevan läsnä vahvoja vuorovaikutuksia & \times & \checkmark \\
       
@@ -1112,7 +1117,7 @@ kun
 tulosten analysointiin
 käytetään vastemallianalyysia, \em ei silloin kun käytetään Taguchin kehittämää
 suoritemitta-analyysia. \em
-Lisäksi \textcite{Bursztyn} päätyivät siihen tulokseen että dispersiovaikutusten
+Lisäksi he päätyivät siihen tulokseen että dispersiovaikutusten
 havaitseminen kokeista joissa ei ole toistoa on hyvin riskialtista eikä
 sen yrittäminen suotavaa.
 
@@ -1123,15 +1128,26 @@ Vastepintamenetelmä (engl. response surface methodology, RSM)
 on kokoelma matemaattisia tekniikoita jotka soveltuvat erityisen hyvin tilanteisiin
 joissa vaikuttaa monia tekijöitä ja tavoitteena on vasteen optimointi, kuten
 robustien parametrien suunnittelussa. Nimi tulee menetelmässä piirrettävistä
-kuvaajista joissa vaste usein esitetään kaksiulotteisena pintana kuten \todo{kuvassa n}.
+kuvaajista joissa vaste usein esitetään kaksiulotteisena pintana kuten kuvassa \ref{fig:RSM}.
 Vastepintamenetelmän loppuvaiheen optimointiin kehitetyt koesuunnitelmat
 keskittyvät tekijöiden ja vasteen välisen suhteen mallintamiseen
 eivätkä ne sovellu merkittävien tekijöiden tunnistamiseen eli seulontaan kuten $2^k$-suunnitelmat
-soveltuvat. Usein näitä suunnitelmia käytetäänkin peräkkäin jolloin 
+soveltuvat. Usein näitä suunnitelmia käytetäänkin peräkkäin jolloin
 $2^k$-seulontakokeessa tunnistettuja tekijöitä optimoidaan tarkemmilla vastepintasuunnitelmilla.
 \textcite{ehandbook} mukaan vastepintasuunnitelmiin on paras siirtyä vasta
 sitten kun seulontakokeella on vähennetty tutkittavien tekijöiden määrää
 neljään tai vähempään.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[scale=0.6]{RSM}
+  \end{center}
+  \caption[Vastepintamallin kuvaaja]{Vastepintamallin kuvaaja \parencite[s.~575]{Montgomery2012}.}
+  % Optional shorter caption in brackets is used in Table of Figures
+  % (tof).
+  \label{fig:RSM}
+\end{figure}
+
 
 Usein tekijöiden seulonnan jälkeen prosessin senhetkisten tekijätasojen oletetaan
 vielä olevan kaukana optimista, joten on suotavaa ensin siirtyä nopeasti optimialueen
@@ -1239,7 +1255,7 @@ varianssista.
 % \usepackage{booktabs}
 \begin{table}[]
 \centering
-\caption{GR\&R-analyysin muuttujia \parencite{Burdick2003}.}
+\caption{GR\&R-analyysin suureita \parencite{Burdick2003}.}
 \label{table:grr}
 \begin{tabular}{@{}ll@{}}
 \toprule
@@ -1363,7 +1379,6 @@ tulkinnan kannalta on havainnollisten kuvien ja kuvaajien piirtäminen.
 \label{ch:kumip}
 %-------------------------------------------------------------------------------
 
-\todo
 
 Kun kova pinta liukuu pehmeämpää pintaa vasten ja kovan pinnan
 karheat huiput uurtavat pehmeämpää pintaa, on kyse kahden kappaleen abrasiivisesta kulumisesta
@@ -1443,7 +1458,6 @@ rakoon.
 \label{ch:kokeet}
 %-------------------------------------------------------------------------------
 
-\todo
 
 Teollisuusprojekti syntyi tarpeesta selvittää syitä
 kumipyöräabraasiotestin tulosten hajontaan. Erityisesti
@@ -1913,7 +1927,7 @@ satunnaisemmiksi loppua kohden, tämän voisi kuvitella johtuvan kumipyörän ku
 
 
 %-------------------------------------------------------------------------------
-\chapter{Conclusions}
+\chapter{Yhteenveto}
 \label{ch:concl}
 %-------------------------------------------------------------------------------
 
