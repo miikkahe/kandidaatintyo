@@ -683,7 +683,7 @@ ortogonaalisia ja siten vaikutusarviot voivat olla toisistaan riippuvaisia.
 Ne kuitenkin sallivat kokeen suorittamisen tavallisia koesuunnitelmia
 vähemmillä koeajoilla ja sallivat suunnitelman muokkauksen silloin kun
 kaikkia tekijätasojen yhdistelmiä ei syystä tai toisesta voida toteuttaa
-\parencite{ehandbook}.
+\parencite{ehandbook,mitchell1974}.
 D-optimaalinen suunnitelma kykenee arvioimaan kaikki yhden parametrin vaikutukset sekä kaikki 2 tekijän yhteisvaikutukset pitämällä koeajojen määrän kuitenkin mahdollisimman pienenä.
 
 
@@ -749,7 +749,7 @@ tämä kaikille tekijöille vuorollaan. Tätä kutsutaan
 yksi tekijä kerrallaan -menetelmäksi
 (engl. one-factor-at-a-time tai OFAT).
 Tuloksista on helppo piirtää yksinkertaisia vaikutuskuvaajia
-\todo{vaikutuskuvaajat}.
+kuten kuvassa \ref{fig:vaikutus}, joka esittää aiemman katapulttiesimerkin yhden tekijän vaikutusta vasteeseen.
 OFAT ei kuitenkaan pysty havaitsemaan
 tekijöiden yhteisvaikutuksia,
 vaatii enemmän koeajoja
@@ -770,6 +770,16 @@ pieni (vähemmän kuin yksi neljäsosa tekijävaikutuksista) tai
 tekijöitten yhteisvaikutukset suuria (enemmän kuin yksi neljäsosa
 kaikista vaikutuksista). \textcite{frey2005mechanisms} esittävät
 myös mekanismeja ja selityksiä tälle tulokselle.
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[scale=0.6]{vaikutus}
+  \end{center}
+  \caption[Tekijän vaikutuskuvaaja]{Yhden tekijän vaikutus vasteeseen.}
+  % Optional shorter caption in brackets is used in Table of Figures
+  % (tof).
+  \label{fig:vaikutus}
+\end{figure}
 
 
 Kokeen suunnittelun alkuvaiheessa monia mahdollisia tekijöitä harkitaan
@@ -883,6 +893,25 @@ leveys on 2,9 mm tai 3,1 mm. Koesuunnitelmaan sisältyisi tällöin
 kaksitasoinen ei-hallittava tekijä jonka matala taso on 2,9 mm ja
 korkea taso 3,1 mm.
 
+Sisällyttämällä kokeeseen ei-hallittavia tekijöitä voidaan piirtää
+havainnollisia vuorovaikutuskuvaajia. Kuva \ref{fig:slope} esittää ei-hallittavan
+tekijän, komponenttiosan leveyden, ja hallittavan tekijän, hitsaustavan, vuorovaikutusta.
+Kuvasta nähdään että hallittavan tekijän dispersiovaikutus vasteeseen muuttuu sen eri tasoilla
+kun ei-hallittava tekijä vaihtelee. Hitsaustapa matalalla tasollaan on vaakasuorempi,
+mikä tarkoittaa hitsaustavan matalampi taso vähentää vasteen varianssia.
+
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[scale=0.6]{slope}
+  \end{center}
+  \caption[Tekijöiden vuorovaikutuskuvaaja]{Hallittavan ja ei-hallittavan tekijän vuorovaikutuskuvaaja \parencite[s.~24]{Bursztyn}.}
+  % Optional shorter caption in brackets is used in Table of Figures
+  % (tof).
+  \label{fig:slope}
+\end{figure}
+
+
 Hyvä esimerkki on japanilaisen Ina Tile Companyn tapaus 1950-luvulta,
 kuten \textcite{Kackar1989} kertoo:
 Yhtiön valmistamien tiilien mitat vaihtelivat paljon ja monet olivat sallittujen mittojen ulkopuolella
@@ -892,7 +921,6 @@ jota ei kuitenkaan voitu hallita. Taguchi-menetelmillä saatiin selville että
 lisäämällä kalkin määrää savessa, mikä taas oli hallittava tekijä, tiilet saatiin
 vastustuskykyisemmiksi uunin lämpötilan vaihtelulle ja mitat yhdenmukaisemmiksi.
 
-\todo{regression slope kuvaaja}.
 \textcite{steinberg1994,Steinberg1998,Berube1998} ovat osoittaneet
 että ei-hallittavien tekijöiden sisällyttäminen kokeeseen voi
 lisätä sen kykyä havaita dispersiovaikutuksia huomattavasti.
@@ -1025,7 +1053,7 @@ Sama pätee robust-sanaan.
 Toisaalta Taguchi-menetelmiä
 on teollisuudessa käytetty jo kauan (kuten esimerkiksi Six Sigma -strategiassa)
 ja tulosten ja käyttäjien kokemusten perusteella se on usein
-toiminut paremmin kuin tarjotut vaihtoehdot.
+toiminut erinomaisesti.
 \textcite{Berube1998} huomauttavat että osa ongelmaa on se että
 monet käytetyistä tulosten analysointimenetelmistä eivät ole
 erityisesti käyttäneet hyväksi ristikkäisen suunnitelman ja ulkotaulukon
