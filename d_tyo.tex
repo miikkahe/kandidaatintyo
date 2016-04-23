@@ -1942,7 +1942,12 @@ saadaan tulos kuten kuvassa \ref{subfig:robusti1}.
 Punaisella ylälaidassa näkyvät parhaiten keskihajontaa pienentävä parametrien arvojen yhdistelmä. Huomattiin kuitenkin että koska nähtävästi
 optimointityökalu yrittää minimoida absoluuttisen keskihajonnan niin samalla se
 pyrkii pienempiin ajoaikoihin vain koska silloin tuloksen keskiarvo ja sitä kautta myös keskihajonta pienenee, \em vaikka suhteellinen keskihajonta nousisikin. \em Päätettiin käyttää keskihajonnan sijasta yksikköä \em variaatiokerroin, \em kaavalla
-\[v = \frac{s}{x} \times 100\> \%\]
+
+\begin{equation}
+  \label{eq:varkerroin}
+ v = \frac{s}{x} \times 100\> \%,
+\end{equation}
+
 missä \em s \em on keskihajonta ja \em x \em on keskiarvo.
 Kirjallisuudesta paljastuikin myöhemmin variaatiokertoimen sisältyvän Taguchin suoritemitta-analyysiin vaikka Minitab ei tätä mainitsekaan \parencite{Steinberg1998,Kawamura2010,Wu2009}.
 Variaatiokertoimet syötettiin Minitabiin, mutta koska Minitab ei ole asettanut mallia näihin arvoihin, vaan ainoastaan keskihajonnan arvoihin, ei variaatiokerrointa voida optimoida samalla työkalulla. Voidaan kuitenkin piirtää kuvan \ref{subfig:robusti2} mukainen vaikutuskuvaaja.
