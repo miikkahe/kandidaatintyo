@@ -46,7 +46,7 @@
 % Define your basic information
 %-------------------------------------------------------------------------------
 \author{Miikka Hevosmaa}
-\title{Koeuunnittelun soveltaminen teollisen mittausprosessin analysointiin ja optimointiin: tapaustutkimus}      % primary title (for front page)
+\title{Abrasiivisen kulumisen koemenetelmän luotettavuuden parantaminen tilastollisen koesuunnittelun menetelmin}      % primary title (for front page)
 %ONGELMA!!! LIIAN PITKÄ, HEITTÄÄ TARKASTAJAN SEURAAVALLE SIVULLE!!!
 \titleB{Otsikko suomeksi} % translated title for abstract
 \thesistype{Kandidaatintyö} % or Bachelor of Science, Laboratory Report... 
@@ -181,12 +181,12 @@
 \begin{spacing}{1.0}
          {\bf \textsf{\MakeUppercase{\@author}}}: \@title\\  % or use \@title when thesis is in Finnish
          \textsf{Tampereen teknillinen yliopisto}\\
-         \textsf{Diplomityö, xx sivua, x liitesivua}\\ %
-         \textsf{xxxkuu 201x}\\
-         \textsf{xxx koulutusohjelma}\\
-         \textsf{Pääaine: }\\
+         \textsf{Kandidaatintyö, xx sivua, 0 liitesivua}\\ %
+         \textsf{Huhtikuu 2016}\\
+         \textsf{Materiaalitekniikan koulutusohjelma}\\
+         \textsf{Pääaine: Materiaalitekniikka}\\
          \textsf{Tarkastajat:  Prof. \@examiner}\\ % automated, if just 1 examiner
-         \textsf{Avainsanat: }\\
+         \textsf{Avainsanat: Koesuunnittelu, abrasiivinen kuluminen, kulumiskestävyyden testaus, robustien parametrien suunnittelu, mittajärjestelmäanalyysi}\\
 \end{spacing}
 
 
@@ -199,7 +199,15 @@
 %kielellä kuin työ. Kuitenkin myös suomenkielisillä kandidaatintöillä
 %pitää olla englanninkielinen otsikko arkistointia varten.
 
-Työssä on tutkittu
+Työ on tehty projektina teknologiayritykselle. Tarkoituksena oli selvittää syitä standardin
+G65-04 mukaisessa kumipyöräabraasiokokeessa ilmenneisiin odottamattomiin koetuloksiin.
+Abraasiokoetta tutkittiin tilastollisen koesuunnittelun ja mittajärjestelmäanalyysin
+menetelmillä tavoitteena vaihtelun lähteiden selvittäminen ja kokeen optimiasetusten
+löytäminen niin että vaihtelu minimoituisi. Työssä on esitetty asiaankuuluvat
+koesuunnittelun, mittajärjestelmäanalyysin ja abrasiivisen kulumisen teoriat.
+Tehtyjen kokeiden perusteella on tehty joitain suosituksia kokeen parantamiseen mutta
+samalla on myös huomioitu tehtyjen kokeiden vajavuus ja siten niiden
+perusteella tehtyjen johtopäätösten rajallisuus.
 
 %-------------------------------------------------------------------------------
 
@@ -246,16 +254,23 @@ Työssä on tutkittu
 %preface must fit on one page. Add the date, after which you have not
 %made any revisions to the text, at the end of the preface.
 
+Tämä työ on tehty tutkimusprojektina suomalaiselle teknologiayritykselle sekä
+kandidaatintyönä Tampereen teknillisen yliopiston Materiaaliopin laitokselle
+lukuvuonna 2015-2016.
+
+Erityiskiitokset työn ohjaajalle professori Petri Vuoristolle ja esimiehelleni Ville Eroselle.
+Kiitokset myös työtovereilleni ja kaikille muille minua tukeneille.
+
 ~ 
 % Tilde ~ makes an non-breakable spce in LaTeX. Here it is used to get
 % two consecutive paragraph breaks
 
-Tampere, 1.9.2014
+Tampere, 24.4.2016
 
 ~
 
 
-Teemu Teekkari
+Miikka Hevosmaa
 
 
 
@@ -380,13 +395,24 @@ Teemu Teekkari
 
 Kulumiskestävyyden testaus on kriittinen osa uusien pinnoitteiden kehitystä.
 Sovelluskohteesta riippuen kulumiskestävyys voi olla jopa kehitystyön tärkein
-tavoite. Näin ollen on selvää että testauksen on annettava luotettavia ja
+tavoite. On selvää että testauksen on annettava luotettavia ja
 vertailukelpoisia tuloksia. Ei ole tarkoituksenmukaista luottaa mittaus- ja
 testauslaitteisiin varauksetta tutkimatta niitten luotettavuutta kriittisesti.
+Abrasiivisen kulumisen testaukseen on olemassa standardin G65-04 \parencite{Standard2010}
+määrittelemä koemenetelmä.
 
+Teknologiayrityksen kumipyöräabraasiokoe oli ajoittain antanut suuresti
+odotetusta arvosta poikkeavia tuloksia pinnoitteiden rutiinitestauksessa.
+Haluttiin selvittää että johtuivatko tulokset pinnoitteista vai aiheuttiko
+niitä jokin tekijä koemenetelmässä. Jos tulosten vaihtelut johtuivat
+koemenetelmästä, haluttiin löytää sen tarkka syy ja säätää
+kokeen parametreja niin että vaihtelu minimoituisi.
+Tutkimusmenetelmäksi valittiin tilastollinen koesuunnittelu.
 
 Nykyiset koesuunnittelumenetelmät kehitettiin alun perin
-
+maanviljelyksen tarpeisiin ja nykyisin niitä sovelletaan laajasti
+sekä teollisuudessa että tieteessä. Alan kattavimman oppikirjan
+on kirjoittanut Douglas Montgomery \parencite*{Montgomery2012}.
 
 Kaikki koesuunnittelun englanninkieliset termit tekijä on vapaasti
 suomentanut itse, sillä vakiintuneita suomenkielisiä termejä ei
@@ -409,13 +435,15 @@ myös alkuperäinen englanninkielinen termi.
 \label{ch:doe}
 %-------------------------------------------------------------------------------
 
+
 Kokeiden teko on tapa saada tietoa tutkittavasta ilmiöstä. Se on teorian
 ohella yksi tieteellisen menetelmän perusteista ja siten siihen onkin
-kehittynyt oma erikoistunut teoreettinen runkonsa, joka limittyy matematiikan ja
-tilastotieteen kanssa. Alan muodostumiseen ovat suuresti vaikuttaneet mm.
-tilastotieteilijät R. A. Fisher (1890-1962) ja George E. P. Box (1919-2013).
-Suomeksi tähän alaan viittaa termi koesuunnittelu, joskus kokeensuunnittelu,
+kehittynyt oma erikoistunut teoreettinen runkonsa joka limittyy matematiikan ja
+tilastotieteen kanssa.
+Suomeksi tähän alaan viittaa termi koesuunnittelu tai kokeensuunnittelu,
 englanniksi design of experiments (DOE) tai experimental design.
+Alan muodostumiseen ovat suuresti vaikuttaneet mm.
+tilastotieteilijät R. A. Fisher (1890-1962) ja George E. P. Box (1919-2013).
 
 Koesuunnittelu on osoittautunut tehokkaaksi työkaluksi teollisuudessa; siellä sitä
 sovelletaan prosessien
@@ -1564,7 +1592,9 @@ Koesuunnittelun hallittavat ja ei-hallittavat
 tekijät vastaavat näitä hallittavia ja ei-hallittavia parametreja joten
 tässä luvussa niitä on kutsuttu parametreiksi.
 
-Kokeessa vaste on koekappaleen massahäviö. Millekään tietylle tasolle
+Kokeessa vaste on koekappaleen massahäviö.
+Kuvissa näkyvät mittaustulokset ovat milligrammoina.
+Millekään tietylle tasolle
 vastetta ei ole haluttu säätää, sillä luotettavia referenssimateriaalien
 arvoja ei ole ollut saatavilla ja koe ei muutenkaan ole ollut täysin
 standardin mukainen. Tuloksia on käytetty puhtaasti laboratorion
@@ -1899,7 +1929,9 @@ ja ”Maximum likelihood” -menetelmä kuvan \ref{subfig:pareto2} mukaisen.
 Tekijöiden vaikutusjärjestys, suurimmasta pienimpään, on molemmissa sama;
 1 tekijän vaikutukset ovat ensimmäisinä ennen yhteisvaikutuksia.
 Eniten vaikuttivat hiekan virtausmäärä ja paine koekappaleen ja kumipyörän välillä.
-\todo{merkittävyysrajat}
+Minitab piirtää kuvaan punaisen merkittävyysrajan, jonka tarkoitus on erottaa vaikutuksista ne
+jotka ovat tilastollisesti merkittäviä niistä jotka luultavasti johtuvat satunnaisesta virheestä.
+Minitab ei kerro tarkalleen kuinka se laskee tämän merkittävyysrajan.
 
 \begin{figure}
   \begin{center}
@@ -1981,7 +2013,8 @@ Tässä kuvassa ajoaika ja abrasiivi ovat aiempaan verrattuna päinvastoin, nyt 
 Kaiken kaikkiaan on hyvä muistaa että tässä robustien parametrien suunnittelussa tehtiin vain 4 toistokoetta jokaisella parametriarvojen yhdistelmällä.
 Koska tekijöiden vaikutusta hajontaan mitataan nimenomaan näistä 4:stä toistokokeesta,
 voi satunnainen kohina vaikuttaa tuloksiin paljon.
-\todo{Ensimmäinen Pareto–kaavio myös arvioi kaikki vaikutukset merkityksettömiksi.}
+Ensimmäinen Pareto–kaavio myös arvioi kaikki vaikutukset tilastollisesti merkityksettömiksi
+ja luultavasti vain satunnaisesta virheestä johtuvaksi.
 
 \section{Kumipyörän P2 tyypin 1 mittajärjestelmäanalyysi}
 
@@ -2021,23 +2054,45 @@ satunnaisemmiksi loppua kohden, tämän voisi kuvitella johtuvan kumipyörän ku
 
 \epigraph{The best time to plan an experiment is after you’ve done it.}{R. A. Fisher}
 
+Kumipyöräabraasiokokeen luotettavuuden tutkimisessa suoritettiin
+useita erilaisia mittajärjestelmäanalyysikokeita ja yksi
+D-optimaalinen $2^k$-seulontakoe. Seulontakokeessa tutkittujen tekijöiden ja tehtyjen
+koetoistojen lukumäärä oli kuitenkin suhteellisen pieni
+ja siten tulokset hyvin epävarmoja.
+Kokeen destruktiivinen luonne myös osaltaan lisää tuloksien
+epävarmuutta, sillä saman materiaalisten koekappaleiden homogeenisuus
+ei ole aivan varmaa.
+Tulokset antavat lähtökohdan jatkotutkimuksille mutta varmojen
+johtopäätösten tekeminen niiden pohjalta on ennenaikaista.
 
-Kaiken kaikkiaan mikään tutkituista tekijöitä ei vaikuttanut aiheuttavan
-kovin merkittäviä disperiovaikutuksia. Tulos viittaa siihen että jos kumipyöräkoe
+Ennen koetta eniten hämmennystä olivat aiheuttaneet ajoittaiset suuresti odotetusta
+arvosta poikkeaneet koetulokset. Poikkeamat olivat useiden kymmenien
+milligrammojen luokkaa. Kokeen aikana ei suuresta yksittäisten koeajojen määrästä
+huolimatta esiintynyt näin suuria poikkeamia yhtä teräsnäytettä lukuunottamatta.
+Mikään tutkituista tekijöitä ei myöskään vaikuttanut aiheuttavan
+erityisen suuria disperiovaikutuksia. Tulos viittaa siihen että jos kumipyöräkoe
 on antanut ajoittain poikkeavia tuloksia, on syy jossain muualla kuin tutkituissa
 tekijöissä.
 
+Kumipyörän kulumisen asteen havaittiin vaikuttavan tulosten vaihteluun.
+Silein kumipyörä vaikutti parhaalta mutta ero tavallisessa käytössä kuluneeseen
+pyörään ei ollut iso. Sen sijaan keinotekoisesti kulutetun kumipyörän dispersiovaikutus
+oli helposti havaittava. Jälkikäteen keinotekoisesti kootussa viimeisessä stabiiliustutkimuksessa
+sileä pyörä oli jo kulunut jonkin verran ja dispersiovaikutus näyttäisikin kasvaneen.
+Mielenkiintoista oli kulutetun kumipyörän suuri vaikutus teräksiseen referenssimateriaaliin.
+Vaikutus tavanomaisiin keraamipinnoitteisiin ei ollut näin selvä. Yksittäinen poikkeava
+koetulos voi toki olla myös jostain muusta satunnaisesta virheestä johtuva.
 
-Robustien parametrien suunnitteluun käytettiin lopulta D-optimaalista
-$2^k$-seulontakoetta
+Robustien parametrien suunnitteluun ajateltiin aluksi käytettävän
+Taguchi-koetta mutta päädyttiin lopulta vain yhteen D-optimaaliseen
+$2^k$-seulontakokeeseen 5:llä tekjiällä ja 4:lla toistokokeella.
+Seulontakokeeseen siksi että dispersioon
+vaikuttavista tekijöistä ei oltu lainkaan selvillä. D-optimaaliseen suunnitelmaan
+ja vain 5:een tekijään päädyttiin jotta koeajojen määrä saatiin pysymään
+siedettävänä. Optimoinnin tekeminen tällaisen kokeen pohjalta on
+riskialtista. Tästä huolimatta tehty variaatiokerrointa käyttävä vaikutusanalyysi kertoo parhaiksi parametrien arvoiksi hajonnan vähentämisen kannalta pitkän ajoajan, punnuksen käytön välttämisen, suuren hiekan virtausmäärän, alumiinioksidin käytön abrasiivina ja hiekan kasaantumista koekappaleen yläreunalle estävän kannen käyttämisen.
 
-
-
-Kokeen aikana ei suuresta koeajojen määrästä huolimatta esiintynyt
-suuresti odotetusta poikkeavia koetuloksia (yhtä teräsnäytettä lukuunottamatta).
-
-
-
+Alumiinioksidin käyttö abrasiivina vaikutti lupaavalta. Kokeen perusteella se vähentää hajontaa eikä sen käyttämisessä ilmennyt muita vaikeuksia kuin suuremmasta tiheydestä johtuva suurempi paino. Se ei myöskään pölissyt samalla tavalla kuin käytössä ollut abrasiivi. Vasta jatkotutkimuksilla voidaan kuitenkin selvittää onko alumiinioksidin käytöllä muita haittapuolia, kuten esimerkiksi laitteen osien ja kumipyörän nopeampi kuluminen.
 
 
 
@@ -2057,12 +2112,6 @@ suuresti odotetusta poikkeavia koetuloksia (yhtä teräsnäytettä lukuunottamat
 %here emphasized by having this short and rather artificial summary
 %also in this template. A concise summary table is a good way for
 %providing an overview of the most important points.
-
-
-
-
-
-
 
 
 
