@@ -93,7 +93,7 @@
 
 % Option3) for bibliography: newer way, esp. for Name-year citations
 % http://www.ctan.org/pkg/biblatex
-\usepackage[style=authoryear,maxcitenames=2,backend=bibtexu,
+\usepackage[style=authoryear,maxcitenames=2,backend=biber,
   firstinits=true,uniquename=init]{biblatex}
 %% Note that option style=numeric works as well, also authoryear
 \addbibresource{references.bib}
@@ -2404,4 +2404,4 @@ Alumiinioksidin käyttö abrasiivina vaikutti lupaavalta. Kokeen perusteella se 
 
 \end{document}
 
-%sagemathcloud={"latex_command":"pdflatex -synctex=1 -interact=nonstopmode 'd_tyo.tex'"}
+%sagemathcloud={"latex_command":"biber d_tyo.tex"}
