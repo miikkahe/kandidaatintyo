@@ -72,7 +72,7 @@
 % !!! 2014-11-03 Second language seems to mess up figure and table
 % !!! captions. Do not use it after all (ES)
 %%\usepackage[finnish,english]{babel}
-\usepackage[finnish]{babel}
+\usepackage[english,finnish]{babel}
 %\usepackage[english]{babel}
 
 
@@ -93,8 +93,16 @@
 
 % Option3) for bibliography: newer way, esp. for Name-year citations
 % http://www.ctan.org/pkg/biblatex
-\usepackage[style=authoryear,maxcitenames=2,backend=biber,
-  firstinits=true,uniquename=init]{biblatex}
+
+\usepackage[style=authoryear,bibstyle=authoryear,maxcitenames=2,backend=biber,url=false,maxbibnames=100,language=american,autolang=other,firstinits=true,uniquename=init]{biblatex}
+
+\newcommand{\biband}{\ifcurrentname{labelname}{\bibstring{and}}{\&}}
+
+\renewcommand*{\finalnamedelim}{%
+   \ifnumgreater{\value{liststop}}{2}{\finalandcomma}{}%
+   \addcomma\addspace\biband\space}
+
+
 %% Note that option style=numeric works as well, also authoryear
 \addbibresource{references.bib}
 

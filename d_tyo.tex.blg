@@ -1,5 +1,5 @@
 [0] Config.pm:325> INFO - This is Biber 2.1
-[0] Config.pm:328> INFO - Logfile is 'd_tyo.tex.blg'
-[84] biber:276> INFO - === Sat May 14, 2016, 18:09:26
-[220] Utils.pm:162> ERROR - Cannot find control file 'd_tyo.tex.bcf'! - did you pass the "backend=biber" option to BibLaTeX?
-[221] Biber.pm:111> INFO - ERRORS: 1
+[1] Config.pm:328> INFO - Logfile is 'd_tyo.tex.blg'
+[51] biber:276> INFO - === Mon May 16, 2016, 13:23:26
+[171] Utils.pm:162> ERROR - Cannot find control file 'd_tyo.tex.bcf'! - did you pass the "backend=biber" option to BibLaTeX?
+[172] Biber.pm:111> INFO - ERRORS: 1
