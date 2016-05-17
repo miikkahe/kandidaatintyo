@@ -428,6 +428,16 @@ ole ollut olemassa tai niitä ei ole sisällytetty yleisiin
 sanakirjoihin. Näissä tapauksissa termin yhteyteen on kirjoitettu
 myös alkuperäinen englanninkielinen termi.
 
+Luvuissa \ref{ch:doe,ch:grr,ch:kumip} on esitetty työn aiheeseen
+liittyvä tieteellinen teoria. Luku \ref{ch:doe} on työn laajin osa,
+ja se käsittelee koesuunnittelua. Luvun \ref{ch:grr} aiheena on
+koesuunnitteluun läheisesti liittyvä mittajärjestelmäanalyysi, ja
+luvun \ref{ch:kumip} aiheena on tutkimuskohteen, eli kumipyöräabraasiokokeen,
+teoria. Luvussa \ref{ch:kokeet} esitetään projektin koejärjestelyt,
+kaikki suoritetut kokeet ja niistä saadut koetulokset. Luku \ref{ch:concl}
+sisältää koetuloksista tehdyt johtopäätökset sekä koko työn yhteenvedon.
+
+
 %This document is structured as follows. Chapter~\ref{ch:doe}
 %discusses briefly the basics of writing and presentation style
 %regarding the text, figures, tables and mathematical
@@ -633,8 +643,8 @@ kutsutaan tätä \(3^k\)-kokeeksi, ja jos valittuja tasoja on \textit{I},
 kutsutaan sitä \(I^k\)-kokeeksi.
 
 Tekijän vaikutusta voidaan arvioida laskemalla vasteen keskiarvo
-ensin kaikista tuloksista tekijän ollessa matalalla tasollaan ja sen jälkeen
-vasteen keskiarvo tekijän ollessa korkealla tasollaan ja sen jälkeen
+ensin kaikista tuloksista tekijän ollessa matalalla tasollaan, sen jälkeen
+laskemalla vasteen keskiarvo tekijän ollessa korkealla tasollaan, ja lopuksi
 vertailemalla niitä keskenään. Kun koesuunnitelma sallii tällaisen matemaattisesti
 riippumattoman tarkastelun joka tekijän vaikutuksista, sanotaan
 sen olevan \em ortogonaalinen.\em Toisin sanoen matemaattisessa
@@ -704,12 +714,12 @@ on nolla \parencite{barker2005}.
 
 
 Käytetyin koesuunnitelma on \textit{osittainen yhdistelykoe} (eng. fractional factorial
-design), useimmiten 2 tai 3:lla tekijätasolla. Osittaisessa kokeessa ei ajeta
+design), useimmiten 2 tai 3 tekijätasolla. Osittaisessa kokeessa ei ajeta
 kaikkia mahdollisia yhdistelmiä, vaan vain tietyt tarkoituksella valitut. Hyvä
 osittainen yhdistelykoe antaa tyydyttävästi tietoa yhteisvaikutuksista
 kohtuullisella koemäärällä.
 
-Osittaisista yhdistelykokeista käytetään merkintää \(I^{k - p}\)
+Osittaisista yhdistelykokeista käytetään merkintää \(I^{k - p}\),
 mikä tarkoittaa että koe on \(1/I^p\)-osa \(I^k\)-kokeesta.
 Esimerkiksi \(2^{3 - 1}\)-koe on puolikas \(2^3\)-kokeesta,
 jolloin koeajoja on vain 4 (\(2^3\)-kokeessa koeajoja on 8).
@@ -722,27 +732,27 @@ Pienempi koemäärä johtaa tekijöiden vaikutusten
 vaikutuksia ei voida erottaa toisistaan. Esimerkiksi tekijä A ja yhteisvaikutus BCD
 voivat olla sulautuneita, jolloin ei voida sanoa johtuuko vaikutus A:sta vai
 BCD:stä. Mitä vähemmän koeajoja on, eli mitä osittaisempi suunnitelma on, sitä
-enemmän on sulautumisia. Suunnitelmien teossa käytetään hyväksi n.s.
+enemmän on sulautumisia. Suunnitelmien teossa käytetään hyväksi niin sanottua
 \textit{vaikutusten niukkuusperiaatetta} (eng. sparsity-of-effects principle),
-jonka mukaan todennäköisintä on että vaikutuksen aiheuttaa yksi tekijä, vähemmän
+jonka mukaan todennäköisintä on, että vaikutuksen aiheuttaa yksi tekijä, vähemmän
 todennäköistä on kahden tekijän yhteisvaikutus, vielä vähemmän todennäköistä on
-kolmen tekijän yhteisvaikutus jne.
+kolmen tekijän yhteisvaikutus ja niin edelleen.
 Suunnitelmissa monen tekijän yhteisvaikutukset
 yleensä sulautetaan ja kokeen tekijän on hyvä ottaa tämä huomioon.
 Yhden tekijän aiheuttamia vaikutuksia vasteeseen kutsutaan \textit{päävaikutuksiksi}
-(eng. main factor) erotukseksi useamman tekijän yhteisvaikuksista.
+(eng. main factor), erotukseksi useamman tekijän yhteisvaikuksista.
 
-Nykyisin tietokoneiden avulla voidaan luoda algoritmin tuottamia D-optimaalisia
+Tietokoneiden avulla voidaan luoda algoritmin tuottamia D-optimaalisia
 koesuunnitelmia. Suunnitelman luova algoritmi etsii optimaalisen ryhmän
-koeajoja mahdollisten koeajojen joukosta siten että mallin parametriarvioiden
+koeajoja mahdollisten koeajojen joukosta siten, että mallin parametriarvioiden
 kovarianssi miminoituu \parencite[s.~513]{Montgomery2012}.
-Toisin kuin yleiset koesuunnitelmat, D-optimaaliset eivät välttämättä ole
-ortogonaalisia ja siten vaikutusarviot voivat olla toisistaan riippuvaisia.
+Toisin kuin yleiset koesuunnitelmat, D-optimaaliset suunnitelmat eivät välttämättä ole
+ortogonaalisia, ja siten vaikutusarviot voivat olla toisistaan riippuvaisia.
 Ne kuitenkin sallivat kokeen suorittamisen tavallisia koesuunnitelmia
-vähemmillä koeajoilla ja sallivat suunnitelman muokkauksen silloin kun
+vähemmillä koeajoilla, ja sallivat suunnitelman muokkauksen silloin kun
 kaikkia tekijätasojen yhdistelmiä ei syystä tai toisesta voida toteuttaa
 \parencite{ehandbook,mitchell1974}.
-D-optimaalinen suunnitelma kykenee arvioimaan kaikki yhden parametrin vaikutukset sekä kaikki 2 tekijän yhteisvaikutukset pitämällä koeajojen määrän kuitenkin mahdollisimman pienenä.
+D-optimaalinen suunnitelma kykenee arvioimaan kaikki yhden parametrin vaikutukset sekä kaikki 2 tekijän yhteisvaikutukset koeajojen määrän pysyessä kuitenkin mahdollisimman pienenä.
 
 
 
@@ -758,7 +768,7 @@ Analyysin tuloksia on muun muassa:
     enemmän kuin kahden tekijän yhteisvaikutuksia.
 \end{itemize}
 
-Tuloksia voidaan mallintaa matemaattisesti, vasteen ja tekijöiden yhdistävällä
+Tuloksia voidaan mallintaa matemaattisesti vasteen ja tekijöiden yhdistävällä
 yhtälöllä. Ensimmäisen kertaluvun malli kuvaa ainoastaan tekijöiden päävaikutuksia.
 Jos tekijöitä on esimerkiksi kaksi, on malli
 
@@ -770,43 +780,43 @@ Jos tekijöitä on esimerkiksi kaksi, on malli
 missä \textit{y} on vaste, \textit{x}:t tekijöitä, $\beta $:t tuntemattomia parametreja
 jotka arvioidaan kokeen tuloksista ja $\varepsilon $ on
 kokeessa tapahtuvaa satunnaista virhettä kuvaava termi.
-Usein lisätään yhteisvaikutusta kuvaava termi, esimerkiksi kahden tekijän tapauksessa
+Usein lisätään yhteisvaikutusta kuvaava termi, esimerkiksi jälleen kahden tekijän tapauksessa
 
 \begin{equation}
   \label{eq:2krtluku}
  y = \beta _0 + \beta _{1}x_1 + \beta _{2}x_2 + \beta _{12}x_{1}x_{2} + \varepsilon,
 \end{equation}
 
-jolloin voidaan kuvata päävaikutuksia ja kahden tekijän yhteisvaikutuksia.
+jolloin voidaan kuvata sekä päävaikutuksia että kahden tekijän yhteisvaikutuksia.
 
 
 
 Koesuunnitelmaan ja sulauttamiseen liittyy käsite \textit{resoluutio}. Resoluutio
 kertoo kuinka monet vaikutukset suunnitelmassa on sulautettu. Arvo ilmoitetaan
-roomalaisilla numeroilla ja isompi resoluutio tarkoittaa vähemmän sulautumisia.
-Yleensä on siis järkevää valita suurin mahdollinen resoluutio ottaen huomioon
+roomalaisilla numeroilla ja isompi resoluutio tarkoittaa vähempiä sulautumisia.
+Yleensä on siis järkevää valita suurin mahdollinen resoluutio ottamalla samalla huomioon
 koeajojen määrä. Yleisimmät resoluutioarvot ovat III, IV ja V:
 
 \begin{description}
 \item[Resoluutio III] Päävaikutukset eivät ole sulautuneita toisiinsa
-mutta ovat sulautuneita 2 tekijän yhteisvaikutuksiin;
+mutta ovat sulautuneita 2 tekijän yhteisvaikutuksiin.
 \item[Resoluutio IV] Päävaikutukset eivät ole sulautuneita toisiinsa eivätkä 2 tekijän
-yhteisvaikutuksiin mutta jotkut 2 tekijän yhteisvaikutukset ovat sulautuneita toisiinsa
-ja päävaikutukset ovat sulautuneita 3 tekijän yhteisvaikutuksiin;
+yhteisvaikutuksiin, mutta jotkut 2 tekijän yhteisvaikutukset ovat sulautuneita toisiinsa
+ja päävaikutukset ovat sulautuneita 3 tekijän yhteisvaikutuksiin.
 \item[Resoluutio V] Päävaikutukset ja 2 tekijän yhteisvaikutukset eivät ole sulautuneita
-keskenään tai toisiina mutta 2 tekijän yhteisvaikutukset ovat sulautuneita 3 tekijän
-yhteisvaikutuksiin ja päävaikutukset ovat sulautuneita 4 tekijän yhteisvaikutuksiin. \parencite[s.~9]{montgomery2006}
+keskenään tai toisiinsa, mutta 2 tekijän yhteisvaikutukset ovat sulautuneita 3 tekijän
+yhteisvaikutuksiin, ja päävaikutukset ovat sulautuneita 4 tekijän yhteisvaikutuksiin. \parencite[s.~9]{montgomery2006}
 \end{description}
 
 
 
 
 Yksinkertaisin tapa toteuttaa koe on vaihdella yhtä tekijää kerrallaan
-muiden pysyessä valituilla perustasoillaan ja toistaa
+samalla kun muut pysyvät valituilla perustasoillaan, ja toistaa
 tämä kaikille tekijöille vuorollaan. Tätä kutsutaan
 yksi tekijä kerrallaan -menetelmäksi
 (eng. one-factor-at-a-time tai OFAT).
-Tuloksista on helppo piirtää yksinkertaisia vaikutuskuvaajia
+Tuloksista on helppo piirtää yksinkertaisia vaikutuskuvaajia,
 kuten kuvassa \ref{fig:vaikutus}, joka esittää aiemman katapulttiesimerkin yhden tekijän vaikutusta vasteeseen.
 OFAT ei kuitenkaan pysty havaitsemaan
 tekijöiden yhteisvaikutuksia,
@@ -814,17 +824,17 @@ vaatii enemmän koeajoja
 ja voi helposti olla huomaamatta tekijöiden optimiyhdistelmiä.
 Siten esimerkiksi \textcite{Montgomery2012}
 yhtyy siihen yleiseen käsitykseen että käytännössä joka tilanteessa on
-suotavampaa käyttää yhdistelykokeita koska yhteisvaikutukset
+suotavampaa käyttää yhdistelykokeita, koska yhteisvaikutukset
 ovat niin yleisiä ja silloin OFAT ei toimi hyvin.
 Kuitenkin \textcite{frey2005mechanisms} osoittavat tämän
 olevan ainakin osittain virheellinen käsitys. Heidän tutkimansa
 menetelmä on adaptive OFAT (aOFAT, mukautuva OFAT), jossa muutetaan
 yhtä tekijää, tarkistetaan tulos, ja jos se on parempi niin
-pidetään tekijä tällä tasolla ja jos huonompi niin muutetaan se
-takaisin aiemmalle. Näin jatketaan kunnes kaikkia tekijöitä on
-muutettu. Tutkimuksen mukaan ainakin tämä menetelmä voi
+pidetään tekijä tällä tasolla, ja jos huonompi niin muutetaan se
+takaisin aiemmalle tasolleen. Näin jatketaan kunnes kaikkia tekijöitä on
+muutettu. Tutkimuksen mukaan tämä menetelmä voi
 johtaa keskimäärin parempiin tuloksiin jos kokeen virhe on
-pieni (vähemmän kuin yksi neljäsosa tekijävaikutuksista) tai
+pieni (vähemmän kuin yksi neljäsosa tekijävaikutuksista), tai
 tekijöitten yhteisvaikutukset suuria (enemmän kuin yksi neljäsosa
 kaikista vaikutuksista). \textcite{frey2005mechanisms} esittävät
 myös mekanismeja ja selityksiä tälle tulokselle.
@@ -845,7 +855,7 @@ mutta todennäköisesti useat niistä ovat merkityksettömiä tai lähes
 merkityksettömiä. Tätä ei kuitenkaan voida etukäteen tietää. Tällöin
 on tarkoituksenmukaista tehdä \em seulontakoe \em
 (eng. screening experiment), jossa mukana on monia tekijöitä
-ja tarkoituksena on tunnistaa niistä ne joilla on suuri vaikutus.
+ja tarkoituksena on tunnistaa niistä ne, joilla on suuri vaikutus.
 Tärkeiksi havaitut tekijät tutkitaan perusteellisemmin myöhemmissä
 kokeissa.
 
@@ -860,9 +870,9 @@ toimivuuden perustuvan vaikutusten niukkuusperiaatteelle.
 
 \textcite{plackett1946} esittivät Plackett-Burman-suunnitelmat,
 jotka ovat erittäin vähän koeajoja sisältäviä osittaisia yhdistelykokeita
-ja soveltuvat siten hyvin käytettäväksi seulontaan. Esimerkiksi 12 koeajon
+ja jotka soveltuvat siten hyvin käytettäväksi seulontakokeissa. Esimerkiksi 12 koeajon
 PB-suunnitelmassa voidaan tutkia 11 tekijää. Näissä suunnitelmissa
-päävaikutukset ovat kuitenkin voimakkaasti sulautuneet yhteisvaikutuksiin.
+päävaikutukset ovat kuitenkin voimakkaasti sulautuneita yhteisvaikutuksiin.
 
 
 
@@ -879,7 +889,7 @@ aktiivisten tekijöiden tunnistamiseen seulontakokeessa.
 Koeajojen jälkeen tulokset analysoidaan tilastollisilla menetelmillä.
 Koesuunnitteluun tarkoitetut ohjelmistot tekevät tämän yleensä
 automaattisesti, mutta osaavat kokeentekijät voivat myös tehdä
-analyyseja itse esimerkiksi python tai R -ohjelmointikielillä.
+analyyseja itse, esimerkiksi python- tai R -ohjelmointikielillä.
 Usein hyödyllisintä datan tutkimiseen ja tulkintaan on
 piirtää yksinkertaisia kuvia ja kuvaajia.
 
@@ -890,7 +900,7 @@ piirtää yksinkertaisia kuvia ja kuvaajia.
 Teollisuudessa prosessin tuloksena on usein jokin tuote, ja vasteena voidaan
 tutkia jotakin tämän tuotteen ominaisuutta. Koesuunnittelun menetelmillä
 saadaan selville tutkittavien tekijöiden vaikutus tähän ominaisuuteen.
-Yleensä tuotteen ominaisuuksien halutaan pysyvän aina samana kun
+Yleensä tuotteen ominaisuuksien halutaan pysyvän aina samana, kun
 tekijät pidetään tietyillä tasoilla. Tällöin tuote on tasalaatuista, mikä
 on yksi laadunhallinnan tavoitteista.
 
@@ -898,7 +908,7 @@ Vasteen satunnaista vaihtelua sanotaan \em varianssiksi \em tai \em vaihteluksi,
 ja yleensä tavoitellaan sen minimoimista. Koesuunnittelulla saadaan
 tietoa tekijöiden vaikutuksista vasteen varianssiin. Tällaista vaikutusta
 kutsutaan \em dispersiovaikutukseksi. \em
-Vastaavasti kuten edellä käsitellyissä vaikutuksissa vasteen tasoon,
+Vastaavasti kuten edellä käsitellyissä tekijöiden vaikutuksissa,
 myös dispersiovaikutuksissa esiintyy yhden tekijän päävaikutuksia
 ja monen tekijän yhteisvaikutuksia.
 
@@ -907,27 +917,27 @@ Kun koesuunnittelulla halutaan saada selville nämä vaikutukset
 ja se ihanteellinen tekijätasojen yhdistelmä jolla varianssi on pienimmillään,
 puhutaan \em robustien parametrien suunnittelusta \em (eng. robust
 parameter design, robustien koska prosessista halutaan mahdollisimman
-vastustuskykyinen satunnaisille muutoksille, so. robusti, ja parametrien koska
+vastustuskykyinen satunnaisille muutoksille eli robusti, ja parametrien koska
 teollisuudessa kokeen tekijät ovat yleensä hallittavia prosessiparametreja).
 Dispersiovaikutusten etsintään on kolme lähestymistapaa:
 
 \begin{enumerate}
-\item  Kokeessa toistetaan koetta samalla hallittavien tekijöiden
-    tasolla josta varianssia voidaan arvioida;
-\item Kokeeseen pakotetaan varianssia sisällyttämällä siihen
-    myös ei-hallittavia tekijöitä;
-\item Dispersiovaikutuksia analysoidaan kokeista joissa ei
+\item  kokeessa toistetaan koetta samalla hallittavien tekijöiden
+    tasolla josta varianssia voidaan arvioida,
+\item kokeeseen pakotetaan varianssia sisällyttämällä siihen
+    myös ei-hallittavia tekijöitä,
+\item dispersiovaikutuksia analysoidaan kokeista joissa ei
     ole toistoa. \parencite{Bursztyn}
 \end{enumerate}
 
 Ensimmäistä ja kolmatta lähestymistapaa kutsutaan joskus
-\em passiiviseksi \em robustiksi suunnitteluksi ja toista lähestymistapaa
+\em passiiviseksi \em robustiksi suunnitteluksi, ja toista lähestymistapaa
 \em aktiiviseksi \em robustiksi suunnitteluksi.
 
 Ei-hallittavien tekijöiden sisällyttäminen oli japanilaisen
 Genichi Taguchin (1924--2012) idea. Taguchi kehitti menetelmänsä
 1950-luvulla ja ne saivat suurta huomiota Yhdysvalloissa 1980-luvulla.
-Taguchi vaikutti siten voimakkaasti laadunhallinnan tekniikan kehittymiseen.
+Taguchi vaikutti siten voimakkaasti laadunhallinnan tekniikoiden kehittymiseen.
 
 \subsection{Taguchi-menetelmä}
 
@@ -935,7 +945,7 @@ Taguchi esitti että vasteen vaihtelun aiheuttavat usein satunnaiset vaihtelut
 merkittävissä tekijöissä joita ei kuitenkaan voida prosessin aikana hallita.
 Esimerkkejä ovat ympäristötekijät, kuten ilmankosteus tai lämpötila, ja
 komponenttien mittojen vaihtelu nimellisarvon ympärillä (toleranssit).
-Taguchi nimesi nämä ei-hallittaviksi tekijöiksi (noise factor)
+Taguchi nimesi nämä ei-hallittaviksi tekijöiksi (eng. noise factor),
 ja erotti ne hallittavista tekijöistä antaen niille kokeessa erityistä
 huomiota. Tavoitteeksi hän asetti niiden hallittavien tekijöiden tasojen
 löytämisen, joilla ei-hallittavien tekijöiden dispersiovaikutus minimoituu.
@@ -946,17 +956,18 @@ Toistoon perustuvassa dispersiovaikutusten etsinnässä jokainen
 komponenttiosa valittaisiin satunnaisesti, joten joittenkin leveys
 saattaisi olla 2,9 mm, joittenkin 3,1 mm, mutta monet olisivat lähellä
 3,0 mm. Taguchin menetelmässä komponentin leveys valittaisiin
-ei-hallittavaksi tekijäksi ja kokeessa käytettäisiin vain niitä joiden
+ei-hallittavaksi tekijäksi ja kokeessa käytettäisiin vain komponentteja joiden
 leveys on 2,9 mm tai 3,1 mm. Koesuunnitelmaan sisältyisi tällöin
-kaksitasoinen ei-hallittava tekijä jonka matala taso on 2,9 mm ja
+kaksitasoinen ei-hallittava tekijä, jonka matala taso on 2,9 mm ja
 korkea taso 3,1 mm.
 
 Sisällyttämällä kokeeseen ei-hallittavia tekijöitä voidaan piirtää
-havainnollisia vuorovaikutuskuvaajia. Kuva \ref{fig:slope} esittää ei-hallittavan
+havainnollisia vuorovaikutuskuvaajia. Kuva \ref{fig:slope} kuvaa ei-hallittavan
 tekijän, komponenttiosan leveyden, ja hallittavan tekijän, hitsaustavan, vuorovaikutusta.
 Kuvasta nähdään että hallittavan tekijän dispersiovaikutus vasteeseen muuttuu sen eri tasoilla
-kun ei-hallittava tekijä vaihtelee. Hitsaustapa matalalla tasollaan on vaakasuorempi,
-mikä tarkoittaa hitsaustavan matalampi taso vähentää vasteen varianssia.
+kun ei-hallittava tekijä vaihtelee. Dispersiovaikutuksen kuvaaja on vaakasuorempi kun hitsaustapa
+on matalalla tasollaan,
+mikä tarkoittaa sitä että hitsaustavan matalampi taso vähentää vasteen varianssia.
 
 
 \begin{figure}
@@ -970,14 +981,14 @@ mikä tarkoittaa hitsaustavan matalampi taso vähentää vasteen varianssia.
 \end{figure}
 
 
-Hyvä esimerkki on japanilaisen Ina Tile Companyn tapaus 1950-luvulta,
+Hyvä esimerkki Taguchi-menetelmän soveltamisesta on japanilaisen Ina Tile Companyn tapaus 1950-luvulta,
 kuten \textcite{Kackar1989} kertoo:
-Yhtiön valmistamien tiilien mitat vaihtelivat paljon ja monet olivat sallittujen mittojen ulkopuolella
+Yhtiön valmistamien tiilien mitat vaihtelivat paljon ja monet olivat sallittujen mittojen ulkopuolella,
 jolloin hävikki oli suurta.
 Saatiin selville että vaihtelua aiheutti polttouunin epätasainen lämpötila,
 jota ei kuitenkaan voitu hallita. Taguchi-menetelmillä saatiin selville että
 lisäämällä kalkin määrää savessa, mikä taas oli hallittava tekijä, tiilet saatiin
-vastustuskykyisemmiksi uunin lämpötilan vaihtelulle ja mitat yhdenmukaisemmiksi.
+vastustuskykyisemmiksi uunin lämpötilan vaihtelulle ja siten myös niiden mitat yhdenmukaisemmiksi.
 
 \textcite{steinberg1994,Steinberg1998,Berube1998} ovat osoittaneet
 että ei-hallittavien tekijöiden sisällyttäminen kokeeseen voi
@@ -986,8 +997,7 @@ Haittapuolia ovat kuitenkin koeajojen määrän huomattava lisääntyminen
 ja se, että tämänkaltaisia tekijöitä on usein vaikea
 tai kallista hallita kokeen aikana. Luonnollisesti jotta merkittävät ei-hallittavat
 tekijät voidaan sisällyttää kokeeseen, on ne tunnistettava oikein jo
-suunnitteluvaiheessa, mikä vaatii usein erinomaista prosessin tuntemusta
-eikä suinkaan ole itsestäänselvää.
+suunnitteluvaiheessa, mikä vaatii usein erinomaista prosessin tuntemusta.
 
 Taguchin menetelmässä hallittaville ja ei-hallittaville
 tekijöille valitaan omat erilliset koesuunnitelmansa.
@@ -995,19 +1005,20 @@ Hallittavien tekijöiden suunnitelmaa nimitetään \em sisätaulukoksi \em
 ja ei-hallittavien tekijöiden suunnitelmaa \em ulkotaulukoksi \em
 (eng. inner array ja outer array).
 Nämä suunnitelmat
-"ristitään", so. sisätaulukon jokainen tekijätasojen yhdistelmä
+"ristitään" eli sisätaulukon jokainen tekijätasojen yhdistelmä
 suoritetaan ulkotaulukon joka tekijätasojen yhdistelmällä. Syntyvää
 koesuunnitelmaa sanotaan \em ristikkäiseksi suunnitelmaksi \em
 (eng. crossed array design). Kuvassa \ref{subfig:crossed} on esimerkki tällaisesta suunnitelmasta.
 Kuvan sisätaulukko on \(2^{4-1}\) osittainen yhdistelykoe ja ulkotaulukko
-yksinkertainen \(2^1\)-koe. Sisätaulukon 8 koeajoa ja ulkotaulukon 2
+yksinkertainen \(2^1\)-koe. Sisätaulukon 8 koeajoa ja ulkotaulukon 2 koeajoa
 ristiöitynä tekevät yhteensä 16 koeajoa, mutta kuvan kokeessa jokainen
-yhdistelmä myös toistettiin kolmesti, tuloksena 48 havaintoa.
+yhdistelmä myös toistettiin kolmesti, jolloin saatiin yhteensä 48 tulosta.
 Kuvassa \ref{subfig:crossed2}
 on toinen esimerkki ristikkäisestä suunnitelmasta. Nyt sisätaulukossa
 on kolmitasoinen resoluution III \(3^{4-2}\)-suunnitelma ja ulkotaulukossa \(2^3\)-suunnitelma,
 yhteensä \(9\times 8=72\) koeajoa. Kuten nähdään, vaikka tekijöitä on vain
 7 ja resoluutio vain III, on koe silti suhteellisen aikaavievä.
+
 \textcite{Hijar-Rivera2009} esittävät tietokoneella tuotettuja ristikkäisiä
 suunnitelmia Taguchin tarjoamien valmiiden suunnitelmien rinnalle.
 Jokaiselle Taguchin suunnitelmalle voitiin tuottaa vähintään yksi koeajoiltaan samansuuruinen
@@ -1038,17 +1049,17 @@ mutta tehokkaampi suunnitelma.
 
 
 \textcite{shoemaker1991} huomauttavat että tällainen ristikkäinen
-suunnitelma on pohjimmiltaan vain osittainen yhdistelykoe jolla
+suunnitelma on pohjimmiltaan vain osittainen yhdistelykoe, jolla
 on tietty sulautumisrakenne. Kun ristikkäinen suunnitelma esitetään
 näin, puhutaan \em yhdistetystä suunnitelmasta \em (eng. combined
 array). Yhdistetyssä suunnitelmassa ei-hallittavia
 tekijöitä ei siis eroteta omaksi ulkotaulukokseen, vaan niitä vaihdellaan yhdessä hallittavien
-tekijöiden kanssa kuten normaalissa \(2^k\)-kokeessa.
+tekijöiden kanssa, kuten normaalissa \(2^k\)-kokeessa.
 Yhdistetyn suunnitelman etuna on suurempi joustavuus, sillä siinä sulautumisia
 voidaan hallita tarpeen mukaan.
 
 
-Myös Taguchin menetelmä ristikkäisen suunnitelman datan analysointiin on
+Taguchin menetelmä ristikkäisen suunnitelman datan analysointiin on myös
 omintakeinen. Ei-hallittavia tekijöitä sisältävien kokeiden analysoinnissa
 käytetään pääasiassa kahta menetelmää, \em vastemallianalyysia \em ja \em suoritemitta-analyysia \em
 (eng. response model analysis ja performance measure analysis).
@@ -1061,7 +1072,7 @@ sen varianssiin. Hallittavien tekijöiden dispersiovaikutukset tunnistetaan
 niiden vaikutuksesta signaali-kohinasuhteeseen, ja robustin suunnittelun
 tavoitteena on maksimoida tämä suhde.
 Suoritemitta-analyysin tarkoituksenmukaisuutta on kritisoitu paljon.
-Bursztynin ja Steinbergin \parencite*{Bursztyn} mukaan sen suurin heikkous on siinä että
+Bursztynin ja Steinbergin \parencite*{Bursztyn} mukaan sen suurin heikkous on siinä, että
 kokeeseen sisällytettyjä ei-hallittavia tekijöitä ei
 erityisesti hyödynnetä,
 vaikka ne on varta vasten tunnistettu ja valittu koetta varten. Pohjimmiltaan
@@ -1069,14 +1080,14 @@ niiden data vain "luhistetaan" matemaattisesti jonka jälkeen analyysi
 tehdään kuten yksinkertaisessa toistoon perustuvassa suunnitelmassa.
 Toinen ongelmallinen seikka on vasteen keskiarvon ja sen varianssin
 väkinäinen yhdistäminen.
-\textcite{box1988,steinberg1994} ovat näyttäneet monia muitakin suoritemitta-analyysin
+\textcite{box1988,steinberg1994} ovat osoittaneet muitakin suoritemitta-analyysin
 haittoja, muun muassa sen että se voi olla huomaamatta dispersiovaikutuksia.
 
 Vastemallianalyysi on vähemmän kiistanalainen analysointimenetelmä.
 Sovellettuna yhdistettyyn suunnitelmaan se on samankaltainen kuin
-luvussa \ref{doe} esitetty tulosten mallintamisen
-menetelmä. Esimerkiksi, jos on 2 hallittavaa tekijää, $x_1$ ja $x_2$, ja yksi
-ei-hallittava tekijä, $z_1$, malli on
+luvussa \ref{ch:doe} esitetty tulosten mallintamisen
+menetelmä. Esimerkiksi, jos hallittavia tekijöitä on 2, $x_1$ ja $x_2$, ja
+ei-hallittavia tekijöitä 1, $z_1$, malli on
 
 \begin{equation}
   \label{eq:vastemalli}
@@ -1093,15 +1104,10 @@ siis yhtä aikaa optimoida sekä vasteen keskiarvo että sen varianssi.
 
 
 Taguchin menetelmien perusteista ja pätevyydestä on huomattavasti erimielisyyttä.
-Yleisesti ottaen tilastotieteilijät, matemaatikot ja tutkijat sanovat menetelmän
-olevan vanhentunut ja kritisoivat joustamattomuutta (koe pitää muokata
-annettujen suunnitelmien mukaiseksi, kun taas tietokoneiden avulla suunnitelmat
-voidaan luoda kokeen perusteella,
-kokeen tekijän on tunnettava prosessi erittäin hyvin
-jotta mahdollisia merkittäviä mutta ennalta tuntemattomia tekijöitä
-ei jää huomiotta), tehottomuutta (pieni resoluutio suhteessa
+Yleisesti ottaen monet tilastotieteilijät, matemaatikot ja tutkijat sanovat menetelmän
+olevan vanhentunut ja kritisoivat spesifisyyttä, tehottomuutta (pieni resoluutio suhteessa
 koeajojen määrään) ja annettujen analysointityökalujen järkevyyttä
-(signaali-kohinasuhde).
+(suoritemitta-analyysi).
 Yksi ongelma on myös se että hieman ulkopuolisena uudistajana Taguchi
 usein turhaan uudelleennimesi jo olemassa olevia käsitteitä ja käytti
 erikoisia merkintöjä, jotka ovat yhä käytössä näissä menetelmissä.
@@ -1112,7 +1118,7 @@ Sama pätee robust-sanaan.
 Toisaalta Taguchi-menetelmiä
 on teollisuudessa käytetty jo kauan (kuten esimerkiksi Six Sigma -strategiassa)
 ja tulosten ja käyttäjien kokemusten perusteella se on usein
-toiminut erinomaisesti.
+toiminut moitteettomasti.
 \textcite{Berube1998} huomauttavat että osa ongelmaa on se että
 monet käytetyistä tulosten analysointimenetelmistä eivät ole
 erityisesti käyttäneet hyväksi ristikkäisen suunnitelman ja ulkotaulukon
@@ -1127,9 +1133,29 @@ vastepintamenetelmää.
 \textcite{Antony2006} antaa yleistason kuvan Taguchi-menetelmien ja
 perinteisen koesuunnittelun eroista harjoittajan näkökulmasta. Taulukossa \ref{tab:vertailu}
 hän vertailee Taguchi-menetelmää ja perinteistä koesuunnittelua, jolla hän
-tässä tarkoittaa seulontakoe-vastepinta-menetelmää josta lisää luvussa \ref{vastep}.
-Antony näyttää kallistuvan Taguchi-menetelmän kannalle teollisuuden
-tarpeiden tapauksessa.
+tässä tarkoittaa seulontakoe-vastepinta-menetelmää, josta lisää luvussa \ref{vastep}.
+
+
+
+
+
+\textcite[s.~300-301]{Hedayat2012} luettelevat
+seuraavat ongelmat liittyen
+Taguchi-menetelmiin:
+\begin{itemize}
+\item Signaali-kohinasuhde ei kerro kuinka hallittavat tekijät vaikuttavat
+      vasteeseen. Vaikka vaikutusta havaittaisiin, ei silti voida tietää
+      muuttaako se vasteen tasoa, varianssia vai molempia.
+\item Mahdollisia tekijöitten välisiä vuorovaikutuksia ei oteta huomioon.
+\item Vaikka ristikkäisyyden vuoksi koeajoja ja tuloksia on paljon, hallittavien tekijöiden
+    tasoyhdistelmiä on kuitenkin suhteessa tähän vain pieni määrä. Siten hallittavien
+    tekijöiden keskinäinen sulautuminen on aina sama, ja täten kyseinen resoluutio pieni.
+\item Menetelmä ei kerro tarkalleen kuinka ei-hallittavat tekijät vaikuttavat vasteeseen.
+      Syntyykö kohina vain joistain ei-hallittavista tekijöistä? Onko niitten ja
+      hallittavien tekijöitten välillä vuorovaikutuksia? Signaali-kohinasuhdeanalyysi
+      ei vastaa näihin kysymyksiin.
+\end{itemize}
+
 
 \begin{table}
   \small
@@ -1166,41 +1192,26 @@ tarpeiden tapauksessa.
 
 
 
-\textcite[s.~300-301]{Hedayat2012} luettelevat
-seuraavat ongelmat liittyen
-Taguchi-menetelmiin:
-\begin{itemize}
-\item Signaali-kohinasuhde ei kerro kuinka hallittavat tekijät vaikuttavat
-      vasteeseen. Vaikka vaikutusta havaittaisiin, ei silti voida tietää
-      muuttaako se vasteen tasoa, varianssia vai molempia.
-\item Mahdollisia tekijöitten välisiä vuorovaikutuksia (huom. ei siis yhteisvaikutuksia) ei oteta huomioon.
-\item Vaikka ristikkäisyyden vuoksi koeajoja ja tuloksia on paljon, hallittavien tekijöiden
-    tasoyhdistelmiä on kuitenkin suhteessa tähän vain pieni määrä. Siten hallittavien
-    tekijöiden keskinäinen sulautuminen on aina sama, ja täten kyseinen resoluutio pieni.
-\item Menetelmä ei kerro tarkalleen kuinka ei-hallittavat tekijät vaikuttavat vasteeseen.
-      Syntyykö kohina vain joistain ei-hallittavista tekijöistä? Onko niitten ja
-      hallittavien tekijöitten välillä vuorovaikutuksia? Signaali-kohinasuhdeanalyysi
-      ei vastaa näihin kysymyksiin.
-\end{itemize}
+
 
 \textcite{nair1992} ovat koonneet kattavan paneelikeskustelun Taguchi-menetelmän
-toimivuudesta. Yksi väittelyn ydinkohdista on ristikkäisten ja yhdistettyjen suunnitelmien
+toimivuudesta. Yksi väittelyn ydinkohdista on kysymys ristikkäisten ja yhdistettyjen suunnitelmien
 tehokkuudesta robustissa suunnittelussa.
 Teoreettiset perustelut yhdistettyjen suunnitelmien toimivuudelle ovat
 vakuuttavat mutta jotkut empiiriset kokeet viittaavaat siihen että
 ristikkäiset suunnitelmat johtavat parempiin tuloksiin
 \parencite{kunert2003experiment}.
-\textcite[s.~558]{Montgomery2012} on sitä mieltä että yleensä ottaen yhdistetyt
+\textcite[s.~558]{Montgomery2012} on sitä mieltä että useimmissa tapauksissa yhdistetyt
 suunnitelmat ovat paljon tehokkaampia.
-Osa erimielisyyksistä liittyy siihen, missä määrin ns. vaikutusten
+Osa erimielisyyksistä liittyy siihen, missä määrin vaikutusten
 niukkuusperiaatetta pidetään perusteltuna \parencite{Li2006}.
 
 \textcite{Bursztyn} vertailevat kattavassa tutkimuksessaan menetelmiä dispersiovaikutusten
 seulomiseksi. He päätyvät siihen tulokseen että ei-hallittavien tekijöiden
 sisällyttäminen kokeeseen lisää huomattavasti kokeen kykyä havaita
-dispersiovaikutuksia verrattuna pelkästään kokeiden toistoon perustuvaan
-kokeeseen. He huomasivat että tämä parannus saavutetaan vain
-kun
+dispersiovaikutuksia, verrattuna pelkästään kokeiden toistoon perustuvaan
+kokeeseen. He havaitsivat että tämä parannus saavutetaan vain
+silloin kun
 tulosten analysointiin
 käytetään vastemallianalyysia, \em ei silloin kun käytetään Taguchin kehittämää
 suoritemitta-analyysia. \em
@@ -1212,19 +1223,19 @@ sen yrittäminen suotavaa.
 \label{vastep}
 
 Vastepintamenetelmä (eng. response surface methodology, RSM)
-on kokoelma matemaattisia tekniikoita jotka soveltuvat erityisen hyvin tilanteisiin
-joissa vaikuttaa monia tekijöitä ja tavoitteena on vasteen optimointi, kuten
+on kokoelma matemaattisia tekniikoita, jotka soveltuvat erityisen hyvin tilanteisiin
+joissa vaikuttaa monia tekijöitä ja joissa tavoitteena on vasteen optimointi, kuten esimerkiksi
 robustien parametrien suunnittelussa. Nimi tulee menetelmässä piirrettävistä
-kuvaajista joissa vaste usein esitetään kaksiulotteisena pintana kuten kuvassa \ref{fig:RSM}.
+kuvaajista joissa vaste usein esitetään kaksiulotteisena pintana, kuten kuvassa \ref{fig:RSM}.
 Vastepintamenetelmän loppuvaiheen optimointiin kehitetyt koesuunnitelmat
-keskittyvät tekijöiden ja vasteen välisen suhteen mallintamiseen
-eivätkä ne sovellu merkittävien tekijöiden tunnistamiseen eli seulontaan kuten $2^k$-suunnitelmat
-soveltuvat. Usein näitä suunnitelmia käytetäänkin peräkkäin jolloin
+keskittyvät tekijöiden ja vasteen välisen suhteen mallintamiseen,
+eivätkä ne sovellu merkittävien tekijöiden tunnistamiseen eli seulontaan niin hyvin kuin $2^k$-suunnitelmat
+soveltuvat. Usein näitä suunnitelmia käytetäänkin peräkkäin, jolloin
 $2^k$-seulontakokeessa tunnistettuja tekijöitä optimoidaan tarkemmilla vastepintasuunnitelmilla.
 National Institute of Standards and
 Technologyn (U.S.) \parencite*{ehandbook} mukaan vastepintasuunnitelmiin on paras siirtyä vasta
-sitten kun seulontakokeella on vähennetty tutkittavien tekijöiden määrää
-neljään tai vähempään.
+sitten, kun seulontakokeella on vähennetty tutkittavien tekijöiden määrää
+neljään tai harvempaan.
 
 \begin{figure}
   \begin{center}
@@ -1240,18 +1251,18 @@ neljään tai vähempään.
 Usein tekijöiden seulonnan jälkeen prosessin senhetkisten tekijätasojen oletetaan
 vielä olevan kaukana optimista, joten on suotavaa ensin siirtyä nopeasti optimialueen
 läheisyyteen, jonka jälkeen vasta mallinnetaan vastepinta ja tarkemmat tekijöiden
-optimitasot. Ensimmäinen tai ensimmäiset kokeet voidaan tehdä $2^k$-suunnitelmilla
-ja  sovittamalla tulokset ensimmäisen kertaluvun malliin \ref{eq:1krtluku}.
+optimitasot. Ensimmäinen tai ensimmäiset kokeet voidaan tehdä $2^k$-suunnitelmilla,
+sovittamalla tulokset ensimmäisen kertaluvun malliin \ref{eq:1krtluku}.
 Tämän jälkeen kohti optimialuetta siirrytään \em jyrkimmän nousun \em
-(tai \em jyrkimmän laskun \em) menetelmällä. Jyrkimmän nousun suunta on se
+(tai \em jyrkimmän laskun \em) menetelmällä \parencite[s.~479]{Montgomery2012}. Jyrkimmän nousun suunta on se
 suunta, missä vaste $y$ nousee nopeimmin. Ensimmäisen kertaluvun mallissa,
 jossa ei ole kaarevuutta, tämä suunta on kohtisuora vastepintaa kohden, kuten
-nähdään kuvasta \ref{fig:steepest}. Kokeen tekijä päättää
+nähdään kuvasta \ref{fig:steepest}. Kokeen tekijä päättää sen,
 kuinka isoja askeleita jyrkimmän nousun suuntaan otetaan. Uusia kokeita suoritetaan
 aina askelten välissä, ja jos vasteessa ei enää havaita nousua, voidaan sovittaa
 uusi ensimmäisen kertaluvun malli, jonka jälkeen jatketaan samaan tapaan.
 Lopulta päädytään lähelle optimialuetta, mistä yleensä kertoo ensimmäisen kertaluvun mallin
-huonompi sopivuus tuloksiin.
+huonontunut sopivuus tuloksiin.
 
 \begin{figure}
   \begin{center}
@@ -1264,11 +1275,11 @@ huonompi sopivuus tuloksiin.
 \end{figure}
 
 Optimialueen läheisyydessä toteutetaan vastepintasuunnitelma, josta voidaan
-tarkasti arvioida vastepinnan muotoa ja siten myös tekijöiden optimitasoja.
-Yleisimmin käytetyt suunnitelmat ovat Box-Behnken- ja keskiökomposiittisuunnitelmat
+tarkasti arvioida vastepinnan muotoa, ja siten myös tekijöiden optimitasoja.
+Yleisimmin käytetyt suunnitelmat ovat Box-Behnken-suunnitelmat ja keskiökomposiittisuunnitelmat
 (eng. Central composite design, CCD). Molemmissa käytetään vähintään kolmea
-tekijätasoa kaarevuudeen mallintamiseksi. Joissain CCD-suunnitelmissa vaaditaan
-jopa viisi tekijätasoa. Taulukossa \ref{vpsuunnitelmat} nähdään näitten suunnitelmien vaatimat
+tekijätasoa kaarevuudeen mallintamiseksi. Joissain CCD-suunnitelmissa käytetään
+jopa viittä tekijätasoa. Taulukossa \ref{vpsuunnitelmat} nähdään näitten suunnitelmien vaatimat
 koeajojen määrät eri tekijöiden määrällä.
 
 \begin{table}[]
@@ -1298,7 +1309,7 @@ kokeiden määrä saattaa nousta kokeesta riippuen hyvin korkeaksi.
 \textcite{frey2008adaptive} ovat tutkineet adaptive OFAT (mukautuva OFAT) -menetelmän
 toimivuutta robustissa suunnittelussa. Menetelmä on kuten kappaleessa \ref{doe} mainittu
 aOFAT, erotuksena se että joka hallittavan tekijän tason vaihdon
-jälkeen ajetaan ei-hallittaville tekijöille resoluutio III -tasoinen
+jälkeen suoritetaan ei-hallittaville tekijöille resoluutio III -tasoinen
 yhdistelykoe. Johtopäätöksenä he esittävät että OFAT on tässäkin tilanteessa
 turhaan ylenkatsottu menetelmä.
 
@@ -1337,8 +1348,8 @@ mittalaitteella useita kertoja käyttäjän, mittausmenetelmän tai jonkin muun
 tekijän vaihtuessa. Havaittu vaihtelu jaetaan kahteen osaan, toistettavuuteen
 ja toisinnettavuuteen (eng. repeatability ja reproducibility). Toistettavuus
 kuvaa mittalaitteesta aiheutuvaa vaihtelua kun samaa
-kohdetta mitataan käyttäjän, menetelmän jne. pysyessä samana. Toisinnettavuus
-on eri käyttäjistä, menetelmistä jne. aiheutuvaa vaihtelua.
+kohdetta mitataan käyttäjän, menetelmän ja muiden tekijöiden pysyessä samana. Toisinnettavuus
+on eri käyttäjistä, menetelmistä ja muista tekijöistä aiheutuvaa vaihtelua.
 Tuloksia tutkitaan tilastollisella \em varianssianalyysilla \em (ANOVA, analysis of variance).
 Tämänkaltaisia mittajärjestelmäanalyyseja kutsutaan GR\&R-analyyseiksi
 (gauge tai gage repeatability and reproducibility).
@@ -1374,7 +1385,7 @@ vaihtelun lähde (tyypillisesti käyttäjä tai näytekappale) satunnainen vai
 vakio (eng. random factor ja fixed factor). Muuttuja on satunnainen
 jos kokeessa käytetyt muuttujan arvot ovat vain otos isommasta
 tutkittavasta perusjoukosta ja vakio jos kokeessa
-käytetyt muuttujan arvot ovat ainoat joista ollaan kiinnostuneita.
+käytetyt muuttujan arvot ovat ne ainoat arvot joista ollaan kiinnostuneita.
 Näytekappale on lähes aina satunnainen muuttuja sillä kokeeseen
 valitut kappaleet ovat satunnainen otos kaikista mahdollisista kappaleista.
 Muuttujan käyttäjä asema sen sijaan ei aina ole selvä. Jos esimerkiksi kokeessa
@@ -1386,14 +1397,14 @@ siitä onko muuttuja vakio vai satunnainen, sillä satunnaisuus tuo kokeeseen
 ylimääräisiä vaihtelun lähteitä.
 
 
-Yksinkertaisin analyysi on ns. tyypin 1 mittajärjestelmäanalyysi, jossa
+Yksinkertaisin analyysi on niin sanottu tyypin 1 mittajärjestelmäanalyysi, jossa
 mitataan ainoastaan mittalaitteen toistettavuutta. Tällöin sama käyttäjä
 mittaa samaa osaa useita kertoja. Yleensä suositellaan tekemään
 vähintään 20 mittausta tällä tavalla. Tuloksista voidaan arvioida mittaustuloksen
 vaihtelua ja keskiarvon mahdollista muuttumista ajan suhteen.
 
 Syystä tai toisesta teollisuuteen on vakiintunut tapa tehdä GR\&R-analyysi
-10:llä näytekappaleella, 3:lla käyttäjällä ja 2 tai 3:lla mittaustoistolla.
+10 näytekappaleella, 3 käyttäjällä ja 2 tai 3 mittaustoistolla.
 Tällöin koe on $10 \times 3 \times 2$ tai $10 \times 3 \times 3$ -koe.
 Kuten nähdään, $10 \times 3 \times 2$ -koe vaatii $10 \times 3 \times 2 = 60$
 yksittäistä mittausta. Kuten \textcite{kitska2014} neuvoo, ei kuitenkaan ole mieltä
@@ -1405,7 +1416,7 @@ Toisinnettuja kokeita on oltava tarpeeksi monta jotta varianssi voidaan
 arvioida tarkasti. On myös harkittava muiden muuttujien kuin vain näytekappaleiden
 ja käyttäjien sisällyttämistä kokeeseen.
 
-Tyypillisesti mittajärjestelmäanalyysissa tutkitaan vain kahta muuttujaa -
+Tyypillisesti mittajärjestelmäanalyysissa tutkitaan vain kahta muuttujaa ---
 käyttäjää ja näytekappaletta. Samassa analyysissa voidaan kuitenkin
 tutkia useampiakin muuttujia, esimerkiksi eri mittalaitteita tai laboratorioita. Kun
 tyypilliseen GR\&R-analyysiin lisätään muuttujia, puhutaan
@@ -1417,26 +1428,26 @@ kasvaa näin nopeasti, usein vähennetään näytekappaleiden määrää
 
 
 
-Usein mittaus kuitenkin vahingoittaa kohdetta tai näytettä jollain tavalla.
+Usein mittaus vahingoittaa kohdetta tai näytettä jollain tavalla.
 Esimerkiksi vetolujuutta mitattaessa näytekappale tuhoutuu. Tällöin
 kokeen kaikki käyttäjät eivät voi mitata samaa kappaletta, jolloin toistettavuutta
 ei voida määrittää tavalliseen tapaan. \textcite{mitchell1997,bergeret2002improving}
-ovat kuitenkin esittäneet menetelmiä mittajärjestelmäanalyysin tekemiseen
+ovat esittäneet menetelmiä mittajärjestelmäanalyysin tekemiseen
 destruktiiviselle mittausjärjestelmälle. Kattavan katsauksen näihin ja
 muihin vastaaviin menetelmiin antavat \textcite{Mast2005}.
 Gormanin ja Bowerin \parencite*{Gorman2002} esittämässä menetelmässä tarvitaan erä kappaleita
-jotka ovat tarpeeksi samanlaisia jotta niitä voidaan ajatella samana kappaleena,
-so. homogeeninen erä. Toistettavuus arvioidaan erän sisäisestä vaihtelusta.
+jotka ovat tarpeeksi samanlaisia jotta niitä voidaan ajatella samana kappaleena, toisin sanoen
+homogeeninen erä. Toistettavuus arvioidaan erän sisäisestä vaihtelusta.
 
 Myös tyypin 1 mittajärjestelmäanalyysi voidaan tehdä destruktiiviselle
 mittaukselle. Tällöin kappaleet yksinkertaisesti oletetaan homogeenisiksi
 ja analyysi tehdään kuin käytettäisi yhtä ainoaa näytekappaletta.
-On siis kriittistä kuinka perusteltu oletus homogeenisuudesta on.
+Tällöin on erittäin tärkeää, että harkitaan sitä, kuinka perusteltu oletus homogeenisuudesta on.
 
 Mittajärjestelmäanalyysi voidaan suorittaa joko ristiöitynä tai hierarkkisena
 (eng. crossed tai nested). Ristiöidyssä kokeessa joka käyttäjä mittaa joka
 kappaleen, eli mittaukset tehdään ristiin. Hierarkkisessa suunnitelmassa
-joka käyttäjällä on omat mitattavat kappaleensa ja siis esimerkiksi käyttäjä
+joka käyttäjällä on omat mitattavat kappaleensa, ja siten esimerkiksi käyttäjä
 A ei mittaa käyttäjän B mittaamia kappaleita. Kuvassa \ref{fig:crossedandnested}
 nähdään näiden suunnitelmien erot. Destruktiivinen mittausjärjestelmä
 vaatii lähes aina hierarkkisen mittajärjestelmäanalyysin. Jos käytettävissä on
@@ -1469,8 +1480,8 @@ käytetty ristiöityä vai hierarkkista suunnitelmaa.
 
 
 \textcite{Burdick2003} antavat suosituksia onnistuneen mittajärjestelmäanalyysin
-suorittamiseksi. Yksi on mahdollisimman monen erilaisen näytekappaleen
-käyttö jotta ne edustaisivat mahdollisimman hyvin mittajärjestelmän
+suorittamiseksi. Yksi suositus on mahdollisimman monen erilaisen näytekappaleen
+käyttö, jotta ne edustaisivat mahdollisimman hyvin mittajärjestelmän
 todellisuudessa kohtaamaa ainesta.
 Tällöin voidaan myös helpommin havaita
 mitattavan ominaisuuden lukemasta riippuva vaihtelu. Toinen on näytekappaleiden
@@ -1500,10 +1511,10 @@ tulkinnan kannalta on havainnollisten kuvien ja kuvaajien piirtäminen.
 
 
 Kun kova pinta liukuu pehmeämpää pintaa vasten ja kovan pinnan
-karheat huiput uurtavat pehmeämpää pintaa, on kyse kahden kappaleen abrasiivisesta kulumisesta
+karheat huiput uurtavat pehmeämpää pintaa, on kyse \em kahden kappaleen abrasiivisesta kulumisesta \em
 (eng. two-body abrasive wear). Jos kahden pinnan välissä on kovempia kappaleita
-jotka uurtavat molempia pintoja kutsutaan tätä kolmen kappaleen
-abrasiiviseksi kulumiseksi (eng. three-body abrasive wear).
+jotka uurtavat molempia pintoja, kutsutaan tätä \em kolmen kappaleen
+abrasiiviseksi kulumiseksi \em (eng. three-body abrasive wear).
 
 Abrasiivisen kulumisen kulumisjälkenä syntyy tunnusomaisia
 pitkiä samansuuntaisia uurteita, joitten pituus ja syvyys vaihtelevat
@@ -1517,12 +1528,12 @@ Abrasiivinen kuluminen voi tapahtua eri mekanismeilla:
 \begin{itemize}
 \item kyntämällä
 \item leikkaamalla
-\item hauraasti murtumalla \parencite[s.~109]{kivioja1997}
+\item hauraasti murtumalla \parencite[s.~109]{kivioja1997}.
 \end{itemize}
 
 
 Materiaalin kolmen kappaleen abrasiivisen kulumisen vastustuskyvyn määrittämiseen
-on olemassa standardisoitu koe G65-04 \parencite{Standard2010},
+on olemassa standardisoitu koe G65-04 \parencite{Standard2010} eli
 kumipyöräabraasiokoe.
 Kuvan \ref{fig:G65} mukaisella laitteistolla koekappaleeseen
 kulutetaan kulumisjälki ja kappaleen massan muutos mitataan. Abrasiivina
@@ -1554,7 +1565,7 @@ materiaalien vertailuun.
 \textcite{Stevenson1996} ovat esittäneet parannusehdotuksia
 standardin mukaiseen abraasiokokeeseen. Ehdotetussa parannellussa
 koelaitteessa, joka nähdään kuvassa \ref{fig:redesign}, koekappale on vaakatasossa kiinnitettynä
-ikeeseen siten että se voi liikkua vapaammin kuin standardin mukaisessa laitteessa.
+ikeeseen siten, että se voi liikkua vapaammin kuin standardin mukaisessa laitteessa.
 Rakenne mahdollistaa koekappaleen ja kumipyörän välistä kulkevan abrasiivin
 määrän ja kappaleeseen kohdistuvan reaktiovoiman määrittämisen.
 Tällöin voidaan mitata myös kokeen aikaisia kitkavoimia.
@@ -1576,12 +1587,12 @@ pienentäminen johti suurempiin lämpötilan nousuihin.
 \textcite{avery1981analysis,borik1970rubber} ovat osoittaneet kulumisnopeuden
 kasvavan kumipyörän kumin kovuuden kasvaessa. \textcite{Stevenson1996}
 havaitsivat että kokeen aikana syntyvä lämpö voi alentaa kumin kovuutta ja
-että vaikutus oli erilainen klooributyylikumille ja polyuretaanille, polyuretaanin
+että vaikutus oli erilainen klooributyylikumille ja polyuretaanille: polyuretaanin
 kovuus laski enemmän. Tästä syystä he suosittelevat suuria hiekan virtausmääriä,
 sillä tällä tavalla kitkan kokeessa synnyttämä lämpö ohjautuu tehokkaammin pois.
 
 \textcite{merkle2008} on esittänyt kumipyöräabraasiokokeen
-käytössä ilmenneitä ongelmia. Vaikeimmaksi asiaksi hallita
+käytössä ilmeneviä ongelmia. Vaikeimmaksi asiaksi hallita
 osoittautui kumipyörien vaihtelevat kovuudet. Myyjän toimittamissa
 kumipyörissä havaittiin merkittävää vaihtelua jota vuosia kestänyt
 varastointi lisäsi. Vaihtelun minimointiin Merkle antaa ratkaisuksi
@@ -1604,23 +1615,23 @@ rakoon.
 Teollisuusprojekti syntyi tarpeesta selvittää syitä
 kumipyöräabraasiotestin tulosten hajontaan. Erityisesti
 haluttiin selvittää onko suuresti odotetusta poikkeaviin
-testituloksiin syy todellakin pinnoitteessa vai olivatko
+testituloksiin syy todellakin pinnoitteessa, vai olivatko
 ne mahdollisesti seurausta virheellisestä testauslaitteistosta
 tai -menetelmästä. Toisin sanoen haluttiin selvittää
 kumipyöräabraasiokokeen luotettavuutta. Tutkimuksen tekemiseen
 käytettiin koesuunnittelun menetelmiä jotka
 toteutettiin Minitab–ohjelmistolla. Projektissa käytettäväksi
 valmisteltiin yksi suuri erä ruiskupinnoitettuja karbidipintaisia näytekappaleita
-sekä kokoelma kappaleita erilaisilla pinnoitteilla.
+sekä erä kappaleita erilaisilla pinnoitteilla.
 
 Kumipyöräabraasiokoe on tässä projektissa mallinnettu prosessiksi johon kuuluu
 näytteen valmistelu, abraasiotestin toteuttaminen ja massahäviön
 mittaaminen. Prosessissa on sekä hallittavia parametreja, tässä muun muassa
 näytekappaletta kumipyörää vasten painava
-voima ja pyörimisaika kuten myös ei-hallittavia parametrejä, tässä muun muassa
+voima ja pyörimisaika, kuten myös ei-hallittavia parametrejä, tässä muun muassa
 ilmankosteus, pyörän pinnan tasaisuus ja kumipyörän kovuus.
 Koesuunnittelun hallittavat ja ei-hallittavat
-tekijät vastaavat näitä hallittavia ja ei-hallittavia parametreja joten
+tekijät vastaavat näitä hallittavia ja ei-hallittavia parametreja, joten
 tässä luvussa niitä on kutsuttu parametreiksi.
 
 Kokeessa vaste on koekappaleen massahäviö.
@@ -1638,15 +1649,15 @@ mittajärjestelmäanalyyseissa.
 
 \section{Suunnitelma}
 
-Muodostui seuraava suunnitelma: ensin suoritetaan yksinkertainen
-tyypin 1 mittajärjestelmäanalyysi jolla tutkitaan
+Muodostui seuraava suunnitelma: Ensin suoritetaan yksinkertainen
+tyypin 1 mittajärjestelmäanalyysi, jolla tutkitaan
 prosessin toistettavuutta. Sen
 jälkeen yleisellä mittajärjestelmäanalyysilla (Gage R\&R) tutkitaan
 todennäköisimmäksi hajonnan aiheuttajaksi jo aiemmin arvellun kumipyörän
-epäsäännöllisyyden osuutta kokonaishajonnasta 3:lla erilaisella tätä
-projektia varten valmistetulla kumipyörällä. Lopulta suoritetaan
-robustien parametrien suunnittelu, jolla etsitään ne
-hallittavien parametrien arvot (ajoaika, hiekan virtausmäärä jne.)
+epäsäännöllisyyden osuutta kokonaishajonnasta 3 erilaisella tätä
+projektia varten valmistetulla kumipyörällä. Lopuksi suoritetaan
+robustien parametrien suunnittelukoe, jolla etsitään ne
+hallittavien parametrien arvot (ajoaika, hiekan virtausmäärä ja niin edelleen),
 joilla koetulosten vaihtelu on pienintä. Alustavasti menetelmäksi valittiin
 Taguchi–koe. Jätettiin myös avoimeksi mahdollisuus tehdä muita
 kokeita sen mukaan mikä vaikuttaisi olevan projektin kannalta
@@ -1680,12 +1691,12 @@ Kuva \ref{fig:t1grr} näyttää tulokset kokeiden ajojärjestyksessä, mittaustu
 \end{figure}
 
 Voidaan havaita hienoinen laskeva suuntaus mutta ainoastaan yksi koetulos on ohjelmiston laskeman (tilastollisesti merkittävän) punaisella merkityn alarajan alapuolella. Suuntaus voi hyvin olla kohinan tai pinnoitteen epähomogeenisuuden tuottama harha.
-Koemäärä osoittautui myös liian pieneksi johtopäätösten tekemiseen.
+Koemäärä osoittautui myös liian pieneksi luotettavien johtopäätösten tekemiseen.
 
-Kuva \ref{fig:t1grr2} näyttää joka koekappaleen 2 testitulosta rinnakkain.
+Kuva \ref{fig:t1grr2} näyttää joka koekappaleen molemmat testitulokset rinnakkain.
 Epätavallista on että lähes jokaisen näytekappaleen massahäviö
 laski toisella koekerralla. Syytä on vaikea arvella, mutta eräs
-mahdollisuus on näytteiden keskeneräiseksi jäänyt kuivaaminen,
+mahdollisuus on näytteiden keskeneräiseksi jäänyt kuivuminen,
 jonka johdosta nestettä haihtuisi vielä koetta edeltävän punnituksen
 ja kokeen jälkeisen punnituksen välillä.
 
@@ -1704,7 +1715,7 @@ Koska koemäärä vaikutti riittämättömältä koetta jatkettiin valmistelemal
 Kuva \ref{fig:t1grrjt} näyttää tuloksen kun uudet tulokset lisättiin kuvaan \ref{fig:t1grr}.
 Hajonta vaikuttaa kaoottisemmalta ja laskeva suuntaus ei ole enää niin selvä. Näytteen ensimmäisen ja toisen mittaustuloksen vertailukuvaajaan lisättynä
 tulos on kuvassa \ref{fig:t1grrjt2} (uudet näytteet merkittiin B-kirjaimella). 3:ssa uusista näytteistä massahäviö laski mutta 3:ssa myös nousi.
-Aiempi ilmiö oli luultavasti sattumaa tai aiheutui tuntemattomasta virheestä koeprosessissa. Kaiken kaikkiaan tyypin 1 mittajärjestelmäanalyysi ei osoittanut testin olevan epästabiili, so. ajan suhteen muuttuva. Toisaalta on huomattava että 32 testiajoa n. 2 päivän aikana ei todennäköisesti ole riittävä määrä kokeita tai aikaa luotettavien tulosten saamiseksi.
+Aiempi ilmiö oli luultavasti sattumaa tai aiheutui tuntemattomasta virheestä koeprosessissa. Kaiken kaikkiaan tyypin 1 mittajärjestelmäanalyysi ei osoittanut testin olevan epästabiili eli ajan suhteen muuttuva. Toisaalta on huomattava että 32 testiajoa noin 2 päivän aikana ei todennäköisesti ole riittävä määrä kokeita tai aikaa luotettavien tulosten saamiseksi.
 
 \begin{figure}
   \begin{center}
@@ -1728,19 +1739,19 @@ Aiempi ilmiö oli luultavasti sattumaa tai aiheutui tuntemattomasta virheestä k
 
 \section{Yleinen mittajärjestelmäanalyysi}
 
-Mittajärjestelmäanalyysiin valitaan koekappaleita mahdollisimman kattavasti koko siitä valikoimasta joita mittajärjestelmä normaalissa käytössä kohtaisi, tarkoituksena vertailla tätä koekappaleiden odotettua hajontaa muihin hajontalähteisiin ja saada selville käyttäytyykö järjestelmä eri tavalla eri mittaustulosalueilla. Koekappaleita valmistettiin 12:sta eri pinnoitteesta jotka
+Mittajärjestelmäanalyysiin valitaan koekappaleita mahdollisimman kattavasti koko siitä valikoimasta joita mittajärjestelmä normaalissa käytössä kohtaisi, tarkoituksena vertailla tätä koekappaleiden odotettua hajontaa muihin hajontalähteisiin ja saada selville käyttäytyykö järjestelmä eri tavalla eri mittaustulosalueilla. Koekappaleita valmistettiin 12 eri pinnoitteesta jotka
 numeroitiin 1 \ldots 12.
-Eri käyttäjien sijasta käytettiin 3:a erilaista abraasiotestin kumipyörää koska tämän
+Eri käyttäjien sijasta käytettiin 3:a erilaista abraasiotestin kumipyörää, koska tämän
 uskottiin olevan merkittävästi todennäköisempi vaihtelun lähde kuin käyttäjän. Pyörät
 valittiin seuraavasti:
 
 \begin{description}
-  \item[P1] Kumipyörä 1, normaalissa käytössä ollut kohtalaisesti kulunut kumipyörä.
-  \item[P2] Kumipyörä 2, sileä ja kulumaton kumipyörä.
-  \item[P3] Kumipyörä 3, keinotekoisesti hiomakoneella kulutettu kumipyörä, ”pompottava”.
+  \item[P1:] Kumipyörä 1, normaalissa käytössä ollut kohtalaisesti kulunut kumipyörä.
+  \item[P2:] Kumipyörä 2, sileä ja kulumaton kumipyörä.
+  \item[P3:] Kumipyörä 3, keinotekoisesti hiomakoneella kulutettu kumipyörä, ”pompottava”.
 \end{description}
 
-Koe tehtiin Minitab–ohjelman ohjeiden mukaan, hierarkkisena (nested) sillä kulumiskestävyyskoe on destruktiivinen eikä täsmälleen samaa näytekappaleen aluetta voi testata eri käyttäjillä/kumipyörillä. Onkin muistettava että kokeen taustalla on oletus pinnoitteiden homogeenisuudesta mikä ei välttämättä ole totuudenmukaista.
+Koe tehtiin Minitab–ohjelman ohjeiden mukaan, hierarkkisena (nested) sillä kulumiskestävyyskoe on destruktiivinen. Onkin muistettava että kokeen taustalla on oletus pinnoitteiden homogeenisuudesta mikä ei välttämättä ole totuudenmukaista.
 
 Joka pinnoitteesta valmisteltiin 3 näytekappaletta, joihin jokaiseen ajettiin 2 kulumisjälkeä. Aluksi laitteeseen asetettiin kumipyörä P1, jolla suoritettiin 1 koeajo jokaiseen eri pinnoitteeseen satunnaisessa järjestyksessä. Seuraavaksi asetettiin paikalleen kumipyörä P2 ja sama toistettiin uudelle joukolle näytekappaleita. Sama toistettiin jälleen pyörälle P3. Tämän jälkeen asetettiin paikalleen pyörä P1 uudelleen ja suoritettiin koeajo samoihin näytteisiin kuin oli suoritettu samalle pyörälle P1 aiemmin, jälleen satunnaisessa järjestyksessä. Näin tehtiin myös pyörälle P2 ja lopuksi pyörälle P3.
 
@@ -1816,14 +1827,14 @@ Kaiken kaikkiaan mittajärjestelmäanalyysi paljasti että kumipyörän epätasa
 \section{Muut varianssianalyysit}
 
 Kumipyörän epätasaisuuden osoittauduttua suhteellisen pieneksi osaksi hajontaa tutkittiin muita mahdollisia syitä vaihteleville tuloksille.
-Päädyttiin siihen johtopäätökseen että vaihteleviin tuloksiin luultavimmin vaikuttavat näytteen kunnollinen kuivaus, kumipyörän kovuuden vaihtelu, hiekan virtausmäärän vaihtelu ja hiekan kasaantuminen ja epätasainen virtaus näytekappaleen päältä. Näytteiden kuivaus vaikutti epätodennäköiseltä syyltä sillä kuivumiseen annettiin aina reilusti aikaa, ainakin seuraavaan päivään asti, ja kuivausmenetelmää oli käyttänyt kokenut operaattori, joka ei ollut maininnut kuivauksessa olleen mitään vaikeuksia. Hiekan virtausmäärä vaikutti vakiolta aina ennen laitteen käyttämistä tehdyssä mittauksessa, lähes aina ~60 g/min. Kumipyörän kovuuden vaihtelun mittaaminen osoittautui vaikeaksi, käsin käytettävän Shore –durometrin mittaustulokset olivat vaihtelevia ja vaikeita toistaa.
+Päädyttiin siihen johtopäätökseen että vaihteleviin tuloksiin luultavimmin vaikuttavat näytteen kunnollinen kuivaus, kumipyörän kovuuden vaihtelu, hiekan virtausmäärän vaihtelu ja hiekan kasaantuminen ja epätasainen virtaus näytekappaleen päältä. Näytteiden kuivaus vaikutti epätodennäköiseltä syyltä, sillä kuivumiseen annettiin aina reilusti aikaa, ainakin seuraavaan päivään asti, ja kuivausmenetelmää oli käyttänyt kokenut operaattori, joka ei ollut maininnut kuivauksessa olleen mitään vaikeuksia. Hiekan virtausmäärä vaikutti vakiolta aina ennen laitteen käyttämistä tehdyssä mittauksessa, lähes aina ~60 g/min. Kumipyörän kovuuden vaihtelun mittaaminen osoittautui vaikeaksi, käsin käytettävän Shore–durometrin mittaustulokset olivat vaihtelevia ja vaikeita toistaa.
 
 Hiekan oli havaittu kasautuvan epäsäännölliseen muotoon näytekappaleen päälle ja vasta siitä laskeutuvan
 kumipyörän ja näytteen väliseen rakoon. Vaikutti järkeenkäyvältä että tällainen epätasainen virtaus vaikuttaisi koetulosten hajontaan. Standardissa G65 \parencite{Standard2010}
-ja muissa kumipyöräabraasiolaitteen kaaviokuvissa hiekkaverho putosi aina suoraan pyörän ja kappaleen väliseen rakoon. Vaikutusta olisi myös helppo tutkia, oli vain valmistettava näytekappaleita jotka olivat niin korkeita että niiden yläreuna olisi korkeammalla kuin hiekkasuuttimen pää, jolloin hiekka ei pääsisi kasaantumaan reunan päälle.
-Valittiin 8 kpl hyväpintaisia 100 x 50 mm koekappaleita, joista 4 leikattiin 50 x 50 mm muotoisiksi
+ja muissa kumipyöräabraasiolaitteen kaaviokuvissa hiekkaverho putoaa aina suoraan pyörän ja kappaleen väliseen rakoon. Vaikutusta olisi myös helppo tutkia, oli vain valmistettava näytekappaleita jotka olivat niin korkeita että niiden yläreuna olisi korkeammalla kuin hiekkasuuttimen pää, jolloin hiekka ei pääsisi kasaantumaan reunan päälle.
+Valittiin 8 kappaletta hyväpintaisia $100\times 50$ mm koekappaleita, joista 4 leikattiin $50\times 50$ mm muotoisiksi,
 kuten kuvassa \ref{fig:kappaleet}.
-100 x 50 mm kappaleista hiottiin kulmat pois, koska muuten ne ottivat kiinni hiekkasuuttimen päähän kokeen aikana.
+$100\times 50$ mm kappaleista hiottiin kulmat pois, koska muuten ne ottivat kiinni hiekkasuuttimen päähän kokeen aikana.
 
 \begin{figure}
   \begin{center}
@@ -1839,7 +1850,49 @@ Varianssianalyysi suoritettiin hierarkkisena Gage R\&R:nä, kuten aiempikin mitt
 kuvan \ref{subfig:virtausxbar} mukaisen Xbar –kuvaajan ja kuvan \ref{subfig:virtausrchart} mukaisen R-chart-kuvaajan.
 Kuvasta nähdään että suorakulmion muotoisilla näytteillä, joissa hiekan virtaus on hallitumpaa, saman kappaleen eri mittausten välillä on vähemmän eroa. Yksiköt ovat jälleen milligrammoja.
 Koeajojen rinnakkainen vertaus on kuvassa \ref{subfig:virtausrinnakkaiset}
-Odottamattomasti jokaisen 50 x 50 mm –näytteen massahäviö laski toisella koeajolla mutta vastaavaa ilmiötä ei havaittu 100 x 50 mm –näytteillä.
+Odottamattomasti jokaisen $50\times 50$ mm –näytteen massahäviö laski toisella koeajolla mutta vastaavaa ilmiötä ei havaittu $100\times 50$ mm –näytteillä.
+
+
+
+Näitten tulosten ansiosta päätettiin toistaa sama hiekan virtauksen varianssianalyysi suuren projektia varten tehdyn näyte-erän karbidipinnoitteille. Tästä erästä leikattiin pieni ”kansi”, joka asetettiin näytteen päälle näytteenpidikkeeseen, kuten kuvassa \ref{fig:kappaleet2}
+Kuvassa \ref{fig:kpllaitteessa} näkyvä pieni pahvinpala piti kannen tiukasti paikoillaan kokeen aikana.
+Muuten koe suoritettiin samoin kuin edellinen teräskappaleilla tehty koe,
+eli hierarkkisena Gage R\&R:nä.
+Syntynyt Xbar –kuvaaja on kuvassa \ref{subfig:virtaus2xbar}, R-chart kuvassa \ref{subfig:virtaus2rchart} ja rinnakkaistarkastelu
+kuvassa \ref{subfig:virtaus2rinnakkaiset}.
+
+
+
+Tässä kokeessa ei löytynyt merkittävää eroa kannellisen ja kannettoman koeajon välillä.
+On mahdollista että teräs on keraamia herkempää hiekkavirran turbulenssille tai että ”kansi --- ei kantta” koejärjestely ei vastaa ”$50\times 50$ mm --- $100\times 50$ mm” koejärjestelyä. Joka tapauksessa tämä nimenomainen koetulos ei puolla hiekkavirran hallintaa kansikappaletta käyttämällä.
+
+\section{Robustien parametrien suunnittelu}
+
+Alunperin robustien parametrien suunnitteluun ajateltiin käytettäväksi
+Taguchi-menetelmää. Projektin edetessä selventyi kuitenkin 2 syytä, joiden
+vuoksi Taguchi-suunnitelma ei ollut sopiva tässä tapauksessa:
+
+\begin{itemize}
+  \item Taguchi–menetelmässä tekijöiden optimointiin käytetään
+signaali-kohinasuhdetta, joka yhdistää koetuloksen keskiarvon ja varianssin. Tämä on tarpeetonta sillä projektissa ei
+yritetty tai haluttu säätää tulosten keskiarvoa millään tavalla.
+  \item Taguchi-menetelmä on aktiivinen robustien parametrien suunnittelumenetelmä jossa kaikki ei-hallittavat tekijät pyritään ennen koetta tunnistamaan ja sitten kokeen aikana hallitsemaan. Tämä on hyvin toimivaa kun nämä häiriötekijät tunnistetaan tai tunnetaan jo etukäteen ja prosessi halutaan suojata niitä vastaan, mutta kumipyöräabraasiokokeessa
+hajonnan syyt eivät olleet tarpeeksi hyvin tiedossa jotta aktiivista suunnittelua
+oltaisi voitu toteuttaa.
+\end{itemize}
+
+Lopulta suunnitelmaksi valikoitui $2^k$ dispersiovaikutusten passiivinen seulontakoe. Toistojen määräksi valikoitui 4, koska 2:een
+saman pinnoitteen näytekappaleeseen kumpaankin voidaan tehdä 2 koeajoa.
+
+Koeajojen määrän pitämiseksi järkevänä oli tutkittavien parametrien määrä pidettävä pienenä. Lopulta päädyttiin 5 parametriin joiden vaikutus tuntui todennäköisimmältä:
+
+\begin{itemize}
+  \item ajoaika
+  \item näytteen paine kumipyörää vasten
+  \item hiekan virtausmäärä aikayksikköä kohden
+  \item hiekan eli abrasiivin tyyppi
+  \item oliko edellisessä kokeessa käytetty hiekan virtausta ohjaava kansi paikallaan vai ei.
+\end{itemize}
 
 \begin{figure*}
   \begin{center}
@@ -1866,12 +1919,8 @@ Odottamattomasti jokaisen 50 x 50 mm –näytteen massahäviö laski toisella ko
 \end{figure*}
 
 
-Näitten tulosten ansiosta päätettiin toistaa sama hiekan virtauksen varianssianalyysi suuren projektia varten tehdyn näyte-erän karbidipinnoitteille. Tästä erästä leikattiin pieni ”kansi”, joka asetettiin näytteen päälle näytteenpidikkeeseen, kuten kuvassa \ref{fig:kappaleet2}
-Kuvassa \ref{fig:kpllaitteessa} näkyvä pieni pahvinpala piti kannen tiukasti paikoillaan kokeen aikana.
-Muuten koe suoritettiin samoin kuin edellinen teräskappaleilla tehty koe,
-eli hierarkkisena Gage R\&R:nä.
-Syntynyt Xbar –kuvaaja on kuvassa \ref{subfig:virtaus2xbar}, R-chart kuvassa \ref{subfig:virtaus2rchart} ja rinnakkaistarkastelu
-kuvassa \ref{subfig:virtaus2rinnakkaiset}.
+
+
 
 \begin{figure}
   \begin{center}
@@ -1918,38 +1967,11 @@ kuvassa \ref{subfig:virtaus2rinnakkaiset}.
 \end{figure*}
 
 
-Tässä kokeessa ei löytynyt merkittävää eroa kannellisen ja kannettoman koeajon välillä.
-On mahdollista että teräs on keraamia herkempää hiekkavirran turbulenssille tai että ”kansi –- ei kantta” koejärjestely ei vastaa ”50 x 50 mm –- 100 x 50 mm” koejärjestelyä. Joka tapauksessa tämä nimenomainen koetulos ei puolla hiekkavirran hallintaa kansikappaletta käyttämällä.
 
-\section{Robustien parametrien suunnittelu}
 
-Alunperin robustien parametrien suunnitteluun ajateltiin käytettäväksi
-Taguchi-menetelmää. Projektin edetessä selventyi kuitenkin 2 syytä, joiden
-vuoksi Taguchi-suunnitelma ei ollut sopiva tässä tapauksessa:
 
-\begin{itemize}
-  \item Taguchi–menetelmässä tekijöiden optimointiin käytetään
-signaali-kohinasuhdetta, joka yhdistää koetuloksen keskiarvon ja varianssin. Tämä on tarpeetonta koska projektissa ei
-yritetty tai haluttu säätää tulosten keskiarvoa millään tavalla.
-  \item Taguchi-menetelmä on aktiivinen robustien parametrien suunnittelumenetelmä jossa kaikki ei-hallittavat tekijät pyritään ennen koetta tunnistamaan ja sitten kokeen aikana hallitsemaan. Tämä on hyvin toimivaa kun nämä häiriötekijät tunnistetaan tai tunnetaan jo etukäteen ja prosessi halutaan suojata niitä vastaan, mutta kumipyöräabraasiokokeessa
-hajonnan syyt eivät olleet tarpeeksi hyvin tiedossa jotta aktiivista suunnittelua
-oltaisi voitu toteuttaa.
-\end{itemize}
 
-Lopulta suunnitelmaksi valikoitui $2^k$ dispersiovaikutusten passiivinen seulontakoe. Toistojen määräksi valikoitui 4 koska 2
-saman pinnoitteen näytekappaleeseen kumpaankin voidaan tehdä 2 koeajoa.
-
-Koeajojen määrän pitämiseksi järkevänä oli tutkittavien parametrien määrä pidettävä pienenä. Lopulta päädyttiin 5 parametriin joiden vaikutus tuntui todennäköisimmältä:
-
-\begin{itemize}
-  \item ajoaika
-  \item näytteen paine kumipyörää vasten
-  \item hiekan virtausmäärä aikayksikköä kohden
-  \item hiekan eli abrasiivin tyyppi
-  \item oliko edellisessä kokeessa käytetty hiekan virtausta ohjaava kansi paikallaan vai ei.
-\end{itemize}
-
-Joka parametrille valittiin 2 tasoa, matala ja korkea. Ajoajalle tasoiksi valittiin 5 minuuttia ja 15 minuuttia, paineelle 0 kg punnus ja 1,5 kg punnus, hiekan virtaukselle 21 grammaa/minuutti ja 62 grammaa/minuutti, abrasiivityypille nilsiähiekka ($-1$) ja alumiinioksidi (1) ja kannelle ei kantta ($-1$) tai kansi paikoillaan (1). Hiekan virtausta oli tarkoitus tutkia myös suuremmilla arvoilla, mutta tarkoitukseen soveltuvia suuttimia ei löytynyt. Kumipyöräksi valittiin aiemmin hyväksi osoittautunut kumipyörä P2.
+Joka parametrille valittiin 2 tasoa, matala ja korkea. Ajoajalle tasoiksi valittiin 5 minuuttia ja 15 minuuttia, paineelle 0 kilogramman punnus ja 1,5 kilgramman punnus, hiekan virtaukselle 21 grammaa/minuutti ja 62 grammaa/minuutti, abrasiivityypille nilsiähiekka ($-1$) ja alumiinioksidi ($1$) ja kannelle ei kantta ($-1$) tai kansi paikoillaan ($1$). Hiekan virtausta oli tarkoitus tutkia myös suuremmilla arvoilla, mutta tarkoitukseen soveltuvia suuttimia ei löytynyt. Kumipyöräksi valittiin aiemmin hyväksi osoittautunut kumipyörä P2.
 
 Varsinaista koesuunnitelmaa ei valittu valmiiden joukosta, vaan Minitab–makrolla luotiin D-optimaalinen suunnitelma. Etuna on että koeajojen määrä saatiin mahdollisimman pieneksi.
 
@@ -2115,11 +2137,11 @@ Vaikutus tavanomaisiin keraamipinnoitteisiin ei ollut näin selvä. Yksittäinen
 koetulos voi toki olla myös jostain muusta satunnaisesta virheestä johtuva.
 
 Robustien parametrien suunnitteluun ajateltiin aluksi käytettävän
-Taguchi-koetta mutta päädyttiin lopulta vain yhteen D-optimaaliseen
-$2^k$-seulontakokeeseen 5:llä tekijällä ja 4:llä toistokokeella.
+Taguchi-koetta, mutta päädyttiin lopulta vain yhteen D-optimaaliseen
+$2^k$-seulontakokeeseen 5 tekijällä ja 4 toistokokeella.
 Seulontakokeeseen siksi että dispersioon
 vaikuttavista tekijöistä ei oltu lainkaan selvillä. D-optimaaliseen suunnitelmaan
-ja vain 5:een tekijään päädyttiin jotta koeajojen määrä saatiin pysymään
+ja vain 5 tekijään päädyttiin jotta koeajojen määrä saatiin pysymään
 siedettävänä. Optimoinnin tekeminen tällaisen kokeen pohjalta on
 riskialtista. Tästä huolimatta tehty variaatiokerrointa käyttävä vaikutusanalyysi kertoo parhaiksi parametrien arvoiksi hajonnan vähentämisen kannalta pitkän ajoajan, punnuksen käytön välttämisen, suuren hiekan virtausmäärän, alumiinioksidin käytön abrasiivina ja hiekan kasaantumista koekappaleen yläreunalle estävän kannen käyttämisen.
 
